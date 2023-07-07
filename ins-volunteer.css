@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/******Topbar*******/
+.navbar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-section{
+    position: fixed;
+    width: 100vw;
+    height: 11vh;
+    left: 0px;
+    top: 0px;
+    background-color: #6FBB76;
+    align-items: center;
+ }
+.header-section .row .logo img{
+    position: absolute;
+    width: 80px;
+    height: 73px;
+    left: 23px;
+    top: 2px;
+}
+.header-section .row .logo .p1 p {
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    position: fixed;
+    left: 104px;
+    top: 10px;
+    width: 203px;
+    height: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    webkit-box-align: center;
+}
+.header-section .row .logo .p2 p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    position: fixed;
+    left: 104px;
+    top: 32px;
+    width: 195px;
+    height: 29px;
+}
+.header-section .row .logout {
+    position: fixed;
+    width: 121px;
+    height: 34px;
+    left: 87vw;
+    top: 18px;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 24px;
+    max-height: 100%;
+    font-family: 'Inter';
+    display: inline-block;
+    cursor: pointer;
+ }
+.header-section .row .logout .fa{
+    position: absolute;
+    left: 10.62%;
+    right: 77.88%;
+    top: 33.29%;
+    bottom: 28.57%;
+}
+
+
+
+/*******BODY******/
+.bg-section{
+    left: 0;
+    width: 100vw;
+    height: 140vh;
+    background: #d9d9d9;
+    position: relative;
+  }
+ 
+    /*****Sidebar*****/ 
+ 
+    .bg-section .sidebar {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        height: 140vh;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.92);
+       } 
+      .sidebar .navbar-nav{
+            margin: 10px 30px;
+        }
+      .sidebar .navbar-nav .pcoded-inner-navbar {
+            flex-direction: column;
+        }
+       .navbar-nav .pcoded-inner-navbar ul{
+            width: 100%;
+        }
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+        .sidebar .nav .nav-link{
+            padding: 15px 25px;
+            color: #000000;
+            font-size: 17px;
+            font-family: 'Poppins';
+            font-style: normal;
+            line-height: 30px;
+        }
+        .sidebar .nav .nav-link i {
+            margin-right: 5px;
+            font-size: 20px;
+        }
+        .sidebar .nav .nav-link.active {
+            color: #008A0E;
+        }
+
+
+
+
+        /******Table Volunteer*****/
+
+        .tbl-volunteer{            
+        position: relative;
+        -webkit-box-align: center;
+        text-align: center;
+        }
+        .tbl-volunteer .container{
+            max-width: none!important;
+        }
+        .tbl-volunteer .row{
+            display: flex;        
+            margin: 0 55px;
+            padding-top: 45px;
+            padding-left: 230px;
+        }
+        .tbl-volunteer .tbl-volunteer-title h5{
+            display: flex;
+            width: 500px;
+            height: 28.883px;
+            transform: rotate(-0.291deg);
+            flex-direction: column;
+            flex-shrink: 0;
+            color: #000;
+            text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            font-size: 25px;
+            font-family: Inter;
+            padding-left: 5%;
+            text-align: left;
+            
+        }
+        .tbl-volunteer .table{
+            margin-top: 5px;
+        }
+        .tbl-volunteer .table .title{
+            background-color:#6FBB76 ;
+            padding: 0px 500px;
+            padding-left: 25px;
+        }
+        .tbl-volunteer .table .title td{
+            width: 200%;
+        }
+        .tbl-volunteer .table .vul-line1{
+            padding: 0px 0px;
+            line-height: 5px;
+        }
+        .tbl-volunteer .table .vul-line1 .pp{
+            position: relative;
+            left: 0px;
+        }
+
+        
