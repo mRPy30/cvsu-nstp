@@ -12,7 +12,7 @@ body{
   left: 0;
   width: 100vw;
   height: 170vh;
-  background: #d9d9d9;
+  background: #f1f0f0;
   position: relative;
 }
 
@@ -72,11 +72,10 @@ body{
       }
       /******STANDARD UPPERBAR********/
       .pcoded-main-content .rec-content .upperbox { 
-        border-bottom: solid rgb(0, 0, 0) 0.8px;
         height: 50px;
-        width: 110%;
+        width: 105%;
         display: flex;
-        margin-top: 10px;
+        margin: 10px 0px 0px 35px;
         justify-content: space-between;
         align-items: center;
     }
@@ -88,19 +87,19 @@ body{
       text-decoration: none;
     }
     .pcoded-main-content .rec-content .upperbox h4{
-      font: normal 400 18px/normal 'Poppins';
+      font: normal 700 18px/normal 'Poppins';
       margin: 10px 50px 8px 25px;
       
     }
     .pcoded-main-content .rec-content .upperbox h3{
-      font: normal 400 18px/normal 'Poppins';
+      font: normal 700 18px/normal 'Poppins';
       margin: 14px 0px 8px 5px;
       position: relative;
     }
     /********* table display ***********/
       
     .pcoded-main-content .rec-content .searchbox {
-      margin: 8px 0px 10px 350px;
+      margin: 8px 0px 10px 320px;
       align-items: center;
       
     }
@@ -227,7 +226,7 @@ body{
 
 /********TABLE CLASSES*********/
       .pcoded-main-content .rec-content .align-tbl{
-        margin: 0px 160px 0px 170px;
+        margin: 10px 160px 0px 170px;
       }
       .pcoded-main-content .rec-content .align-tbl .tabledisplay {
         width: 600px;
@@ -316,7 +315,7 @@ body{
       }
       .pcoded-main-content .rec-content
       .add-box{
-        margin: 20px 0px 0px 800px; 
+        margin: 20px 0px 0px 100px; 
         position: sticky;
         bottom: 20px;
         left: 50%;
@@ -399,7 +398,7 @@ body{
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #fff;
-            padding: 0px;
+            padding: 20px;
             border-radius: 5px;
             box-shadow: 0px 0px 400px 900px rgba(0,0,0,0.28);
             z-index: 9999;
@@ -447,18 +446,18 @@ body{
 /*****form*****/
       .pcoded-main-content .rec-content .formbox {
         width: 95%;
-        margin: 0px 0px 0px 40px;
+        margin: 0px 0px 0px 60px;
       }
       .pcoded-main-content .rec-content
       .form-container {
         background-color: #ffffff;
-        padding: 20px;
+        padding: 10px;
         border-radius: 5px;
         width: 290px;
         height: 230px;
         position: absolute;
         margin-top: 25px;
-        box-shadow: 2px 2px 4px 0px rgba(91,91,91, 0.30);
+        box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
       }
       .pcoded-main-content .rec-content
       .form-container h4{
@@ -483,7 +482,7 @@ body{
       /******table*****/
       .pcoded-main-content .rec-content 
       .align-tbl-course{
-        margin: 0px 0px 0px 350px;
+        margin: 10px 0px 0px 330px;
       }
       .pcoded-main-content .rec-content 
       .align-tbl-course .tabledisplay {
@@ -706,7 +705,7 @@ body{
 
 /******INSTRUCTOR LIST********/
 .pcoded-main-content .rec-content .align-tbl-instructor{
-  margin: 0px 110px 0px 100px;
+  margin: 10px 110px 0px 100px;
 }
   .pcoded-main-content .rec-content
    .align-tbl-instructor
@@ -808,17 +807,125 @@ body{
       background-color: #ff1100;
       transition: 0.4s;
     }
-  
-
-
-
-  
-
-
-
-
-
 /**********END RECORDS INSTRUCTOR*************/
+
+/********RECORDS FINANCES**********/
+.pcoded-main-content .rec-content .middlebox-finance{
+  padding: 5px;
+  margin: 20px 5px 5px 20px;
+  width: 150px;
+  height: 550px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.status-box{
+  display: flex;
+  margin-left: 60px;
+}
+
+
+.pcoded-main-content .rec-content .middlebox-finance
+.budget-box{
+  background: rgb(111,187,118);
+  background: linear-gradient(90deg, rgba(111,187,118,1) 35%, rgba(129,204,135,1) 100%);
+  width:  280px;
+  height: 150px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 15px;
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.budget-box ion-icon{
+  color: #000000;
+  margin-top: 10px;
+  font-size: xx-large;
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.budget-box h1{
+  color: #000000;
+  margin-top: 5px;
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.budget-box p{
+  color: #060606;
+  font: normal 400 14px/normal 'Poppins';
+}
+
+
+.pcoded-main-content .rec-content .middlebox-finance 
+.total-expenses-box{
+  background: rgb(111,187,118);
+  background: linear-gradient(90deg, rgba(111,187,118,1) 35%, rgba(129,204,135,1) 100%);
+  width:  280px;
+  height: 150px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 15px;
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.total-expenses-box ion-icon{
+  color: #000000;
+  margin-top: 10px;
+  font-size: xx-large;
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.total-expenses-box h1{
+  color: #000000;
+  margin-top: 5px;
+}
+.pcoded-main-content .rec-content .middlebox-finance 
+.total-expenses-box p{
+  color: #060606;
+  font: normal 400 14px/normal 'Poppins';
+}
+
+
+
+
+
+.table-box{
+  border: solid 1px black;
+  width: 1130px;
+  height: 400px;
+  margin-top: 10px;
+
+
+}
+
+.table-box p{
+  margin:10px;
+  display: flex;
+}
+
+#expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#expense-table th,
+#expense-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#expense-table th {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+/********END RECORDS FINANCES*******/
+
+
+
   /*******************END RECORDS********************/
 
   /************MAIN CONTENTS**************/

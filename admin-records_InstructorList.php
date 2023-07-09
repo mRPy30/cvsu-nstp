@@ -111,7 +111,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <div class="upperbox">
                             <h3><?php echo $selectedCourseName; ?></h3>
                                 <div class="searchbox">
-                                    <i class="fa-solid fa-magnifying-glass"></i><input  type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search section names...">
+                                    <i class="fa-solid fa-magnifying-glass"></i><input  type="text" class="form-control" aria-label="Text input with checkbox" id="searchInput" onkeyup="searchTable()" placeholder="Search section names...">
                                 </div>
 
                                 <div class="print">

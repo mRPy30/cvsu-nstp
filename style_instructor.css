@@ -34,10 +34,10 @@ body{
     position: relative;
     border-radius: 100%;
     overflow: hidden;
-    margin: 10px 5px 0px 200px;
+    margin: 25px 5px 0px 200px;
  }
  .pcoded-main-content .instructor_prof p{
-    margin: 20px 0 0 270px;
+    margin: 20px 0px 30px 270px;
     font-family: 'poppins';
     font-style: normal;
     font-weight: 700;
@@ -52,13 +52,16 @@ body{
     transition: all 0.1 0.5s;
  }
  .pcoded-main-content .box .content-box{
-    margin: 20px 260px;
+    margin: 30px 260px;
     padding: 15px 15px;
     background-color: #FFE193;
     color: #000000;
     width: 790px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
  }
+ .pcoded-main-content .box .content-box .second{
+   margin-bottom: 60px;
+}
  .pcoded-main-content .box .content-box .second{
     margin-bottom: 60px;
  }
@@ -265,13 +268,12 @@ body{
       font-family: 'Inter';
       text-transform: uppercase;
    }
-   .pcoded-main-content .tbl_masterlist .table button{
-      padding: 0px 3px;
-   }
-   .pcoded-main-content .tbl_masterlist .table button ion-icon{
-      font-size: large;
-      color: #fff;
-      margin-top: 2px;
+   .pcoded-main-content .tbl_masterlist .table input{
+      border: none;
+      width: 70px;
+      background-color: #F9F9F9;
+      text-align: center;
+      padding: 0px 10px;
    }
    .pcoded-main-content .tbl_masterlist .table .row_1{
       line-height: 5px;
@@ -312,14 +314,16 @@ body{
       color: #ffffff;
    }
    .pcoded-main-content .tbl_grades .table{
-      margin: 50px 110px;
+      margin: 20px 160px;
       text-align: center;
-      background: #FFF;
+      background-color: #FFF;
+      width: 1000px;
+      overflow-x:auto;
       box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
    }
    .pcoded-main-content .tbl_grades .table input{
       border: none;
-      width: 70px;
+      width: 100px;
       background-color: #F9F9F9;
       text-align: center;
       padding: 0px 10px;
@@ -327,11 +331,27 @@ body{
    .pcoded-main-content .tbl_grades .table .valid{
       color: #008A0E;
       font-size: larger;
+      position: absolute;
+      right: 75px;
+      visibility: hidden;
    }
    .pcoded-main-content .tbl_grades .table .invalid{
       color: #ff0000;
       font-size: larger;
+      position: absolute;
+      right: 75px;
+      visibility: hidden;
    }
+   .pcoded-main-content .tbl_grades .table .error-icon {
+      color: red;
+      display: none;
+    }
+    
+    .pcoded-main-content .tbl_grades .table .valid-icon {
+      color: green;
+      display: none;
+    }
+
    /***end grade table****/
 
 
@@ -545,16 +565,18 @@ body{
          color: #008A0E;
          margin-left: 70vw;
       }
-      .pcoded-main-content .class_navs .nav button{
-         margin-left: 40vw;
-         font-size: 10px;
+      .pcoded-main-content .tbl_masterlist .table input{
+         border: none;
          width: 70px;
+         background-color: #F9F9F9;
+         text-align: center;
+         padding: 0px 10px;
       }
       .pcoded-main-content .tbl_masterlist .table{
          margin: 20px 160px;
          text-align: center;
          background-color: #FFF;
-         width: 390px;
+         width: 300px;
          overflow-x:auto;
          box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       }

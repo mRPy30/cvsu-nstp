@@ -71,45 +71,34 @@
                                 <tr>
                                     <th scope="col" class="col-3">Student Number</th>
                                     <th scope="col" class="col-5">Name</th>
-                                    <th scope="col" class="col-2" colspan="2">Attendance</th>
+                                    <th scope="col" class="col-2"> Total Attendance</th>
                                 </tr>
                                 </thead>
                                     <tbody>
-                                        <tr class="row_1">
-                                            <td></td>
-                                            <td></td>
-                                            <td>Present</td>
-                                            <td>Absent</td>
-                                        </tr>
                                         <tr>
                                             <td>202110115</td>
                                             <th>Agustine Cuevas</th>
-                                            <td><button type="button" class="btn btn-success"><ion-icon name="checkmark"></ion-icon></button></td>
-                                            <td><button type="button" class="btn btn-danger"><ion-icon name="close"></ion-icon></button></td>
+                                            <td><input type="text"></td>
                                         </tr>
                                         <tr>
                                             <td>202110116</td>
                                             <th>Bianca Bautista</th>
-                                            <td><button type="button" class="btn btn-success"><ion-icon name="checkmark"></ion-icon></button></td>
-                                            <td><button type="button" class="btn btn-danger"><ion-icon name="close"></ion-icon></button></button></td>
+                                            <td><input type="text"></td>
                                         </tr>
                                         <tr>
                                             <td>202110117</td>
                                             <th>Agustine Cuevas</th>
-                                            <td><button type="button" class="btn btn-success"><ion-icon name="checkmark"></ion-icon></button></td>
-                                            <td><button type="button" class="btn btn-danger"><ion-icon name="close"></ion-icon></button></button></td>
+                                            <td><input type="text"></td>
                                         </tr>
                                         <tr>
                                             <td>202110118</td>
                                             <th>Bianca Bautista</th>
-                                            <td><button type="button" class="btn btn-success"><ion-icon name="checkmark"></ion-icon></button></td>
-                                            <td><button type="button" class="btn btn-danger"><ion-icon name="close"></ion-icon></button></button></td>
+                                            <td><input type="text"></td>
                                         </tr>
                                         <tr>
                                             <td>202110119</td>
                                             <th>Nicole Masigasig</th>
-                                            <td><button type="button" class="btn btn-success"><ion-icon name="checkmark"></ion-icon></button></td>
-                                            <td><button type="button" class="btn btn-danger"><ion-icon name="close"></ion-icon></button></button></td>
+                                            <td><input type="text"></td>
                                         </tr>
                                     </tbody>
                             </table>

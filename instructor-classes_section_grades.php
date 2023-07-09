@@ -72,24 +72,27 @@
                             <table class="table table-hover ">
                                 <thead class="title">
                                 <tr>
-                                    <th scope="col">Student Number</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Overall grade</th>
-                                    <th scope="col">Remarks</th>
+                                    <th scope="col" class="col-3">Student Number</th>
+                                    <th scope="col" class="col-3">Name</th>
+                                    <th scope="col" class="col-3">Overall grade</th>
+                                    <th scope="col" class="col-3">Remarks</th>
                                 </tr>
                                 </thead>
                                     <tbody>
                                         <tr>
                                             <td>202110115</td>
                                             <td>Ariel Hementera</td>
-                                            <td><input type="text"></td>
-                                            <td><ion-icon class="valid" name="checkmark-circle-outline"></ion-icon></td>
+                                            <td><input type="text" form-control></td>
+                                            <td>
+                                                <ion-icon class="valid" name="checkmark-circle-outline" id="check-icon"></ion-icon>
+                                                <ion-icon class="invalid" name="close-circle-outline" id="error-icon"></ion-icon>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>202110116</td>
                                             <td>Agustine Cuevas</td>
                                             <td><input type="text"></td>
-                                            <td><ion-icon class="valid" name="checkmark-circle-outline"></ion-icon></td>
+                                            <td><ion-icon class="invalid" name="close-circle-outline"></ion-icon></td>
                                         </tr>
                                         <tr>
                                             <td>202110117</td>
@@ -118,6 +121,57 @@
         <!-----End Main content------>
 </section>
 
+<script>
+   const password = document.getElementById('password');
+
+   form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validate()) {
+                form.submit(); // Submit the form if validation succeeds
+            }
+        });
+
+     // Password validation
+     if (passwordVal === '') {
+                setErrorMsg(password, 'Password cannot be blank');
+                isValid = false;
+            } else if (passwordVal.length < 8) {
+                setErrorMsg(password, 'Password should have at least 8 characters');
+                isValid = false;
+            } else if (!/[A-Z]/.test(passwordVal)) {
+                setErrorMsg(password, 'Password should contain at least 1 uppercase letter');
+                isValid = false;
+            } else if (!/[a-z]/.test(passwordVal)) {
+                setErrorMsg(password, 'Password should contain at least 1 lowercase letter');
+                isValid = false;
+            } else if (!/\d/.test(passwordVal)) {
+                setErrorMsg(password, 'Password should contain at least 1 numeric character');
+                isValid = false;
+            } else {
+                setSuccessMsg(password);
+            }
+
+            return isValid; // Return the overall validation result
+        
+
+
+            function setErrorMsg(input, errorMsg) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control .valid-icon';
+            small.innerText = errorMsg;
+            small.style.display = 'block'; // Change visibility to display
+        }
+
+        function setSuccessMsg(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control error-icon';
+            const small = formControl.querySelector('small');
+            small.style.display = 'none'; // Change visibility to display
+        }
+    </script>
+            
+</script>
 
 </body>
 </html>

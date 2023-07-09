@@ -33,402 +33,132 @@ $remainingBudget = $totalBudget - $totalExpenses;
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        .upperbox {
-            border-bottom: solid black 1px;
-            height: 50px;
-            width: 100%;
-            display: flex;
-            margin-bottom: 5px;
-           
-        }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .upperbox .go-back-button {
-            margin-left: 890px;
-            display: inline-block;
-            padding: 10px 20px;
-            height: 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 3px;
-        }
+    <!----------TITLE------------>
+    <link rel="shortcut icon" href="logo.png" type="">
+    <title><?php echo "Coordinator Page"; ?></title>
 
-        .upperbox .go-back-button:hover {
-            background-color: #45a049;
-        }
+     <!----------CSS------------>
+    <link rel="stylesheet" href="style_admin.css">
 
-        .course-box {
-            border: solid 1px black;
-            margin: 10px;
-            width: 250px;
-            padding: 10px 20px;
-            align-items: center;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      <!----------BOOTSTRAP------------>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+     <!----------FONTS------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@400;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 
-        .middlebox {
-            padding: 5px;
-            margin: 5px;
-            width: 1150px;
-            height: 550px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: flex-start;
-         
-        }
+    <!----------ICONS------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
-        
-
-        .status-box{
-            border: solid 1px black;
-            width: 1130px;
-            height: 170px;
-            display: flex;
-            justify-content: space-evenly;
-        }
+    <!----------ALERTS-------------->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
-        .budget-box{
-            border: solid 1px black;
-           width:  400px;
-            height: 150px;
-            margin: 10px;
-            text-align: center;
-        }
 
-        .total-expenses-box{
-            border: solid 1px black;
-            width:  400px;
-            height: 150px;
-            margin: 10px;
-            text-align: center;
-            
-        }
+     
+<!---Inner topbar--->
+<?php include('topbar.php');?>
 
-        .table-box{
-            border: solid 1px black;
-            width: 1130px;
-            height: 400px;
-            margin-top: 10px;
-        
-
-        }
-
-        .table-box p{
-            margin:10px;
-            display: flex;
-        }
-        
-
-        
-        .tabledisplay {
-            width: 900px;
-            border: solid black 1px;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-            flex-direction: column;
-            padding: 10px;
-            margin-left: 50px;
-        }
-
-        #expense-table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
-
-        #expense-table th,
-        #expense-table td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        #expense-table th {
-            background-color: #f2f2f2;
-        }
-
-        .edit-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .delete-button {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-       
-        .lowerbox {
-            width: 120px;
-            margin-top: 210px; /* Adjust the margin-top value as needed */
-            position: sticky;
-         
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 999;
-        }
-
-        .add-button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        }
-
-        /* Style for the Add button on hover */
-        .add-button:hover {
-        opacity: 0.8;
-        }
-
-        .form-popup select {
-        width: 275px;
-        border: 1px solid black;
-        font-size: 14px;
-        border-radius: 5px;
-        padding: 12px;
-        display: block;
-    }
-
-         /* CSS styles for the popup form */
-        
-         #addForm {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-        }
-
-        .form-container {
-            width: 300px;
-        }
-
-        .form-container h4 {
-            margin-top: 0;
-        }
-
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-container input[type="text"] {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-
-        .form-container button[type="submit"] {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        
-        .form-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 9999;
-        }
-
-        /* Style for the form container */
-        .form-container {
-            background-color: #fefefe;
-            padding: 20px;
-            border: 1px solid #888;
-            max-width: 500px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        /* Style for the close button */
-        .form-container .cancel {
-        color: #aaa;
-        float: right;
-        font-size: 14px;
-        font-weight: bold;
-        border: none;
-        }
-
-        /* Style for the close button on hover */
-        .form-container .cancel:hover {
-        color: black;
-        cursor: pointer;
-        }
-
-        /* Style for the Add button */
-        .add-button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-        }
-
-        /* Style for the Add button on hover */
-        .add-button:hover {
-        opacity: 0.8;
-        }
-
-        .form-popup select {
-        width: 275px;
-        border: 1px solid black;
-        font-size: 14px;
-        border-radius: 5px;
-        padding: 12px;
-        display: block;
-    }
-
-
-    </style>
 </head>
+
+<!----Body----->
 <body>
+<section class="bg-section">
+   <!---------Sidebar------------>
+        <?php include('sidebar-admin.php');?>
 
+        <!--Main Content-->
+        <main class="pcoded-main-content">
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="rec-content">
+    <!--------------------------------- DIV PARA SA TITLE AT GO BACK BUTTON ----------------------------------->
+                        <div class="upperbox">
+                            <h4>FINANCIAL RECORDS</h4>
+                            <a href="admin-records.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
+                        </div>
 
-    <div class="content">
-         <!--------------------------------- DIV PARA SA TITLE AT GO BACK BUTTON ----------------------------------->
-       <div class="upperbox">
-            <h4>FINANCIAL RECORDS</h4>
-            <a href="records.php" class="go-back-button">Go Back</a>
-        </div>
+                        <div class="add-box">
+                        <button id="add-button" class="add-button" >Add Expense</button>
+                        </div>
 
+                        <div class="middlebox-finance">
+                            <div class="status-box">
+                                    <div class="budget-box">
+                                        <ion-icon name="card-outline"></ion-icon>
+                                        <h1><?php echo '₱' , $totalBudget?></h1>
+                                        <p>BUDGET</p>
+                                    </div>
+                                
+                                    <div class="total-expenses-box">
+                                        <ion-icon name="receipt-outline"></ion-icon>
+                                        <h1><?php echo  '₱' ,$totalExpenses?></h1>
+                                        <p> TOTAL EXPENSES</p>
+                                    </div>
 
-        <div class="middlebox">
-
-            <div class="status-box">
-           <div class="budget-box">
-            <h1><?php echo '₱' , $totalBudget?></h1>
-            <p>BUDGET</p>
-
-           </div>
-
-           <div class="total-expenses-box">
-           <h1><?php echo  '₱' ,$totalExpenses?></h1>
-           <p> TOTAL EXPENSES</p>
-           </div>
-
-           <div class="total-expenses-box">
-           <h1><?php echo  '₱' ,$remainingBudget?></h1>
-           <p> REMAINING BUDGET</p>
-           </div>
-            
-          
-           </div>
+                                    <div class="total-expenses-box">
+                                        <ion-icon name="cash-outline"></ion-icon>
+                                        <h1><?php echo  '₱' ,$remainingBudget?></h1>
+                                        <p> REMAINING BUDGET</p>
+                                    </div>
+                            </div>
+                        </div>
             <!--------------------------------- TABLE FOR EXPENSES ----------------------------------->
+            <div class="align-tbl-finances">  
+                                <div class="table-box">
+                                    <p>EXPENSES</p>
+                                        <div class="tabledisplay">
+                                            <table id="expense-table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Title</th>
+                                                        <th>Date</th>
+                                                        <th>Amount Spent</th>
+                                                        <th>Modify</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($expenses as $expense): ?>
+                                                        <tr>
+                                                            <td><?php echo $expense['expenseName']; ?></td>
+                                                            <td><?php echo $expense['yearID']; ?></td>
+                                                            <td><?php echo $expense['amount']; ?></td>
+                                                            <td>
+                                                            <button class="edit-button" onclick="openEditForm(<?php echo $expense['expenseID']; ?>)" data-expense-id="<?php echo $expense['expenseID']; ?>">Edit</button>
+                                                            <button class="delete-button" onclick="deleteExpense(<?php echo $expense['expenseID']; ?>)">Delete</button>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                            $expenseID = $expense['expenseID'];
+                                                            $expenseName = $expense['expenseName'];
+                                                            $year = $expense['yearID'];
+                                                            $amount = $expense['amount'];
+                                                            ?>
+                                                        <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                </div>
 
-
-            <div class="table-box">
-
-            <p>EXPENSES</p>
-
-
-            <div class="tabledisplay">
-
-          
-
-           
-            <table id="expense-table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>Amount Spent</th>
-                        <th>Modify</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($expenses as $expense): ?>
-                        <tr>
-                            <td><?php echo $expense['expenseName']; ?></td>
-                            <td><?php echo $expense['yearID']; ?></td>
-                            <td><?php echo $expense['amount']; ?></td>
-                            <td>
-                                <button class="edit-button" onclick="openEditForm(<?php echo $expense['expenseID']; ?>)" data-expense-id="<?php echo $expense['expenseID']; ?>">Edit</button>
-                                <button class="delete-button" onclick="deleteExpense(<?php echo $expense['expenseID']; ?>)">Delete</button>
-                            </td>
-                        </tr>
-                        <?php
-                        $expenseID = $expense['expenseID'];
-                        $expenseName = $expense['expenseName'];
-                        $year = $expense['yearID'];
-                        $amount = $expense['amount'];
-                        ?>
-                    <?php endforeach; ?>
-                 </tbody>
-            </table>
-        </div>
-
-
-        
-
-
-        <div class="lowerbox">
-            <button id="add-button" class="add-button" >Add Expense</button>
-        </div>
+                    </div>            
+                    </div>
+                </div>
+            </div>
+        </main>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-
-      
-    </div>
 
 
      
@@ -436,11 +166,9 @@ $remainingBudget = $totalBudget - $totalExpenses;
             <!----------------------------- Add expense form (hidden by default) ------------------------>
 
 
-                <div id="addForm" class="form-popup">
-                <form action="manageExpense.php" method="POST" class="form-container" enctype="multipart/form-data">
-                <h2>Add Expense</h2>
-
-
+            <div id="addForm" class="form-popup">
+                <form action="admin-records_manageExpense.php" method="POST" class="form-container" enctype="multipart/form-data">
+                <h2>Add </h2>
 
                 <label for="expenseName"><b>Title</b></label>
                 <input type="text" placeholder="Enter Expense Name" name="expenseName" required>
@@ -458,7 +186,7 @@ $remainingBudget = $totalBudget - $totalExpenses;
 
                 <button type="submit" class="btn" onclick="closeAddForm()">Add</button>
                 <button type="button" class="btn cancel" onclick="closeAddForm()">Cancel</button>
-            </form>
+                </form>
             </div>
         
 
@@ -467,7 +195,7 @@ $remainingBudget = $totalBudget - $totalExpenses;
            
             <!--pop up form for editing the expense details-->
             <div id="editForm" class="form-popup">
-            <form action="manageExpense.php" method="POST" class="form-container" enctype="multipart/form-data">
+            <form action="admin-records_manageExpense.php" method="POST" class="form-container" enctype="multipart/form-data">
                 <h2>Edit Expense</h2>
 
                 <input type="hidden" id="expenseID" name="expenseID" value="<?php echo $expenseID; ?>">
@@ -489,14 +217,14 @@ $remainingBudget = $totalBudget - $totalExpenses;
             </div>
 
             
-            <form id="deleteExpenseForm" action="manageExpense.php" method="post">
+            <form id="deleteExpenseForm" action="admin-records_manageExpense.php" method="post">
                 <input type="hidden" name="expenseID" id="expenseIDInput">
                 <input type="hidden" name="deleteExpense" value="1">
             </form>
 
 
 
-
+</section>
 <script>
         // ---------------------------------- adding instructor open js -------------------------------- //
 
