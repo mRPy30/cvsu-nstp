@@ -127,7 +127,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <div class="align-tbl-instructor">
                             <div class="table-list-display">
                                 <div class="course">
-                                    <p><?php echo $selectedCourseName . ' Instructors' ; ?></p>
+                                    <p><?php echo $selectedCourseName . ' <span>Instructors</span>' ; ?></p>
                                 </div>
 
                                 <?php if (!empty($instructors)): ?>

@@ -82,83 +82,85 @@ $remainingBudget = $totalBudget - $totalExpenses;
             <div class="container">
                 <div class="col-lg-12">
                     <div class="rec-content">
-    <!--------------------------------- DIV PARA SA TITLE AT GO BACK BUTTON ----------------------------------->
+                                                                 <!--------------------------------- DIV PARA SA TITLE AT GO BACK BUTTON ----------------------------------->
                         <div class="upperbox">
                             <h4>FINANCIAL RECORDS</h4>
                             <a href="admin-records.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
-                        <div class="add-box">
-                        <button id="add-button" class="add-button" >Add Expense</button>
-                        </div>
+                        
 
                         <div class="middlebox-finance">
                             <div class="status-box">
                                     <div class="budget-box">
                                         <ion-icon name="card-outline"></ion-icon>
                                         <h1><?php echo '₱' , $totalBudget?></h1>
-                                        <p>BUDGET</p>
+                                        <p>Budget</p>
                                     </div>
                                 
                                     <div class="total-expenses-box">
                                         <ion-icon name="receipt-outline"></ion-icon>
                                         <h1><?php echo  '₱' ,$totalExpenses?></h1>
-                                        <p> TOTAL EXPENSES</p>
+                                        <p> Total Expenses</p>
                                     </div>
 
                                     <div class="total-expenses-box">
                                         <ion-icon name="cash-outline"></ion-icon>
                                         <h1><?php echo  '₱' ,$remainingBudget?></h1>
-                                        <p> REMAINING BUDGET</p>
+                                        <p> Remaining Budget</p>
                                     </div>
-                            </div>
                         </div>
-            <!--------------------------------- TABLE FOR EXPENSES ----------------------------------->
-            <div class="align-tbl-finances">  
+                        
+                                    <!--------------------------------- TABLE FOR EXPENSES ----------------------------------->
+                        <div class="align-tbl-finances">  
                                 <div class="table-box">
                                     <p>EXPENSES</p>
-                                        <div class="tabledisplay">
-                                            <table id="expense-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Title</th>
-                                                        <th>Date</th>
-                                                        <th>Amount Spent</th>
-                                                        <th>Modify</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php foreach ($expenses as $expense): ?>
-                                                        <tr>
-                                                            <td><?php echo $expense['expenseName']; ?></td>
-                                                            <td><?php echo $expense['yearID']; ?></td>
-                                                            <td><?php echo $expense['amount']; ?></td>
-                                                            <td>
-                                                            <button class="edit-button" onclick="openEditForm(<?php echo $expense['expenseID']; ?>)" data-expense-id="<?php echo $expense['expenseID']; ?>">Edit</button>
-                                                            <button class="delete-button" onclick="deleteExpense(<?php echo $expense['expenseID']; ?>)">Delete</button>
-                                                            </td>
-                                                        </tr>
-                                                        <?php
-                                                            $expenseID = $expense['expenseID'];
-                                                            $expenseName = $expense['expenseName'];
-                                                            $year = $expense['yearID'];
-                                                            $amount = $expense['amount'];
-                                                            ?>
-                                                        <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                    <div class="tabledisplay-finance">
+                                        <table id="expense-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th>Date</th>
+                                                    <th>Amount Spent</th>
+                                                    <th>Modify</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php foreach ($expenses as $expense): ?>
+                                            <tr>
+                                                <td><?php echo $expense['expenseName']; ?></td>
+                                                <td><?php echo $expense['yearID']; ?></td>
+                                                <td><?php echo $expense['amount']; ?></td>
+                                                <td>
+                                                <button class="edit-button" onclick="openEditForm(<?php echo $expense['expenseID']; ?>)" data-expense-id="<?php echo $expense['expenseID']; ?>">Edit</button>
+                                                <button class="delete-button" onclick="deleteExpense(<?php echo $expense['expenseID']; ?>)">Delete</button>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                                $expenseID = $expense['expenseID'];
+                                                $expenseName = $expense['expenseName'];
+                                                $year = $expense['yearID'];
+                                                $amount = $expense['amount'];
+                                                ?>
+                                            <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-
-                    </div>            
+                            </div>    
+                        </div>
+                            <div class="add-box">
+                                <button id="add-button" class="add-button" >Add Expense</button>
+                            </div>
+                            </div>                
                     </div>
                 </div>
             </div>
         </main>
 
 
-
+        
 
 
      

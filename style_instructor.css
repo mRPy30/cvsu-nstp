@@ -11,7 +11,7 @@ body{
     left: 0;
     width: 100vw;
     height: 140vh;
-    background: #d9d9d9;
+    background:#f1f0f0;
     position: relative;
   }
  
@@ -361,53 +361,43 @@ body{
 
     /******Instructor-Main-Content-Table-Volunteer*****/
 
-    .tbl-volunteer{            
-      position: relative;
-      -webkit-box-align: center;
-      text-align: center;
-      }
-      .tbl-volunteer .container{
-          max-width: none!important;
-      }
-      .tbl-volunteer .row{
-          display: flex;        
-          margin: 0 55px;
-          padding-top: 45px;
-          padding-left: 230px;
-      }
-      .tbl-volunteer .tbl-volunteer-title h5{
-          display: flex;
-          width: 500px;
-          height: 28.883px;
-          transform: rotate(-0.291deg);
+    .pcoded-main-content .tbl-volunteer h5{
           flex-direction: column;
           flex-shrink: 0;
           color: #000;
-          text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
           font-size: 25px;
           font-family: 'Inter';
-          padding-left: 5%;
-          text-align: left;
+          padding-left: 20%;
+          margin-top: 25px;
           
       }
-      .tbl-volunteer .table{
-          margin-top: 5px;
+      .pcoded-main-content .tbl-volunteer .table{
+          margin: 30px 0px 0px 160px;
+          text-align: center;
+          width: 1000px;
+          box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       }
-      .tbl-volunteer .table .title{
+      .pcoded-main-content 
+      .tbl-volunteer .table .title th{
           background-color:#6FBB76 ;
-          padding: 0px 500px;
-          padding-left: 25px;
+          
       }
-      .tbl-volunteer .table .title td{
-          width: 200%;
+      .pcoded-main-content .tbl-volunteer
+      .table .title th{
+         background-color:#6FBB76 ;
+         color: #ffffff;
+         text-align: center;
+         font-size: 12px;
+         font-family: 'Inter';
+         text-transform: uppercase;
       }
-      .tbl-volunteer .table .vul-line1{
-          padding: 0px 0px;
-          line-height: 5px;
-      }
-      .tbl-volunteer .table .vul-line1 .pp{
-          position: relative;
-          left: 0px;
+      .pcoded-main-content .tbl-volunteer 
+      .table input{
+         border: none;
+         width: 70px;
+         background-color: #F9F9F9;
+         text-align: center;
+         padding: 0px 10px;
       }
 
 
