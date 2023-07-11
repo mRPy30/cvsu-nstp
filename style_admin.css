@@ -980,7 +980,69 @@ body{
     }
 
 /********END RECORDS FINANCES*******/
-
+/****************RECORDS STUDENTS*******************/
+.pcoded-main-content .rec-content .align-tbl-student{
+  margin: 10px 110px 0px 100px;
+}
+  .pcoded-main-content .rec-content 
+  .align-tbl-student .student-tbl-display .course-and-section p{
+  padding: 5px;
+  font: normal 500 17px/normal 'Poppins';
+  margin: 5px;
+  position: absolute;
+  }
+  .pcoded-main-content .rec-content
+  .align-tbl-student .student-tbl-display {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 40px;
+  border-radius: 6px;
+  background: #FFF;
+  box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-course-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 45px 25px 0px 20px;
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-course-table th,
+  #student-course-table td {
+  padding: 8px 2px 8px 2px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font: normal 500 14px/normal 'Poppins';
+  }
+  
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-course-table th,
+  #student-course-table #student-course-table th {
+  background-color:#e7e7e7;
+  font: normal 500 15px/normal 'Poppins';
+  }
+  .pcoded-main-content .rec-content .student-info {
+   margin: 30px 130px;
+   width: 800px;
+  }
+  .pcoded-main-content .rec-content .student-info 
+  .middle-box_Student {
+   height: 400px;
+   flex-shrink: 0;
+   border-radius: 20px;
+   background:#6FBB76;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   padding: 40px 50px;
+ }
+  .pcoded-main-content .rec-content .student-info 
+  .middle-box_Student p {
+    font-size: 20px;
+    font-weight: 350;
+  }
+/****************END RECORDS STUDENTS*******************/
 
 
   /*******************END RECORDS********************/
