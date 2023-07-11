@@ -985,4 +985,180 @@ body{
 
   /*******************END RECORDS********************/
 
+
+
+  /********Admin Complience*************/
+
+
+      /*******COMPLIANCE FIRST PAGE********/
+      .pcoded-main-content .nav-compliance{
+        margin: 20px 160px;
+    }
+    .pcoded-main-content .nav-compliance .nav {
+        border-radius: 20px;
+        background: #6FBB76;
+        padding: 10px 10px;
+        width: 500px;
+    }
+    .pcoded-main-content .nav-compliance .nav li a{
+        color: #000;
+        font-size: 17px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+   }
+   .pcoded-main-content .nav-compliance .nav li a:hover {
+        color: white;
+   }
+   .pcoded-main-content .nav-compliance .nav .vertical{
+        border-left: 1px solid black;
+        height: 34px;
+   }
+   .pcoded-main-content .nstp-description{
+        color: #000;
+        font-size: 25px;
+        font-family: 'Inter';
+        font-weight: 400;
+        padding: 15px 170px;
+   }
+   .pcoded-main-content .nstp-description h2{
+        color: #000;
+        font-size: 23px;
+        font-family: 'Inter';
+        font-weight: 550;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+
+   }
+   .pcoded-main-content .nstp-description p{
+        margin-left: 25px;
+        display: flex;
+        width: 920px;
+        height: 155px;
+        flex-direction: column;
+        flex-shrink: 0;
+        color: #000;
+        font-size: 15px;
+        font-family: 'Poppins';
+        line-height: 30px;
+        text-indent: 70px;
+        text-align: justify;
+   }
+/*******END OF COMPLIANCE FIRST PAGE********/  
+
+
+
+
+
+  /*******COMPLIANCE SECOND PAGE********/
+  .pcoded-main-content .compliance2-title{
+        margin: 20px 160px;
+  }
+  .pcoded-main-content .compliance2-title .compliance-items{
+    border-radius: 20px;
+    background: #6FBB76;
+    padding: 7px 10px;  
+    width: 500px;
+  }
+  .pcoded-main-content .compliance2-title .compliance-items h2 {
+    color: #000;
+        font-size: 17px;
+        font-family: 'Inter';
+        font-weight: 00;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+  }
+  .pcoded-main-content .compliance2-title .compliance2-middle-box p{
+        margin-top: 38px;
+        margin-left: 40px;
+        display: flex;
+        width: 850px;
+        flex-shrink: 0;
+        color: #000;
+        font-size: 16px;
+        font-family: 'Poppins';
+        line-height: 30px;
+        text-indent: 70px;
+        text-align: justify;
+  }
+  .pcoded-main-content .compliance2-title .compliance2-button{
+    position: absolute;
+  }      
+  .pcoded-main-content .compliance2-button a ion-icon{
+    font-size: xx-large;
+    color: #008A0E; 
+    margin-left: 66vw;
+    margin-top: -21vw;
+    position: absolute;
+  }
+  .pcoded-main-content .compliance2-button a.active {
+      color: white;
+ }
+/*******END OF COMPLIANCE SECOND PAGE********/
+
+
+
+
+
+
+ /*******COMPLIANCE THIRD PAGE********/
+ .pcoded-main-content .compliance3-title h4 {
+  text-align: center; 
+  margin: 20px 0px 10px 220px;
+  color: #000;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+ }
+ .pcoded-main-content .compliance3-title .compliance3-button{
+  position: absolute;
+  margin: -42.5px 20px 10px 95%;
+}      
+.pcoded-main-content .compliance3-title a ion-icon{
+  font-size: xx-large;
+  color: #008A0E; 
+  position: absolute;
+}
+ .pcoded-main-content .images-gov {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 10px 0px 0px 220px;
+ }
+ .pcoded-main-content .images-gov .inner-content1 img{
+  height: 360px;
+  width: 290px;
+  margin: 20px 10px;
+ }
+ .pcoded-main-content .content-link {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 0px 0px 40px 205px;   
+ }
+ .pcoded-main-content .content-link  p{
+  height: 30px;
+  width: 260px;
+  margin: 0px 45px;
+  color: #000;
+  font-family: 'Inter';
+ }
+ .pcoded-main-content .content-link .inner-link a{
+  color:  #4CAF50;
+ }
+ .pcoded-main-content .list-content {
+    margin-left: 160px;
+ }
+ .pcoded-main-content .Govermentlink li a{
+  margin: 60px 0px;
+  font-size: 20px;
+  color:  #4CAF50;
+  font-weight: 500;
+ }
+/*******END OF COMPLIANCE THIRD  PAGE********/
+
   /************MAIN CONTENTS**************/

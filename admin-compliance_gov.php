@@ -54,7 +54,7 @@
                     <div class="compliance3-title">
                         <h4>Government Mandate</h4>
                         <div class="compliance3-button">
-                            <a href="admin-compliance1.php">
+                            <a href="admin-compliance.php">
                                 <ion-icon name="arrow-back-circle-outline"></ion-icon>
                             </a>
                         </div>
