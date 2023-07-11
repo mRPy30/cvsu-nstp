@@ -63,7 +63,7 @@
                                 units each semester.</p>
                         </div>
                         <div class="compliance2-button">
-                            <a href="admin-compliance1.php">
+                            <a href="admin-compliance.php">
                                 <ion-icon name="arrow-back-circle-outline"></ion-icon>
                             </a>
                         </div>
