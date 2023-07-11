@@ -13,7 +13,7 @@
     </title>
 
     <!----------CSS------------>
-    <link rel="stylesheet" href="style_admin.css">
+    <link rel="stylesheet" href="style_admins.css">
 
     <!----------BOOTSTRAP------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
