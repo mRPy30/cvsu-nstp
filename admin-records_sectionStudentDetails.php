@@ -123,7 +123,8 @@ if ($result->num_rows > 0) {
                             <button onclick="window.print()"> Print</button>
                             </div>
 
-                            <a href="recordsStudent.php" class="go-back-button">Go Back</a>
+                            <a href="admin-records_studentClasses.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
 

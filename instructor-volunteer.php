@@ -43,99 +43,102 @@
 <!----Body----->
 
 <body>
-    <main class="bg-section">
+    <section class="bg-section">
         <!---------Sidebar------------>
         <?php include('sidebar-instructor.php'); ?>
 
         <!---------End Sidebar--------->
 
         <!--Main Content-->
-        <div class="tbl-volunteer">
-    <div class="container">
-        <div class="row">
-            <div class="tbl-volunteer-title">
-                <h5>VOLUNTEER LIST :</h5>
-            </div>
-            <table class="table">
-                <thead class="title">
-                  <tr>
-                    <th scope="col" >Student Name</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Attendance</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="vul-line1">
-                    <td></td>
-                    <td></td>
-                    <td>Present Absent</td>
-                  </tr>
-                  <tr>
-                    <th>Agustine Cuevas</th>
-                    <td>03/12/2023</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th >Bianca Bautista</th>
-                    <td>03/12/2023</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>Agustine Cuevas</th>
-                    <td>03/12/2023</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th >Bianca Bautista</th>
-                    <td>03/12/2023</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
+        <main class="pcoded-main-content">
+          <div class="container pt-4">
+            <div class="col-lg-12">
+              <div class="tbl-volunteer">
+                <h5>Volunteer List</h5>
+                <table class="table table-hover ">
+                    <thead class="title">
+                      <tr>
+                        <th scope="col" >Student Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Attendance</th>
+                      </tr>
+                    </thead>
+                    <tbody class="overflow-y-auto">
+                      <tr>
+                        <th>Agustine Cuevas</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                      <tr>
+                        <th>Agustine Cuevas</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                      <tr>
+                        <th>Agustine Cuevas</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                      <tr>
+                        <th>Agustine Cuevas</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                      <tr>
+                        <th >Bianca Bautista</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                      <tr>
+                        <th>Agustine Cuevas</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                      <tr>
+                        <th >Bianca Bautista</th>
+                        <td>03/12/2023</td>
+                        <td><input type="text"></td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
 
-        <div class="">
-
-        </div>
 
 
-        <div class="row">
-          <div class="tbl-volunteer-title">
-              <h5>UPCOMING EVENTS :</h5>
-          </div>
-          <table class="table">
-              <thead class="title">
-                <tr>
-                  <th scope="col" >Program Name</th>
-                  <th scope="col">Location</th>
-                  <th scope="col">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="vul-line1">
-                  <td></td>
-                  <td></td>
-                  <td>Absent</td>
-                </tr>
-                <tr>
-                  <th>Agustine Cuevas</th>
-                  <td>03/12/2023</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th >Bianca Bautista</th>
-                  <td>03/12/2023</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-      </div>
-
-    </div>
-</div>
-        <!-----End Main content------>
-    </main>
-    <!-----End of Body------>
+              <div class="tbl-volunteer">
+                <h5>Upcoming Events</h5>
+                <table class="table table-hover overflow-scroll">
+                    <thead class="title">
+                      <tr>
+                        <th scope="col">Program Name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Feeding Program</th>
+                        <td>Dulong Bayan Imus City</td>
+                        <td>09/15/2023</td>
+                      </tr>
+                      <tr>
+                        <th>First Aid program</th>
+                        <td>Buhay na Tubig Imus Cavite </td>
+                        <td>10/27/2023</td>
+                      </tr>
+                      <tr>
+                        <th>Blood Donation Program</th>
+                        <td>Habay Bacoor City Cavite </td>
+                        <td>11/05/2023</td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>  
+              
+          </div>       
+        </main>     
+    </section>
+            <!-----End Main content------>
+             <!-----End of Body------>
 </body>
-
 </html>

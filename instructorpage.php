@@ -1,9 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "login_system";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+//connection
+include 'db_connect.php';
+
 session_start();
 $accountID = $_SESSION['id'];
 
@@ -97,7 +95,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!-----2 BOX------->
                <div class="col">
                     <div class="box">
-                        <div class="content-box">
+                        <div class="content-box first">
                             <h4>2022 - 2023</h4>
                             <span>ACADEMIC YEAR</span>
                         </div>

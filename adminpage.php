@@ -1,6 +1,6 @@
 <?php
     // Database connection
-    $conn = mysqli_connect("localhost", "root", "", "login_system");
+    $conn = mysqli_connect("localhost", "root", "", "db_nstp");
 
     // Count query for student
     $query = "SELECT COUNT(id) AS total_students FROM student";

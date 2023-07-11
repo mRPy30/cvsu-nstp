@@ -1,10 +1,6 @@
 <?php
 // CONNECTION
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "login_system";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+include 'db_connect.php';
 
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

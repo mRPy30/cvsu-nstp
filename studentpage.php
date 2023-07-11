@@ -25,54 +25,159 @@
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
 
-     
-<!---Inner topbar--->
-<?php include('topbar.php');?>
+     <!---Inner topbar--->
+     <?php include('topbar.php');?>
+
+    <style type="text/css">
+                            .container {
+                                position: absolute;
+                                display: flex;
+                                flex-direction: row;
+                                border: 1px solid black;
+                                padding: 10px;
+                                width: 1100px;
+                                height: 670px;
+                                 top: 380px;
+                                left: 930px;
+                                transform: translate(-50%, -50%);
+                                
+                                
+                            }  
+                            
+                            .nstp {
+                            position: relative;
+                            border: 1px black solid;
+                            width: 735px;
+                            height: 217px;
+                            margin: 10px;
+                            padding: 10px; 
+                            background-color: #FFE193;
+                            border-radius: 10px
+                                                  
+
+                            }
+
+                          
+
+                            .statusbox {
+                            border: 1px black solid;
+                            width: 400px;
+                            height: 217px;
+                            margin: 10px;
+                            padding: 1px;
+
+                            }
+
+                            .box {
+                            border: 1px black solid;
+                            width: 1060px;
+                            height: 380px;
+                            background-color: #FFFFFF;
+                            position: absolute;
+                            left: 20px;
+                            top: 270px;
+                            border-radius: 10px;
+                            margin-top:0px;
+                            
+                            }
+
+                            .status { 
+                            position: relative;
+                            border: 1px black solid;
+                            width: 365px;
+                            height: 93px;
+                            margin: 10px;
+                            background-color: #FFFFFF;
+                            border-radius: 10px;
+                            text-align: bottom; 
+                            
+                            
+                            }
+
+                            .courseandsection {
+                            position: relative;
+                            border: 1px black solid;
+                            width: 365px;
+                            height: 93px;
+                            margin: 10px;
+                            background-color: #FFFFFF;
+                            border-radius: 10px;
+                            }
+
+                            .bottom-left {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            padding: 1px;
+                            margin: 10px;
+                            }
+
+                           
+
+                        </style>
+
+
+
+
 
 </head>
 
 <!----Body----->
 <body>
-    <section class="bg-section">
+
    <!---------Sidebar------------>
-   <?php include('sidebar-student.php');?>
+   
+
+   <section class="bg-section">
+   <?php include('sidebar-instructor.php');?>
+   
     <!---------End Sidebar--------->
         
+
         <!--Main Content-->
-        <div class="pcoded-main-content">
-            <div class="container pt-4">
-                <div class="col-lg-12">
-                    <div class="homepage-title">
-                        <h1>PRE PRE PRE</h1>
-                    </div>
-                    <!----box--->
-                        <div class="col">
-                            <div class="box">
-                                <div class="content-box">
-                                    <h3>NSTP 1</h3>
-                                </div>
+        
+
+                             <!--Main Content codeeeee-->
+
+
+                             <div class="container">
+                            
+                            <div class="nstp"><h1>NSTP 1</h1></div>
+
+                            <div class="statusbox"> 
+
+                            
+                            <div class="status"><p class="bottom-left">Status</p></div>
+                            <div class="courseandsection"><p class="bottom-left">Course and Section</p></div>
                             </div>
+                            <div class="box"></div>
+                           
+                            
+                           
+                            </div>
+                        
+
+
+
+                            
+                                         
+
+                      
+                          
+                       
+                      
+
+                           
+                            
                         </div>
-                        <div class="col-8">
-                            <div class="box-small">
-                                <div class="content-box">
-                                    <h3>NSTP 1</h3>
-                                </div>
-                            </div>
-                        </div>    
-                        <div class="col-8">
-                            <div class="box-small">
-                                <div class="content-box">
-                                    <h3>NSTP 1</h3>
-                                </div>
-                            </div>
-                        </div>        
+                    </div>
                 </div>
-            </div>
-        </div> 
-              
+            </div>      
+
     <!-----End Main content------>        
     </section>
+
+    
 <!-----End of Body------>
 </body>
 </html>
