@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $id = $_POST["id"];
     $course = $_POST["course"];
-    $section = $_POST["section"];
+    $section = $_POST["sectionID"];
     $password = $_POST["password"];
 
     // Check if the ID already exists in the database

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "db_nstp";
+$dbname = "nstp_db";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
