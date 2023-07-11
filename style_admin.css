@@ -1024,6 +1024,11 @@ body{
   background-color:#e7e7e7;
   font: normal 500 15px/normal 'Poppins';
   }
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-course-table a{
+    color: #000000;
+    font: normal 500 13px/normal 'Poppins';
+  }
   .pcoded-main-content .rec-content .student-info {
    margin: 30px 130px;
    width: 800px;
