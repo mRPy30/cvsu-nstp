@@ -86,7 +86,8 @@
                         <li><a class="nav-link" href="admin-records.php"><i class="fa-sharp fa-regular fa-rectangle-list"></i> Records </a></li>
                         <li><a class="nav-link" href="admin-reports.php"><i class="fa-sharp fa-solid fa-chart-pie"></i> Reports </a></li>
                         <li><a class="nav-link" href="admin-compliance.php" style="font-size: 15px; margin "><i class="fa-solid fa-clipboard-check"></i> Compliance </a></li>
-                       </ul>
+                        <li><a class="nav-link" href="admin-external.php" style="font-size: 15px; margin "><i class="fa-solid fa-arrow-up-right-from-square"></i> External Pages </a></li>                       
+                        </ul>
                     </div>
                 </div>
             </nav>
