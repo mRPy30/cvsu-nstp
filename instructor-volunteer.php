@@ -55,12 +55,13 @@
             <div class="col-lg-12">
               <div class="tbl-volunteer">
                 <h5>Volunteer List</h5>
+                <button type="button" type="submit" class="btn" value="submit">Submit</button>
                 <table class="table table-hover ">
                     <thead class="title">
                       <tr>
                         <th scope="col" >Student Name</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Attendance</th>
+                        <th scope="col">Total Attendance</th>
                       </tr>
                     </thead>
                     <tbody class="overflow-y-auto">

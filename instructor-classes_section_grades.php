@@ -48,12 +48,12 @@
             <main class="pcoded-main-content">
                 <div class="container pt-4">
                     <div class="col-lg-12">
-                        <a href="instructor-classes.php">
-                            <ion-icon name="arrow-back-circle-outline"></ion-icon>
-                        </a>
                         <div class="box-top">
                             <h5>BSIT1-C</h5>
-                        </div>                  
+                                <a href="instructor-classes.php">
+                                <ion-icon name="arrow-back-circle-outline"></ion-icon>
+                                </a>
+                            </div>               
                         <div class="class_navs">
                             <ul class="nav nav-underline">
                                 <li class="nav-item">

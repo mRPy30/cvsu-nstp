@@ -257,7 +257,8 @@ body{
       text-align: center;
       background-color: #FFF;
       width: 1000px;
-      overflow-x:auto;
+      overflow-x: scroll;
+    white-space: nowrap;
       box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
    }
    .pcoded-main-content .tbl_masterlist .table .title th{
@@ -294,7 +295,13 @@ body{
       width: 170px;
       height: 40px;
       border-radius: 15px;
-      padding: 10px 0;
+      padding: 10px 0px;
+      margin: 20px 160px;
+   }
+   .pcoded-main-content .box-top a {
+      position: absolute;
+      margin-left: -150px;
+      margin-top: -35px;
    }
    .pcoded-main-content .box-top h5{
       text-align: center;
@@ -302,7 +309,19 @@ body{
       font: normal 400 18px/normal 'Inter' ;
    }
    .pcoded-main-content .acads_info{
-      margin: 30px 110px;  
+      margin: 30px 160px;  
+   }
+   .pcoded-main-content .acads_info button{
+      margin-left: 60vw;
+      position: absolute;
+      border-radius: 15px;
+      background: #6FBB76;
+      color: #FFF;
+      font-size: 12px;
+      font-family: 'Inter';
+      text-transform: uppercase;
+      width: 90px;
+      margin-top: -50px;
    }
    .pcoded-main-content .acads_info p{
       text-align: start;
@@ -370,6 +389,18 @@ body{
           padding-left: 20%;
           margin-top: 25px;
           
+      }
+      .pcoded-main-content .tbl-volunteer button{
+         margin-left: 68vw;
+         position: absolute;
+         border-radius: 15px;
+         background: #6FBB76;
+         color: #FFF;
+         font-size: 12px;
+         font-family: 'Inter';
+         text-transform: uppercase;
+         width: 90px;
+         margin-top: -40px;
       }
       .pcoded-main-content .tbl-volunteer .table{
           margin: 30px 0px 120px 200px;
