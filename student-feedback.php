@@ -11,6 +11,7 @@ $page = $components[2];
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,13 +19,14 @@ $page = $components[2];
 
     <!----------TITLE------------>
     <link rel="shortcut icon" href="logo.png" type="">
-    <title><?php echo "Instructor Page"; ?></title>
+    <title><?php echo "Student Page"; ?></title>
 
      <!----------CSS------------>
-    <link rel="stylesheet" href="style_student.css">
+    <link rel="stylesheet" href="style_students.css">
 
      <!----------BOOTSTRAP------------>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      
      <!----------FONTS------------>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,220 +35,201 @@ $page = $components[2];
 
     <!----------ICONS------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
 
-     
-<!---Inner topbar--->
-<header class=" flex-column flex-md-row bd-navbar sticky-top header-section navbar-expand  ">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-8 logo ">
-                   <img src="logo.png" alt="">
-                    <div class=" p1">
-                        <p class="font-weight-normal">CVSU-IMUS CAMPUS</p>
-                    </div>
-                    <div class="p2">
-                        <p>NSTP PROGRAM</p>
-                    </div>
-                    <div class="w-100 logout">
-                        <button type="button" class="btn btn-light rounded btn-logout float-left " a href="logout.php"><i
-                                class="fa-solid fa-arrow-right-from-bracket"></i> LOGOUT </button>
-                    </div>
-                </div>
-            </div>
-    </header>
-    <style type="text/css">
-                            
-                            .status { 
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            text-align: bottom; 
-                            
-                            
-                            }
-
-                            .courseandsection {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            }
-
-                            .bottom-left {
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            padding: 1px;
-                            margin: 10px;
-                            }
-
-                            .feedbackandevaluation {
-                            position: absolute;
-                            margin: 10px;
-                            left: 30px;
-                            font-size: 30px;
-                            border-bottom: 1px black solid;
-                            display: flex;
-                            flex-direction: column;
-                            width: 1015px;
-                            height: 60px;
-                            }
-
-                            .feedback-box {
-                            position: relative;
-                            width: 1015px;
-                            height: 530px;
-                            margin: 15px;
-                            border-radius: 10px;
-                            display: flex;
-                            align-items: justify ;
-                            justify-content: justify;
-                            top: 50px;
-                            font-size: 20px;
-                            font-family: arial, sans-serif;
-                            padding: 25px;
-                            left: 0;
-                            }
-                            
-                            .instructions {
-                            text-align: justify;
-                            align-items: justify ;
-                            justify-content: justify;
-                            top: 40px;
-                            font-size: 15px;
-                            font-family: arial, sans-serif;
-                            padding: 5px;
-
-                            }
-
-                            .evaluatebox {
-                            position: absolute;
-                            border: 1px black solid;
-                            width: 280px;
-                            height: 60px;
-                            margin: 10px;
-                            background-color: #6FBB76;
-                            border-radius: 5px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 14px;
-                            bottom: 0;
-                            top: -170px;
-                            }
-
-                            .evaluatebox  a {
-                                text-decoration: none;
-                            } 
-
-                            .black-letter {
-                                color: black;
-                            }
-
-                            
-                           
-
-                        </style>
-
-
-
-
-
+     <!---Inner topbar--->
+     <?php include('topbar.php');?>
 </head>
-
 <!----Body----->
 <body>
 
    <!---------Sidebar------------>
    
+
    <section class="bg-section">
-   <nav class="sidebar navbar-collapsed" >
-            <div class="navbar-wrapper">
-                    <div class="navbar-nav">
-                       <ul class="nav pcoded-inner-navbar">
-                        <li><a class="nav-link active" aria-current="page" href="studentpage.php"><i class="fa-sharp fa-solid fa-house"></i> Home </a></li>
-                        <li><a class="nav-link" href="student-classes.php"><i class="fa-solid fa-book"></i> Classes </a></li>
-                        <li><a class="nav-link" href="student-programs.php"><i class="fa-solid fa-people-group"></i> Programs </a></li>
-                        <li><a class="nav-link" href="student-feedback.php"><i class="fa-solid fa-comment"></i> Feedback </a></li>
-                       </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>    
+   <?php include('sidebar-student.php');?>
     <!---------End Sidebar--------->
-        
+<br>
 
-        <!--Main Content-->
-        
+<main class="pcoded-main-content">
+            <div class="container pt-4 ">
+                <div class="col-lg-12">
+    <div class="centered">
+        <div class="student_eval">
+            <h1>FEEDBACK AND EVALUATION</h1>
+        </div>
+    </div>
+</div>
 
-                             <!--Main Content codeeeee-->
+<div class="header-form">
+    <div class="header-innner">
+        <p>INSTRUCTOR</p>
+        <select class="form-select col-10" aria-label="Default select example">
+            <option selected >--Please select instructor--</option>
+            <option value="1">Instructor 1</option>
+            <option value="2">Instructor 2</option>
+            <option value="3">Instructor 3</option>
+            <option value="4">Instructor 4</option>
+            <option value="5">Instructor 5</option>
+        </select>
+    </div>
+</div>
 
+<div class="eval-form">
+        <div class="eval_sheet">
+            <h1>A. INSTRUCTOR EVALUATION</h1>
+            <p>1. Shows good command and knowledge of the subject matter.</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-                             <div class="container">
-                             
-                             <div class="feedbackandevaluation"> <p> FEEDBACK AND EVALUATION </p> </div>
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>2. Demonstrates breadth and depth of mastery.</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-                             <div class="row" > 
-                             <div class="col-sm-12" > 
-                                <div class="feedback-box"> 
-                                <div class="instructions"> <p> Welcome to feedback and evaluation in this page students are able to give an evalution  
-                                for your NSTP course and your corresponding instructor. <br> 
-                                <br>
-                                Here are the Guidelines for evaluation: <br>
-                                 •  Only officially enrolled student can evaluate; <br>
-                                 •  Select your NSTP program and your instructor <br>
-                                 •  Evaluate the faculty member based on the given indicator (5 is the highest and 1 is the lowest); <br>
-                                 •  Evaluate the effectivity of the course based on the given indicator  (5 is the highest and 1 is the lowest); <br> 
-                                 •  Submit your evaluaiton after double checking your answers
-                                <br> 
-                                <br>
-                                <b>Thank you for helping us make NSTP Program better! </b> </p> </div>
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>3. Draws and share information in the state-of-the-art theory and practice in his/her respective discipline.</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-                             </div>   
-                              
-                             <div class="row" > 
-                             <div class="col-sm-4" ></div>
-                             <div class="col-sm-4"> 
-                                <div class="evaluatebox"><a href="student-feedback-page.php"> <b> <span class="black-letter"> EVALUATE NOW </span> </b> </a> </div>
-                             </div>
-                             <div class="col-sm-4" ></div>
-                             </div>
-                                             
-                             </div>
-                             </div>
-                             </div>
-                        
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>4. Demonstrates up-to-date knowledge and/or awareness on current trends and issues of the subject matter.</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>5. Integrates subject to practical circumstances.</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
+</div>
 
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+        <h1>B. COURSE EVALUATION</h1>
+            <p>1. How would you rate the overall quality of the course content and materials provided throughout the semester?</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-                            
-                                         
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>2. Did the course effectively cover the stated learning objectives and provide you with the necessary knowledge and skills?</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-                      
-                          
-                       
-                      
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>3. Were the assessments and assignments designed to accurately evaluate your understanding of the course material and allow you to demonstrate your knowledge?</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-                           
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>      
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>4. Were the course resources, such as textbooks, online platforms, or supplementary materials, helpful in supporting your learning experience?</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-    <!-----End Main content------>        
-    </section>
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+            <p>5. How would you rate the organization and structure of the course in terms of facilitating your learning and comprehension of the subject matter?</p>
+            <select class="form-select" aria-label="Default select example">
+            <option selected >--Select Evaluation--</option>
+            <option value="1">5 - Outstanding</option>
+            <option value="2">4 - Exceeds Expectations</option>
+            <option value="3">3 - Meets Expectations</option>
+            <option value="4">2 - Needs Improvement</option>
+            <option value="5">1 - Unacceptable</option>
+        </div>
 
-    
-<!-----End of Body------>
+        <div class="eval_sheet">
+            <select class="form-select" aria-label="Default select example">
+        </div>
+        <div class="eval_sheet">
+        <h1>COMMENTS AND SUGGESTIONS</h1>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+        </div>
+        </div>
+</div>
+</div>
+</main>
+</section>
 </body>
 </html>

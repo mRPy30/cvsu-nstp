@@ -22,7 +22,7 @@ $page = $components[2];
     <title><?php echo "Instructor Page"; ?></title>
 
      <!----------CSS------------>
-     <link rel="stylesheet" href="style_instructors.css">
+    <link rel="stylesheet" href="style_instructor.css">
 
      <!----------BOOTSTRAP------------>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -35,7 +35,11 @@ $page = $components[2];
 
     <!----------ICONS------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
+
+    <!----------ALERTS-------------->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!---Inner topbar--->
      <?php include('topbar.php');?>
@@ -52,37 +56,14 @@ $page = $components[2];
         <!---------End Sidebar--------->
 
         <!--Main Content-->
-        <div class="pcoded-main-content">
-            <div class="container pt-4 px-4">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="homepage-title">
-                            <h1>NSTP-
-                                
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="box">
-                        <div class="content-box">
-                            <h4>2022 - 2023</h4>
-                            <span>ACADEMIC YEAR</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="box">
-                        <div class="content-box">
-                            <h4>SECOND</h4>
-                            <span>SEMESTER</span>
-                        </div>
-                    </div>
-                </div>
+        <main class="pcoded-main-content">
+            <div class="container pt-4 ">
+                <div class="col-lg-12">
+                        
                
             </div>
         </div>
+</main>
         <!-----End Main content------>
     </section>
     <!-----End of Body------>
