@@ -4,6 +4,18 @@ include 'db_connect.php';
 
 session_start();
 $accountID = $_SESSION['id'];
+
+
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

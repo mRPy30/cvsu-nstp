@@ -48,7 +48,17 @@ if ($result && mysqli_num_rows($result) > 0) {
 ?>
 
 
-<!DOCTYPE html>
+<?php
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>

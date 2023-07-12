@@ -8,16 +8,16 @@
     /*****Sidebar*****/
 
     .bg-section .sidebar {
-        position: relative;
-        top: 0px;
-        left: 0;
-        bottom: 0;
-        width: 250px;
-        height: 140vh;
-        overflow-y: auto;
-        background: rgba(255, 255, 255, 0.92);
-
-    }
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     width: 250px;
+     height: 140vh;
+     overflow-y: auto;
+     background: rgba(255, 255, 255, 0.92);
+     box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.44);
+    } 
 
     .sidebar .navbar-nav {
         margin: 0px 5px;

@@ -18,7 +18,16 @@
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $totalInstructors = $row['total_instructors'];
-   
+
+    // Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
 
 
 ?>

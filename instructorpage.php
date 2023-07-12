@@ -31,6 +31,16 @@ if ($result && mysqli_num_rows($result) > 0) {
     // Handle the case if the instructor is not found
     $instructorName = "Unknown";
 }
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
+
 
 
 ?>

@@ -87,7 +87,7 @@
     <div class="navbar-wrapper">
         <div class="navbar-nav">
             <ul class="nav pcoded-inner-navbar">
-                <li class="nav-link active">
+                <li class="nav-link">
                     <a href="instructorpage.php" class="<?php if ($page == "instructorpage.php") {
                         echo "nav-link active";
                     } else {
@@ -98,7 +98,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="instructor-classes.php" class="<?php if ($page == "instructor-classes.php") {
+                    <a href="instructor-classes.php?=instructor-classes_section" class="<?php if ($page == "instructor-classes.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";

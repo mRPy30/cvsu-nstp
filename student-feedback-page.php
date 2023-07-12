@@ -1,3 +1,14 @@
+<?php
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,69 +57,7 @@
             </div>
     </header>
     <style type="text/css">
-                            .container {
-                                position: absolute;
-                                display: flex;
-                                flex-direction: row;
-                                border: 1px solid black;
-                                padding: 10px;
-                                width: 1100px;
-                                height: 670px;
-                                 top: 340px;
-                                left: 930px;
-                                transform: translate(-50%, -50%);
-                                
-                                
-                            }  
                             
-                            .nstp {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 735px;
-                            height: 217px;
-                            margin: 10px;
-                            padding: 10px; 
-                            background-color: #FFE193;
-                            border-radius: 10px
-                                                  
-
-                            }
-
-                          
-
-                            .statusbox {
-                            border: 1px black solid;
-                            width: 400px;
-                            height: 217px;
-                            margin: 10px;
-                            padding: 1px;
-
-                            }
-
-                            .box {
-                            border: 1px black solid;
-                            width: 1060px;
-                            height: 400px;
-                            background-color: #FFFFFF;
-                            position: absolute;
-                            left: 20px;
-                            top: 270px;
-                            border-radius: 10px;
-                            
-                            }
-
-                            .status { 
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            text-align: bottom; 
-                            
-                            
-                            }
 
                             .courseandsection {
                             position: relative;
