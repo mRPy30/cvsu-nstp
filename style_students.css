@@ -11,11 +11,13 @@ body{
     left: 0;
     width: 100vw;
     height: 140vh;
-    background: #d9d9d9;
+    background:#f1f0f0;
     position: relative;
   }
   /*******MAIN CONTENT********/
 
+
+/************LANDING PAGE***********/
 .pcoded-main-content .homepage-title h1{
     color: #008A0E;
     font-size: 16px;
@@ -24,27 +26,216 @@ body{
     position: relative;
     margin: 20px 220px;
  }
- .pcoded-main-content .box {
-    min-width: 175px;
-    position: relative;
-    -webkit-transition: all 0.1 0.5s;
-    transition: all 0.1 0.5s;
-}
-.pcoded-main-content .box .content-box{
-    margin: 30px 50px;
-    padding: 150px 450px;
+
+ .pcoded-main-content .layer_1{
+    margin: 30px 50px 0px 150px;
+ }
+ .pcoded-main-content .layer_1 .nstp {
+    position: absolute;
+    width: 640px;
+    height: 217px;
     background-color: #FFE193;
-    color: #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
+    border-radius: 10px
+    }
+    .pcoded-main-content .layer_1 .nstp h1{
+        font: normal 800 32px/normal 'Inter' ;
+        margin: 15px 0px 0px 15px; 
+    }
+    .pcoded-main-content .layer_1 .nstp p{
+        font: normal 400 14px/normal 'Poppins' ;
+        margin: 120px 0px 0px 15px; 
+    }
+    .pcoded-main-content .layer_1 .nstp i{
+        font-size: medium;
+        position: absolute; 
+        margin: 3px 0px 0px 5px; 
+
+    }
+.pcoded-main-content .layer_1 .statusbox {
+    margin: 10px 0px 0px 670px;
+    padding: 1px;
 }
-.pcoded-main-content .box .content-box .second{
-    margin-bottom: 60px;
+.pcoded-main-content .layer_1 .status{
+    width: 365px;
+    height: 93px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    text-align: bottom; 
 }
-.pcoded-main-content .box .content-box h3{
-    font-family: 'Inter';
-	font-style: normal;
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 700;
+.pcoded-main-content .layer_1 .status h1{ 
+    font: normal 400 25px/normal 'Poppins' ;
+    margin: 0px 0px 0px 10px;
+    padding-top: 8px;
+    position: absolute;
 }
- /******END MAIN CONTENT*********/
+.pcoded-main-content .layer_1 .status ion-icon{ 
+  font-size: 45px;
+  position: absolute;
+  margin: 25px 0px 0px 300px;
+  color: #008A0E;
+}
+.pcoded-main-content .layer_1 .status p{ 
+    font: normal 300 15px/normal 'Poppins' ;
+    margin: 0px 0px 0px 10px;
+    padding-top: 60px;
+    position: absolute;
+}
+.pcoded-main-content .layer_1 .courseandsection {
+    position: relative;
+    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
+    width: 365px;
+    height: 93px;
+    margin-top: 26px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+.pcoded-main-content .layer_1 .courseandsection h1{ 
+    font: normal 400 25px/normal 'Poppins' ;
+    margin: 0px 0px 0px 10px;
+    padding-top: 8px;
+    position: absolute;
+}
+.pcoded-main-content .layer_1 .courseandsection i{ 
+  font-size: 30px;
+  position: absolute;
+  margin: 30px 0px 0px 295px;
+}
+.pcoded-main-content .layer_1 .courseandsection p{ 
+    font: normal 300 15px/normal 'Poppins' ;
+    margin: 0px 0px 10px 10px;
+    padding-top: 60px;
+    position: absolute;
+}
+.pcoded-main-content .box {
+    width: 1040px;
+    height: 380px;
+    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
+    background-color: #FFFFFF;
+    position: absolute;
+    margin: 60px 0px 0px 150px;
+    border-radius: 10px;
+    }
+/************END LANDING PAGE***********/
+
+/**********Classes***********/
+.pcoded-main-content .welcome {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    padding: 1px;
+    margin: 10px 0px 0px 150px;
+    }
+.pcoded-main-content .instructorbox{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px black solid;
+        width: 950px;
+        height: 125px;
+        margin: 0px 50px 0px 180px;
+}
+.black-letter {
+    color: black;
+    }
+.instructor img {
+        weight: 30px;
+        height: 33px;
+    }
+
+    .coursematerials img {
+        weight: 30px;
+        height: 30px;
+    }
+
+    .schedule img {
+        weight: 35px;
+        height: 35px;
+    }
+
+    .classlist img {
+        weight: 30px;
+        height: 30px;
+    }
+   
+.pcoded-main-content .box1 {
+    position: relative;
+    width: 225px;
+    height: 90px;
+    margin: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .pcoded-main-content .box1:hover{
+        background-color: #6FBB76;
+        transition: all .5s ease;
+        transform: scale(0.98);
+        z-index: 2;
+        color: #FFF;
+      }
+      .pcoded-main-content .box1 a{
+        color: #000;
+        text-decoration: none;
+        font: normal 500 17px/normal 'Poppins';
+      }
+      .pcoded-main-content .box1 a span:hover{
+        color: #000000;
+      }
+      .pcoded-main-content .description {
+        position: relative;
+        width: 950px;
+        height: 300px;
+        margin: 10px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        display: flex;
+        align-items: justify ;
+        justify-content: justify;
+        top: 50px;
+        font: normal 700 28px/normal 'Poppins' ;
+        padding: 23px;
+        }
+
+        .pcoded-main-content .descriptionbox {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        height: 220px;
+        margin-left: 5px;
+        padding: 1px;
+        top: 130px;
+        left: 40px;
+        }
+        .pcoded-main-content .maindescription img{
+            position: absolute;
+            height: 20px;
+            weight: 20px;
+        }
+        .pcoded-main-content  .maindescription {
+            text-align: justify;
+            align-items: justify ;
+            justify-content: justify;
+            top: 40px;
+            font-size: 15px;
+            font-family: arial, sans-serif;
+            padding: 5px;
+            }
+/**********End Classes***********/
+
+
+
+/**********Instructor***********/
+
+/**********End Instructor***********/
+            
+
+
+
+
+ /*************END MAIN CONTENT**************/

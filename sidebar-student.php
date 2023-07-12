@@ -12,7 +12,7 @@
      height: 140vh;
      overflow-y: auto;
      background: rgba(255, 255, 255, 0.92);
-     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+     box-shadow: 2px 2px 8px 1px rgba(0,0,0,0.44);
     } 
    .sidebar .navbar-nav{
          margin: 10px 30px;
@@ -81,14 +81,13 @@
                     <div class="navbar-nav">
                        <ul class="nav pcoded-inner-navbar">
                         <li><a class="nav-link active" aria-current="page" href="studentpage.php"><i class="fa-sharp fa-solid fa-house"></i> Home </a></li>
-                        <li><a class="nav-link" href="studentpage.php?page=student-classes"><i class="fa-solid fa-book"></i> Classes </a></li>
-                        <li><a class="nav-link" href="studentpage.php?page=student-feedback"><i class="fa-solid fa-people-group"></i> Programs </a></li>
-                        <li><a class="nav-link" href="studentpage.php?page=student-programs"><i class="fa-solid fa-comment"></i> Feedback </a></li>
+                        <li><a class="nav-link" href="student-classes.php"><i class="fa-solid fa-book"></i> Classes </a></li>
+                        <li><a class="nav-link" href="studentpage-feedback.php"><i class="fa-solid fa-people-group"></i> Programs </a></li>
+                        <li><a class="nav-link" href="studentpage-programs.php"><i class="fa-solid fa-comment"></i> Feedback </a></li>
                        </ul>
                     </div>
-                </div>
-            </nav>
-        </div>    
+            </div>
+</nav>    
         
     <!---------End Sidebar--------->
         

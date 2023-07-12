@@ -1,5 +1,13 @@
+<?php
+//connection
+include 'db_connect.php';
+
+session_start();
+$accountID = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +21,8 @@
     <link rel="stylesheet" href="style_students.css">
 
      <!----------BOOTSTRAP------------>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      
      <!----------FONTS------------>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,104 +31,12 @@
 
     <!----------ICONS------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
 
      <!---Inner topbar--->
      <?php include('topbar.php');?>
-
-    <style type="text/css">
-                            .container {
-                                position: absolute;
-                                display: flex;
-                                flex-direction: row;
-                                border: 1px solid black;
-                                padding: 10px;
-                                width: 1100px;
-                                height: 670px;
-                                 top: 380px;
-                                left: 930px;
-                                transform: translate(-50%, -50%);
-                                
-                                
-                            }  
-                            
-                            .nstp {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 735px;
-                            height: 217px;
-                            margin: 10px;
-                            padding: 10px; 
-                            background-color: #FFE193;
-                            border-radius: 10px
-                                                  
-
-                            }
-
-                          
-
-                            .statusbox {
-                            border: 1px black solid;
-                            width: 400px;
-                            height: 217px;
-                            margin: 10px;
-                            padding: 1px;
-
-                            }
-
-                            .box {
-                            border: 1px black solid;
-                            width: 1060px;
-                            height: 380px;
-                            background-color: #FFFFFF;
-                            position: absolute;
-                            left: 20px;
-                            top: 270px;
-                            border-radius: 10px;
-                            margin-top:0px;
-                            
-                            }
-
-                            .status { 
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            text-align: bottom; 
-                            
-                            
-                            }
-
-                            .courseandsection {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            }
-
-                            .bottom-left {
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            padding: 1px;
-                            margin: 10px;
-                            }
-
-                           
-
-                        </style>
-
-
-
-
-
 </head>
 
 <!----Body----->
@@ -129,50 +46,40 @@
    
 
    <section class="bg-section">
-   <?php include('sidebar-instructor.php');?>
-   
+   <?php include('sidebar-student.php');?>
     <!---------End Sidebar--------->
-        
-
         <!--Main Content-->
-        
 
-                             <!--Main Content codeeeee-->
-
-
-                             <div class="container">
-                            
-                            <div class="nstp"><h1>NSTP 1</h1></div>
-
+        <main class="pcoded-main-content">
+            <div class="container pt-4 ">
+                <div class="col-lg-12">
+                    <!------LAYER 1----->
+                    <div class="layer_1">  
+                            <div class="nstp">
+                                <h1>NSTP 1</h1>
+                                <p>Civil Welfare Training Service
+                                <i class="fa-solid fa-chevron-right"></i></p>
+                            </div>
                             <div class="statusbox"> 
-
-                            
-                            <div class="status"><p class="bottom-left">Status</p></div>
-                            <div class="courseandsection"><p class="bottom-left">Course and Section</p></div>
+                                <div class="status">
+                                    <h1>Enrolled</h1>
+                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                                    <p>Status</p>
+                                </div>
+                                 <div class="courseandsection">
+                                    <h1>BSIT1-C</h1>
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                    <p>Course and Section</p>
+                                </div>
                             </div>
-                            <div class="box"></div>
-                           
-                            
-                           
-                            </div>
-                        
-
-
-
-                            
-                                         
-
-                      
-                          
-                       
-                      
-
-                           
-                            
-                        </div>
+                    </div>
+                            <!------LAYER 2----->
+                            <div class="box">
+                            </div>   
                     </div>
                 </div>
-            </div>      
+            </div>
+        </main>     
 
     <!-----End Main content------>        
     </section>
