@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Set a success message in the session
             $_SESSION['instructorAdded'] = true;
             // Close the form by redirecting to the same page
-            header('Location: admin-records_recordsInstructorList.php');
+            header('Location: admin-records_InstructorList.php');
             exit();
         } else {
             // Set an error message in the session if insertion fails
