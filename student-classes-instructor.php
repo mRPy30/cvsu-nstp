@@ -27,105 +27,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
-
-     
-
-    <style type="text/css">
-                            .nstp {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 735px;
-                            height: 217px;
-                            margin: 10px;
-                            padding: 10px; 
-                            background-color: #FFE193;
-                            border-radius: 10px
-                                                  
-
-                            }
-                            .statusbox {
-                            border: 1px black solid;
-                            width: 400px;
-                            height: 217px;
-                            margin: 10px;
-                            padding: 1px;
-
-                            }
-
-                            .box {
-                            border: 1px black solid;
-                            width: 1060px;
-                            height: 400px;
-                            background-color: #FFFFFF;
-                            position: absolute;
-                            left: 20px;
-                            top: 270px;
-                            border-radius: 10px;
-                            
-                            }
-
-                            .status { 
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            text-align: bottom; 
-                            
-                            
-                            }
-
-                           
-
-                            .bottom-left {
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            padding: 1px;
-                            margin: 10px;
-                            }
-
-                            .class-instructor { 
-                            position: absolute;
-                            margin: 10px;
-                            left: 30px;
-                            font-size: 30px;
-                            font-size: 30px;
-                            border-bottom: 1px black solid;
-                            display: flex;
-                            flex-direction: column;
-                            width: 1015px;
-                            height: 60px;
-                            }
-
-                            .nstp-instructor {
-                            position: relative;
-                           
-                            width: 1015px;
-                            height: 250px;
-                            margin: 15px;
-                            background-color: #FFE193;
-                            border-radius: 10px;
-                            display: flex;
-                            align-items: justify ;
-                            justify-content: justify;
-                            top: 80px;
-                            font-size: 20px;
-                            font-family: arial, sans-serif;
-                            padding: 25px;
-                            left: 15px;
-                            } 
-
-                           
-
-                        </style>
-
-
-
-
-
 <!---Inner topbar--->
 <?php include('topbar.php');?>
 </head>
@@ -141,26 +42,30 @@
 
 
         <!--Main Content-->
-
-                             <!--Main Content codeeeee-->
-
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
-                <div class="col-lg-12">  
-                            
-                             <div class = "class-instructor"> <p> CLASS INSTRUCTOR </p> </div>
-                             
+                <div class="col-lg-12">
+                    <div class="content-instructor">     
+                    <div class ="class-instructor"> 
+                        <p> CLASS INSTRUCTOR </p> 
+                        <a href="student-classes.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
+                    </div>
                              <div class = "row">
-                             <div class = "col-sm-12">
-                             <div class = "nstp-instructor"> <p> NSTP Instructor </p> </div>
-
-                             </div>
-                             </div>
+                                <div class = "col-sm-12">
+                                    <div class = "nstp-instructor">
+                                        <img src="instructors_folder/Aton.jpg"> 
+                                        <p> NSTP Instructor </p> 
+                                        <p class="p1"> <ion-icon name="logo-facebook"></ion-icon>NSTP Instructor </p> 
+                                        <p class="p2"> <ion-icon name="mail-open"></ion-icon>NSTP Instructor </p> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>      
-
             </div>
             </div>
         </main>     

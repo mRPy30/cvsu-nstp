@@ -57,8 +57,7 @@
                                 <a href="student-classes-instructor.php" class="clickable-link"> 
                                 <div class="col-sm-3">
                                     <div class="box1 instructor"> 
-                                        <img src="icon_folder/instructor.jpg">
-                                        <a href="student-classes-instructor.php"> 
+                                        <img src="icon_folder/instructor.jpg"> 
                                             <span class="black-letter">Instructor </span> </a>
                                     </div>
                                 </div>
@@ -89,16 +88,19 @@
                              <div class="col-sm-12">
                                 <div class="description"> 
                                     <p>National Service Training Program 1</p>
+                                    <img src="pic1.png">
                                 </div>
                                 <div class="descriptionbox">
+                                
                                     <div class="maindescription"> 
                                         <p>The course mandated by Republic Act No. 9163, otherwise known as 
                                         the National Service Training Act of 2001, aims to enhance the civic consciousness of the students 
                                         “by developing the ethics of service and patriotism” while undergoing Civic Welfare Training Service (CWTS). 
                                         NSTP1 covers topics through big sessions in campus that will tap on the students’ enthusiasm and idealism for 
                                         nation-building, leadership and civic involvement. Combining active reflection in a creative dynamic learning 
-                                        environment, it prepares the students into actual community service in NSTP 2. </p>
-                                    <img src="pic1.png">
+                                        environment, it prepares the students into actual community service in NSTP 2. 
+                                    
+                                    </p>
                                     </div>
                                 </div>
                              </div>

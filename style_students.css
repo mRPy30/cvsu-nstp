@@ -212,10 +212,11 @@ body{
         top: 130px;
         left: 40px;
         }
-        .pcoded-main-content .maindescription img{
+        .pcoded-main-content .description img{
             position: absolute;
-            height: 20px;
-            weight: 20px;
+            height: 220px;
+            weight: 100px;
+            margin: 20px 0px 0px 530px;
         }
         .pcoded-main-content  .maindescription {
             text-align: justify;
@@ -226,16 +227,213 @@ body{
             font-family: arial, sans-serif;
             padding: 5px;
             }
+            .pcoded-main-content  .maindescription p{
+                position: absolute;
+                font: normal 400 15px/normal 'Poppins' ;
+            }
 /**********End Classes***********/
 
 
 
 /**********Instructor***********/
+.pcoded-main-content .class-instructor { 
+    position: absolute; 
+    left: 30px;
+    flex-direction: column;
+    width: 1015px;
+    height: 60px;
+    }
+    .pcoded-main-content .class-instructor p{
+        margin: 10px 0px 0px 130px;
+        position: absolute;
+        font: normal 400 18px/normal 'Poppins' ;
+    }
+.pcoded-main-content .class-instructor a ion-icon {
+        font-size: xx-large;
+        color: #008A0E;
+        flex-direction: row;
+        margin: 10px 0px 1px 75vw;
+        text-decoration: none;
+        position: absolute;
+      }
+.pcoded-main-content .nstp-instructor {
+        position: relative;
+        width: 1015px;
+        height: 250px;
+        background-color: #FFE193;
+        border-radius: 10px;
+        display: flex;
+        align-items: justify ;
+        justify-content: justify;
+        margin-top: 60px;
+        padding: 25px;
+        left: 15px;
+    }
+.pcoded-main-content .nstp-instructor .p1{
+    margin: 140px 0px 0px 40px;
+    position: absolute;
+    font: normal 300 15px/normal 'Poppins' ;
+    }
+    .pcoded-main-content .nstp-instructor .p1 ion-icon{
+        font-size: large;
+        margin-right: 10px;
+        }
+    .pcoded-main-content .nstp-instructor .p2{
+    margin: 170px 0px 0px 40px;
+    position: absolute;
+    font: normal 300 15px/normal 'Poppins' ;
+    }
+    .pcoded-main-content .nstp-instructor .p2 ion-icon{
+        font-size: large;
+        margin-right: 10px;
+        }
+.pcoded-main-content .nstp-instructor img{
+    border-radius: 100%;
+    position: absolute;
+    margin-left: 750px;
+}
 
+.pcoded-main-content .content-instructor {
+    margin: 10px 0px 0px 130px;
+}
 /**********End Instructor***********/
             
+/********materials******/
 
+.pcoded-main-content .course-materials {
+position: absolute;
+margin: 10px;
+left: 30px;
+font-size: 30px;
+display: flex;
+flex-direction: column;
+width: 1015px;
+height: 60px;
+}
+.pcoded-main-content .course-materials p{
+    margin: 10px 0px 0px 130px;
+    position: absolute;
+    font: normal 400 18px/normal 'Poppins' ;
+}
+.pcoded-main-content .course-materials a ion-icon {
+    font-size: xx-large;
+    color: #008A0E;
+    flex-direction: row;
+    margin: 10px 0px 1px 75vw;
+    text-decoration: none;
+    position: absolute;
+  }
+.pcoded-main-content .coursebox {
+position: relative;     
+width: 1015px;
+height: 530px;
+margin: 15px;
+background-color: #FFFFFF;
+border-radius: 10px;
+display: flex;
+align-items: justify ;
+justify-content: justify;
+top: 80px;
+font-size: 15px;
+font-family: arial, sans-serif;
+padding: 25px;
+left: 15px;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
+.pcoded-main-content .coursebox .table-bordered {
+border-collapse: collapse;
+width: 100%;
+table-layout: fixed; 
+font: normal 500 14px/normal 'Poppins';
+}
+
+.pcoded-main-content .coursebox .table-bordered th{
+    padding: 20px;
+    text-align: center;
+    background-color: #e7e7e7;
+    font: normal 500 14px/normal 'Poppins';
+}
+
+th, td, tr {
+text-align: center;
+height: 50px;
+
+}
+
+/*******end materials*****/
+
+/*******schedule******/
+
+/******End Schedule****/
+
+/*******classlist*****/
+.pcoded-main-content .class-list p{
+    margin: 10px 0px 0px 130px;
+    position: absolute;
+    font: normal 400 18px/normal 'Poppins' ;
+}
+.pcoded-main-content .class-list a ion-icon {
+    font-size: xx-large;
+    color: #008A0E;
+    flex-direction: row;
+    margin: 10px 0px 1px 75vw;
+    text-decoration: none;
+    position: absolute;
+  }
+.class-list {
+    position: absolute;
+    margin: 10px;
+    left: 30px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 1015px;
+    height: 60px;
+    }
+
+    .class-list-box {
+    position: relative;
+    border: 1px black solid;
+    width: 1015px;
+    height: 530px;
+    margin: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: justify ;
+    justify-content: justify;
+    top: 80px;
+    font-size: 15px;
+    font-family: arial, sans-serif;
+    padding: 25px;
+    left: 15px;
+
+    }
+
+    .table-bordered {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed; 
+  
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+        padding: 20px;
+    
+        border: 2px solid black;
+    }
+
+    th, td, tr {
+    text-align: center;
+    height: 50px;
+
+    }
+
+   
+
+/******end classlist***/
 
 
  /*************END MAIN CONTENT**************/
