@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <label class="enter" for="id">Enter your ID:</label>
                                 <input type="text is-valid" class="form-control" placeholder="Enter your Id" name="id" required>
                                 <label class="pass log" for="password">Password:</label>
-                                <input type="password is-valid" class="form-control" placeholder="Enter your Password" name="password" id="password" required>
+                                <input type="password is-valid" class="form-control" placeholder="Enter your Password" name="password" id="password" required onclick="togglePasswordVisibility()">
                                 <span class="password-toggle" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
                                 <span class="error" id="passwordError"></span>
                                     <button class="btn btn-lg btn-block" type="submit" name="submit" value="Submit">LOGIN</button>

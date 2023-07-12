@@ -29,7 +29,7 @@ if(!$con){
         <h1>Number of Enrolees</h1>
       </div>
           <div class="card-body">
-          <canvas id="chartjs_bar" style="width: 60px; height: 10px;"></canvas>
+          <canvas id="chartjs_bar" style="width: 20px; height: 10px;"></canvas>
           </div>
       </div>
     </div>
@@ -44,7 +44,7 @@ if(!$con){
           data: {
             labels:<?php echo json_encode($num_enrolees); ?>,
             datasets: [{
-                backgroundcolor: [
+                backgroundColor: [
                     '#5969ff',
                     '#6FBB76'
                 ],

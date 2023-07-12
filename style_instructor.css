@@ -109,15 +109,6 @@ body{
    position: absolute;
 }
 
-.pcoded-main-content .box-classes .box-classes_left p{
-   color: #000;
-   font-size: 14px;
-   font-family: "Poppins";
-   margin-left: 60px;
-   position: absolute;
-   margin-top: 35px;
-}
-
 .pcoded-main-content .box-classes  .box-classes_right{
    position: absolute;
    
@@ -169,7 +160,7 @@ body{
    color: #FFF;
    font-size: 25px;
    font-family: 'Inter';
-   font-weight: 900; 
+   font-weight: 800; 
    margin: 10px 20px;
 }
 .pcoded-main-content .section_box .sec_box_inner{

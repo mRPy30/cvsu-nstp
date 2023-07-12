@@ -128,26 +128,26 @@
                             margin: 10px;
                             }
 
-                            .nstp-programs {
+                            .class-instructor { 
                             position: absolute;
                             margin: 10px;
                             left: 30px;
+                            font-size: 30px;
                             font-size: 30px;
                             border-bottom: 1px black solid;
                             display: flex;
                             flex-direction: column;
                             width: 1015px;
                             height: 60px;
-
                             }
 
-                            .programs-box1 {
+                            .nstp-instructor {
                             position: relative;
                             border: 1px black solid;
                             width: 1015px;
-                            height: 150px;
+                            height: 250px;
                             margin: 15px;
-                            background-color: #FFFFFF;
+                            background-color: #FFE193;
                             border-radius: 10px;
                             display: flex;
                             align-items: justify ;
@@ -157,30 +157,7 @@
                             font-family: arial, sans-serif;
                             padding: 25px;
                             left: 15px;
-
-                            }
-
-                            .programs-box2 {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 1015px;
-                            height: 150px;
-                            margin: 15px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            display: flex;
-                            align-items: justify ;
-                            justify-content: justify;
-                            top: -60px;
-                            font-size: 20px;
-                            font-family: arial, sans-serif;
-                            padding: 25px;
-                            left: 15px;
-                            }
-
-                           
-                           
-
+                            } 
 
                            
 
@@ -204,8 +181,8 @@
                        <ul class="nav pcoded-inner-navbar">
                         <li><a class="nav-link active" aria-current="page" href="studentpage.php"><i class="fa-sharp fa-solid fa-house"></i> Home </a></li>
                         <li><a class="nav-link" href="student-classes.php"><i class="fa-solid fa-book"></i> Classes </a></li>
-                        <li><a class="nav-link" href="student-programs.php"><i class="fa-solid fa-people-group"></i> Programs </a></li>
-                        <li><a class="nav-link" href="student-feedback.php"><i class="fa-solid fa-comment"></i> Feedback </a></li>
+                        <li><a class="nav-link" href="student-feedback.php"><i class="fa-solid fa-people-group"></i> Programs </a></li>
+                        <li><a class="nav-link" href="student-programs.php"><i class="fa-solid fa-comment"></i> Feedback </a></li>
                        </ul>
                     </div>
                 </div>
@@ -219,19 +196,15 @@
 
                              <!--Main Content codeeeee-->
 
-                            
+
                              <div class="container">
 
-                             <div class="nstp-programs"> <p> NSTP PROGRAMS </p> </div>
+                             <div class = "class-instructor"> <p> CLASS INSTRUCTOR </p> </div>
+                             
+                             <div class = "row">
+                             <div class = "col-sm-12">
+                             <div class = "nstp-instructor"> <p> NSTP Instructor </p> </div>
 
-                             <div class="row"> 
-                             <div class="col-sm-12"> 
-                             <div class="programs-box1"> </div> 
-                             </div> 
-
-                             <div class="col-sm-12">
-                             <div class="programs-box2"> </div>
-                             </div>
 
                              </div>
                              </div>
