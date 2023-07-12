@@ -11,7 +11,7 @@ if (isset($_POST['semesterID']) && isset($_POST['deleteSemester'])) {
     $conn->query($deleteQuery);
 
     // Redirect back to the page to refresh the expense table
-    header('Location: recordsSemester.php');
+    header('Location: admin-records_Semester.php');
     exit();
 
 }
