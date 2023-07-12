@@ -16,11 +16,11 @@ include 'db_connect.php';
     <!----------TITLE------------>
     <link rel="shortcut icon" href="logo.png" type="">
     <title>
-        <?php echo "Coordinator Page"; ?>
+        <?php echo "Instructor Page"; ?>
     </title>
 
     <!----------CSS------------>
-    <link rel="stylesheet" href="instructor_style.css">
+    <link rel="stylesheet" href="style_instructor.css">
 
     <!----------BOOTSTRAP------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"

@@ -145,7 +145,7 @@
                             position: relative;
                             border: 1px black solid;
                             width: 1015px;
-                            height: 150px;
+                            height: 530px;
                             margin: 15px;
                             background-color: #FFFFFF;
                             border-radius: 10px;
@@ -160,22 +160,67 @@
 
                             }
 
-                            .programs-box2 {
+                            .feedback-evaluation {
+                            position: absolute;
+                            margin: 10px;
+                            left: 30px;
+                            font-size: 30px;
+                            border-bottom: 1px black solid;
+                            display: flex;
+                            flex-direction: column;
+                            width: 1015px;
+                            height: 60px;
+
+                            }
+
+                            .instructorbox {
                             position: relative;
                             border: 1px black solid;
                             width: 1015px;
-                            height: 150px;
+                            height: 80px;
                             margin: 15px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
+                            background-color: #6FBB76;
+                            border-radius: 5px;
                             display: flex;
                             align-items: justify ;
                             justify-content: justify;
-                            top: -60px;
+                            top: 80px;
+                            font-size: 20px;
+                            font-family: arial, sans-serif;
+                            padding: 20px;
+                            left: 15px; 
+                            
+
+                            }
+
+                            .instructor {
+                            text-align: justify;
+                            align-items: justify ;
+                            justify-content: justify;
+                            top: 40px;
+                            font-size: 17px;
+                            font-family: arial, sans-serif;
+                            padding: 5px;
+
+                            }
+
+                            .evaluationbox {
+                            position: relative;
+                            border: 1px black solid;
+                            width: 1015px;
+                            height: 470px;
+                            margin: 15px;
+                            background-color: #FFFFFF;
+                            border-radius: 5px;
+                            display: flex;
+                            align-items: justify ;
+                            justify-content: justify;
+                            top: 70px;
                             font-size: 20px;
                             font-family: arial, sans-serif;
                             padding: 25px;
-                            left: 15px;
+                            left: 1px;
+
                             }
 
                            
@@ -220,20 +265,22 @@
                              <!--Main Content codeeeee-->
 
                             
-                             <div class="container">
+                             <div class="container"> 
 
-                             <div class="nstp-programs"> <p> NSTP PROGRAMS </p> </div>
+                             <div class="feedback-evaluation"> <p> FEEDBACK AND EVALUATION </p> </div>
 
                              <div class="row"> 
-                             <div class="col-sm-12"> 
-                             <div class="programs-box1"> </div> 
+                                <div class="col-sm-12"> 
+                                <div class="instructorbox"> 
+                                <div class="instructor"> <p> <b> INSTRUCTOR </b> </p> </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                <div class="evaluationbox"> </div>
+                                </div>
+
+                             
                              </div> 
-
-                             <div class="col-sm-12">
-                             <div class="programs-box2"> </div>
-                             </div>
-
-                             </div>
                              </div>
                              </div>
                         

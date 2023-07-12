@@ -1,10 +1,3 @@
-<?php
-//connection
-include 'db_connect.php';
-
-session_start();
-$accountID = $_SESSION['id'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,11 +27,9 @@ $accountID = $_SESSION['id'];
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
-
-     <!---Inner topbar--->
-     <?php include('topbar.php');?>
+<!---Inner topbar--->
+<?php include('topbar.php');?>
 </head>
-
 <!----Body----->
 <body>
 
@@ -48,36 +39,34 @@ $accountID = $_SESSION['id'];
    <section class="bg-section">
    <?php include('sidebar-student.php');?>
     <!---------End Sidebar--------->
-        <!--Main Content-->
 
+
+        <!--Main Content-->
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">
-                    <!------LAYER 1----->
-                    <div class="layer_1">  
-                            <div class="nstp">
-                                <h1>NSTP 1</h1>
-                                <p>Civil Welfare Training Service
-                                <i class="fa-solid fa-chevron-right"></i></p>
-                            </div>
-                            <div class="statusbox"> 
-                                <div class="status">
-                                    <h1>Enrolled</h1>
-                                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                                    <p>Status</p>
-                                </div>
-                                 <div class="courseandsection">
-                                    <h1>BSIT1-C</h1>
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                    <p>Course and Section</p>
-                                </div>
-                            </div>
+                    <div class="content-instructor">     
+                    <div class ="class-instructor"> 
+                        <p> CLASS INSTRUCTOR </p> 
+                        <a href="student-classes.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
                     </div>
-                            <!------LAYER 2----->
-                            <div class="box">
-                            </div>   
+                             <div class = "row">
+                                <div class = "col-sm-12">
+                                    <div class = "nstp-instructor">
+                                        <img src="instructors_folder/Aton.jpg"> 
+                                        <p> NSTP Instructor </p> 
+                                        <p class="p1"> <ion-icon name="logo-facebook"></ion-icon>NSTP Instructor </p> 
+                                        <p class="p2"> <ion-icon name="mail-open"></ion-icon>NSTP Instructor </p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
+            </div>      
+            </div>
             </div>
         </main>     
 

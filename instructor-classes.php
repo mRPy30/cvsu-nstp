@@ -48,7 +48,6 @@
                         <div class="box-classes_left">
                             <i class="fa-solid fa-user"></i>
                             <h5>Mark B. Villar</h5>
-                            <p>nstp 1</p>
                         </div>
                         <div class="box-classes_right">
                             <h2>80</h2>
