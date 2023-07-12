@@ -73,6 +73,14 @@
                                 <div class="records_box" id="instructor_box">
                                     <h3><i class="fa-solid fa-book-open-reader"></i> Instructor Records</h3>
                                 </div> 
+
+                                <div class="records_box" id="year_box">
+                                    <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
+                                </div>
+
+                                <div class="records_box" id="senm_box">
+                                    <h3><i class="fa-regular fa-calendar"></i> Semester Records</h3>
+                                </div>  
                             </div>
                         </div>
                 </div>
@@ -101,6 +109,14 @@
 
         document.getElementById('financial_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Finances.php';
+        });
+
+        document.getElementById('year_box').addEventListener('click', function() {
+            window.location.href = 'admin-records_Year.php';
+        });
+
+        document.getElementById('sem_box').addEventListener('click', function() {
+            window.location.href = 'admin-records_Semester.php';
         });
 
 

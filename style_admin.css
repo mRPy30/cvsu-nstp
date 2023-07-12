@@ -141,7 +141,6 @@ body{
       height: 400px;
       display: flex;
       flex-wrap: wrap;
-      flex-direction: column;
     }
       .pcoded-main-content .rec-content .middlebox .records_box {
         width: 350px;

@@ -31,21 +31,6 @@
      
 
     <style type="text/css">
-                            .container {
-                                position: absolute;
-                                display: flex;
-                                flex-direction: row;
-                                border: 1px solid black;
-                                padding: 10px;
-                                width: 1100px;
-                                height: 670px;
-                                 top: 340px;
-                                left: 930px;
-                                transform: translate(-50%, -50%);
-                                
-                                
-                            }  
-                            
                             .nstp {
                             position: relative;
                             border: 1px black solid;
@@ -58,9 +43,6 @@
                                                   
 
                             }
-
-                          
-
                             .statusbox {
                             border: 1px black solid;
                             width: 400px;
@@ -95,15 +77,7 @@
                             
                             }
 
-                            .courseandsection {
-                            position: relative;
-                            border: 1px black solid;
-                            width: 365px;
-                            height: 93px;
-                            margin: 10px;
-                            background-color: #FFFFFF;
-                            border-radius: 10px;
-                            }
+                           
 
                             .bottom-left {
                             position: absolute;
@@ -128,7 +102,7 @@
 
                             .nstp-instructor {
                             position: relative;
-                            border: 1px black solid;
+                           
                             width: 1015px;
                             height: 250px;
                             margin: 15px;
@@ -173,32 +147,15 @@
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">  
-                             <div class="container">
-
+                            
                              <div class = "class-instructor"> <p> CLASS INSTRUCTOR </p> </div>
                              
                              <div class = "row">
                              <div class = "col-sm-12">
                              <div class = "nstp-instructor"> <p> NSTP Instructor </p> </div>
 
-
                              </div>
                              </div>
-                             </div>
-                        
-
-
-
-                            
-                                         
-
-                      
-                          
-                       
-                      
-
-                           
-                            
                         </div>
                     </div>
                 </div>
