@@ -86,8 +86,9 @@ $page = $components[2];
                             </div>
                     </div>
                             <!------LAYER 2----->
-                            <div class="box">
-                            </div>   
+                            
+                            <?php include('student-calendar.php');?>
+                            
                     </div>
                 </div>
             </div>

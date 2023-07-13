@@ -95,6 +95,9 @@ $page = $components[2];
                             <p>Instructors</p>
                         </div>
                     </div>
+                    <div class="calendar_section">
+                        <?php include('admin-schedule.php');?>
+                        </div>
                 </div>
             </div>
         </main>        

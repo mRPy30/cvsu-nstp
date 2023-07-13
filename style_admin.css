@@ -20,8 +20,9 @@ body{
   
   /*******LANDING PAGE*******/
   .pcoded-main-content .total-result{
-    margin: 20px 0px 0px 150px;
+    margin: 20px 0px 0px 200px;
     display: inline-flex;
+    position: absolute;
   }
   .pcoded-main-content .total_stud_box {
     position: relative;
@@ -54,6 +55,12 @@ body{
     font-size: 20px;
     font: normal 400 18px/normal 'Poppins';
     margin: 0px 30px 0px 30px;
+  }
+  .pcoded-main-content .calendar_section{
+    position: relative;
+    margin: 150px 0px 0px 0px;
+    
+
   }
 /*******************END LANDING********************/
 

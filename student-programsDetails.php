@@ -55,62 +55,46 @@ $page = $components[2];
 
 <main class="pcoded-main-content">
             <div class="container pt-4 ">
-            <div class="col-lg-12">
+                <div class="col-lg-12">
     <div class="centered">
-    
-        <div class="student_prog2">
-            <h1>NSTP PROGRAMS</h1>
+        
+        <div class="student_prog">
+            <h1>NSTP PROGRAMS / FEEDING PROGRAM</h1>
         </div>
-
     </div>
 </div>
 
-<div class="feeds">
-<a href="student-programsDetails.php">
-    <div class="inner_feeds">
+<div class="feed">
+    <div class="inner_feed">
         <h1>FEEDING PROGRAM</h1>
+    </div>
+
+    <div class="inner_feed-2">
+        <h1>PROGRAM DESCRIPTION</h1>
+    </div>
+
+    <div class="inner_feed-3">
+        <h1>Armand G. Aton</h1>
+        <p>Assigned Instructor</p>
+        <img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">
+    </div>
+
+    <div class="inner_feed-4">
+        <h1>7AM - 12PM</h1>
+        <p>Time</p>
         <i class="fa-regular fa-clock"></i>
-        <p>7AM - 12PM</p>
-    </div>
-    </a>
-
-    <div class="inner_feeds-2">
-        <i class="fa-regular fa-user"></i>
-        <p>Armand G. Aton</p>
     </div>
 
-    <div class="inner_feeds-3">
+    <div class="inner_feed-5">
+        <h1>Brgy. Buhay na Tubig</h1>
+        <p>Location</p>
         <i class="fa-solid fa-location-dot"></i>
-        <p>Brgy. Buhay na Tubig</p>
+        <button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>
     </div>
 </div>
-
-<div class="feeds-3">
-    <div class="inner_feeds-4">
-        <h1>CLEAN UP DRIVE</h1>
-        <i class="fa-regular fa-clock"></i>
-        <p>7AM - 12PM</p>
-    </div>
-
-    <div class="inner_feeds-5">
-        <i class="fa-regular fa-user"></i>
-        <p>Armand G. Aton</p>
-    </div>
-
-    <div class="inner_feeds-6">
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Brgy. Buhay na Tubig</p>
-    </div>
 </div>
-</div>      
-            </div>
-            </div>
-        </main>     
-
-    <!-----End Main content------>        
-    </section>
-
-    
-<!-----End of Body------>
+</div>
+</main>
+</section>
 </body>
 </html>

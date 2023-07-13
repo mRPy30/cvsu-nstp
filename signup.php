@@ -44,6 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $query = "SELECT courseID, courseName FROM tbl_course";
 $result = mysqli_query($conn, $query);
 $courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+// Fetch course data from the database
+$query = "SELECT sectionID, sectionName FROM tbl_sections";
+$result = mysqli_query($conn, $query);
+$sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>

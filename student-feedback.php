@@ -55,181 +55,39 @@ $page = $components[2];
 
 <main class="pcoded-main-content">
             <div class="container pt-4 ">
-                <div class="col-lg-12">
-    <div class="centered">
-        <div class="student_eval">
-            <h1>FEEDBACK AND EVALUATION</h1>
-        </div>
-    </div>
-</div>
+            <div class="col-lg-12">
+                             <div class="feedbackandevaluation"> <p> FEEDBACK AND EVALUATION </p> </div>
 
-<div class="header-form">
-    <div class="header-innner">
-        <p>INSTRUCTOR</p>
-        <select class="form-select col-10" aria-label="Default select example">
-            <option selected >--Please select instructor--</option>
-            <option value="1">Instructor 1</option>
-            <option value="2">Instructor 2</option>
-            <option value="3">Instructor 3</option>
-            <option value="4">Instructor 4</option>
-            <option value="5">Instructor 5</option>
-        </select>
-    </div>
-</div>
+                             <div class="row" > 
+                             <div class="col-sm-12" > 
+                                <div class="feedback-box"> 
+                                <div class="instructions"> <p> Welcome to feedback and evaluation in this page students are able to give an evalution  
+                                for your NSTP course and your corresponding instructor. <br> 
+                                <br>
+                                Here are the Guidelines for evaluation: <br>
+                                 •  Only officially enrolled student can evaluate; <br>
+                                 •  Select your NSTP program and your instructor <br>
+                                 •  Evaluate the faculty member based on the given indicator (5 is the highest and 1 is the lowest); <br>
+                                 •  Evaluate the effectivity of the course based on the given indicator  (5 is the highest and 1 is the lowest); <br> 
+                                 •  Submit your evaluaiton after double checking your answers
+                                <br> 
+                                <br>
+                                <b>Thank you for helping us make NSTP Program better! </b> </p> </div>
 
-<div class="eval-form">
-        <div class="eval_sheet">
-            <h1>A. INSTRUCTOR EVALUATION</h1>
-            <p>1. Shows good command and knowledge of the subject matter.</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>2. Demonstrates breadth and depth of mastery.</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>3. Draws and share information in the state-of-the-art theory and practice in his/her respective discipline.</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>4. Demonstrates up-to-date knowledge and/or awareness on current trends and issues of the subject matter.</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>5. Integrates subject to practical circumstances.</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-</div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-        <h1>B. COURSE EVALUATION</h1>
-            <p>1. How would you rate the overall quality of the course content and materials provided throughout the semester?</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>2. Did the course effectively cover the stated learning objectives and provide you with the necessary knowledge and skills?</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>3. Were the assessments and assignments designed to accurately evaluate your understanding of the course material and allow you to demonstrate your knowledge?</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>4. Were the course resources, such as textbooks, online platforms, or supplementary materials, helpful in supporting your learning experience?</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-            <p>5. How would you rate the organization and structure of the course in terms of facilitating your learning and comprehension of the subject matter?</p>
-            <select class="form-select" aria-label="Default select example">
-            <option selected >--Select Evaluation--</option>
-            <option value="1">5 - Outstanding</option>
-            <option value="2">4 - Exceeds Expectations</option>
-            <option value="3">3 - Meets Expectations</option>
-            <option value="4">2 - Needs Improvement</option>
-            <option value="5">1 - Unacceptable</option>
-        </div>
-
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
-        <div class="eval_sheet">
-        <h1>COMMENTS AND SUGGESTIONS</h1>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-        <button type="submit" class="btn btn-primary">SUBMIT</button>
-        </div>
-        </div>
-</div>
-</div>
-</main>
+                             </div>   
+                              
+                             <div class="row" > 
+                             <div class="col-sm-4" ></div>
+                             <div class="col-sm-4"> 
+                                <div class="evaluatebox"><a href="student-feedbackEvaluation.php"> <b> <span class="black-letter"> EVALUATE NOW </span> </b> </a> </div>
+                             </div>
+                             <div class="col-sm-4" ></div>
+                             </div>
+                                             
+                             </div>
+                             </div>
+                             </div>      
+                             </main>
 </section>
 </body>
 </html>
