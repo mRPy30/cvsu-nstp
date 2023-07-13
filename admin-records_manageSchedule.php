@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->query($deleteQuery);
 
         // Redirect back to the page or display a success message
-        header('Location: schedule.php');
+        header('Location: admin-schedule.php');
         exit();
     } elseif (isset($_POST['updateSchedule'])) {
         // Retrieve form data
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Execute the update query
         if (mysqli_query($conn, $query)) {
             // Redirect back to the page or display a success message
-            header("Location: schedule.php");
+            header("Location: admin-schedule.php");
             exit();
         } else {
             // Update failed
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Execute the insert query
         if (mysqli_query($conn, $insertQuery)) {
             // Redirect back to the page or display a success message
-            header("Location: schedule.php");
+            header("Location: admin-schedule.php");
             exit();
         } else {
             // Insertion failed

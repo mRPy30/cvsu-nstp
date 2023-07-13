@@ -78,7 +78,7 @@ $page = $components[2];
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <a href="instructor-classes.html">
+                        <a href="instructor-classes_section.php">
                             <ion-icon name="arrow-back-circle-outline"></ion-icon>
                         </a>
                     </div>

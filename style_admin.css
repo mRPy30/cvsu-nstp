@@ -196,15 +196,15 @@ body{
     margin: 20px 0px 0px 100px;
     width: 800px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
+    flex-wrap: wrap;
   }
   .pcoded-main-content .rec-content .middlebox-class a {
     text-decoration: none;
   }
   .pcoded-main-content .rec-content .middlebox-class a .course-box {
-    width: 400px;
+    width: 350px;
     margin: 5px 20px 0px 22px;
     border-radius: 10px;
     background: #FFF;
@@ -575,9 +575,9 @@ body{
   margin: 20px 0px 0px 100px;
   width: 800px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  flex-wrap: wrap;
 }
 .pcoded-main-content .rec-content 
 .middlebox-Student a {
@@ -586,7 +586,7 @@ body{
 .pcoded-main-content .rec-content 
 .middlebox-Student a .course-box {
   margin: 10px;
-  width: 400px;
+  width: 350px;
   margin: 5px 20px 0px 25px;
   border-radius: 10px;
   background: #FFF;
@@ -669,9 +669,9 @@ body{
   margin: 20px 0px 0px 100px;
   width: 800px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  flex-wrap: wrap;
 }
 .pcoded-main-content .rec-content 
 .middlebox-instructor a {
@@ -680,7 +680,7 @@ body{
 .pcoded-main-content .rec-content 
 .middlebox-instructor a .course-box {
   margin: 10px;
-  width: 400px;
+  width: 350px;
   margin: 5px 20px 0px 25px;
   border-radius: 10px;
   background: #FFF;

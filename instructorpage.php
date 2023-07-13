@@ -92,7 +92,7 @@ $page = $components[2];
 
         <!--Main Content-->
         <main class="pcoded-main-content">
-            <div class="container pt-4 ">
+            <div class="pt-4 ">
                 <div class="col-lg-12">
                     <div class="instructor_prof">
                         <h1><?php echo "$instructorCourse" ?></h1>
@@ -118,10 +118,15 @@ $page = $components[2];
                             <span>SEMESTER</span>
                         </div>
                     </div>
+                    <div class="calendar_section">
+                        <?php include('calendar.php');?>
+                        </div>
                 </div>
-               
+                
             </div>
+
         </main>
+        
         <!-----End Main content------>
     </section>
     <!-----End of Body------>

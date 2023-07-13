@@ -151,7 +151,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <div class="form-control">
                             <div class="box-control">
                                 <div class="form-control-1">
-                                    <label for="course">Course:</label>
+                                    <label for="course">Training Program:</label>
                                     <select name='course' id="course">
                                         <?php foreach ($courses as $course): ?>
                                             <option value="<?php echo $course['courseID']; ?>"><?php echo $course['courseName']; ?></option>

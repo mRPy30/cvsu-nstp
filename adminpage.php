@@ -96,7 +96,7 @@ $page = $components[2];
                         </div>
                     </div>
                     <div class="calendar_section">
-                        <?php include('student-calendar.php');?>
+                        <?php include('calendar.php');?>
                         </div>
                 </div>
             </div>
