@@ -93,7 +93,7 @@ $page = $components[2];
                                         </tr>
                                         <tr>
                                             <td>202110116</td>
-                                            <th>Bianca Bautista</th>
+                                            <th><a href="instructor-student_info.php">Bianca Bautista</a></th>
                                             <td><input type="text"></td>
                                         </tr>
                                         <tr>

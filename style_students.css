@@ -829,6 +829,7 @@ height: 50px;
     flex-direction: column;
     width: 1015px;
     height: 60px;
+    font-family: arial, sans-serif;
     }
 
     .feedback-box {
