@@ -1,7 +1,7 @@
 <?php
 
 include 'db_connect.php';
-include 'sidebar-admin.php';
+
 
 
 
@@ -47,8 +47,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="script.js" defer></script>
 
-     <!---Inner topbar--->
-    <?php include('topbar.php'); ?>
+   
     <style>
           body {
             font-family: Arial, sans-serif;
@@ -56,19 +55,16 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
           .container{
             width: 1180px;
             height: 650px;
-            border: 1px solid black;
             display: flex;
             flex-direction: row;
             padding:10px;
-
+            margin-left: 140px;
           }
 
 
           .event-panel {
-          
             padding: 10px;
-    
-            border: 1px solid BLACK;
+            box-shadow: -2px 2px 10px -4px rgba(4,4,4,0.82);
             border-radius: 10px;
             width: 320px;
             height: 500px;
@@ -110,14 +106,14 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
           .form-box {
-              border: solid 1px black;
-              width: 332px;
+              background-color: #ffffff;
+              width: 336px;
               border-radius: 10px;
               margin:10px;
-              height: 510px;
+              height: 580px;
               padding: 5px;
               padding-top: 5px;
-             
+              box-shadow: -2px 2px 10px -4px rgba(4,4,4,0.82);
           }
           .form-box h4 {
            text-align:center;
@@ -161,7 +157,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
           .form-control input {
               width: 120px;
               border: 1px solid black;
-              font-size: 14px;
+              font-size: 8px;
               border-radius: 5px;
               padding: 12px;
               display: block;
@@ -174,9 +170,9 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         .form-control select {
               width:146px;
               border: 1px solid black;
-              font-size: 14px;
+              font-size: 12px;
               border-radius: 5px;
-              padding: 12px;
+              padding: 8px;
               display: block;
 
           }
@@ -184,7 +180,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
           .form-control2 select {
               width:146px;
               border: 1px solid black;
-              font-size: 14px;
+              font-size: 12px;
               border-radius: 5px;
               padding: 12px;
               display: block;
@@ -194,9 +190,9 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
           .form-control2 input {
               width: 120px;
               border: 1px solid black;
-              font-size: 14px;
+              font-size: 12px;
               border-radius: 5px;
-              padding: 12px;
+              padding: 8px;
               display: block;
           }
 
@@ -263,7 +259,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         .calendar-box{
           width: 600px;
           height: 520px;
-          border: 1px solid black;
+          box-shadow: -2px 2px 10px -4px rgba(4,4,4,0.82);
           border-radius: 5px;
           margin-top: 10px;
         }
@@ -275,7 +271,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
         
         .program-box {
-          width: 300px;
+          width: 290px;
           height: 50px;
           border: 1px solid black;
           border-radius: 5px;
@@ -287,15 +283,14 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
 
         .class-box {
-          width: 300px;
-          height: 50px;
+          
           border: 1px solid black;
           border-radius: 5px;
-          padding: 5px;
+ 
           display: flex;
           align-items: center;
           margin: 5px;
-          background-color: WHITE;
+         
         }
 
         .date-box {
@@ -307,16 +302,18 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
           flex-direction: column;
           align-items: center;
           justify-content: space;
-          background-color: #ffffff;
+          
         }
 
         .date-box h3{
           margin-top: 10px;
+          font-size: 12px;
       
         }
         .date-box h4 {
          margin-top: 0px;
          margin-bottom: 50px;
+         font-size: 12px;
         }
 
 
@@ -331,21 +328,23 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         .details-box {
           height: 50px;
-          width: 230px;
+          width: 220px;
        
           flex-direction: column;
           align-items: center;
           justify-content: space;
-          background-color: #ffffff;
+          
        
         }
 
         .details-box h3 {
           margin-top: 10px;
+          font-size: 12px
         }
 
         .details-box h5 {
           margin-bottom: 10px;
+          font-size: 15px
         }
 
          /* Modal styles */

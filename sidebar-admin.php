@@ -98,7 +98,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="admin-schedule.php" class="<?php if ($page == "admin-schedule.php") {
+                    <a href="admin-schedulepage.php" class="<?php if ($page == "admin-schedulepage.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";
@@ -106,7 +106,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="admin-shedule.php" class="<?php if ($page == "admin-shedule.php") {
+                    <a href="admin-programs.php" class="<?php if ($page == "admin-programs.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";
