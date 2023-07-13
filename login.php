@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <p>NSTP PROGRAM</p>
                     </div>
                     <div class="col-4 home">
-                        <a href="student.php" class="home-link "><i class="fa-solid fa-house"></i></a>
+                        <a href="homepage.php" class="home-link "><i class="fa-solid fa-house"></i></a>
                     </div>
                 </div>
             </div>

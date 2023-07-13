@@ -83,8 +83,8 @@
                                           </a>
                                             <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="homepage-about_MisVisQp.php">VISION AND MISSION</a></li>
-                                              <li><a class="dropdown-item" href="homepage-about_nstp_program.php">NSTP PROGRAM</a></li>
-                                              <li><a class="dropdown-item" href="homepage-about_instructor.php">INSTRUCTORS</a></li>
+                                              <li><a class="dropdown-item" href="homepage-about-nstp_program.php">NSTP PROGRAM</a></li>
+                                              <li><a class="dropdown-item" href="homepage-about-instructor.php">INSTRUCTORS</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">

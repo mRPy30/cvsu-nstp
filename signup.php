@@ -89,7 +89,7 @@ $courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <p>NSTP PROGRAM</p>
                     </div>
                     <div class="col-4 home">
-                        <a href="student.php" class="home-link"><i class="fa-solid fa-house"></i></a>
+                        <a href="homepage.php" class="home-link"><i class="fa-solid fa-house"></i></a>
                     </div>
                 </div>
             </div>

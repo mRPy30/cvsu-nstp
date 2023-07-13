@@ -10,7 +10,7 @@
         height: 140vh;
         overflow-y: auto;
         background: rgba(255, 255, 255, 0.92);
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.44);
     }
 
     .sidebar .navbar-nav {
@@ -106,7 +106,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="instructor-reports.php" class="<?php if ($page == "instructor-reports.phpp") {
+                    <a href="instructor-reports.php" class="<?php if ($page == "instructor-reports.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";

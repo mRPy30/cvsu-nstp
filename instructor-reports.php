@@ -59,8 +59,7 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">
-                        
-               
+                <?php include('chart.php');?>  
             </div>
         </div>
 </main>

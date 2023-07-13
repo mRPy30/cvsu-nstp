@@ -50,10 +50,10 @@
                                           <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             ABOUT
                                           </a>
-                                            <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="homepage-about_MisVisQp.php">VISION AND MISSION</a></li>
-                                              <li><a class="dropdown-item" href="homepage-about_nstp_program.php">NSTP PROGRAM</a></li>
-                                              <li><a class="dropdown-item" href="homepage-about_instructor.php">INSTRUCTORS</a></li>
+                                          <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="homepage-about_MisVisQp.php">VISION AND MISSION</a></li>
+                                              <li><a class="dropdown-item" href="homepage-about-nstp_program.php">NSTP PROGRAM</a></li>
+                                              <li><a class="dropdown-item" href="homepage-about-instructor.php">INSTRUCTORS</a></li>
                                             </ul>
                                         </li>
                                         <li class="nav-item">
@@ -90,7 +90,7 @@
     <div class="container">
         <div class="row">
         <div class="card" style="width: 18rem;">
-          <img src="Abayari.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Abayari.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">ABAYARI, JENNY DANICA</h5>
             <p class="card-text">INSTRUCTOR I</p>
@@ -98,7 +98,7 @@
         </div>
 
         <div class="card" style="width: 18rem;">
-          <img src="Aton.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Aton.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">ATON, ARMAND</h5>
             <p class="card-text">INSTRUCTOR I</p>
@@ -106,7 +106,7 @@
         </div>
 
         <div class="card" style="width: 18rem;">
-          <img src="Mojica.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Mojica.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">MOJICA, MA. ISABEL</h5>
             <p class="card-text">ASSISTANT PROFESSOR I</p>
@@ -116,7 +116,7 @@
 
       <div class="row">
       <div class="card" style="width: 18rem;">
-        <img src="Batula.jpg" class="card-img-top" alt="">
+        <img src="instructors_folder/Batula.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">BATULA, JOSE LERIO</h5>
           <p class="card-text">ASSISTANT PROFESSOR I</p>
@@ -124,7 +124,7 @@
       </div>
 
         <div class="card" style="width: 18rem;">
-          <img src="Manuel.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Manuel.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">MANUEL, JENICA</h5>
             <p class="card-text">INSTRUCTOR I</p>
@@ -132,7 +132,7 @@
         </div>
 
         <div class="card" style="width: 18rem;">
-          <img src="Baguion.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Baguion.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">BAGUION, MA. CARLOTA</h5>
             <p class="card-text">INSTRUCTOR I</p>
@@ -142,7 +142,7 @@
 
         <div class="row">
         <div class="card" style="width: 18rem;">
-          <img src="Panigbatan.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Panigbatan.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">PANIGBATAN, VIVIAN</h5>
             <p class="card-text">INSTRUCTOR I</p>
@@ -150,7 +150,7 @@
         </div>
 
         <div class="card" style="width: 18rem;">
-          <img src="Admin_Vales.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Admin_Vales.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">VALES, RONA</h5>
             <p class="card-text">ADMIN ASST. I</p>
@@ -158,7 +158,7 @@
         </div>
 
         <div class="card" style="width: 18rem;">
-          <img src="Admin_Gonzales.jpg" class="card-img-top" alt="">
+          <img src="instructors_folder/Admin_Gonzales.jpg" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">GONZALES, JERICK</h5>
             <p class="card-text">ADMIN AIDE II</p>
