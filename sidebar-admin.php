@@ -7,7 +7,7 @@
         left: 0;
         bottom: 0;
         width: 250px;
-        height: 140vh;
+        height: 170vh;
         overflow-y: auto;
         background: rgba(255, 255, 255, 0.92);
         box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.44);
@@ -146,7 +146,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="admin-external.php" style="font-size: 15px; margin" class="<?php if ($page == "admin-compliance.php") {
+                    <a href="admin-external.php" style="font-size: 15px; margin" class="<?php if ($page == "admin-external.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";

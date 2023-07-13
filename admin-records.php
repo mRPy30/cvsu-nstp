@@ -89,7 +89,7 @@ $page = $components[2];
                                     <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
                                 </div>
 
-                                <div class="records_box" id="senm_box">
+                                <div class="records_box" id="sem_box">
                                     <h3><i class="fa-regular fa-calendar"></i> Semester Records</h3>
                                 </div>  
                             </div>

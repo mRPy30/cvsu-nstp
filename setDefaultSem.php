@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($sql);
 
     // Redirect back to the page displaying the table
-    header("Location: recordsSemester.php");
+    header("Location: admin-records_Semester.php");
     exit();
 }
 ?>

@@ -5,7 +5,6 @@ include 'sidebar-admin.php';
 
 
 
-
 // Fetch course data from the database
 $query = "SELECT id, instructorName FROM instructor";
 $result = mysqli_query($conn, $query);
@@ -47,8 +46,9 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <!-- Google Font Link for Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="script.js" defer></script>
--
-    <title>Calendar</title>
+
+     <!---Inner topbar--->
+    <?php include('topbar.php'); ?>
     <style>
           body {
             font-family: Arial, sans-serif;

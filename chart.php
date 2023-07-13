@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","db_nstp");
+$con = mysqli_connect("localhost","root","","nstp_db");
 if(!$con){
     echo "Problem in database connection..." .mysqli_error();
 }else{
@@ -22,13 +22,13 @@ if(!$con){
 </head>
 
 <body>
-  <div class="row">
+  <div class="row" style="margin-left: 130px; margin-top: 70px;" >
     <div class="col-md-8 offset-md-2">
-      <div class="card">
+      <div class="card" style="box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);">
       <div class="card-header bg">
         <h1>Number of Enrolees</h1>
       </div>
-          <div class="card-body">
+          <div class="card-body" >
           <canvas id="chartjs_bar" style="width: 20px; height: 10px;"></canvas>
           </div>
       </div>
@@ -56,7 +56,7 @@ if(!$con){
                   display:true,
                   position:'bottom',
                   labels: {
-                      fontColor: 'orange',
+                      fontColor: '#008104',
                       fontFamily: 'poppins',
                       fontSize: 14,
                   }

@@ -11,7 +11,7 @@ if (isset($_POST['yearID']) && isset($_POST['deleteYear'])) {
     $conn->query($deleteQuery);
 
     // Redirect back to the page to refresh the expense table
-    header('Location: recordsYear.php');
+    header('Location: admin-records_Year.php');
     exit();
 
 }
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["yearID"]) && isset($_
     $stmt->close();
     
     // Redirect back to the same page after editing a semester
-    header("Location: recordsYear.php");
+    header("Location: admin-records_Year.php");
     exit();
 }
 // Code for adding a semester
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["yearName"])) {
     $stmt->close();
     
     // Redirect back to the same page after adding a semester
-    header("Location: recordsYear.php");
+    header("Location: admin-records_Year.php");
     exit();
 }
 ?>

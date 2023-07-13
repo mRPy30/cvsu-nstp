@@ -1,6 +1,8 @@
 
 <?php
+
 include 'db_connect.php';
+
 
 ?>
 
@@ -58,43 +60,38 @@ include 'db_connect.php';
     <!-------------------------------------- UPPER PART NG PAGE --------------------------------------------->
     
         <div class="upperbox">
-
             <h3>Semester List</h3>
-            
-       
             <a href="admin-records.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
-
-     
         </div>
 
        
          <!--------------------------------------TABLE NG CLASSES --------------------------------------------->
         <div class="align-tbl-year">
-        <div class="table-year-display">
+            <div class="table-year-display">
             <table id="course-table">
                 <thead>
                     <tr>
-                        <th>School Year</th>
+                        <th>Semester</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody class="scrollable-tbody">
                     <?php
-                        $sql = "SELECT * FROM tbl_year";
+                        $sql = "SELECT * FROM tbl_semester";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                $schoolyear = $row["yearName"];
-                                $yearID = $row["yearID"];
+                                $semester = $row["semesterName"];
+                                $semesterID = $row["semesterID"];
                                 ?>
-                        <tr>
-                            <td data-year="<?php echo $yearID; ?>"><?php echo $schoolyear; ?></td>
-                            <td><button onclick="editYear('<?php echo $yearID; ?>')" class="edit-button">Edit</button></td>
-                            <td><button class="delete-button" onclick="deleteYear(<?php echo $yearID; ?>)">Delete</button></td>  
-                        </tr>
+                               <tr>
+                                    <td data-semester="<?php echo $semesterID; ?>"><?php echo $semester; ?></td>
+                                    <td><button onclick="editSemester('<?php echo $semesterID; ?>')" class="edit-button">Edit</button></td>
+                                    <td><button class="delete-button" onclick="deleteSem(<?php echo $semesterID; ?>)">Delete</button></td>  
+                                </tr>
 
                                 <?php
                             }
@@ -115,29 +112,29 @@ include 'db_connect.php';
             <table id="semester-table">
                 <thead>
                     <tr>
-                        <th>Year</th>
+                        <th>Semester</th>
                         <th>Default</th>
                         <th>Set Default</th>
                     </tr>
                 </thead>
                 <tbody class="scrollable-tbody">
                     <?php
-                    $sql = "SELECT * FROM tbl_year";
+                    $sql = "SELECT * FROM tbl_semester";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            $yearName = $row["yearName"];
-                            $yearID = $row["yearID"];
+                            $semester = $row["semesterName"];
+                            $semesterID = $row["semesterID"];
                             $isDefault = $row["isDefault"];
                             ?>
                             <tr>
-                                <td><?php echo $yearName; ?></td>
+                                <td><?php echo $semester; ?></td>
                                 <td><?php echo ($isDefault) ? 'Yes' : 'No'; ?></td>
                                 <td>
                                     <?php if (!$isDefault) { ?>
-                                        <form method="POST" action="setDefaultYear.php">
-                                            <input type="hidden" name="yearID" value="<?php echo $yearID; ?>">
+                                        <form method="POST" action="setDefaultSem.php">
+                                            <input type="hidden" name="semesterID" value="<?php echo $semesterID; ?>">
                                             <button type="submit">Set as Default</button>
                                         </form>
                                     <?php } ?>
@@ -152,37 +149,32 @@ include 'db_connect.php';
                 </tbody>
             </table>
         </div>
-        </div>
-         <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
+
+
+
+
+
+        
+        <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
         <div class="add-box">
             <button id="add-year-button">Add Semester</button>
         </div>
     </div>
                 </div>
+    </div>
             </div>
         </main>
-     <!-----End Main content------>        
-        
-
-
-
-
-
-        
-       
-        
-
 
 
 
 
     <!----------------- POP UP FORM NG PAG ADD NG BAGONG CLASS -------------->
 
-        <div id="add-year-popup" class="form-popup">
-            <form method="post" class="form-container" id="add-year-form" action="admin-records_manageYear.php">
+        <div id="add-sem-popup" class="form-popup">
+            <form method="post" class="form-container" id="add-sem-form" action="manageSemester.php">
                 <h4>Add Class</h4>
-                <label for="add-year-name">School Year:</label>
-                <input type="text" name="yearName" placeholder="Enter Semester name">
+                <label for="add-semester-name">Section Name:</label>
+                <input type="text" name="semesterName" placeholder="Enter Semester name">
                 <button type="submit">Add Semester</button>
             </form>
         </div>
@@ -190,12 +182,12 @@ include 'db_connect.php';
    
     <!----------------- POP UP FORM PARA SA PAG EDIT NG ISANG CLASS -------------->
 
-        <div id="edit-year-popup" class="form-popup">
-            <form method="post" class="form-container" id="edit-year-form" action="admin-records_manageYear.php">
-                <h4>Edit Year</h4>
-                <input type="hidden" name="yearID" id="edit-yearID">
-                <label for="edit-yearName">Semester Name:</label>
-                <input type="text" id="edit-yearName" name="yearName" required>
+        <div id="edit-sem-popup" class="form-popup">
+            <form method="post" class="form-container" id="edit-sem-form" action="manageSemester.php">
+                <h4>Edit Sem</h4>
+                <input type="hidden" name="semesterID" id="edit-semesterID">
+                <label for="edit-semesterName">Semester Name:</label>
+                <input type="text" id="edit-semesterName" name="semesterName" required>
                 <br><br>
                 <div style="display: flex; justify-content: right;">
                 <button type="submit">Update Section</button>
@@ -206,9 +198,9 @@ include 'db_connect.php';
 
        
             
-        <form id="deleteYearForm" action="admin-records_manageYear.php" method="post">
-                <input type="hidden" name="yearID" id="yearIDInput">
-                <input type="hidden" name="deleteYear" value="1">
+        <form id="deleteSemForm" action="manageSemester.php" method="post">
+                <input type="hidden" name="semesterID" id="semesterIDInput">
+                <input type="hidden" name="deleteSemester" value="1">
          </form>             
 
 
@@ -217,113 +209,72 @@ include 'db_connect.php';
 
 
 
-<!-----End of Body------>
-</section>
+
     
      <!---------------------------------     JAVASCRIPT CODE ------------------------------------------>
     <script>
 
             // ---------------- JS PARA BUMUKAS YUNG POP UP FORM PARA SA PAG EDIT ---------------- //
 
-            function editYear(yearID) {
+            function editSemester(semesterID) {
                 // Get the edit form elements
-                var editYearPopup = document.getElementById('edit-year-popup');
-                var editYearForm = document.getElementById('edit-year-form');
-                var editYearID = document.getElementById('edit-yearID');
-                var editYearName = document.getElementById('edit-yearName');
+                var editSemPopup = document.getElementById('edit-sem-popup');
+                var editSemForm = document.getElementById('edit-sem-form');
+                var editSemesterID = document.getElementById('edit-semesterID');
+                var editSemesterName = document.getElementById('edit-semesterName');
 
-                // Set the yearID value in the form
-                editYearID.value = yearID;
+                // Set the semesterID value in the form
+                editSemesterID.value = semesterID;
 
-                // Get the current year name from the table cell
-                var yearName = document.querySelector('td[data-year="' + yearID + '"]').textContent;
+                // Get the current semester name from the table cell
+                var semesterName = document.querySelector('td[data-semester="' + semesterID + '"]').textContent;
 
-                // Set the current year name in the form
-                editYearName.value = yearName;
+                // Set the current semester name in the form
+                editSemesterName.value = semesterName;
 
                 // Show the edit form
-                editYearPopup.style.display = 'block';
+                editSemPopup.style.display = 'block';
             }
 
-            // Close the pop-up form
-            function closeForm() {
-                document.getElementById("edit-year-popup").style.display = 'none';
-            }
+                 // Close the pop-up form
+                function closeForm() {
+                    document.getElementById("edit-sem-popup").style.display = 'none';
+                }
 
-            // Close the edit section pop-up form when the cancel button is clicked
-            document.querySelector('#edit-year-popup .cancel-button').addEventListener('click', () => {
-                document.getElementById('edit-year-popup').style.display = 'none';
-            });
+                
+                // Close the edit section pop-up form when the cancel button is clicked
+                document.querySelector('#edit-sem-popup .cancel-button').addEventListener('click', () => {
+                        document.getElementById('edit-sem-popup').style.display = 'none';
+                    });
+
+
+
 
 
         // ---------------- JS PARA BUMUKAS YUNG POP UP FORM PARA SA PAG ADD NG BAGONG CLASS ---------------- //
 
                 // Get the button element
-                var addYearButton = document.getElementById('add-year-button');
+                var addSemButton = document.getElementById('add-sem-button');
 
                 // Get the popup form element
-                var addYearPopup = document.getElementById('add-year-popup');
+                var addSemPopup = document.getElementById('add-sem-popup');
 
                 // Add an event listener to the button for the click event
-                addYearButton.addEventListener('click', function(event) {    
+                addSemButton.addEventListener('click', function(event) {    
                     event.preventDefault();
-                    addYearPopup.style.display = 'block';
+                    addSemPopup.style.display = 'block';
                 });
 
 
     //--------------------------- DELETE CONFIRMATION PROMPT ------------------------------//
     // Delete confirmation prompt
-    function deleteYear(yearID) {
+    function deleteSem(semesterID) {
         if (confirm("Are you sure you want to delete this semester?")) {
-            document.getElementById('yearIDInput').value = yearID;
-            document.getElementById('deleteYearForm').submit();
+            document.getElementById('semesterIDInput').value = semesterID;
+            document.getElementById('deleteSemForm').submit();
         }
     }
 
-        // --------------------------------- JS PARA SA PAG SEARCH  ------------------------------- //
-
-        function searchTable() {
-            var input, filter, table, tbody, tr, td, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("course-table");
-            tbody = table.getElementsByTagName("tbody")[0];
-            tr = tbody.getElementsByTagName("tr");
-
-            // Loop through all table rows and hide those that don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0]; // Assuming the section name is in the first column
-
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-
-        // --------------------------------- JS PARA SA PAG PRINT  ------------------------------- //
-        
-        // Print function
-         function printPage() {
-            // Hide the unnecessary elements
-            var elementsToHide = document.querySelectorAll('.upperbox, .lowerbox, .searchbox');
-            for (var i = 0; i < elementsToHide.length; i++) {
-                elementsToHide[i].style.display = 'none';
-            }
-
-            // Print the page
-            window.print();
-
-            // Show the hidden elements after printing
-            for (var i = 0; i < elementsToHide.length; i++) {
-                elementsToHide[i].style.display = '';
-            }
-        }
 
     </script>
 </body>
