@@ -7,7 +7,7 @@
         left: 0;
         bottom: 0;
         width: 250px;
-        height: 170vh;
+        height: 160vh;
         overflow-y: auto;
         background: rgba(255, 255, 255, 0.92);
         box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.44);

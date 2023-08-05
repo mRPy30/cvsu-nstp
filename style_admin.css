@@ -1245,11 +1245,12 @@ body{
 }
 .pcoded-main-content .rec-content
     .align-tbl-year #semester-table form button{
-    width: 70px;
-    padding: 1px;
+    width: 110px;
+    padding: 2px 2px 2px 2px;
     display: block;
     background-color: lightgray;
     border-radius: 5px;
+    border: none;
 }
 /****************School YEar***********************/
 

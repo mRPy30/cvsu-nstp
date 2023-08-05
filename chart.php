@@ -8,7 +8,7 @@ if(!$con){
     $chart_data = "";
     while($row = mysqli_fetch_array($result)){
         $num_enrolees[] = $row['courseName'];
-        $course[] = $row['enrolees'];
+        $course[] = $row['enrollees'];
     }
 }
 ?>
@@ -26,7 +26,7 @@ if(!$con){
     <div class="col-md-8 offset-md-2">
       <div class="card" style="box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);">
       <div class="card-header bg">
-        <h1>Number of Enrolees</h1>
+        <h1>Number of Enrollees</h1>
       </div>
           <div class="card-body" >
           <canvas id="chartjs_bar" style="width: 20px; height: 10px;"></canvas>
