@@ -6,9 +6,9 @@ session_start();
 
 
 
-$selectedsectionID = "";
-$selectedsectionName = "";
-$selectedCourseName = "";
+    $selectedsectionID = "";
+    $selectedsectionName = "";
+    $selectedCourseName = "";
 
 if (isset($_GET['sectionID']) && isset($_GET['sectionName'])) {
     $selectedsectionID = $_GET['sectionID'];

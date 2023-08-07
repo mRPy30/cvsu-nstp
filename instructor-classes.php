@@ -1,13 +1,76 @@
 <?php
-// Active Sidebar Page
+include "db_connect.php";
 
-$directoryURI = $_SERVER['REQUEST_URI'];
+session_start();
+$accountID = $_SESSION['id'];
 
-$path = parse_url($directoryURI, PHP_URL_PATH);
+    // Count query for student
+    $query = "SELECT COUNT(id) AS total_students FROM student";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $totalStudents = $row['total_students'];
 
-$components = explode('/', $path);
+    // query for the name of the instructor
+    $query = "SELECT instructorName FROM instructor WHERE id = '$accountID'";
+    $result = mysqli_query($conn, $query);
 
-$page = $components[2];
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $instructorName = $row['instructorName'];
+    } else {
+        // Handle the case if the instructor is not found
+        $instructorName = "Unknown";
+    }
+
+    
+    // query for the description of the instructor
+    $query = "SELECT instructorDescription FROM instructor WHERE id = '$accountID'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $instructorDesc = $row['instructorDescription'];
+    } else {
+        // Handle the case if the instructor is not found
+        $instructorDesc = "Unknown";
+    }
+
+    // query for the instructor handled courseID
+    $query = "SELECT tbl_course.courseID FROM instructor
+    LEFT JOIN tbl_course ON instructor.courseID = tbl_course.courseID
+    WHERE instructor.id = '$accountID'";
+    $result = mysqli_query($conn, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $CourseID = $row['courseID'];
+    } else {
+        // Handle the case if the course ID is not found
+         $CourseID = "0";
+    }
+    
+     // query for the instructor handled course
+     $query = "SELECT tbl_course.unit FROM instructor
+     LEFT JOIN tbl_course ON instructor.courseID = tbl_course.courseID
+     WHERE instructor.id = '$accountID'";
+     $result = mysqli_query($conn, $query);
+     if ($result && mysqli_num_rows($result) > 0) {
+     $row = mysqli_fetch_assoc($result);
+     $courseUnit = $row['unit'];
+     } else {
+         // Handle the case if the course unit is not found
+          $courseUnit = "0.00";
+     }
+
+
+    // Fetch sections for the selected course from the database
+    $sql = "SELECT sectionName FROM tbl_sections WHERE courseID = '$accountID'";
+    $result = $conn->query($sql);
+    
+    // Active Sidebar Page
+    $directoryURI = $_SERVER['REQUEST_URI'];
+    $path = parse_url($directoryURI, PHP_URL_PATH);
+    $components = explode('/', $path);
+    $page = $components[2];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +85,7 @@ $page = $components[2];
     <title><?php echo "Instructor Page"; ?></title>
 
      <!----------CSS------------>
-    <link rel="stylesheet" href="style_instructor.css">
+    <link rel="stylesheet" href="style_instructors.css">
 
      <!----------BOOTSTRAP------------>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -52,25 +115,26 @@ $page = $components[2];
         <!---------End Sidebar--------->
 
         <!--Main Content-->
-        <main class="pcoded-main-content">
+<main class="pcoded-main-content">
     <div class="container pt-4">
             <div class="col-lg-12">
                 <div class="box-classes">
                         <div class="box-classes_left">
                             <i class="fa-solid fa-user"></i>
-                            <h5>Mark B. Villar</h5>
+                            <h5><?php echo " $instructorName" ?> </h5>
+                            <p><?php echo "$instructorDesc" ?> </p>
                         </div>
                         <div class="box-classes_right">
-                            <h2>80</h2>
+                            <h2><?php echo $totalStudents; ?></h2>
                             <p>STUDENTS</p>
                         </div>
                 </div>
                 <div class="class_info">
-                    <h3>Subject Code: 1</h3>
-                    <p>UNIT 2.00</p>
+                    <h3>Program code: <?php echo $CourseID; ?></h3>
+                    <p>Unit: <?php echo $courseUnit; ?></p>
                 </div>
 
-                <a href="instructor-classes_section.php">
+                <!--<a href="">
                 <div class="section_box">
                     <h4>BSIT 1-C</h4>
                     <div class="sec_box_inner">
@@ -80,10 +144,34 @@ $page = $components[2];
                         <p>Schedule</p>
                      </div>
                 </div>
-                </a>
+                </a>-->
+                <div class="sections-display">
+                    <?php
+                        // Check if there are any sections
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $sectionName = $row['sectionName'];
+                                $encodedSectionName = urlencode($sectionName);
+                                
 
-                
-                         
+                                echo "<a href='instructor-classes_section.php?sectionName=$encodedSectionName'>";
+                                echo "<div class='section_box'>";
+                                echo "<h4> $sectionName</h4>";
+                                echo "<div class='sec_box_inner'>";
+                                echo "<h3> $totalStudents </h3>";
+                                echo "<p>Number Of Student</p>";
+                                echo "<h3>7:00 - 9:00</h3>";
+                                echo "<p>Schedule</p>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</a>";
+                            }
+                        } else {
+                            echo "No sections found.";
+                        }
+                        ?>  
+                </div>
+                            
             </div>
         </div>
     </div>

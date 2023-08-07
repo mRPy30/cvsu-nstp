@@ -96,7 +96,7 @@ $page = $components[2];
                 <div class="col-lg-12">
                     <div class="instructor_prof">
                         <h1><?php echo "$instructorCourse" ?></h1>
-                        <p>Instructor Name:  <?php echo " $instructorName" ?>
+                        <p>Instructor Name:  <?php echo " $instructorName" ?> </p>
                         <div class="profile_img">
                             <img src="INSTRUCTORS & coor/Abayari.jpg">
                         </div>

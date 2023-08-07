@@ -129,19 +129,7 @@ $page = $components[2];
         document.getElementById('sem_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Semester.php';
         });
-
-
-
-
-
-
-
-
-
         
-
-
-
     </script>
 </body>
 </html>    

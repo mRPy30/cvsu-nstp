@@ -1,13 +1,77 @@
 <?php
+
+include 'db_connect.php';
+
+
+session_start();
+
+$selectedsectionID = "";
+$selectedsectionName = "";
+$selectedCourseName = "";
+
+if (isset($_GET['sectionID']) && isset($_GET['sectionName'])) {
+    $selectedsectionID = $_GET['sectionID'];
+    $selectedsectionName = $_GET['sectionName'];
+
+    $_SESSION['selectedsectionID'] = $selectedsectionID;
+    $_SESSION['selectedsectionName'] = $selectedsectionName;
+
+} elseif (isset($_SESSION['selectedsectionID']) && isset($_SESSION['selectedsectionName'])) {
+    $selectedsectionID = $_SESSION['selectedsectionID'];
+    $selectedsectionName = $_SESSION['selectedsectionName'];
+}
+
+
+
+
+
+
+
+
+// Fetch section details from the database
+$sql = "SELECT * FROM tbl_sections WHERE sectionID = '$selectedsectionID'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $sectionData = $result->fetch_assoc();
+    $courseID = $sectionData['courseID'];
+
+    // Fetch course name from the database
+    $sql = "SELECT courseName FROM tbl_course WHERE courseID = '$courseID'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $courseData = $result->fetch_assoc();
+        $selectedCourseName = $courseData['courseName'];
+    }
+}
+
+
+$sql = "SELECT id, name FROM student WHERE sectionID = '$selectedsectionID'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $students = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    $students = array();
+}
+
+$sql = "SELECT id FROM student WHERE sectionID = '$selectedsectionID'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $studentID = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    $studentID = array();
+}
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
-
 $path = parse_url($directoryURI, PHP_URL_PATH);
-
 $components = explode('/', $path);
-
 $page = $components[2];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +86,7 @@ $page = $components[2];
     <title><?php echo "Instructor Page"; ?></title>
 
      <!----------CSS------------>
-    <link rel="stylesheet" href="style_instructor.css">
+    <link rel="stylesheet" href="style_instructors.css">
 
      <!----------BOOTSTRAP------------>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -62,8 +126,8 @@ $page = $components[2];
                             <ion-icon name="arrow-back-circle-outline"></ion-icon>
                         </a>                  
                         <div class="section_name">
-                            <h1>bsit1-c</h1>
-                            <p>2023 : May: 15 12: 30: 27</p>
+                            <h1><?php echo " $selectedsectionName" ?></h1>
+                            <p id="datetime"></p>
                         </div>
                         <div class="class_navs">
                             <ul class="nav nav-underline">
@@ -85,30 +149,31 @@ $page = $components[2];
                                     <th scope="col" class="col-2"> Total Attendance</th>
                                 </tr>
                                 </thead>
-                                    <tbody>
+                                    <tbody class="scrollable-tbody">
+                                        <?php if (!empty($students)): ?>
+                                        <?php foreach ($students as $student): ?>
+                                        <?php foreach ($students as $studentid): ?>
                                         <tr>
-                                            <td>202110115</td>
-                                            <th>Agustine Cuevas</th>
+                                            <td><?php echo $studentid['id']; ?></td>
+                                            <td>
+                                                <a
+                                                    href="instructor-student_info.php?id=<?php echo $student['id']; ?>">
+                                                    <?php echo $student['name']; ?>
+                                                </a>
+                                            </td>
                                             <td><input type="text"></td>
                                         </tr>
+                                        <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                        <?php else: ?>
+                                        <tr>
+                                            <td colspan="4">No students found.</td>
+                                        </tr>
+                                        <?php endif; ?>
+                    
                                         <tr>
                                             <td>202110116</td>
                                             <th><a href="instructor-student_info.php">Bianca Bautista</a></th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>202110117</td>
-                                            <th>Agustine Cuevas</th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>202110118</td>
-                                            <th>Bianca Bautista</th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>202110119</td>
-                                            <th>Nicole Masigasig</th>
                                             <td><input type="text"></td>
                                         </tr>
                                     </tbody>
@@ -120,6 +185,21 @@ $page = $components[2];
         <!-----End Main content------>
 </section>
 
+<script>
+    // Function to update the date and time display
+    function updateDateTime() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Manila' };
+      const formattedDateTime = now.toLocaleDateString('en-PH', options);
+      
+      document.getElementById('datetime').textContent = formattedDateTime;
+    }
 
+    // Update the date and time initially
+    updateDateTime();
+
+    // Update the date and time every second
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
 </html>

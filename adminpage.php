@@ -1,6 +1,6 @@
 <?php
     // Database connection
-    $conn = mysqli_connect("localhost", "root", "", "db_nstp");
+    include "db_connect.php";
 
     // Count query for student
     $query = "SELECT COUNT(id) AS total_students FROM student";
@@ -22,11 +22,8 @@
     // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
-
 $path = parse_url($directoryURI, PHP_URL_PATH);
-
 $components = explode('/', $path);
-
 $page = $components[2];
 
 
