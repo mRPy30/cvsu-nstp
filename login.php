@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>LOGIN PAGE</title>
     
     <!---------CSS LINK------------>
-    <link rel="stylesheet" href="style_log-in_&_signup.css">
+    <link rel="stylesheet" href="style_log-in_&_sign-up.css">
    
      <!----------BOOTSTRAP------------>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <p>NSTP PROGRAM</p>
                     </div>
                     <div class="col-4 home">
-                        <a href="student.php" class="home-link "><i class="fa-solid fa-house"></i></a>
+                        <a href="homepage.php" class="home-link "><i class="fa-solid fa-house"></i></a>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <label class="enter" for="id">Enter your ID:</label>
                                 <input type="text is-valid" class="form-control" placeholder="Enter your Id" name="id" required>
                                 <label class="pass log" for="password">Password:</label>
-                                <input type="password is-valid" class="form-control" placeholder="Enter your Password" name="password" id="password" required>
+                                <input type="password is-valid" class="form-control" placeholder="Enter your Password" name="password" id="password" required onclick="togglePasswordVisibility()">
                                 <span class="password-toggle" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
                                 <span class="error" id="passwordError"></span>
                                     <button class="btn btn-lg btn-block" type="submit" name="submit" value="Submit">LOGIN</button>

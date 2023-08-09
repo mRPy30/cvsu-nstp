@@ -70,7 +70,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <title>SIGN UP PAGE</title>
 
     <!---------Css link------------>
-    <link rel="stylesheet" href="style_log-in_&_signup.css">
+    <link rel="stylesheet" href="style_log-in_&_sign-up.css">
 
     <!-----------bootsrap------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -101,7 +101,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <p>NSTP PROGRAM</p>
                     </div>
                     <div class="col-4 home">
-                        <a href="student.php" class="home-link"><i class="fa-solid fa-house"></i></a>
+                        <a href="homepage.php" class="home-link"><i class="fa-solid fa-house"></i></a>
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <div class="form-control">
                                 <div class="box-control">
                                     <div class="form-control-1">
-                                        <label for="course">Course:</label>
+                                        <label for="course">Training Program:</label>
                                             <select name='course' id="course">
                                                 <?php foreach ($courses as $course) : ?>
                                                     <option value="<?php echo $course['courseID']; ?>"><?php echo $course['courseName']; ?></option>
