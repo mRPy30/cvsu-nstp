@@ -31,6 +31,8 @@ if ($result && mysqli_num_rows($result) > 0) {
     // Handle the case if the instructor is not found
     $instructorName = "Unknown";
 }
+
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -94,9 +96,9 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="pt-4 ">
                 <div class="col-lg-12">
-                    <div class="instructor_prof">
+                <div class="instructor_prof">
                         <h1><?php echo "$instructorCourse" ?></h1>
-                        <p>Instructor Name:  <?php echo " $instructorName" ?> </p>
+                        <p>Instructor Name:  <?php echo " $instructorName" ?>
                         <div class="profile_img">
                             <img src="INSTRUCTORS & coor/Abayari.jpg">
                         </div>
@@ -131,5 +133,4 @@ $page = $components[2];
     </section>
     <!-----End of Body------>
 </body>
-
 </html>

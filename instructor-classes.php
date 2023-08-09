@@ -134,17 +134,7 @@ $accountID = $_SESSION['id'];
                     <p>Unit: <?php echo $courseUnit; ?></p>
                 </div>
 
-                <!--<a href="">
-                <div class="section_box">
-                    <h4>BSIT 1-C</h4>
-                    <div class="sec_box_inner">
-                        <h5>40</h5>
-                        <p>Number of students</p>
-                        <h5>7:00 - 9:00</h5>
-                        <p>Schedule</p>
-                     </div>
-                </div>
-                </a>-->
+              
                 <div class="sections-display">
                     <?php
                         // Check if there are any sections

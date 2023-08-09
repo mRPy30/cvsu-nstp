@@ -9,26 +9,9 @@ $selectedsectionID = "";
 $selectedsectionName = "";
 $selectedCourseName = "";
 
-if (isset($_GET['sectionID']) && isset($_GET['sectionName'])) {
-    $selectedsectionID = $_GET['sectionID'];
-    $selectedsectionName = $_GET['sectionName'];
-
-    $_SESSION['selectedsectionID'] = $selectedsectionID;
-    $_SESSION['selectedsectionName'] = $selectedsectionName;
-
-} elseif (isset($_SESSION['selectedsectionID']) && isset($_SESSION['selectedsectionName'])) {
-    $selectedsectionID = $_SESSION['selectedsectionID'];
-    $selectedsectionName = $_SESSION['selectedsectionName'];
-}
 
 
-
-
-
-
-
-
-// Fetch section details from the database
+// Fetch section info
 $sql = "SELECT * FROM tbl_sections WHERE sectionID = '$selectedsectionID'";
 $result = $conn->query($sql);
 
@@ -36,17 +19,7 @@ if ($result->num_rows > 0) {
     $sectionData = $result->fetch_assoc();
     $courseID = $sectionData['courseID'];
 
-    // Fetch course name from the database
-    $sql = "SELECT courseName FROM tbl_course WHERE courseID = '$courseID'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $courseData = $result->fetch_assoc();
-        $selectedCourseName = $courseData['courseName'];
-    }
-}
-
-
+// Fetch name and student id
 $sql = "SELECT id, name FROM student WHERE sectionID = '$selectedsectionID'";
 $result = $conn->query($sql);
 
@@ -55,15 +28,22 @@ if ($result->num_rows > 0) {
 } else {
     $students = array();
 }
-
-$sql = "SELECT id FROM student WHERE sectionID = '$selectedsectionID'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $studentID = $result->fetch_all(MYSQLI_ASSOC);
-} else {
-    $studentID = array();
 }
+// Attendance into the database
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) {
+    $attendanceData = $_POST['attendance'];
+
+    // Loop through each student's attendance and insert into the database
+    foreach ($attendanceData as $studentId => $attendance) {
+        $insertQuery = "INSERT INTO student (id, attendance) VALUES ('$studentId', '$attendance')";
+       
+    }
+    // Redirect back to the page to refresh the section table
+     header("Location: instructor-classes_section.php");
+     exit();
+ }
+
+
 
 // Active Sidebar Page
 
@@ -113,6 +93,8 @@ $page = $components[2];
 <!----Body----->
 
 <body>
+<?php  echo "$selectedsectionID"; ?>
+    
     <section class="bg-section">
         <!---------Sidebar------------>
         <?php include('sidebar-instructor.php');?>
@@ -137,11 +119,12 @@ $page = $components[2];
                                 <li class="nav-item">
                                   <a class="nav-link" href="instructor-classes_section_grades.php">Grades</a>
                                 </li>
-                                <button type="button" type="submit" class="btn" value="submit">Submit</button>
+
                               </ul>
                         </div>
                         <div class="tbl_masterlist">
-                            <table class="table table-hover">
+                        <form method="post">
+                            <table class="table table-hover" method="post">
                                 <thead class="title bar">
                                 <tr>
                                     <th scope="col" class="col-3">Student Number</th>
@@ -161,7 +144,9 @@ $page = $components[2];
                                                     <?php echo $student['name']; ?>
                                                 </a>
                                             </td>
-                                            <td><input type="text"></td>
+                                            <td>
+                                                <input type="number" name="attendance[<?php echo $student['id']; ?>]" value="0">
+                                            </td>
                                         </tr>
                                         <?php endforeach; ?>
                                         <?php endforeach; ?>
@@ -170,7 +155,7 @@ $page = $components[2];
                                             <td colspan="4">No students found.</td>
                                         </tr>
                                         <?php endif; ?>
-                    
+                                            
                                         <tr>
                                             <td>202110116</td>
                                             <th><a href="instructor-student_info.php">Bianca Bautista</a></th>
@@ -178,6 +163,8 @@ $page = $components[2];
                                         </tr>
                                     </tbody>
                             </table>
+                            <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                        </form>
                         </div>
                     </div>
                 </div>
