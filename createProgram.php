@@ -1,48 +1,37 @@
 <?php
-
 include 'db_connect.php';
-// Fetch course data from the database
-$query = "SELECT id, instructorName FROM instructor";
-$result = mysqli_query($conn, $query);
-$instructor = mysqli_fetch_all($result, MYSQLI_ASSOC);
-$query = "SELECT p.programID, p.programName, p.programLocation, p.description, p.instructorID, p.scheduleDate, p.start_time, p.end_time, i.instructorName
-            FROM tbl_program p
-            INNER JOIN instructor i ON p.instructorID = i.id";
-
-$result = mysqli_query($conn, $query);
 
 $programs = array(); // Initialize an empty array to store program details
 
-if ($result && mysqli_num_rows($result) > 0) {
-    while ($program = mysqli_fetch_assoc($result)) {
-        // Retrieve the individual values
-        $programID = $program['programID'];
-        $programName = $program['programName'];
-        $programLocation = $program['programLocation'];
-        $description = $program['description'];
-        $instructorID = $program['instructorID'];
-        $scheduleDate = $program['scheduleDate'];
-        $start_time = $program['start_time'];
-        $end_time = $program['end_time'];
-        $instructorName = $program['instructorName'];
+$sql = "SELECT p.*, i.instructorName
+        FROM tbl_program p
+        JOIN instructor i ON p.instructorID = i.id";
+$result_program = $conn->query($sql);
 
+if ($result_program->num_rows > 0) {
+    while ($row = $result_program->fetch_assoc()) {
         // Store the program details in the array
         $programs[] = array(
-            'programID' => $programID,
-            'programName' => $programName,
-            'programLocation' => $programLocation,
-            'description' => $description,
-            'instructorID' => $instructorID,
-            'scheduleDate' => $scheduleDate,
-            'start_time' => $start_time,
-            'end_time' => $end_time,
-            'instructorName' => $instructorName
+            'programID' => $row["programID"],
+            'programName' => $row["programName"],
+            'programLocation' => $row["programLocation"],
+            'description' => $row["description"],
+            'instructorID' => $row["instructorID"],
+            'instructorName' => $row["instructorName"],
+            'scheduleDate' => $row["scheduleDate"],
+            'start_time' => $row["start_time"],
+            'end_time' => $row["end_time"]
         );
     }
+} else {
+    echo "<tr><td colspan='9'>No records found</td></tr>";
 }
+
+
+$query = "SELECT id, instructorName FROM instructor";
+$result = mysqli_query($conn, $query);
+$instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -481,7 +470,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 }
 
                 .form-control input{
-                width: 205px;
+                width: 150px;
                 border: 1px solid black;
                 font-size: 14px;
                 border-radius: 5px;
@@ -493,7 +482,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 }
 
                 #programName {
-                width: 200px;
+                width: 150px;
                 border: 1px solid black;
                 font-size: 14px;
                 border-radius: 5px;
@@ -502,15 +491,17 @@ if ($result && mysqli_num_rows($result) > 0) {
                 }
 
                 #programLocation {
-                width: 200px;
+                width: 150px;
                 border: 1px solid black;
                 font-size: 14px;
                 border-radius: 5px;
                 padding: 12px;
                 display: block;
+                margin-bottom: 23px;
                 }
+
                 .form-control select{
-                width: 300px;
+                width: 178px;
                 border: 1px solid black;
                 font-size: 14px;
                 border-radius: 5px;
@@ -519,7 +510,8 @@ if ($result && mysqli_num_rows($result) > 0) {
                 }
 
                 .form-control textarea {
-                width: 200px;
+                width: 150px;
+                height: 113px;
                 border: 1px solid black;
                 font-size: 14px;
                 border-radius: 5px;
@@ -530,12 +522,10 @@ if ($result && mysqli_num_rows($result) > 0) {
                 .form-control input:focus,
                 .form-control select:focus,
                 .form-control textarea:focus {
-                border-color: #777;
+                border-color: black;
                 }
 
-                .form-control select {
-                width: 230px;
-                }
+           
 
                 .form-control2 {
                 margin-bottom: 10px;
@@ -554,13 +544,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                 }
 
                 .form-container {
-                max-width: 230px;
+                max-width: 359px;
+                border-radius: 10px;
+
                 }
 
                 .form-popup {
                 display: none;
                 position: fixed;
-
                 width: 100%;
                 height: 100%;
                 overflow: auto;
@@ -576,7 +567,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 margin: 10% auto;
                 background-color: #fefefe;
                 padding: 20px;
-                border: 1px solid #888;
+                border: 1px solid black;
                 width: 80%;
                 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
                 }
@@ -591,137 +582,114 @@ if ($result && mysqli_num_rows($result) > 0) {
                 color: white;
                 border: none;
                 cursor: pointer;
-                width: 100%;
+                width: 30%;
                 padding: 10px;
-                margin-top: 10px;
+                margin-top: 20px;
+                border: solid 1px black;
+                border-radius: 3px;
+                margin-left: 139px;
+                }
+
+                .form-container button[type="button"] {
+                background-color: white;
+                color: black;
+                border: none;
+                cursor: pointer;
+                width: 30%;
+                padding: 10px;
+                margin-top: 20px;
+                border: solid 1px black;
+                border-radius: 3px;
+                
                 }
 
                 .form-container button[type="submit"]:hover {
                 background-color: #45a049;
                 }
 
+                .form-container button[type="button"]:hover {
+                background-color: gray;
+                }
+
                 .form-container .form-control:last-child {
                 margin-bottom: 0;
                 }
 
+                .popup-box{
+                
+                 display: flex;
+                 justify: space-evenly;
+                }
+
+                .first-column{
+                    margin-right:10px;
+                }
+
     </style>
 </head>
-<body>
-    <!-- Topbar -->
-    <div class="topbar">
-        <a class="logout" href="log-in.php">Logout</a>
-    </div>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <ul>
-            <li><a href="adminpage.php">Home</a></li>
-            <li><a href="records.php">Records</a></li>
-            <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="programs.php">Programs</a></li>
-            <li><a href="feedback.php">Feedback</a></li>
-            <li><a href="reports.php">Reports</a></li>
-            <li><a href="compliance.php">Compliance</a></li>
-        </ul>
-    </div>
-
-    <!-- Main content -->
-    <div class="content">
-
-        <div class="upperbox">
-            <h4>PROGRAMS</h4>
-            <a href="programs.php" class="go-back-button">Go Back</a>
+ <body>
+                    <!-- Topbar -->
+        <div class="topbar">
+            <a class="logout" href="log-in.php">Logout</a>
         </div>
 
-        <div class="middlebox">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="adminpage.php">Home</a></li>
+                <li><a href="records.php">Records</a></li>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="programs.php">Programs</a></li>
+                <li><a href="feedback.php">Feedback</a></li>
+                <li><a href="reports.php">Reports</a></li>
+                <li><a href="compliance.php">Compliance</a></li>
+            </ul>
+        </div>
 
-        
+        <!-- Main content -->
+        <div class="content">
 
-        <div class="tabledisplay">
-            <table id="course-table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Location</th>
-                        <th>Description</th>
-                        <th>Instructor</th>
-                        <th>Date</th>
-                        <th>start_time</th>
-                        <th>end_time</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody class="scrollable-tbody">
-                <?php
-include 'db_connect.php';
+            <div class="upperbox">
+                <h4>PROGRAMS</h4>
+                <a href="programs.php" class="go-back-button">Go Back</a>
+            </div>
 
-$sql = "SELECT * FROM tbl_program";
-$result_program = $conn->query($sql);
-
-if ($result_program->num_rows > 0) {
-    while ($row = $result_program->fetch_assoc()) {
-        $title = $row["programName"];
-        $programID = $row["programID"];
-        $location = $row["programLocation"];
-        $scheduleDate = $row["scheduleDate"];
-        $start_time = $row["start_time"];
-        $end_time = $row["end_time"];
-        $description = $row["description"];
-
-        $query = "SELECT i.instructorName
-        FROM tbl_program p
-        JOIN instructor i ON p.instructorID = i.id";
-        $result_instructor = mysqli_query($conn, $query);
-
-        if ($result_instructor) {
-            // Fetch the row from the result
-            $row_instructor = $result_instructor->fetch_assoc();
-
-            // Store the instructor name in the variable
-            $instructorName = $row_instructor["instructorName"];
-        }
-
-        $programs[] = array(
-            'programID' => $programID,
-            'programName' => $title,
-            'programLocation' => $location,
-            'description' => $description,
-            'instructorName' => $instructorName,
-            'scheduleDate' => $scheduleDate,
-            'start_time' => $start_time,
-            'end_time' => $end_time
-        );
-
-        ?>
-        <script>
-            var programs = <?php echo json_encode($programs); ?>;
-        </script>
-        <tr>
-            <td><?php echo $title; ?></td>
-            <td><?php echo $location; ?></td>
-            <td><?php echo $description; ?></td>
-            <td><?php echo $instructorName; ?></td>
-            <td><?php echo $scheduleDate; ?></td>
-            <td><?php echo $start_time; ?></td>
-            <td><?php echo $start_time; ?></td>
-            <td><button onclick="openEditForm('<?php echo $programID; ?>')" class="edit-button">Edit</button></td>
-            <td><button class="delete-button" onclick="deleteSem(<?php echo $semesterID; ?>)">Delete</button></td>
-        </tr>
-
-        <?php
-    }
-} else {
-    echo "<tr><td colspan='3'>No records found</td></tr>";
-}
-?>
-                </tbody>
-            </table>
-
+            <div class="middlebox">
 
             
-        </div>
 
+            <div class="tabledisplay">
+        <table id="course-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Instructor</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody class="scrollable-tbody">
+                <?php foreach ($programs as $program): ?>
+                    <tr>
+                        <td><?php echo $program['programName']; ?></td>
+                        <td><?php echo $program['programLocation']; ?></td>
+                        <td><?php echo $program['description']; ?></td>
+                        <td><?php echo $program['instructorName']; ?></td>
+                        <td><?php echo $program['scheduleDate']; ?></td>
+                        <td><?php echo $program['start_time']; ?></td>
+                        <td><?php echo $program['end_time']; ?></td>
+                        <td><button class="edit-button" onclick="openEditForm(<?php echo $program['programID']; ?>)" data-program-id="<?php echo $program['programID']; ?>">Edit</button></td>
+                        <td><button class="delete-button" onclick="deleteYear(<?php echo $program['programID']; ?>)">Delete</button></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
 
 
@@ -737,7 +705,7 @@ if ($result_program->num_rows > 0) {
         
         <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
         <div class="lowerbox">
-            <button id="add-program-button" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Add Semester</button>
+            <button id="add-program-button" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Add Program</button>
         </div>
     </div>
 
@@ -749,8 +717,9 @@ if ($result_program->num_rows > 0) {
 
     <div id="add-program-popup" class="form-popup">
     <form method="post" class="form-container" id="add-program-form" action="manageProgram.php">
-        <h4>Add Program</h4>
-
+       
+        <div class="popup-box">
+        <div class="first-column">
         <div class="form-control">
             <label for="programName">Title:</label>
             <input type="text" name="programName" id="programName" class="unique-input" placeholder="Enter Title">
@@ -766,18 +735,24 @@ if ($result_program->num_rows > 0) {
             <textarea name="description" rows="3" placeholder="Enter Description"></textarea>
         </div>
 
+
+        </div>
+
+        <div class="second-column">
+
         <div class="form-control">
-                <label for="instructor">Instructor</label>
-                <br>
-                <select name="instructor_id" id="instructor_id" class="custom-select">
-                  <?php foreach ($instructor as $row): ?>
+            <label for="instructor">Instructor</label>
+            <br>
+            <select name="instructor_id" id="instructor_id" class="custom-select">
+                <?php foreach ($instructors as $row): ?>
                     <option value="<?php echo $row['id']; ?>"><?php echo $row['instructorName']; ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
+                <?php endforeach; ?>
+            </select>
+        </div>
 
           
-
+   
+        
         <div class="form-control">
             <label for="scheduleDate">Date:</label>
             <input type="date" name="scheduleDate">
@@ -792,8 +767,12 @@ if ($result_program->num_rows > 0) {
             <label for="end_time">End Time:</label>
             <input type="time" name="end_time">
         </div>
+        </div>
 
+        </div>
         <button type="submit">Add Program</button>
+        <button type="button" id="cancelButton">Cancel</button>
+        
     </form>
 </div>
 
@@ -801,58 +780,68 @@ if ($result_program->num_rows > 0) {
     <!----------------- POP UP FORM PARA SA PAG EDIT ------------->
 
       
- 
-<div id="edit-program-popup" class="form-popup" style="display: none;">
-    <form method="post" class="edit-container" id="edit-program-form" action="manageProgram.php">
-        <h4>Edit Program</h4>
+        <div id="edit-program-popup" class="form-popup">
+        <form method="post" class="form-container" id="edit-program-form" action="manageProgram.php">
+            <h4>Edit Program</h4>
+            <div class="popup-box">
 
-        <div class="form-control">
-            <label for="editProgramName">Title:</label>
-            <input type="text" name="editProgramName" id="editProgramName" class="unique-input" placeholder="Enter Title">
-        </div>
-
-        <div class="form-control">
-            <label for="editProgramLocation">Location:</label>
-            <input type="text" name="editProgramLocation" id="editProgramLocation" class="unique-input" placeholder="Enter Location">
-        </div>
-
-        <div class="form-control">
-            <label for="editDescription">Description:</label>
-            <textarea name="editDescription" id="editDescription" rows="3" placeholder="Enter Description"></textarea>
-        </div>
-
-        <div class="form-control">
-            <label for="editInstructor">Instructor:</label>
-            <select name="editInstructor" id="editInstructor" class="custom-select">
-                <?php foreach ($instructor as $row): ?>
-                    <option value="<?php echo $row['id']; ?>"><?php echo $row['instructorName']; ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-
-        <div class="form-control">
-            <label for="editScheduleDate">Date:</label>
-            <input type="date" name="editScheduleDate" id="editScheduleDate">
-        </div>
-
-        <div class="form-control">
-            <label for="editStartTime">Start Time:</label>
-            <input type="time" name="editStartTime" id="editStartTime">
-        </div>
-
-        <div class="form-control">
-            <label for="editEndTime">End Time:</label>
-            <input type="time" name="editEndTime" id="editEndTime">
-        </div>
-
-        <button type="submit">Update Program</button>
-    </form>
-</div>
+            <input type="hidden" name="updateProgramID" value="<?php echo $program['programID']; ?>">
 
 
-        <form id="deleteSemForm" action="manageSemester.php" method="post">
-                <input type="hidden" name="semesterID" id="semesterIDInput">
-                <input type="hidden" name="deleteSemester" value="1">
+                <div class="first-column">
+                    <div class="form-control">
+                        <label for="programName">Title:</label>
+                        <input type="text" name="programName" id="program_Name" class="unique-input" placeholder="Enter Title">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="programLocation">Location:</label>
+                        <input type="text" name="programLocation" id="program_Location" class="unique-input" placeholder="Enter Location">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="description">Description:</label>
+                        <textarea name="description"  id="description" rows="3" placeholder="Enter Description"></textarea>
+                    </div>
+                </div>
+
+                <div class="second-column">
+
+                <div class="form-control">
+                    <label for="instructor_id">Instructor</label>
+                    <br>
+                    <select name="instructor_id" id="instructorName" class="custom-select">
+                        <?php foreach ($instructors as $instructor): ?>
+                            <option value="<?php echo $instructor['id']; ?>" <?php if ($instructor['id'] === $program['instructorID']) echo 'selected'; ?>>
+                                <?php echo $instructor['instructorName']; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                    <div class="form-control">
+                        <label for="scheduleDate">Date:</label>
+                        <input type="date"  id="scheduleDate" name="scheduleDate">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="start_time">Start Time:</label>
+                        <input type="time" id="start_time" name="start_time">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="end_time">End Time:</label>
+                        <input type="time" id="end_time" name="end_time">
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Update Program</button>
+            <button type="button" id="cancelEditButton">Cancel</button>
+        </form>
+    </div>
+
+        <form id="deleteProgramForm" action="manageProgram.php" method="post">
+                <input type="hidden" name="programID" id="programIDInput">
+                <input type="hidden" name="deleteProgram" value="1">
          </form>             
 
 
@@ -865,40 +854,55 @@ if ($result_program->num_rows > 0) {
     
      <!---------------------------------     JAVASCRIPT CODE ------------------------------------------>
     <script>
- function openEditForm(programID) {
-    var programDetails = programs.find(function(program) {
-        return program.programID === programID;
+
+    document.addEventListener("DOMContentLoaded", function () {
+            // Event listener for all "Edit" buttons with class "edit-button"
+    document.querySelectorAll(".edit-button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        // Extract the programID from the data attribute
+        var programID = button.dataset.programId;
+
+        // Call the openEditForm function with the programID
+        openEditForm(programID);
+      });
     });
 
-    if (programDetails) {
-        document.getElementById("editProgramName").value = programDetails.programName;
-        document.getElementById("editProgramLocation").value = programDetails.programLocation;
-        document.getElementById("editDescription").value = programDetails.description;
-        document.getElementById("editInstructor").value = programDetails.instructorName;
-        document.getElementById("editScheduleDate").value = programDetails.scheduleDate;
-        document.getElementById("editStartTime").value = programDetails.start_time;
-        document.getElementById("editEndTime").value = programDetails.end_time;
+    function openEditForm(programID) {
+        var programs = <?php echo json_encode($programs); ?>;
+        var program = programs.find(function(p) {
+            return p.programID === programID;
+        });
 
-        document.getElementById("edit-program-popup").style.display = "block";
+        if (program) {
+            console.log("Found element: ", document.getElementById("description"));
+            console.log("Found element: ", document.getElementById("scheduleDate"));
+            console.log(program.programName);
+            console.log(program);
+
+            document.getElementById("program_Name").value = program.programName;
+            document.getElementById("program_Location").value = program.programLocation;
+            document.getElementById("description").textContent = program.description;
+            document.getElementById("instructorName").value = program.instructorID;
+            document.getElementById("scheduleDate").value = program.scheduleDate;
+            document.getElementById("start_time").value = program.start_time;
+            document.getElementById("end_time").value = program.end_time;
+
+            document.getElementById("edit-program-popup").style.display = "block";
+        }
     }
-}
-// Function to close the edit form
+
+  // Update the event listener for the "Cancel" button
+  document.getElementById("cancelEditButton").addEventListener("click", closeEditForm);
+
 function closeEditForm() {
-    document.getElementById("editForm").style.display = "none";
+    var editProgramPopup = document.getElementById("edit-program-popup");
+    editProgramPopup.style.display = "none";
 }
 
-// Get the button elements for edit buttons
-var editButtons = document.getElementsByClassName('edit-button');
-
-// Add event listeners to each "Edit" button
-Array.from(editButtons).forEach(function(editButton) {
-    editButton.addEventListener('click', function(event) {
-        var programID = event.target.getAttribute('programID');
-        openEditForm(programID, <?php echo json_encode($programs); ?>);
-    });
 });
 
-        // ---------------- JS PARA BUMUKAS YUNG POP UP FORM PARA SA PAG ADD NG BAGONG CLASS ---------------- //
+   
+        // ---------------- JS PARA BUMUKAS YUNG POP UP FORM PARA SA PAG ADD NG BAGONG PROGRAM ---------------- //
 
                 // Get the button element
                 var addSemButton = document.getElementById('add-program-button');
@@ -912,15 +916,30 @@ Array.from(editButtons).forEach(function(editButton) {
                     addSemPopup.style.display = 'block';
                 });
 
+                function closeModal() {
+                    var popup = document.getElementById("add-program-popup");
+                    popup.style.display = "none";
+                }
+
+                // Wait for the DOM to be ready
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Get the cancel button element
+                    var cancelButton = document.getElementById("cancelButton");
+
+                    // Add a click event listener to the cancel button
+                    cancelButton.addEventListener("click", function () {
+                        closeModal();
+                    });
+                });
 
     //--------------------------- DELETE CONFIRMATION PROMPT ------------------------------//
     // Delete confirmation prompt
-    function deleteSem(semesterID) {
-        if (confirm("Are you sure you want to delete this semester?")) {
-            document.getElementById('semesterIDInput').value = semesterID;
-            document.getElementById('deleteSemForm').submit();
-        }
+    function deleteYear(programID) {
+    if (confirm("Are you sure you want to delete this program?")) {
+        document.getElementById('programIDInput').value = programID;
+        document.getElementById('deleteProgramForm').submit();
     }
+}
 
 
     </script>

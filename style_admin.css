@@ -1432,4 +1432,80 @@ body{
  }
 /*******END OF COMPLIANCE THIRD  PAGE********/
 
+
+
+
+.admin_external h1{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 30px;
+  font-weight: bolder;
+  line-height: normal;
+  margin-top: 70px;
+}
+.admin_external{
+  border-bottom: solid black 3px;
+  margin-bottom: 20px;
+}
+.inner_admin button{
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  margin-left: 100px;
+  margin-top: -5px;
+  width: 545px;
+  height: 100px;
+  font-family: 'Poppins';
+  font-weight: 800;
+}
+.inner_admin button:hover{
+  background-color: #008A0E;
+}
+.inner_admin-2 button{
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  margin-left: 666px;
+  margin-top: -128px;
+  width: 545px;
+  height: 100px;
+  font-family: 'Poppins';
+  font-weight: 800;
+}
+.inner_admin-2 button:hover{
+  background-color: #008A0E;
+}
+.cwtsclass{
+  border-radius: 10px;
+  padding: 30px;
+  background-color: white;
+  margin-left: 100px;
+  width: 1110px;
+  height: 500px;
+  margin-bottom: 50px;
+  box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+.cwtsclass h1{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 25px;
+  font-weight: 900;
+  line-height: normal;
+}
+.cwtsclass-2 button{
+  border-radius: 10px;
+  background-color: #6FBB76;
+  color: black;
+  margin-left: -30px;
+  margin-top: 450px;
+  margin-bottom: 50px;
+  width: 1113px;
+  height: 50px;
+  font-family: 'Poppins';
+  font-weight: 800;
+}
+.cwtsclass-2 button:hover{
+  background-color: #008A0E;
+}
+
   /************MAIN CONTENTS**************/

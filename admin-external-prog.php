@@ -37,9 +37,8 @@ $page = $components[2];
 
      <!----------CSS------------>
     <link rel="stylesheet" href="style_admin.css">
-
-      <!----------BOOTSTRAP------------>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+          <!----------BOOTSTRAP------------>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      
      <!----------FONTS------------>
@@ -51,18 +50,16 @@ $page = $components[2];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
-
     <!----------ALERTS-------------->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
-
-     
 <!---Inner topbar--->
 <?php include('topbar.php');?>
 
 </head>
 
+<!----Body----->
+<body>
 <!----Body----->
 <body>
 <section class="bg-section">
@@ -75,8 +72,8 @@ $page = $components[2];
                 <div class="col-lg-12">
                     <div class="rec-content">
                         <div class="upperbox">
-                            <h4>TRAINING PROGRAM RECORDS</h4>
-                            <a href="admin-records.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+                            <h4>TRAINING PROGRAMS</h4>
+                            <a href="admin-external.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
                         <div class="middlebox-class">
@@ -88,7 +85,7 @@ $page = $components[2];
                                     $courseName = $row['courseName'];
                                     $encodedCourseName = urlencode($courseName);
 
-                                    echo "<a href='admin-records_courseClasses.php?courseID=$courseID&courseName=$encodedCourseName'>";
+                                    echo "<a href='admin-external-list.php?courseID=$courseID&courseName=$encodedCourseName'>";
                                     echo "<div class='course-box'>";
                                     echo "<p>$courseName</p>";
                                     echo "</div>";
