@@ -72,6 +72,7 @@ $accountID = $_SESSION['id'];
     $components = explode('/', $path);
     $page = $components[2];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

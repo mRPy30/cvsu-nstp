@@ -44,7 +44,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) 
  }
 
 
+// Check if the sectionName parameter is set in the URL
+if (isset($_GET['sectionName'])) {
+    // Get the sectionName value and store it in a variable
+    $sectionName = $_GET['sectionName'];
 
+    
+} else {
+    // Handle the case when sectionName parameter is not set in the URL
+    echo "Section Name not provided.";
+}
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -108,7 +117,7 @@ $page = $components[2];
                             <ion-icon name="arrow-back-circle-outline"></ion-icon>
                         </a>                  
                         <div class="section_name">
-                            <h1><?php echo " $selectedsectionName" ?></h1>
+                            <h1><?php echo " $sectionName" ?></h1>
                             <p id="datetime"></p>
                         </div>
                         <div class="class_navs">
