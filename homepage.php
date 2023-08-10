@@ -253,128 +253,134 @@ $totalInstructors = $row['total_instructors'];
 
 
 
+      <div class="text-center pt-5" id="news">
+    <h1><strong>NEWS AND UPDATES</strong></h1>
+  </div>
 
-      <div class="wrapper shadow-sm">
-        <ul class="carousel">
-          <li class="card shadow-sm">
-            <div class="img"><img src="Rectangle 218.jpg" alt="slide1" draggable="false"></div>
-            <p>NEWS UPDATE | CvSU announced the Academic Break of classes from April 5-11, 202. </p>
-            <div class="btn-group">
-              <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm">View</button></a>
-            </div>
-          </li>
+  <div class="maincarousel">
+    <div class="wrapper shadow-sm">
+      <ul class="carousel">
+        <li class="card shadow-sm">
+          <div class="img"><img src="Rectangle 218.jpg" alt="slide1" draggable="false"></div>
+          <p>NEWS UPDATE | CvSU announced the Academic Break of classes from April 5-11, 202. </p>
+          <div class="btn-group">
+            <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm">View</button></a>
+          </div>
+        </li>
 
-          <li class="card shadow-sm">
-            <div class="img"><img src="329945500_597232348599656_1009511258308726229_n.jpg" alt="slide1"
-                draggable="false"></div>
-            <p>Pursuant to Office Memorandum 07, s. 2023 released by the Office of the
-              Vice President for Academic Affairs, will be effective 2023.</p>
-            <div class="btn-group">
-              <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm ">View</button></a>
-            </div>
-          </li>
+        <li class="card shadow-sm">
+          <div class="img"><img src="329945500_597232348599656_1009511258308726229_n.jpg" alt="slide1"
+              draggable="false">
+          </div>
+          <p>Pursuant to Office Memorandum 07, s. 2023 released by the Office of the
+            Vice President for Academic Affairs, will be effective 2023.</p>
+          <div class="btn-group">
+            <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm ">View</button></a>
+          </div>
+        </li>
 
-          <li class="card shadow-sm">
-            <div class="img"><img src="345863742_6229350883825936_3886661454847551511_n 1.jpg" alt="slide1"
-                draggable="false"></div>
-            <p>ANNOUCEMENT: Heads up | Student Evaluation for Teachers (SET) is open until May 18, 2023. </p>
-            <div class="btn-group">
-              <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm ">View</button></a>
-            </div>
-          </li>
-        </ul>
-        <i id="right" class="fa-solid fa-angle-right"></i>
-      </div>
-
-
+        <li class="card shadow-sm">
+          <div class="img"><img src="345863742_6229350883825936_3886661454847551511_n 1.jpg" alt="slide1"
+              draggable="false"></div>
+          <p>ANNOUCEMENT: Heads up | Student Evaluation for Teachers (SET) is open until May 18, 2023. </p>
+          <div class="btn-group">
+            <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm ">View</button></a>
+          </div>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
+  </div>
 
-    <script>
-      const wrapper = document.querySelector(".wrapper");
-      const carousel = document.querySelector(".carousel");
-      const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-      const arrowBtns = document.querySelectorAll(".wrapper i");
-      const carouselChildrens = [...carousel.children];
+  </div>
 
-      let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+  <script>
+    const wrapper = document.querySelector(".wrapper");
+    const carousel = document.querySelector(".carousel");
+    const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const carouselChildrens = [...carousel.children];
 
-      // Get the number of cards that can fit in the carousel at once
-      let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+    let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
 
-      // Insert copies of the last few cards to beginning of carousel for infinite scrolling
-      carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    // Get the number of cards that can fit in the carousel at once
+    let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+    // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+      carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+
+    // Insert copies of the first few cards to end of carousel for infinite scrolling
+    carouselChildrens.slice(0, cardPerView).forEach(card => {
+      carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+    });
+
+    // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+
+    // Add event listeners for the arrow buttons to scroll the carousel left and right
+    arrowBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
       });
+    });
 
-      // Insert copies of the first few cards to end of carousel for infinite scrolling
-      carouselChildrens.slice(0, cardPerView).forEach(card => {
-        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-      });
+    const dragStart = (e) => {
+      isDragging = true;
+      carousel.classList.add("dragging");
+      // Records the initial cursor and scroll position of the carousel
+      startX = e.pageX;
+      startScrollLeft = carousel.scrollLeft;
+    }
 
-      // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
-      carousel.classList.add("no-transition");
-      carousel.scrollLeft = carousel.offsetWidth;
-      carousel.classList.remove("no-transition");
+    const dragging = (e) => {
+      if (!isDragging) return; // if isDragging is false return from here
+      // Updates the scroll position of the carousel based on the cursor movement
+      carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+    }
 
-      // Add event listeners for the arrow buttons to scroll the carousel left and right
-      arrowBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-          carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
-        });
-      });
+    const dragStop = () => {
+      isDragging = false;
+      carousel.classList.remove("dragging");
+    }
 
-      const dragStart = (e) => {
-        isDragging = true;
-        carousel.classList.add("dragging");
-        // Records the initial cursor and scroll position of the carousel
-        startX = e.pageX;
-        startScrollLeft = carousel.scrollLeft;
+    const infiniteScroll = () => {
+      // If the carousel is at the beginning, scroll to the end
+      if (carousel.scrollLeft === 0) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+        carousel.classList.remove("no-transition");
+      }
+      // If the carousel is at the end, scroll to the beginning
+      else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
       }
 
-      const dragging = (e) => {
-        if (!isDragging) return; // if isDragging is false return from here
-        // Updates the scroll position of the carousel based on the cursor movement
-        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-      }
+      // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+      clearTimeout(timeoutId);
+      if (!wrapper.matches(":hover")) autoPlay();
+    }
 
-      const dragStop = () => {
-        isDragging = false;
-        carousel.classList.remove("dragging");
-      }
+    const autoPlay = () => {
+      if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+      // Autoplay the carousel after every 2500 ms
+      timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+    }
+    autoPlay();
 
-      const infiniteScroll = () => {
-        // If the carousel is at the beginning, scroll to the end
-        if (carousel.scrollLeft === 0) {
-          carousel.classList.add("no-transition");
-          carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-          carousel.classList.remove("no-transition");
-        }
-        // If the carousel is at the end, scroll to the beginning
-        else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
-          carousel.classList.add("no-transition");
-          carousel.scrollLeft = carousel.offsetWidth;
-          carousel.classList.remove("no-transition");
-        }
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    document.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("scroll", infiniteScroll);
+    wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+    wrapper.addEventListener("mouseleave", autoPlay);
+  </script>
 
-        // Clear existing timeout & start autoplay if mouse is not hovering over carousel
-        clearTimeout(timeoutId);
-        if (!wrapper.matches(":hover")) autoPlay();
-      }
-
-      const autoPlay = () => {
-        if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-        // Autoplay the carousel after every 2500 ms
-        timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
-      }
-      autoPlay();
-
-      carousel.addEventListener("mousedown", dragStart);
-      carousel.addEventListener("mousemove", dragging);
-      document.addEventListener("mouseup", dragStop);
-      carousel.addEventListener("scroll", infiniteScroll);
-      wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-      wrapper.addEventListener("mouseleave", autoPlay);
-    </script>
 
 
 

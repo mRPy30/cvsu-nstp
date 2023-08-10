@@ -1,6 +1,6 @@
 <?php
 // Active Sidebar Page
-
+include 'db_connect.php';
 $directoryURI = $_SERVER['REQUEST_URI'];
 
 $path = parse_url($directoryURI, PHP_URL_PATH);
@@ -8,6 +8,54 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 
 $page = $components[2];
+
+// Fetch course data from the database
+$query = "SELECT courseID, courseName FROM tbl_course";
+$result = mysqli_query($conn, $query);
+$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Fetch section data from the database
+$query = "SELECT sectionID, sectionName FROM tbl_sections";
+$result = mysqli_query($conn, $query);
+$sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+
+
+$query = "SELECT id, instructorName FROM instructor";
+$result = mysqli_query($conn, $query);
+$instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $courseID = $_POST['course'];
+    $instructorID = $_POST['instructor'];
+    $sectionID = $_POST['section'];
+
+    // Calculate sum for instructor evaluations
+    $instructorTotal = 0;
+    for ($i = 1; $i <= 5; $i++) {
+        $rating = $_POST['instructor_rating_' . $i];
+        $instructorTotal += $rating;
+    }
+
+    // Calculate sum for course evaluations
+    $courseTotal = 0;
+    for ($i = 1; $i <= 5; $i++) {
+        $rating = $_POST['course_rating_' . $i];
+        $courseTotal += $rating;
+    }
+
+    $comments = $_POST['comments'];
+
+    // Insert data into the database
+    $query = "INSERT INTO feedback_data (courseID, instructorID, sectionID, instructorRating, courseRating, comments)
+              VALUES ('$courseID', '$instructorID', '$sectionID', '$instructorTotal', '$courseTotal', '$comments')";
+
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,20 +110,43 @@ $page = $components[2];
         </div>
     </div>
 </div>
-
-<div class="header-form">
+<div class="header-form" style="">
     <div class="header-innner">
-        <p>INSTRUCTOR</p>
-        <select class="form-select col-10" aria-label="Default select example">
-            <option selected >--Please select instructor--</option>
-            <option value="1">Instructor 1</option>
-            <option value="2">Instructor 2</option>
-            <option value="3">Instructor 3</option>
-            <option value="4">Instructor 4</option>
-            <option value="5">Instructor 5</option>
+        <form action="">
+        <p>TRANING PROGRAM</p>
+        <select class="form-select col-8" aria-label="Default select example" style="margin-left: 340px;">
+            <option selected >--Please select your training Program--</option>
+            <?php foreach ($courses as $course) : ?>
+                <option value="<?php echo $course['courseID']; ?>"><?php echo $course['courseName']; ?></option>
+            <?php endforeach; ?>
         </select>
     </div>
 </div>
+<div class="header-form">
+    <div class="header-innner">
+        <p>INSTRUCTOR</p>
+        <select class="form-select col-8" aria-label="Default select example" style="margin-left: 340px;">
+            <option selected >--Please select your instructor--</option>
+            <?php foreach ($instructors as $row): ?>
+                <option value="<?php echo $row['id']; ?>"><?php echo $row['instructorName']; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+
+<div class="header-form">
+    <div class="header-innner">
+        <p>SECTION</p>
+        <select class="form-select col-8" aria-label="Default select example" style="margin-left: 340px;">
+            <option selected >--Please select your section--</option>
+            <?php foreach ($sections as $section) : ?>
+                <option value="<?php echo $section['sectionID']; ?>"><?php echo $section['sectionName']; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+
+
 
 <div class="eval-form">
         <div class="eval_sheet">
@@ -89,6 +160,8 @@ $page = $components[2];
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
         </div>
+
+        
 
         <div class="eval_sheet">
             <select class="form-select" aria-label="Default select example">
@@ -151,7 +224,7 @@ $page = $components[2];
             <select class="form-select" aria-label="Default select example">
         </div>
         <div class="eval_sheet">
-        <h1>B. COURSE EVALUATION</h1>
+        <h1>B. TRAINING PROGRAM EVALUATION</h1>
             <p>1. How would you rate the overall quality of the course content and materials provided throughout the semester?</p>
             <select class="form-select" aria-label="Default select example">
             <option selected >--Select Evaluation--</option>
@@ -227,6 +300,7 @@ $page = $components[2];
         <button type="submit" class="btn btn-primary">SUBMIT</button>
         </div>
         </div>
+        </form>
 </div>
 </div>
 </main>

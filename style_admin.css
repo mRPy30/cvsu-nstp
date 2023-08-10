@@ -472,8 +472,8 @@ body{
       .pcoded-main-content .rec-content
       .form-container label{
         font: normal 400 13px/normal 'Poppins';
-        text-align: center;
-        margin: 15px 0px;
+        text-align: left;
+        margin: 5px 10px;
       }
       .pcoded-main-content .rec-content
       .form-container input{
@@ -819,6 +819,15 @@ body{
       transition: 0.4s;
     }
 /**********END RECORDS INSTRUCTOR*************/
+
+
+
+
+
+
+
+
+
 
 /********RECORDS FINANCES**********/
 .pcoded-main-content .rec-content .middlebox-finance{

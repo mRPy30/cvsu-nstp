@@ -85,6 +85,10 @@ $page = $components[2];
                                     <h3><i class="fa-solid fa-book-open-reader"></i> Instructor Records</h3>
                                 </div> 
 
+                                <div class="records_box" id="coordinator_box">
+                                    <h3><i class="fa-regular fa-calendar"></i> Coordinator Records</h3>
+                                </div> 
+
                                 <div class="records_box" id="year_box">
                                     <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
                                 </div>
@@ -128,6 +132,11 @@ $page = $components[2];
 
         document.getElementById('sem_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Semester.php';
+        });
+
+            
+        document.getElementById('coordinator_box').addEventListener('click', function() {
+            window.location.href = 'admin-records_Coordinator.php';
         });
         
     </script>
