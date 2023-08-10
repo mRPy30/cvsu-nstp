@@ -188,74 +188,6 @@ $totalInstructors = $row['total_instructors'];
   <div class="text-center pt-5" id="news">
     <h1><strong>NEWS AND UPDATES</strong></h1>
   </div>
-  <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
-
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 p-5">
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="Rectangle 218.jpg" alt="" width="100%" height="auto">
-              <div class="card-body text-center">
-                <p class="card-text text-start">Academic Break
-
-                <div class="btn-group">
-                  <a href="/News/2023_June.html#Up_news100"><button type="button" class="btn btn-sm ">View</button></a>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="329945500_597232348599656_1009511258308726229_n.jpg" alt="" width="100%" height="auto">
-              <div class="card-body text-center">
-                <p class="card-text text-start">Pursuant to Office Memorandum 07, s. 2023 released by the Office of the
-                  Vice President for Academic Affairs (OVPAA), the following guidelines will be effective Second
-                  Semester of A.Y. 2022-2023.
-
-                <div class="btn-group">
-                  <a href="/News/2023_June.html#Up_news99"><button type="button" class="btn btn-sm ">View</button></a>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="345863742_6229350883825936_3886661454847551511_n 1.jpg" alt="" width="100%" height="auto">
-              <div class="card-body text-center">
-                <p class="card-text text-start">Hi! Student Evaluation for Teachers (SET) is open until May 18, 2023.
-
-                <div class="btn-group">
-                  <a href="/News/2023_June.html#Up_news98"><button type="button" class="btn btn-sm ">View</button></a>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-
-
-        </div>
-      </div>
-
-
-
-      <div class="text-center pt-5" id="news">
-    <h1><strong>NEWS AND UPDATES</strong></h1>
-  </div>
 
   <div class="maincarousel">
     <div class="wrapper shadow-sm">
@@ -380,7 +312,6 @@ $totalInstructors = $row['total_instructors'];
     wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
     wrapper.addEventListener("mouseleave", autoPlay);
   </script>
-
 
 
 
