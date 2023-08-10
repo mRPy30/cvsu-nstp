@@ -236,7 +236,7 @@ body{
   min-height: 80vh;
 }
 .wrapper {
-  max-width: 1250px;
+  max-width: 1200px;
   width: 100%;
   position: relative;
 }
@@ -315,7 +315,7 @@ body{
 }
 .carousel .card p {
   padding-top: 10px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   margin: 50px 40px 0px 30px;
 }
