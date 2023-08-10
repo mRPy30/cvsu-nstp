@@ -74,7 +74,7 @@ if ($result->num_rows > 0) {
 
                         <!-- Add New Course Form -->
                         <div class="formbox">
-                            <div class="form-container">
+                            <div class="form-container-coor">
                                 <h4>Add New Course</h4>
                                 <form method="post" id="add-course-form" action="admin-records_manageCourses.php">
                                     <label for="courseName">Course Name:</label>

@@ -4,11 +4,12 @@ include "db_connect.php";
 session_start();
 $accountID = $_SESSION['id'];
 
-    // Count query for student
-    $query = "SELECT COUNT(id) AS total_students FROM student";
-    $result = mysqli_query($conn, $query);
-    $row = mysqli_fetch_assoc($result);
-    $totalStudents = $row['total_students'];
+
+      // Count query for student
+      $query = "SELECT COUNT(id) AS total_students FROM student";
+      $result = mysqli_query($conn, $query);
+      $row = mysqli_fetch_assoc($result);
+      $totalStudents = $row['total_students'];
 
     // query for the name of the instructor
     $query = "SELECT instructorName FROM instructor WHERE id = '$accountID'";
@@ -137,31 +138,71 @@ $accountID = $_SESSION['id'];
 
               
                 <div class="sections-display">
-                    <?php
-                        // Check if there are any sections
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                $sectionName = $row['sectionName'];
-                                $encodedSectionName = urlencode($sectionName);
-                                
+    <?php
+    $sections = array(); // Initialize an array to store section details
+    $sectionsQuery = "SELECT * FROM tbl_sections";
+    $resultSections = $conn->query($sectionsQuery);
 
-                                echo "<a href='instructor-classes_section.php?sectionName=$encodedSectionName'>";
-                                echo "<div class='section_box'>";
-                                echo "<h4> $sectionName</h4>";
-                                echo "<div class='sec_box_inner'>";
-                                echo "<h3> $totalStudents </h3>";
-                                echo "<p>Number Of Student</p>";
-                                echo "<h3>7:00 - 9:00</h3>";
-                                echo "<p>Schedule</p>";
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</a>";
-                            }
-                        } else {
-                            echo "No sections found.";
-                        }
-                        ?>  
-                </div>
+    if ($resultSections->num_rows > 0) {
+        while ($row = $resultSections->fetch_assoc()) {
+            $sections[] = array(
+                'sectionID' => $row['sectionID'],
+                'sectionName' => $row['sectionName']
+            );
+        }
+
+        foreach ($sections as $section) {
+            $sectionID = $section['sectionID'];
+
+            // Query to get the total number of students for the current section
+            $totalStudentsQuery = "SELECT COUNT(id) AS totalStudents FROM student WHERE sectionID = ?";
+            $stmt = $conn->prepare($totalStudentsQuery);
+            $stmt->bind_param("i", $sectionID);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $totalStudents = $row['totalStudents'];
+            } else {
+                $totalStudents = 0; // If no students enrolled, set total to 0
+            }
+
+            // Query to get the schedule details for the current section
+            $scheduleQuery = "SELECT time_from, time_to FROM tbl_schedule WHERE sectionID = ?";
+            $stmt = $conn->prepare($scheduleQuery);
+            $stmt->bind_param("i", $sectionID);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $start_time = $row['time_from'];
+                $end_time = $row['time_to'];
+            } else {
+                $start_time = "N/A"; // If no schedule found, set to N/A
+                $end_time = "N/A";
+            }
+
+            // Rest of your code to display section details
+            $encodedSectionName = urlencode($section['sectionName']);
+            echo "<a href='instructor-classes_section.php?sectionName=$encodedSectionName'>";
+            echo "<div class='section_box'>";
+            echo "<h4> {$section['sectionName']}</h4>";
+            echo "<div class='sec_box_inner'>";
+            echo "<h3> $totalStudents </h3>";
+            echo "<p>Number Of Student</p>";
+            echo "<h3>$start_time - $end_time</h3>"; // Display start and end times
+            echo "<p>Schedule</p>";
+            echo "</div>";
+            echo "</div>";
+            echo "</a>";
+        }
+    } else {
+        echo "No sections found.";
+    }
+    ?>
+</div>
                             
             </div>
         </div>
