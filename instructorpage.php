@@ -100,7 +100,7 @@ $page = $components[2];
                         <h1><?php echo "$instructorCourse" ?></h1>
                         <p>Instructor Name:  <?php echo " $instructorName" ?>
                         <div class="profile_img">
-                            <img src="INSTRUCTORS & coor/Abayari.jpg">
+                            
                         </div>
                     </div>
                 </div>

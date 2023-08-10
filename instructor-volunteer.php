@@ -117,35 +117,7 @@ $page = $components[2];
 
 
 
-              <div class="tbl-volunteer">
-                <h5>Upcoming Events</h5>
-                <table class="table table-hover overflow-scroll">
-                    <thead class="title">
-                      <tr>
-                        <th scope="col">Program Name</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Date</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th>Feeding Program</th>
-                        <td>Dulong Bayan Imus City</td>
-                        <td>09/15/2023</td>
-                      </tr>
-                      <tr>
-                        <th>First Aid program</th>
-                        <td>Buhay na Tubig Imus Cavite </td>
-                        <td>10/27/2023</td>
-                      </tr>
-                      <tr>
-                        <th>Blood Donation Program</th>
-                        <td>Habay Bacoor City Cavite </td>
-                        <td>11/05/2023</td>
-                      </tr>
-                    </tbody>
-                </table>
-              </div>  
+              
               
           </div>       
         </main>     

@@ -17,8 +17,8 @@ if (isset($_GET['courseID']) && isset($_GET['courseName'])) {
 }
 
 
-$query = "SELECT tbl_activities.activityImage, tbl_activities.activityTitle 
-            FROM tbl_activities WHERE tbl_activities.activityID = $selectedCourseID;";
+$query = "SELECT tbl_activities.activityImage, tbl_activities.activityTitle, tbl_activities.activityID 
+            FROM tbl_activities" ;
 
 $result = mysqli_query($conn, $query);
 

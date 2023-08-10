@@ -18,6 +18,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $sectionData = $result->fetch_assoc();
     $courseID = $sectionData['courseID'];
+    
 
 // Fetch name and student id
 $sql = "SELECT id, name FROM student WHERE sectionID = '$selectedsectionID'";

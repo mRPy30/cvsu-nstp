@@ -140,7 +140,7 @@ $accountID = $_SESSION['id'];
                 <div class="sections-display">
     <?php
     $sections = array(); // Initialize an array to store section details
-    $sectionsQuery = "SELECT * FROM tbl_sections";
+    $sectionsQuery = "SELECT * FROM tbl_sections WHERE instructorID=$accountID";
     $resultSections = $conn->query($sectionsQuery);
 
     if ($resultSections->num_rows > 0) {

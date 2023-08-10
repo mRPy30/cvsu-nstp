@@ -52,7 +52,7 @@ body{
     transition: all 0.1 0.5s;
  }
  .pcoded-main-content .box .content-box{
-    margin: 20px 450px;
+    margin: 70px 450px 0px 450px;
     padding: 15px 15px;
     background-color: #FFE193;
     color: #000000;
@@ -63,11 +63,8 @@ body{
    margin: 0px 220px;
  }
  .pcoded-main-content .box .content-box .second{
-   margin-bottom: 60px;
+   margin-top: 10px;
 }
- .pcoded-main-content .box .content-box .second{
-    margin-bottom: 60px;
- }
  .pcoded-main-content .box .content-box h4{
     font-family: 'Inter';
    font-style: normal;
@@ -227,17 +224,7 @@ body{
 .pcoded-main-content .class_navs .nav{
    margin: 20px 160px;
 }
-.pcoded-main-content .tbl_masterlist form .table tr td .btn{
-   margin-left: 60vw;
-   position: absolute;
-   border-radius: 15px;
-   background: #6FBB76;
-   color: #FFF;
-   font-size: 12px;
-   font-family: 'Inter';
-   text-transform: uppercase;
-   width: 90px;
-}
+
 .pcoded-main-content .class_navs .nav li a{
    text-decoration: none;
    color: #000000;
@@ -293,6 +280,17 @@ body{
       text-align: center;
       font-size: 12px;
       font-family: 'Inter';
+   }
+   .pcoded-main-content .tbl_masterlist form .btn{
+      margin-left: 60vw;
+      position: absolute;
+      border-radius: 15px;
+      background: #6FBB76;
+      color: #FFF;
+      font-size: 12px;
+      font-family: 'Inter';
+      text-transform: uppercase;
+      width: 90px;
    }
    /***end masterlist table****/
 
@@ -379,7 +377,17 @@ body{
       color: green;
       display: none;
     }
-
+    .pcoded-main-content .tbl_grades form .btn{
+      margin-left: 60vw;
+      position: absolute;
+      border-radius: 15px;
+      background: #6FBB76;
+      color: #FFF;
+      font-size: 12px;
+      font-family: 'Inter';
+      text-transform: uppercase;
+      width: 90px;
+   }
    /***end grade table****/
    ******INSTRUCTOR STUDENT INFORMATION PAGE********/
 

@@ -63,13 +63,13 @@
                                 <li class="nav-item">
                                   <a class="nav-link active" href="#">Grades</a>
                                 </li>
-                                <button type="button" type="submit" class="btn" value="submit">Submit</button>
                               </ul>
                         </div>
                         <div class="acads_info">
                             <p>ACADEMIC YEAR : 2022 - 2023 | SEMESTER: SECOND SEMESTER</p>
                         </div>
                         <div class="tbl_grades">
+                        <form method="post">
                             <table class="table table-hover ">
                                 <thead class="title">
                                 <tr>
@@ -115,6 +115,8 @@
                                         </tr>
                                     </tbody>
                             </table>
+                            <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                        </form>
                         </div>
                     </div>
                 </div>

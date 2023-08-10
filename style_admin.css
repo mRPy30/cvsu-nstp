@@ -1571,17 +1571,24 @@ cursor: pointer;
 .pcoded-main-content .rec-content .align-tbl-programs{
   margin: 10px 110px 0px 100px;
 }
+
 .pcoded-main-content .rec-content
    .align-tbl-programs .tabledisplay-program {
-    width: 1000px;
+    width: 800px;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    margin-top: 10px;
-    margin-left: -50px;
+    margin-top: 40px;
     border-radius: 6px;
     background: #FFF;
     box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
+  }
+  .pcoded-main-content .rec-content 
+.align-tbl-programs .tabledisplay-program .course-and-section p{
+  padding: 5px;
+  font: normal 500 17px/normal 'Poppins';
+  margin: 5px;
+  position: absolute;
   }
   .pcoded-main-content .rec-content 
   .align-tbl-programs #program-table{

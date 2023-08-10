@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $conn->query($deleteQuery);
 
         // Redirect back to the page to refresh the program list
-        header('Location: programsList.php');
+        header('Location: admin-createprogram.php');
         exit();
     }
 
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->execute();
         $stmt->close();
 
-        header("Location: createProgram.php");
+        header("Location: admin-createProgram.php");
         exit();
     }
 }

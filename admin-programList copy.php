@@ -17,7 +17,6 @@ if ($result_program->num_rows > 0) {
             'programLocation' => $row["programLocation"],
             'description' => $row["description"],
             'instructorID' => $row["instructorID"],
-            'volunteers' => $row["volunteers"],
             'instructorName' => $row["instructorName"],
             'scheduleDate' => $row["scheduleDate"],
             'start_time' => $row["start_time"],

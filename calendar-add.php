@@ -784,7 +784,7 @@ while ($row = $result->fetch_assoc()) {
       <div class="divider"></div>
       <div class="details-box">
         <h3>' . $title . '</h3>
-        <h5>' . $location .  $scheduleID . '</h5>
+        <h5>' . $location  . '</h5>
       </div>
     </div>
     ';

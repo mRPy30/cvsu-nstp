@@ -16,14 +16,14 @@ if ($result->num_rows > 0) {
 }
 
 // Retrieving the budget for the year 2023
-$query = "SELECT total_budget FROM tbl_budget WHERE yearID = 2023";
+$query = "SELECT total_budget FROM tbl_budget WHERE yearID = 1";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();
-$totalBudget = $row['amount'];
+$totalBudget = $row['total_budget'];
 
 
 // Retrieving the total expenses for the year 2023
-$query = "SELECT SUM(amount) AS total_expenses FROM tbl_expenses  WHERE yearID = 2023";
+$query = "SELECT SUM(amount) AS total_expenses FROM tbl_expenses  WHERE yearID = 1";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();
 $totalExpenses = $row['total_expenses'];
