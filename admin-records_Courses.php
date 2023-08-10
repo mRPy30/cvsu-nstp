@@ -68,14 +68,14 @@ if ($result->num_rows > 0) {
                     <div class="rec-content">
                         <!-------------------------------------- UPPER PART NG PAGE --------------------------------------------->
                         <div class="upperbox">
-                                <h4>COURSES RECORDS</h4>
+                                <h4>TRAINING PROGRAM RECORDS</h4>
                                 <a href="admin-records.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
                         <!-- Add New Course Form -->
                         <div class="formbox">
                             <div class="form-container">
-                                <h4>Add New Course</h4>
+                                <h4>Add New Training Programs</h4>
                                 <form method="post" id="add-course-form" action="admin-records_manageCourses.php">
                                     <label for="courseName">Course Name:</label>
                                     <input type="text" id="courseName" name="courseName" required>
