@@ -106,7 +106,7 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="admin-programs.php" class="<?php if ($page == "admin-programs.php") {
+                    <a href="admin-program.php" class="<?php if ($page == "admin-program.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";
