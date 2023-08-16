@@ -94,39 +94,33 @@ $page = $components[2];
 
         <!--Main Content-->
         <main class="pcoded-main-content">
-            <div class="pt-4 ">
+            <div class="container pt-4">
                 <div class="col-lg-12">
-                <div class="instructor_prof">
-                        <h1><?php echo "$instructorCourse" ?></h1>
-                        <p>Instructor Name:  <?php echo " $instructorName" ?>
-                        <div class="profile_img">
-                            
-                        </div>
+                    <div class="instructor_prof">
+                        <img src="">
+                        <p> <?php echo " $instructorName" ?>
                     </div>
                 </div>
-            <!-----2 BOX------->
-               <div class="col">
-                    <div class="box">
-                        <div class="content-box first">
-                            <h4>2022 - 2023</h4>
-                            <span>ACADEMIC YEAR</span>
-                        </div>
-                    </div>
+                <div class="course">
+                    <h1><?php echo "$instructorCourse" ?></h1>
                 </div>
-                <div class="col">
-                    <div class="box">
-                        <div class="content-box second">
-                            <h4>SECOND</h4>
-                            <span>SEMESTER</span>
-                        </div>
-                    </div>
-                    <div class="calendar_section">
-                        <?php include('calendar.php');?>
-                        </div>
-                </div>
-                
-            </div>
 
+            <!-----2 BOX------->
+                <div class="box">
+                    <div class="first">
+                                <h4>2022 - 2023</h4>
+                                <span>Academic Year</span>
+                    </div>
+                    <div class="second">
+                                <h4>Second</h4>
+                                <span>Semester</span>
+                        </div>
+                </div>
+                    <div class="calendar_section">
+                        <?php //include('calendar.php');?>
+                    </div>
+                </div>
+            </div>
         </main>
         
         <!-----End Main content------>

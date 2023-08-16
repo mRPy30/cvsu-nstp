@@ -120,12 +120,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                                     </tbody>
                                 </table>
                             </div>
+                            <div class="add-box">
+                            <button class="add-button" id="addInstructorButton">+ New Activities</button>
+                        </div>
+                            </div>
                         </div>
 
             
-            <div class="add-box">
-                            <button class="add-button" id="addInstructorButton">+ New Activities</button>
-                        </div>
+           
                  <!----------------------------- Add expense form (hidden by default) ------------------------>
 
 

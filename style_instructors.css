@@ -17,34 +17,71 @@ body{
  
 /****Main Content****/  
 .pcoded-main-content .instructor_prof{
-    margin: 20px 0px;
+    margin: 20px 0px 0px 90px;
+    border-bottom: 1px solid #CCCCCC;
+    width: 1140px;
+    
  }
- .pcoded-main-content .instructor_prof h1{
-    position: relative;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 25px;
-    color: #000000;
-    text-align: center;
-    margin-left: 160px;
- }
- .pcoded-main-content .instructor_prof .profile_img img{
-    width: 10px;
-    position: relative;
+ .pcoded-main-content .instructor_prof img{
+    width: 49px;
     border-radius: 100%;
-    overflow: hidden;
-    margin: 25px 5px 0px 440px;
+    height: 41px;
+    position: absolute;
+    margin-left: 10px;
  }
  .pcoded-main-content .instructor_prof p{
-    margin: 20px 0px 30px 470px;
-    font-family: 'poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 39px;
-    position: absolute;
+    text-align: start;
+    margin-left: 70px;
+    font: normal 500 16px/34px 'Poppins';
+    text-transform: uppercase;
  }
+
+.pcoded-main-content .course{
+   margin: 30px 0px 0px 0px;
+}
+ .pcoded-main-content .course h1{
+   position: relative;
+   font: normal 800 20px/normal 'Inter';
+   text-align: start;
+   margin-left: 107px;
+}
+.pcoded-main-content .box{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+
+}
+.pcoded-main-content .box .first{
+   width: 310px;
+   height: 110px;
+   margin: 20px 0px 0px 107px;
+   background: #FFE193;
+   padding: 20px 25px;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .box .second{
+   width: 310px;
+   height: 110px;
+   margin: 20px 0px 0px 45px;
+   background: #FFE193;
+   padding: 20px 25px;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .box h4{
+   font: normal 700 30px/44px 'Inter';
+   position: absolute;
+}
+.pcoded-main-content .box span{
+   font: normal 400 15px/normal 'Poppins';
+   position: absolute;
+   margin-top: 40px;
+}
+
+.pcoded-main-content .box .calendar_section{
+   margin: 0px 220px;
+ }
+ /***
+
  .pcoded-main-content .box {
     min-width: 175px;
     position: relative;
@@ -59,9 +96,7 @@ body{
     width: 790px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
  }
- .pcoded-main-content .calendar_section{
-   margin: 0px 220px;
- }
+
  .pcoded-main-content .box .content-box .second{
    margin-top: 10px;
 }
@@ -79,7 +114,7 @@ body{
     font-size: 23px;
     line-height: 39px;
  }
-
+*******/
 
  .pcoded-main-content .box-classes{
     margin: 20px 260px;

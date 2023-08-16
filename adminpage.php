@@ -78,23 +78,26 @@ $page = $components[2];
                 <div class="col-lg-12">
                     <div class="total-result">
                         <div class='total_stud_box'>
-                        <h1><i class="fa-solid fa-graduation-cap"></i><?php echo $totalStudents; ?></h1>
-                            <p>Total NSTP Students</p>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h1><?php echo $totalStudents; ?></h1>
+                            <p>NSTP Students</p>
                         </div>
 
                         <div class='total_stud_box'>
-                            <h1><i class="fa-solid fa-book"></i><?php echo $totalCourse; ?></h1>
-                            <p>NSTP Program Courses</p>
+                            <i class="fa-solid fa-book"></i>
+                            <h1><?php echo $totalCourse; ?></h1>
+                            <p>NSTP Program</p>
                         </div>
 
                         <div class='total_stud_box'>
-                            <h1><i class="fa-solid fa-chalkboard-user"></i><?php echo $totalInstructors; ?></h1>
-                            <p>Instructors</p>
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                            <h1><?php echo $totalInstructors; ?></h1>
+                            <p>NSTP Instructors</p>
                         </div>
                     </div>
-                    <div class="calendar_section">
-                        <?php include('calendar.php');?>
-                        </div>
+                    <!--<div class="calendar_section">
+                        <?php// include('calendar.php');?>
+                        </div>-->
                 </div>
             </div>
         </main>        

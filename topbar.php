@@ -12,59 +12,45 @@
  }
  .header-section .row .logo img{
    position: fixed;
-   width: 80px;
-   height: 73px;
-   left: 23px;
-   top: 2px;
+   width: 57px;
+   height: 60px;
+   left: 42px;
+   top: 11px;
  }
  .header-section .row .logo .p1 p {
-    font-family: 'Abel';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 31px;
+    font: normal 700 22px/normal 'Poppins';
     position: fixed;
     left: 104px;
-    top: 12px;
+    top: 14px;
     width: 203px;
     height: 32px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    webkit-box-align: center;
  }
  .header-section .row .logo .p2 p {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 29px;
+    font: normal 400 18px/31px 'Abel';
     position: fixed;
     left: 104px;
-    top: 35px;
+    top: 38px;
     width: 195px;
     height: 29px;
  }
  .header-section .row .logout {
     position: fixed;
-    width: 121px;
     height: 34px;
     left: 87vw;
-    top: 18px;
+    top: 22px;
     font-style: normal;
-    font-size: 15px;
     line-height: 24px;
     max-height: 100%;
     font-family: 'Inter';
     display: inline-block;
     cursor: pointer;
  }
+ .header-section .row .logout button{
+    width: 110px;
+    font-size: 14px;
+ }
  .header-section .row .logout .fa{
     position: absolute;
-    left: 10.62%;
-    right: 77.88%;
-    top: 33.29%;
-    bottom: 28.57%;
  }
 /*******RESPONSIVE**********/
 @media (max-width: 992px){ 
@@ -164,12 +150,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-8 logo ">
-                   <img src="logo.png" alt="">
+                   <img src="logo-nstp.png" alt="">
                     <div class=" p1">
-                        <p class="font-weight-normal">CVSU-IMUS CAMPUS</p>
+                        <p>NSTP PROGRAM</p>
                     </div>
                     <div class="p2">
-                        <p>NSTP PROGRAM</p>
+                    <p class="font-weight-normal">CVSU-IMUS CAMPUS</p>
                     </div>
                     <div class="logout">
                         <button type="button" class="btn btn-light rounded btn-logout float-left " onclick="goBack()"><i

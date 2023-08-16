@@ -165,7 +165,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                                     </tbody>
                                 </table>
                             <?php else: ?>
-                                <p>No instructors found with the provided course ID.</p>
+                                <p class="p1">No instructors found with the provided course ID.</p>
                             <?php endif; ?>
                             </div>
 
