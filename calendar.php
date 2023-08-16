@@ -11,14 +11,6 @@
     <script src="script.js" defer></script>
 
 <style>
-     .container{
-            width: 1180px;
-            height: 650px;
-            display: flex;
-            flex-direction: row;
-            padding:10px;
-            margin-left: 140px;
-          }
           header .icons{
   display: flex;
 }
@@ -49,7 +41,7 @@ header .current-date{
   
 }
           .calendar-box{
-          width: 900px;
+          width: 700px;
           height: 540px;
           box-shadow: -2px 2px 10px -4px rgba(4,4,4,0.82);
           border-radius: 5px;
@@ -108,7 +100,6 @@ header .current-date{
 }
 </style>
   <!----------------------------------- CALENDAR BOX ---------------------------------------->
-  <div class="container">
     
     <div class="calendar-box">
       
@@ -134,7 +125,7 @@ header .current-date{
     </div>
   </div>
   
-    </div>
+  
     <script>
     const daysTag = document.querySelector(".days"),
 currentDate = document.querySelector(".current-date"),

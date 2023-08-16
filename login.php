@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
 
-    <!------navbar------>
+    <!------navbar------
     <nav class="navbar-login_signup login-header-section sticky-top  header-section-container">
         <div class="container">
             <div class="row">

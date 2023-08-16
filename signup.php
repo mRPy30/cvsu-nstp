@@ -92,7 +92,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <!------navbar------>
+    <!------navbar------
     <nav class="navbar-login_signup login-header-section sticky-top header-section-container">
         <div class="container">
             <div class="row">

@@ -84,13 +84,13 @@ $page = $components[2];
                         </div>
 
                         <div class='total_stud_box'>
-                            <i class="fa-solid fa-book"></i>
+                            <ion-icon name="book-outline"></ion-icon>
                             <h1><?php echo $totalCourse; ?></h1>
                             <p>NSTP Program</p>
                         </div>
 
                         <div class='total_stud_box'>
-                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <ion-icon name="people-outline"></ion-icon>
                             <h1><?php echo $totalInstructors; ?></h1>
                             <p>NSTP Instructors</p>
                         </div>

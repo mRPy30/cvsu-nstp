@@ -17,10 +17,9 @@ body{
  
 /****Main Content****/  
 .pcoded-main-content .instructor_prof{
-    margin: 20px 0px 0px 90px;
+    margin: 20px 0px 0px 9vw;
     border-bottom: 1px solid #CCCCCC;
-    width: 1140px;
-    
+    width: 1055px;
  }
  .pcoded-main-content .instructor_prof img{
     width: 49px;
@@ -37,38 +36,39 @@ body{
  }
 
 .pcoded-main-content .course{
-   margin: 30px 0px 0px 0px;
+   margin: 30px 0px 0px 9vw;
+   position: absolute;
 }
  .pcoded-main-content .course h1{
    position: relative;
    font: normal 800 20px/normal 'Inter';
    text-align: start;
-   margin-left: 107px;
 }
 .pcoded-main-content .box{
    display: flex;
    justify-content: flex-start;
    align-items: center;
-
+   position: absolute;
+   margin-top: 60px;
 }
 .pcoded-main-content .box .first{
-   width: 310px;
+   width: 21vw;
    height: 110px;
-   margin: 20px 0px 0px 107px;
+   margin: 20px 0px 0px 9vw;
    background: #FFE193;
    padding: 20px 25px;
    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .pcoded-main-content .box .second{
-   width: 310px;
+   width: 21vw;
    height: 110px;
-   margin: 20px 0px 0px 45px;
+   margin: 20px 0px 0px 30px;
    background: #FFE193;
    padding: 20px 25px;
    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .pcoded-main-content .box h4{
-   font: normal 700 30px/44px 'Inter';
+   font: normal 700 2vw/44px 'Inter';
    position: absolute;
 }
 .pcoded-main-content .box span{
@@ -77,9 +77,242 @@ body{
    margin-top: 40px;
 }
 
-.pcoded-main-content .box .calendar_section{
-   margin: 0px 220px;
+/****EVENT PANEL*****/
+
+.event-panel {
+   padding: 25px;
+   background: #6FBB76;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+   width: 345px;
+   height: 360px;
+   position: absolute;
+   margin: 38px 80vw 0px 55vw;
  }
+ .header h4{
+   font: normal 700 17px/normal 'Poppins';
+}
+ .event-panel-title {
+   font-size: 18px;
+   margin-bottom: 10px;
+ }
+
+ .event-panel-content {
+   font-size: 14px;
+ }
+ .class-box {
+   border-radius: 8px;
+   background-color: #ffffff;
+   display: flex;
+   align-items: center;
+   margin: 5px;
+ }
+ .date-box {
+   height: 50px;
+   width: 40px;
+   margin-right: 10px; /* Add margin between date-box and divider */
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space;
+ }
+ .date-box h3{
+   margin-top: 5px;
+   font-size: 15px;
+ }
+ .date-box h4 {
+  margin-bottom: 30px;
+  font-size: 15px;
+ }
+ .divider {
+   flex-grow: 1; /* Allow the divider to expand and fill the remaining space */
+   height: 40px;
+   border: solid 1px black;
+   margin-right: 10px; /* Add margin between divider and details-box */
+   background-color: #4CAF50;
+   width: 1px;
+ }
+ .details-box {
+   height: 50px;
+   width: 220px;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space;
+ }
+ .details-box h3 {
+   margin-top: 8px;
+   font-size: 12px
+ }
+ .details-box h5 {
+   margin-bottom: 10px;
+   font-size: 15px
+ }
+
+ .program-box {
+   width: 285px;
+   height: 50px;
+   border-radius: 8px;
+   padding: 5px;
+   display: flex;
+   align-items: center;
+   margin: 5px;
+   background-color: #ffffff;
+ }
+/*******END EVENT PANNEL*********/
+
+  /*****CALENDAR****/
+
+ .calendar-box{
+   width: 44vw;
+   height: 540px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+   border-radius: 5px;
+   margin: 233px 0px 0px 9vw;
+   background-color: #fff;
+   position: absolute;
+ }
+ header .icons{
+   display: flex;
+ }
+ header .icons span{
+   height: 38px;
+   width: 38px;
+   cursor: pointer;
+   color: #878787;
+   text-align: center;
+   margin-left: 20px;
+   line-height: 38px;
+   font-size: 1.5rem;
+   user-select: none;
+   border-radius: 50%;
+ }
+ .icons span:last-child{
+   margin-right: -10px;
+ }
+ header .icons span:hover{
+   background: #f2f2f2;
+   
+ }
+ header .current-date{
+   font: normal 600 24px/34px 'Poppins';
+   margin-top: 10px;
+   text-align: center;
+   
+ }
+           
+ .calendar{
+   padding: 20px;
+ }
+ .calendar ul{
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   text-align: center;
+ }
+ .calendar .days{
+   margin-bottom: 10px;
+ }
+ .calendar li{
+   color: #333;
+   width: calc(100% / 7);
+   font-size: 1.07rem;
+ }
+ .calendar .weeks li{
+   font-weight: 500;
+   cursor: default;
+ }
+ .calendar .days li{
+   z-index: 1;
+   cursor: pointer;
+   position: relative;
+   margin-top: 30px;
+ }
+ .days li.inactive{
+   color: #aaa;
+ }
+ .days li.active{
+   color: #fff;
+ }
+ .days li::before{
+   position: absolute;
+   content: "";
+   left: 50%;
+   top: 50%;
+   height: 40px;
+   width: 40px;
+   z-index: -1;
+   border-radius: 50%;
+   transform: translate(-50%, -50%);
+ }
+ .days li.active::before{
+   background: #6FBB76;
+ }
+ .days li:not(.active):hover::before{
+   background: #f2f2f2;
+ }
+/****END CALENDAR****/
+
+ /****NEWS & UPDATES****/
+ 
+ .news .wrapper {
+   width: 400px;
+   height: 500px;
+   overflow: hidden;
+   position: relative;
+   margin: 433px 0px 0px 55vw;
+ }
+ .news .wrapper>div {
+   width: 100%;
+   height: auto;
+   position: absolute;
+   animation: animate 25s infinite;
+   opacity: 0;
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-position: center center;
+ }
+ .news .wrapper>div:nth-child(1) {
+   animation-delay: 1s;
+ }
+ .news .wrapper>div:nth-child(1) {
+   animation-delay: 1s;
+ }
+ .news .wrapper>div:nth-child(2) {
+   animation-delay: 3s;
+ }
+ .news .wrapper>div:nth-child(3) {
+   animation-delay: 5s;
+ }
+ .news .wrapper>div:nth-child(4) {
+   animation-delay: 7s;
+ }
+ .news .wrapper>div:nth-child(5) {
+   animation-delay: 9s;
+ }
+
+ 
+ 
+ @keyframes animate {
+   10% {
+     opacity: 1;
+   }
+   20% {
+     opacity: 0;
+   }
+   30% {
+     opacity: 0;
+   }
+   40% {
+     opacity: 0;
+   }
+   50% {
+     opacity: 0;
+   }
+   140% {
+     transform: scale(1.0);
+   }
+ }
+/********End News and Updates*******/ 
+ 
  /***
 
  .pcoded-main-content .box {
