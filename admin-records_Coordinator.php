@@ -1,6 +1,7 @@
 <?php
 
-include 'db_connect.php'; // Include your database connection code here
+include 'db_connect.php'; 
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -16,12 +17,11 @@ $page = $components[2];
 
 
 
-// Initialize an empty array to store coordinator details
 $coordinators = array(); // Initialize an empty array
 
 
 // Include your SQL query to retrieve coordinator details
-$query = "SELECT * FROM coordinator"; // Replace 'your_table_name' with your actual table name
+$query = "SELECT * FROM coordinator"; 
 $result = mysqli_query($conn, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
