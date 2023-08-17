@@ -5,7 +5,10 @@
 }
 
 
-
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
 /********topbar********/
 .navbar-login_signup{
     position: fixed;

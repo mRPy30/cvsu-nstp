@@ -18,15 +18,228 @@ body{
 
 
 /************LANDING PAGE***********/
-.pcoded-main-content .homepage-title h1{
-    color: #008A0E;
-    font-size: 16px;
-    font-family: "Poppins";
-    margin-left: 60px;
-    position: relative;
-    margin: 20px 220px;
+.pcoded-main-content .student_prof{
+    margin: 20px 0px 0px 130px;
+    border-bottom: 1px solid #CCCCCC;
+    width: 1045px;
  }
+ .pcoded-main-content .student_prof p{
+    text-align: start;
+    font: normal 500 16px/34px 'Poppins';
+    text-transform: uppercase;
+ }
+ 
+ .pcoded-main-content .box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    margin-top: 5px;
 
+ }
+ .pcoded-main-content .box .first{
+    width: 22vw;
+    height: 110px;
+    margin: 20px 0px 0px 130px;
+    background: #ffffff;
+    padding: 20px 25px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
+ .pcoded-main-content .box .second{
+    width: 22vw;
+    height: 110px;
+    margin: 20px 0px 0px 30px;
+    background: #ffffff;
+    padding: 20px 25px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
+ .pcoded-main-content .box .third{
+    width: 22vw;
+    height: 110px;
+    margin: 20px 0px 0px 30px;
+    background: #ffffff;
+    padding: 20px 25px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
+ .pcoded-main-content .box .first ion-icon{
+    font-size: 75px;
+    position: absolute;
+    margin: 0px 0px 0px 210px;
+    color: #008A0E;
+ }
+ .pcoded-main-content .box .second ion-icon{
+    font-size: 65px;
+    position: absolute;
+    margin: 0px 0px 0px 220px;
+ }
+ .pcoded-main-content .box .third i{
+    font-size: 50px;
+    position: absolute;
+    margin: 10px 0px 0px 210px;
+ }
+ 
+ .pcoded-main-content .box h4{
+    font: normal 700 2vw/44px 'Inter';
+    position: absolute;
+ }
+ .pcoded-main-content .box span{
+    font: normal 400 15px/normal 'Poppins';
+    position: absolute;
+    margin-top: 40px;
+ }
+ /***CALENDAR****/
+ .calendar-box{
+    width: 338px;
+    height: 400px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    margin: 170px 80vw 0px 870px;
+    background-color: #fff;
+    position: absolute;
+  }
+  header .icons{
+    display: flex;
+  }
+  header .icons span{
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
+    color: #878787;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 38px;
+    font-size: 1rem;
+    user-select: none;
+    border-radius: 50%;
+  }
+  .icons span:last-child{
+    margin-right: -10px;
+  }
+  header .icons span:hover{
+    background: #f2f2f2;
+    
+  }
+  header .current-date{
+    font: normal 600 24px/34px 'Poppins';
+    margin-top: 10px;
+    text-align: center;
+    
+  }
+            
+  .calendar ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    text-align: center;
+    padding: 4px 2px 5px 2px;
+;
+  }
+  .calendar .days{
+    margin-bottom: 15px;
+  }
+  .calendar li{
+    color: #333;
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+  }
+  .calendar .weeks li{
+    font-weight: 500;
+    cursor: default;
+  }
+  .calendar .days li{
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    margin-top: 17px;
+  }
+  .days li.inactive{
+    color: #aaa;
+  }
+  .days li.active{
+    color: #fff;
+  }
+  .days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .days li.active::before{
+    background: #6FBB76;
+  }
+  .days li:not(.active):hover::before{
+    background: #f2f2f2;
+  }
+
+/****ACTIVITES****/
+  .act .wrapper {
+    width: 705px;
+    height: 397px;
+    overflow: hidden;
+    position: relative;
+    margin: 172px 0px 0px 130px ;
+    border-radius: 10px;
+background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .act .wrapper>div {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    animation: animate 25s infinite;
+    opacity: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+  }
+  .act .wrapper>div:nth-child(1) {
+    animation-delay: 1s;
+  }
+  .act .wrapper>div:nth-child(1) {
+    animation-delay: 1s;
+  }
+  .act .wrapper>div:nth-child(2) {
+    animation-delay: 3s;
+  }
+  .act .wrapper>div:nth-child(3) {
+    animation-delay: 5s;
+  }
+  .act .wrapper>div:nth-child(4) {
+    animation-delay: 7s;
+  }
+  .act .wrapper>div:nth-child(5) {
+    animation-delay: 9s;
+  }
+ 
+  
+  
+  @keyframes animate {
+    10% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    140% {
+      transform: scale(1.0);
+    }
+  }
+ /********End News and Updates*******/ 
+/******
  .pcoded-main-content .layer_1{
     margin: 30px 50px 0px 150px;
  }
