@@ -87,7 +87,7 @@ $page = $components[2];
                     </div>
                             <!------LAYER 2----->
                             
-                            <?php include('calendar.php');?>
+                            <?php //include('calendar.php');?>
                             
                     </div>
                 </div>
