@@ -61,6 +61,7 @@
     position: absolute;
     left: 0px;
     right: 0px;
+    top: 0px;
 }
 .bg img{
     width: 100%;
@@ -95,7 +96,7 @@
     -ms-flex-align: start;
 }
 .logout_container{
-    margin-top: 30px;
+    margin-top: 55px;
 }
 .logout_container .row{
     margin-left: 270px;
@@ -264,8 +265,8 @@
         position: absolute;
         width: 110px;
         height: 50px;
-        left: 70px;
-        top: 50%; 
+        left: 110px;
+        top: 40%; 
     }
     .signup-section .row .text-align img{
         width: 120px;
