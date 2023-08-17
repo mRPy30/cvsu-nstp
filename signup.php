@@ -70,7 +70,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <title>SIGN UP PAGE</title>
 
     <!---------Css link------------>
-    <link rel="stylesheet" href="style_log-in_&_sign-up.css">
+    <link rel="stylesheet" href="style_log-in_&_signup.css">
 
     <!-----------bootsrap------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
