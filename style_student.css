@@ -182,16 +182,16 @@ body{
     height: 397px;
     overflow: hidden;
     position: relative;
-    margin: 172px 0px 0px 130px ;
+    margin: 172px 0px 0px 130px;
     border-radius: 10px;
-background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .act .wrapper>div {
     width: 100%;
     height: auto;
     position: absolute;
-    animation: animate 25s infinite;
+    animation: animate 15s infinite;
     opacity: 0;
     -webkit-background-size: cover;
     background-size: cover;
@@ -201,20 +201,18 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     animation-delay: 1s;
   }
   .act .wrapper>div:nth-child(1) {
-    animation-delay: 1s;
-  }
-  .act .wrapper>div:nth-child(2) {
     animation-delay: 3s;
   }
-  .act .wrapper>div:nth-child(3) {
+  .act .wrapper>div:nth-child(2) {
     animation-delay: 5s;
   }
-  .act .wrapper>div:nth-child(4) {
+  .act .wrapper>div:nth-child(3) {
     animation-delay: 7s;
   }
-  .act .wrapper>div:nth-child(5) {
+  .act .wrapper>div:nth-child(4) {
     animation-delay: 9s;
   }
+  
  
   
   
@@ -234,10 +232,148 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     50% {
       opacity: 0;
     }
-    140% {
+    60% {
       transform: scale(1.0);
     }
   }
+/***end Activities******/
+
+/*****News******/
+.news{
+    margin: 40px 0px 0px 130px;
+    width: 1078px;
+    height: 570px;
+    background-color: #ffffff;
+    fill: #FFF;
+    padding: 30px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.news h1{
+    font: normal 600 20px/34px 'Poppins';
+}
+  .news .maincarousel {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+  }
+  .news .wrapper {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+  }
+  .news .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .news .wrapper i:active{
+    transform: translateY(-50%) scale(0.85);
+  }
+  .news .wrapper i:first-child{
+    left: -22px;
+  }
+  .news .wrapper i:last-child{
+    right: -22px;
+  }
+  .news .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 25px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 450px;
+    list-style: none;
+    background: #6FBB76;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 12px;
+  }
+  .carousel .card .img {
+    height: 120px;
+    width: 120px;
+    margin-top: 70px;
+  }
+  .card .img img {
+    width: 200px;
+    height:230px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .carousel .card p {
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 70px 40px 0px 30px;
+  }
+  
+  .carousel .card button{
+    margin: 50px 20px 0px 0px;
+    font: normal 600 10px/34px 'Poppins';
+    background: #ffffff;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    height: 40px;
+  }
+  
+  .carousel .card .button:hover {
+    background-color: #ffffff;
+    color: white;
+  }
+  
+  .carousel .card span {
+    color: #6A6D78;
+    font-size: 1.31rem;
+  }
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+    
  /********End News and Updates*******/ 
 /******
  .pcoded-main-content .layer_1{

@@ -246,11 +246,14 @@ body{
  /****NEWS & UPDATES****/
  
  .news .wrapper {
-   width: 400px;
-   height: 500px;
+   width: 348px;
+   height: 340px;
    overflow: hidden;
    position: relative;
    margin: 433px 0px 0px 55vw;
+   border-radius: 5px;
+   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
  }
  .news .wrapper>div {
    width: 100%;
