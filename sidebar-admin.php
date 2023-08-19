@@ -94,7 +94,7 @@
                         echo "nav-link active";
                     } else {
                         echo "nav-link";
-                    } ?> "> <i class="fa-sharp fa-solid fa-house"></i> Home </a>
+                    } ?> "> <i class="fa-solid fa-gauge-high"></i></i> Dashboard </a>
                 </li>
 
                 <li class="nav-link">

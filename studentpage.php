@@ -26,6 +26,8 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 $page = $components[2];
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -129,10 +131,10 @@ $page = $components[2];
                     <!---activities---->
                     <section class="act">
                         <div class="wrapper">
-                            <div><img style="height:397px; width:705px; justify-content: center;" src="NSTP-Closing ceremony.jpg"></div>
-                            <div><img style="height:397px; width:705px; justify-content: center; "src="NSTP-Feeding-Program.png"></div>
-                            <div><img style="height:397px; width:705px; justify-content: center;"src="NSTP-Graduation.png"></div>
-                            <div><img style="height:397px; width:705px; justify-content: center;"src="NSTP-Benificiaries-Project.png"></div>
+                            <div><img style="height:345px; width:705px; justify-content: center;" src="NSTP-Closing ceremony.jpg"></div>
+                            <div><img style="height:345px; width:705px; justify-content: center; "src="NSTP-Feeding-Program.png"></div>
+                            <div><img style="height:345px; width:705px; justify-content: center;"src="NSTP-Graduation.png"></div>
+                            <div><img style="height:345px; width:705px; justify-content: center;"src="NSTP-Benificiaries-Project.png"></div>
                         </div>
                     </section>
                      <!-- End Activitiies -->
@@ -173,16 +175,15 @@ $page = $components[2];
                             </ul>
                             <i id="right" class="fa-solid fa-angle-right"></i>
                             </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel1" data-bs-slide="prev">
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+
                         </div>
                     </article>
                     <!-- End News -->

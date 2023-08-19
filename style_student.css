@@ -19,9 +19,9 @@ body{
 
 /************LANDING PAGE***********/
 .pcoded-main-content .student_prof{
-    margin: 20px 0px 0px 130px;
+    margin: 10px 0px 0px 130px;
     border-bottom: 1px solid #CCCCCC;
-    width: 1045px;
+    width: 1075px;
  }
  .pcoded-main-content .student_prof p{
     text-align: start;
@@ -38,77 +38,86 @@ body{
 
  }
  .pcoded-main-content .box .first{
-    width: 22vw;
-    height: 110px;
+    width: 339px;
+    height: 85px;
     margin: 20px 0px 0px 130px;
     background: #ffffff;
-    padding: 20px 25px;
+    padding: 10px 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
  }
  .pcoded-main-content .box .second{
-    width: 22vw;
-    height: 110px;
+    width: 339px;
+    height: 85px;
     margin: 20px 0px 0px 30px;
     background: #ffffff;
-    padding: 20px 25px;
+    padding: 10px 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
  }
  .pcoded-main-content .box .third{
-    width: 22vw;
-    height: 110px;
+    width: 339px;
+    height: 85px;
     margin: 20px 0px 0px 30px;
     background: #ffffff;
-    padding: 20px 25px;
+    padding: 10px 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
  }
  .pcoded-main-content .box .first ion-icon{
-    font-size: 75px;
+    font-size: 43px;
     position: absolute;
-    margin: 0px 0px 0px 210px;
+    margin: 7px 0px 0px 230px;
     color: #008A0E;
  }
  .pcoded-main-content .box .second ion-icon{
-    font-size: 65px;
+    font-size: 43px;
     position: absolute;
-    margin: 0px 0px 0px 220px;
+    margin: 7px 0px 0px 230px;
  }
  .pcoded-main-content .box .third i{
-    font-size: 50px;
+    font-size: 35px;
     position: absolute;
-    margin: 10px 0px 0px 210px;
+    margin: 13px 0px 0px 230px;
  }
  
  .pcoded-main-content .box h4{
-    font: normal 700 2vw/44px 'Inter';
+    font: normal 700 20px/44px 'Inter';
     position: absolute;
+    margin-bottom: 20px;
  }
  .pcoded-main-content .box span{
-    font: normal 400 15px/normal 'Poppins';
+    font: normal 400 13px/normal 'Poppins';
     position: absolute;
-    margin-top: 40px;
+    margin-top: 35px;
  }
+
+
  /***CALENDAR****/
  .calendar-box{
     width: 338px;
-    height: 400px;
+    height: 345px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 5px;
-    margin: 170px 80vw 0px 870px;
+    margin: 140px 80vw 0px 870px;
     background-color: #fff;
+    position: absolute;
+  }
+  header .current-date{
+    font: normal 600 18px/34px 'Poppins';
+    margin: 5px 10px;
     position: absolute;
   }
   header .icons{
     display: flex;
+    margin-left: 250px;
   }
   header .icons span{
     height: 38px;
     width: 38px;
     cursor: pointer;
-    color: #878787;
+    color: #000000;
     text-align: center;
     margin-left: 5px;
     line-height: 38px;
-    font-size: 1rem;
+    font-size: 15px;
     user-select: none;
     border-radius: 50%;
   }
@@ -119,28 +128,23 @@ body{
     background: #f2f2f2;
     
   }
-  header .current-date{
-    font: normal 600 24px/34px 'Poppins';
-    margin-top: 10px;
-    text-align: center;
-    
-  }
+ 
             
   .calendar ul{
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     text-align: center;
-    padding: 4px 2px 5px 2px;
+    padding: 10px 2px 5px 2px;
 ;
   }
   .calendar .days{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   .calendar li{
     color: #333;
     width: calc(100% / 7);
-    font-size: 1.07rem;
+    font-size: 14px;
   }
   .calendar .weeks li{
     font-weight: 500;
@@ -150,7 +154,7 @@ body{
     z-index: 1;
     cursor: pointer;
     position: relative;
-    margin-top: 17px;
+    margin-top: 20px;
   }
   .days li.inactive{
     color: #aaa;
@@ -179,10 +183,10 @@ body{
 /****ACTIVITES****/
   .act .wrapper {
     width: 705px;
-    height: 397px;
+    height: 345px;
     overflow: hidden;
     position: relative;
-    margin: 172px 0px 0px 130px;
+    margin: 140px 0px 0px 130px;
     border-radius: 10px;
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -240,9 +244,9 @@ body{
 
 /*****News******/
 .news{
-    margin: 40px 0px 0px 130px;
+    margin: 35px 0px 0px 130px;
     width: 1078px;
-    height: 570px;
+    height: 520px;
     background-color: #ffffff;
     fill: #FFF;
     padding: 30px;
@@ -319,13 +323,13 @@ body{
   }
   .carousel .card {
     scroll-snap-align: start;
-    height: 450px;
+    height: 400px;
     list-style: none;
     background: #6FBB76;
     cursor: pointer;
     padding-bottom: 15px;
     flex-direction: column;
-    border-radius: 12px;
+    
   }
   .carousel .card .img {
     height: 120px;
@@ -333,10 +337,11 @@ body{
     margin-top: 70px;
   }
   .card .img img {
-    width: 200px;
-    height:230px;
+    width: 450px;
+    height: 230px;
     background: url(<path-to-image>), lightgray 50% / cover no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 40px;
   }
   .carousel .card p {
     padding-top: 10px;
@@ -345,13 +350,15 @@ body{
     margin: 70px 40px 0px 30px;
   }
   
-  .carousel .card button{
-    margin: 50px 20px 0px 0px;
-    font: normal 600 10px/34px 'Poppins';
+  .carousel .card button {
+    margin: 20px 20px 0px 0px;
+    font: normal 600 8px/34px 'Poppins';
     background: #ffffff;
     transition-duration: 0.4s;
     cursor: pointer;
-    height: 40px;
+    height: 30px;
+    width: 40px;
+    padding: 0px;
   }
   
   .carousel .card .button:hover {
@@ -374,89 +381,6 @@ body{
     }
   }
     
- /********End News and Updates*******/ 
-/******
- .pcoded-main-content .layer_1{
-    margin: 30px 50px 0px 150px;
- }
- .pcoded-main-content .layer_1 .nstp {
-    position: absolute;
-    width: 640px;
-    height: 217px;
-    background-color: #FFE193;
-    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
-    border-radius: 10px
-    }
-    .pcoded-main-content .layer_1 .nstp h1{
-        font: normal 800 32px/normal 'Inter' ;
-        margin: 15px 0px 0px 15px; 
-    }
-    .pcoded-main-content .layer_1 .nstp p{
-        font: normal 400 14px/normal 'Poppins' ;
-        margin: 120px 0px 0px 15px; 
-    }
-    .pcoded-main-content .layer_1 .nstp i{
-        font-size: medium;
-        position: absolute; 
-        margin: 3px 0px 0px 5px; 
-
-    }
-.pcoded-main-content .layer_1 .statusbox {
-    margin: 10px 0px 0px 670px;
-    padding: 1px;
-}
-.pcoded-main-content .layer_1 .status{
-    width: 365px;
-    height: 93px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
-    border-radius: 10px;
-    text-align: bottom; 
-}
-.pcoded-main-content .layer_1 .status h1{ 
-    font: normal 400 25px/normal 'Poppins' ;
-    margin: 0px 0px 0px 10px;
-    padding-top: 8px;
-    position: absolute;
-}
-.pcoded-main-content .layer_1 .status ion-icon{ 
-  font-size: 45px;
-  position: absolute;
-  margin: 25px 0px 0px 300px;
-  color: #008A0E;
-}
-.pcoded-main-content .layer_1 .status p{ 
-    font: normal 300 15px/normal 'Poppins' ;
-    margin: 0px 0px 0px 10px;
-    padding-top: 60px;
-    position: absolute;
-}
-.pcoded-main-content .layer_1 .courseandsection {
-    position: relative;
-    box-shadow: 0px 3px 4px 1px rgba(0,0,0,0.4);
-    width: 365px;
-    height: 93px;
-    margin-top: 26px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-}
-.pcoded-main-content .layer_1 .courseandsection h1{ 
-    font: normal 400 25px/normal 'Poppins' ;
-    margin: 0px 0px 0px 10px;
-    padding-top: 8px;
-    position: absolute;
-}
-.pcoded-main-content .layer_1 .courseandsection i{ 
-  font-size: 30px;
-  position: absolute;
-  margin: 30px 0px 0px 295px;
-}
-.pcoded-main-content .layer_1 .courseandsection p{ 
-    font: normal 300 15px/normal 'Poppins' ;
-    margin: 0px 0px 10px 10px;
-    padding-top: 60px;
-    position: absolute;
-}
 
 /************END LANDING PAGE***********/
 
@@ -1246,5 +1170,17 @@ height: 50px;
         color: #fff;
       }
 /*********end feedback*********/
+
+
+
+/**********ABOUT**************/
+
+
+
+
+
+/********END ABOUT**********/
+
+
 
  /*************END MAIN CONTENT**************/
