@@ -29,6 +29,15 @@ if ($result_program->num_rows > 0) {
     echo "<tr><td colspan='9'>No records found</td></tr>";
 }
 
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
 
 ?>
 
