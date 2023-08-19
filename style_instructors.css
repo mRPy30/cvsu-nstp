@@ -164,12 +164,13 @@ body{
  }
  header .icons{
    display: flex;
+   margin: 10px 0px 0px 550px;
  }
  header .icons span{
    height: 38px;
    width: 38px;
    cursor: pointer;
-   color: #878787;
+   color: #000000;
    text-align: center;
    margin-left: 20px;
    line-height: 38px;
@@ -186,8 +187,8 @@ body{
  }
  header .current-date{
    font: normal 600 24px/34px 'Poppins';
-   margin-top: 10px;
-   text-align: center;
+   margin: 5px 10px;
+   position: absolute;
    
  }
            
@@ -199,6 +200,8 @@ body{
    flex-wrap: wrap;
    list-style: none;
    text-align: center;
+   padding: 25px 2px 5px 2px;
+
  }
  .calendar .days{
    margin-bottom: 10px;
@@ -206,7 +209,7 @@ body{
  .calendar li{
    color: #333;
    width: calc(100% / 7);
-   font-size: 1.07rem;
+   font-size: 20px;
  }
  .calendar .weeks li{
    font-weight: 500;

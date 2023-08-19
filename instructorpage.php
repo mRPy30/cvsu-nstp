@@ -97,7 +97,7 @@ $page = $components[2];
             <div class="container pt-4">
                 <div class="col-lg-12">
                     <div class="instructor_prof">
-                        <p> Welcome! <?php echo " $instructorName" ?>
+                        <p> Welcome <?php echo " $instructorName '!'" ?>
                     </div>
                     <div class="course">
                         <h1><?php echo "$instructorCourse" ?></h1>

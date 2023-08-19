@@ -78,7 +78,7 @@ $page = $components[2];
                 <div class="col-lg-12">
                     <!------LAYER 1----->
                     <div class="student_prof">
-                        <p>HI! <?php echo " $studentName" ?></p>
+                        <p>HI <?php echo " $studentName '!'"  ?></p>
                     </div> 
 
                     <!-----BOXES------->
