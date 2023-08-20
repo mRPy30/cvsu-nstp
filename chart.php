@@ -22,22 +22,24 @@ if(!$con){
 </head>
 
 <body>
-  <div class="row" style="margin-left: 130px; margin-top: 70px;" >
-    <div class="col-md-8 offset-md-2">
-      <div class="card" style="box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);">
-      <div class="card-header bg">
-        <h1>Number of Enrollees</h1>
+  <div class="row">
+    <div class="col-md-8" style="margin-left: 154px;">
+      <div class="card" style="border-radius: 5px; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); width:667px;">
+      <div class="card-header bg" style="width:667px; height:40px;">
+        <h5 style="font: normal 600 14px/normal 'Poppins';">Number of Enrollees</h5>
       </div>
-          <div class="card-body" >
-          <canvas id="chartjs_bar" style="width: 20px; height: 10px;"></canvas>
+          <div class="card-body">
+          <canvas id="chartjs_bar" style="width: 10px; height: 5px;"></canvas>
           </div>
       </div>
     </div>
   </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript">
+        
       var ctx = document.getElementById("chartjs_bar").getContext('2d');
       var myChart = new Chart(ctx,{
           type: 'bar',

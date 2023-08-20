@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!---------TITLE-------------->
     <link rel="short icon" href="logo.png" type="">
-    <title>LOGIN PAGE</title>
+    <title>Login Portal</title>
     
     <!---------CSS LINK------------>
     <link rel="stylesheet" href="style_log-in_&_signup.css">
@@ -78,23 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-
-    <!------navbar------
-    <nav class="navbar-login_signup login-header-section sticky-top  header-section-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 logo">
-                    <div class="p1">
-                        <p>NSTP PROGRAM</p>
-                    </div>
-                    <div class="col-4 home">
-                        <a href="homepage.php" class="home-link "><i class="fa-solid fa-house"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!------End navbar------>
 
     <!-----main content----->
     <div class="bg">
@@ -132,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <input type="password is-valid" class="form-control" placeholder="Enter your Password" name="password" id="password" required onclick="togglePasswordVisibility()">
                                 <span class="password-toggle" onclick="togglePasswordVisibility()"><i class="fa-solid fa-eye"></i></span>
                                 <span class="error" id="passwordError"></span>
-                                    <button class="btn btn-lg btn-block" type="submit" name="submit" value="Submit">LOGIN</button>
+                                <button class="btn btn-lg btn-block" type="submit" name="submit" value="Submit">LOGIN</button>
                             </form>
                             <div class="signup">
                                 <p>Don't have an account yet? <a href="signup.php"> Signup Here </a></p>

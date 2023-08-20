@@ -9,54 +9,7 @@ body{
     overflow-y: hidden;
     overflow-x: hidden;
   }
-/********topbar********/
-.navbar-login_signup{
-    position: fixed;
-    align-items: center;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-}
 
-.login-header-section{
-    position: relative;
-    min-height: 70px;
-    left: 0px;
-    top: 0px;
-    display: flex;
-  justify-content: space-between;
-    background: #6FBB76;
-    align-items: center;
-    flex-wrap: wrap;
-    display: flex;
-}
-.login-header-section .row .p1 p{
-    position: fixed;
-    min-width: 350px;
-    height: 39px;
-    left: 35px;
-    top: 17px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 39px;
-}
-.login-header-section .row .home{
-    max-width: 960px;
-    margin: 0 390px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   
-}
-.login-header-section .row .home a {
-    color: #000000;
-    text-decoration: none;
-    font-size: 30px;
-    margin-left: auto;
-}
-    
 /***************** L O G I N ********************/
 /********Body background***********/
 
@@ -178,7 +131,10 @@ body{
     padding: 5px 0px;
     font-family: 'inter';
     padding-left: 10px;
+    caret-color: #008A0E;
+    background-color: rgb(255, 255, 255);
 }
+
 .form-login .form-group .form-login .form-control::placeholder{
     color: #BEBEBF;
     font-family: 'Poppins';
@@ -186,9 +142,13 @@ body{
     font-size: 14px;
     line-height: 100%;
 }
+.form-login .form-group .form-login .form-control input{
+    caret-color: rgb(255, 81, 0);
+}
 .form-login .form-group .form-login .log{
     margin-top: 15px;
 }
+
  
 
 /***hide and show password***/
@@ -223,7 +183,11 @@ body{
     display: flex;
     align-items: center;
     color: #FFFFFF;
+    transition: all .6s ease;
 }
+.form-login .form-group .form-login .btn:hover {
+    transform: scale(1.02);
+  }
 .form-login .signup{
     font-family: 'Poppins';
     font-style: normal;

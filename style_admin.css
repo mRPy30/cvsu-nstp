@@ -20,14 +20,14 @@ body{
   
   /*******LANDING PAGE*******/
   .pcoded-main-content .total-result{
-    margin: 20px 0px 0px 200px;
+    margin: 10px 0px 0px 135px;
     display: inline-flex;
     position: absolute;
   }
   .pcoded-main-content .total_stud_box {
     position: relative;
-    height: 95px;
-    width: 300px;
+    height: 80px;
+    width: 320px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
     background-color: #ffffff;
@@ -35,34 +35,73 @@ body{
     align-items: center;
     justify-content: flex-end;
     padding: 10px; /* Add 'px' unit to the padding value */
-    margin: 10px 20px 0px 20px;
-    border-radius: 10px;
+    margin: 10px 5px 0px 20px;
+    border-radius: 5px;
   }
   
   .pcoded-main-content .total_stud_box h1 {
     color: #008A0E;
-    font: normal 600 45px/normal 'Poppins';
-    margin: 20px 50px 9px 165px;
+    font: normal 600 37px/normal 'Poppins';
+    margin: 0px 50px 10px 165px;
     position: absolute;
   }
   .pcoded-main-content .total_stud_box ion-icon{
     color: #000000;
-    font-size: 60px;
-    margin: 0px 145px 6px 0px;
+    font-size: 50px;
+    margin: 0px 160px 5px 0px;
     position: absolute;
   }
-  
+  .pcoded-main-content .total_stud_box i{
+    color: #000000;
+    font-size: 50px;
+    margin: 0px 145px 5px 0px;
+    position: absolute;
+  }
   .pcoded-main-content .total_stud_box p {
-    color: #000;
+    color: #777777;
     font-size: 20px;
-    font: normal 600 14px/normal 'Poppins';
+    font: normal 600 12px/normal 'Poppins';
     margin: 0px 0px 0px 110px;
   }
-  .pcoded-main-content .calendar_section{
-    position: relative;
-    margin: 150px 0px 0px 100px;
-    
 
+  .pcoded-main-content .bar_section{
+    position: absolute;
+    margin: 130px 0px 0px 0px;
+    width: 1200px;
+
+  }
+
+  .pcoded-main-content .table-event-list {
+    width: 317px;
+    height: 395px;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: 128px 0px 0px 846px;
+    background: #FFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: absolute;
+    border-radius: 5px;
+  }
+  .pcoded-main-content .table-event-list p{
+    padding: 5px;
+    font: normal 700 14px/normal 'Poppins';
+    margin: 8px;
+    position: absolute;
+  }
+  .pcoded-main-content .table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 40px 0px 0px 0px;
+  }
+  .pcoded-main-content .table th{
+    background-color:#6FBB76;
+    font: normal 600 15px/normal 'Poppins';
+    text-align: center;
+  }
+  .pcoded-main-content .table td{
+    font: normal 500 12px/normal 'Poppins';
   }
 /*******************END LANDING********************/
 

@@ -67,7 +67,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <!---------title-------------->
     <link rel="short icon" href="logo.png" type="">
-    <title>SIGN UP PAGE</title>
+    <title>Signup Student</title>
 
     <!---------Css link------------>
     <link rel="stylesheet" href="style_log-in_&_signup.css">
