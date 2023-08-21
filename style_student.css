@@ -384,117 +384,65 @@ body{
 /************END LANDING PAGE***********/
 
 /**********Classes***********/
-.pcoded-main-content .welcome {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: arial, sans-serif;
-    padding: 1px;
-    margin: 10px 0px 0px 150px;
-    }
-.pcoded-main-content .instructorbox{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px black solid;
-        width: 950px;
-        height: 125px;
-        margin: 0px 50px 0px 180px;
+
+/*********BOXES***********/
+.pcoded-main-content .rec-content .upperbox{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 10px 130px;
 }
-.black-letter {
-    color: black;
-    }
-.instructor img {
-        weight: 30px;
-        height: 33px;
-    }
+.pcoded-main-content .rec-content .upperbox h4{
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0px 0px 0px;
+}
 
-    .coursematerials img {
-        weight: 30px;
-        height: 30px;
-    }
-
-    .schedule img {
-        weight: 35px;
-        height: 35px;
-    }
-
-    .classlist img {
-        weight: 30px;
-        height: 30px;
-    }
-   
-.pcoded-main-content .box1 {
-    position: relative;
-    width: 225px;
-    height: 90px;
-    margin: 10px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background-color: #FFFFFF;
+.pcoded-main-content .rec-content .middlebox {
+  padding: 5px;
+  margin: 7px 0px 0px 150px;
+  height: 305px;
+  width: 900px;
+  flex-wrap: wrap;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+  .pcoded-main-content .rec-content .middlebox .records_box {
+    width: 305px;
+    height: 105px;
+    margin: 30px 20px 0px 25px;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-    .pcoded-main-content .box1:hover{
-        background-color: #6FBB76;
-        transition: all .5s ease;
-        transform: scale(0.98);
-        z-index: 2;
-        color: #FFF;
-      }
-      .pcoded-main-content .box1 a{
-        color: #000;
-        text-decoration: none;
-        font: normal 500 17px/normal 'Poppins';
-      }
-      .pcoded-main-content .box1 a span:hover{
-        color: #000000;
-      }
-      .pcoded-main-content .description {
-        position: relative;
-        width: 950px;
-        height: 300px;
-        margin: 10px;
-        background-color: #FFFFFF;
-        border-radius: 10px;
-        display: flex;
-        align-items: justify ;
-        justify-content: justify;
-        top: 50px;
-        font: normal 700 28px/normal 'Poppins' ;
-        padding: 23px;
-        }
-
-        .pcoded-main-content .descriptionbox {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        width: 500px;
-        height: 220px;
-        margin-left: 5px;
-        padding: 1px;
-        top: 130px;
-        left: 40px;
-        }
-        .pcoded-main-content .description img{
-            position: absolute;
-            height: 220px;
-            weight: 100px;
-            margin: 20px 0px 0px 530px;
-        }
-        .pcoded-main-content  .maindescription {
-            text-align: justify;
-            align-items: justify ;
-            justify-content: justify;
-            top: 40px;
-            font-size: 15px;
-            font-family: arial, sans-serif;
-            padding: 5px;
-            }
-            .pcoded-main-content  .maindescription p{
-                position: absolute;
-                font: normal 400 15px/normal 'Poppins' ;
-            }
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover{
+  background-color: #6FBB76;
+  transition: all .5s ease;
+  transform: scale(0.98);
+  z-index: 2;
+  color: #FFF;
+}
+.pcoded-main-content .rec-content .middlebox .records_box h3{
+  font: normal 500 20px/normal 'Poppins';
+  text-align: center;
+  margin: 40px 0px 0px 5px;
+}
+.pcoded-main-content .middlebox .records_box  h3 i{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover i{
+  color: #FFF;
+}
+.pcoded-main-content .middlebox .records_box  h3 ion-icon{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover ion-icon{
+  color: #FFF;
+}
 /**********End Classes***********/
 
 
