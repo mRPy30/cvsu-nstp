@@ -8,7 +8,7 @@
 <!----------TITLE------------>
 <link rel="shortcut icon" href="logo.png" type="">
     <title>
-        <?php echo "Admin Page"; ?>
+        <?php echo "Coordinator Page"; ?>
     </title>
 
     <!----------CSS------------>
