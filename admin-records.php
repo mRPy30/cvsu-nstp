@@ -73,8 +73,12 @@ $page = $components[2];
                                     <h3><i class="fa-solid fa-graduation-cap"></i> Student Records</h3>
                                 </div> 
 
-                                <div class="records_box" id="financial_box">
-                                    <h3><ion-icon name="wallet"></ion-icon> Financial Records</h3>
+                                <div class="records_box" id="year_box">
+                                    <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
+                                </div>
+
+                                <div class="records_box" id="sem_box">
+                                    <h3><i class="fa-regular fa-calendar"></i> Semester Records</h3>
                                 </div>
 
                                 <div class="records_box" id="courses_box">
@@ -89,13 +93,9 @@ $page = $components[2];
                                     <h3><i class="fa-regular fa-calendar"></i> Coordinator Records</h3>
                                 </div> 
 
-                                <div class="records_box" id="year_box">
-                                    <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
+                                <div class="records_box" id="financial_box">
+                                    <h3><ion-icon name="wallet"></ion-icon> Financial Records</h3>
                                 </div>
-
-                                <div class="records_box" id="sem_box">
-                                    <h3><i class="fa-regular fa-calendar"></i> Semester Records</h3>
-                                </div>  
                             </div>
                         </div>
                 </div>
