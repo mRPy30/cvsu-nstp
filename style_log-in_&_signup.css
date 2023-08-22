@@ -58,9 +58,10 @@ body{
     margin-left: 270px;
 }
 .login-section .row .text-align img{
-    width: 120px;
-    height: 125px;
-    margin-top: 5px; 
+    width: 110px;
+    height: 115px;
+    margin-top: 10px; 
+    margin-left: 18px;
 }   
 .login-section .row .text-align .body_logo  {
     -webkit-box-align: center;
@@ -73,29 +74,29 @@ body{
     margin-bottom: 0;
     font-family: 'Abel';
     font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
+    font-weight: 500;
+    font-size: 47px;
     line-height: 55px;
     color: #FFFFFF;
     top: 15px;
     width: 500px;
-    height: 29px;
+    height: 36px;
     color: #FFFFFF;
-    left: 75px;
+    left: 82px;
 }
 .login-section .row .text-align .body-title h1{
     font-family: 'Inter';
     font-style: bold;
-    font-weight: 800;
+    font-weight: 1000;
     line-height: 29px;
     position: absolute;
     font-size: 50px;
-    left: 130px;
+    left: 155px;
     top: 73px;
-    width: 500px;
-    height: 29px;
+    width: 450px;
+    height: 59px;
     color: #FFFFFF;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 /****input box login****/
@@ -232,8 +233,8 @@ body{
         position: absolute;
         width: 110px;
         height: 50px;
-        left: 110px;
-        top: 40%; 
+        left: 140px;
+        top: 39%; 
     }
     .signup-section .row .text-align img{
         width: 120px;
@@ -243,30 +244,29 @@ body{
         position: absolute;
         height: 100px;
         width: 450px;
-        left: 130px;
+        left: 140px;
         top: 5px;
         font-family: 'Abel';
         font-style: normal;
         font-weight: 400;
-        font-size: 40px;
+        font-size: 49px;
         line-height: 55px;
         color: #FFFFFF;
     }
     .signup-section .row .text-align .body-title h1{
         font-family: 'Inter';
         font-style: bold;
-        font-weight: 800;
+        font-weight: 1000;
         line-height: 29px;
         position: absolute;
-        font-size: 50px;
-        left: 130px;
+        font-size: 53px;
+        left: 140px;
         top: 65px;
         width: 500px;
         height: 29px;
         color: #FFFFFF;
-        letter-spacing: 3px;
+        letter-spacing: 1px;
     }
-
 
     /***********Form Section***************/
     .form-signup{

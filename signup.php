@@ -117,12 +117,12 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="container signup_container">
             <div class="row">
                 <div class="col text-align ">
-                    <img src=logo.png>
+                    <img src=logo-nstp.png>
                     <div class="body_logo">
-                        <p> CAVITE STATE UNIVERSITY</p>
+                        <p> CvSU-IMUS CAMPUS</p>
                     </div>
                     <div class="body-title">
-                        <h1>IMUS CAMPUS</h1>
+                        <h1>NSTP PORTAL</h1>
                     </div>
                 </div>
             </div>
