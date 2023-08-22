@@ -1,19 +1,3 @@
-<?php
-require_once "db_connect.php";
-
-$query = "SELECT year, passing_rate FROM passing_rates";
-$result = $conn->query($query);
-
-$data = array();
-while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
-}
-
-echo json_encode($data);
-
-$conn->close();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +5,9 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div style="width: 80%; margin: auto;">
-        <canvas id="lineChart"></canvas>
+    <div style=" padding: 0px 0px 20px 0px; margin-left: 154px; border-radius: 5px; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); width:1010px;   background-color:#ffffff;">
+        <h5 style="border-bottom: 1px solid #CCCCCC; border-radius: 5px 0px 0px 0px; padding: 10px 0px 10px 20px; background-color: #EEE; font: normal 600 14px/normal 'Poppins';">Passing Rates</h5>
+        <canvas style="height: 50px;" id="lineChart"></canvas>
     </div>
     
     <script>
@@ -44,11 +29,11 @@ $conn->close();
                 data: {
                     labels: years,
                     datasets: [{
-                        label: 'Passing Rates',
+                        label: 'Total Passing over the years',
                         data: passingRates,
-                        borderColor: 'blue',
-                        backgroundColor: 'rgba(0, 0, 255, 0.2)',
-                        borderWidth: 1
+                        borderColor: '#008A0E',
+                        backgroundColor: '#008A0E',
+                        borderWidth: 3
                     }]
                 },
                 options: {

@@ -10,6 +10,7 @@ if(!$con){
         $num_enrolees[] = $row['courseName'];
         $course[] = $row['enrollees'];
     }
+  
 }
 ?>
 <!DOCTYPE html>
@@ -50,6 +51,7 @@ if(!$con){
                     '#5969ff',
                     '#6FBB76'
                 ],
+                label: 'Most Enrolled Training Program',
                 data: <?php echo json_encode($course);?>
             }]
           },
@@ -58,7 +60,7 @@ if(!$con){
                   display:true,
                   position:'bottom',
                   labels: {
-                      fontColor: '#008104',
+                      fontColor: '#000000',
                       fontFamily: 'poppins',
                       fontSize: 14,
                   }

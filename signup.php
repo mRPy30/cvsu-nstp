@@ -92,23 +92,6 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <!------navbar------
-    <nav class="navbar-login_signup login-header-section sticky-top header-section-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 logo">
-                    <div class="p1">
-                        <p>NSTP PROGRAM</p>
-                    </div>
-                    <div class="col-4 home">
-                        <a href="homepage.php" class="home-link"><i class="fa-solid fa-house"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!------End navbar------>
-
     <!-----main content----->
     <div class="bg-signup">
         <img src="background-signup.jpg" alt="cvsucover">

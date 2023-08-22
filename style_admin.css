@@ -103,6 +103,13 @@ body{
   .pcoded-main-content .table td{
     font: normal 500 12px/normal 'Poppins';
   }
+
+  .pcoded-main-content .rate_section{
+    position: absolute;
+    margin: 560px 0px 0px 0px;
+    width: 1200px;
+
+  }
 /*******************END LANDING********************/
 
 
@@ -362,7 +369,7 @@ body{
       }
       .pcoded-main-content .rec-content
       .add-box{
-        margin: 20px 0px 0px 100px; 
+        margin: 15px 0px 0px 818px; 
         bottom: 20px;
         left: 50%;
       }
@@ -389,6 +396,32 @@ body{
         transition: 0.4s;
       }
 
+      /***expenses**/
+      .pcoded-main-content .upperbox
+      .addbox{
+        margin: 0px 0px 0px 490px;
+      }
+      .pcoded-main-content .upperbox
+      .addbox button{
+        width: 115px;
+        height: 40px;
+        z-index: 999;
+        background-color: #4CAF50;
+        color: white; 
+        border: none;
+        padding: 10px 20px; 
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font: normal 400 12px/normal 'Inter';  
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .pcoded-main-content .upperbox
+      .addbox button:hover{
+        background-color: #008104;
+        transition: 0.4s;
+      }
       
         
 
@@ -528,7 +561,7 @@ body{
       /******table*****/
       .pcoded-main-content .rec-content 
       .align-tbl-course{
-        margin: 10px 0px 0px 330px;
+        margin: 0px 0px 0px 330px;
       }
       .pcoded-main-content .rec-content 
       .align-tbl-course .tabledisplay {
@@ -751,7 +784,7 @@ body{
 
 /******INSTRUCTOR LIST********/
 .pcoded-main-content .rec-content .align-tbl-instructor{
-  margin: 10px 110px 0px 100px;
+  margin: 0px 110px 0px 100px;
 }
   .pcoded-main-content .rec-content
    .align-tbl-instructor
@@ -880,15 +913,14 @@ body{
 
 /********RECORDS FINANCES**********/
 .pcoded-main-content .rec-content .middlebox-finance{
-  padding: 35px 10px 5px 0px;
-  margin: 40px 5px 5px 35px;
+  padding: 0px 10px 5px 0px;
+  margin: 30px 5px 5px 35px;
   width: 1000px;
   height: 550px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  background-color: #edecec;
   border-radius: 20px;
 }
 .pcoded-main-content .rec-content .middlebox-finance 
@@ -958,7 +990,7 @@ body{
 /******margin table*****/
 .pcoded-main-content .rec-content 
 .align-tbl-finances{
-  margin: 60px 0px 0px 100px;
+  margin: 30px 0px 0px 100px;
 }
 .pcoded-main-content .rec-content .align-tbl-finances 
 .table-box {
