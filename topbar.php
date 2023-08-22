@@ -155,7 +155,7 @@
                         <p>NSTP PORTAL</p>
                     </div>
                     <div class="p2">
-                    <p class="font-weight-normal">CVSU-IMUS CAMPUS</p>
+                    <p class="font-weight-normal">CvSU-IMUS CAMPUS</p>
                     </div>
                     <div class="logout">
                         <button type="button" class="btn btn-light rounded btn-logout float-left " onclick="goBack()"><i
