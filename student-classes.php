@@ -69,29 +69,35 @@ $page = $components[2];
                     <div class="rec-content">
                         <!-- Add your main content here -->
                         <div class="upperbox">
-                            <h4> Welcome to your NSTP-1 class </h4>
+                            <h4> Welcome to your NSTP Class </h4>
                         </div>
 
                         <div class="middlebox">
-                            <div class="records_box col-sm-4" id="course_box">
-                                <h3><i class="fa-regular fa-folder-open"></i> Course Materials </h3>
+                            <div class="records_box" id="course_box">
+                                <h3><i class="fa-regular fa-folder-open"></i>Course Materials </h3>
+                            </div>
+                           
+                            <div class="records_box" id="classes_box">
+                                <h3><i class="fa-solid fa-list-ul"></i>Class List </h3>
                             </div>
 
-                            <div class="records_box col-sm-4" id="instructor_box">
-                                <h3><i class="fa-regular fa-user"></i> Instructor </h3>
-                            </div>
-
-                            <div class="records_box col-sm-4" id="classes_box">
-                                <h3><i class="fa-solid fa-list-ul"></i> Class List </h3>
-                            </div>
-
-                            <div class="records_box col-sm-4" id="grade_box">
-                                <h3><i class="fa-solid fa-graduation-cap"></i> Grades </h3>
-                            </div>
-
-                            <div class="records_box col-sm-4" id="schedule_box">
+                            <div class="records_box" id="schedule_box">
                                 <h3><i class="fa-regular fa-calendar-days"></i>Schedule </h3>
                             </div>
+
+                            <div class="records_box" id="instructor_box">
+                                <h3><i class="fa-regular fa-user"></i>Instructor </h3>
+                            </div>
+
+                            <div class="records_box" id="grade_box">
+                                <h3><i class="fa-solid fa-graduation-cap"></i>Grades </h3>
+                            </div>
+
+                            <div class="records_box" id="certificate_box">
+                                <h3><i class="fa-solid fa-stamp"></i>Certificate </h3>
+                            </div>
+                            
+
                         </div>
                     </div>
                 </div>
@@ -125,6 +131,10 @@ $page = $components[2];
 
         document.getElementById('grade_box').addEventListener('click', function () {
             window.location.href = 'student-classes-grades.php';
+        });
+
+        document.getElementById('certificate_box').addEventListener('click', function () {
+            window.location.href = 'student-classes-certificate.php';
         });
 
     </script>

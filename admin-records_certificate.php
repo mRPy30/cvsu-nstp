@@ -8,8 +8,6 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 
 $page = $components[2];
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +41,7 @@ $page = $components[2];
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
+
      
 <!---Inner topbar--->
 <?php include('topbar.php');?>
@@ -57,17 +56,15 @@ $page = $components[2];
 
         <!--Main Content-->
         <main class="pcoded-main-content">
-            <div class="container pt-4">
+            <div class="container">
                 <div class="col-lg-12">
-                    
-                </div>
+
                 </div>
             </div>
         </main>
-
-        <!-----End Main content------>
-    </section>
-    <!-----End of Body------>
+     <!-----End Main content------>        
+        
+<!-----End of Body------>
+</section>
 </body>
-
-</html>
+</html>  

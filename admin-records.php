@@ -93,8 +93,12 @@ $page = $components[2];
                                     <h3><i class="fa-regular fa-calendar"></i> Coordinator Records</h3>
                                 </div> 
 
-                                <div class="records_box" id="financial_box">
+                                <div class="records_box " id="financial_box">
                                     <h3><ion-icon name="wallet"></ion-icon> Financial Records</h3>
+                                </div>
+
+                                <div class="records_box" id="certificate_box">
+                                    <h3><i class="fa-solid fa-certificate"></i> Programs Certificate </h3>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +137,10 @@ $page = $components[2];
         document.getElementById('sem_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Semester.php';
         });
-
+        
+        document.getElementById('certificate_box').addEventListener('click', function() {
+            window.location.href = 'admin-records_certificate.php';
+        });
             
         document.getElementById('coordinator_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Coordinator.php';

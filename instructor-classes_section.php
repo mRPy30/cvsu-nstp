@@ -144,7 +144,7 @@ $page = $components[2];
                                 </thead>
                                     <tbody class="scrollable-tbody">
                                         <?php if (!empty($students)): ?>
-                                        <?php foreach ($students as $studentid): ?>
+                                        <?php foreach ($students as $student): ?>
                                         <tr>
                                             <td>
                                                 <a

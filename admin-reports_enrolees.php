@@ -59,67 +59,13 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container pt-4">
                 <div class="col-lg-12">
-                <div class="rec-content">
-                        
-                        <div class="upperbox">
-                            <h4> Reports </h4>
-                        </div>
-
-                        <div class="middlebox">
-                            <div class="records_box" id="enrol_box">
-                                <h3><i class="fa-solid fa-chart-column"></i>Enrolees </h3>
-                            </div>
-                           
-                            <div class="records_box" id="passing_box">
-                                <h3><i class="fa-solid fa-chart-line"></i>Passing </h3>
-                            </div>
-
-                            <div class="records_box" id="attendance_box">
-                                <h3><ion-icon name="pie-chart-outline"></ion-icon>Attendance </h3>
-                            </div>
-
-                            <div class="records_box" id="feedback_box">
-                                <h3><i class="fa-solid fa-flag"></i> Feedback reports </h3>
-                            </div>
-
-                            <div class="records_box" id="event_box">
-                                <h3><i class="fa-solid fa-chart-simple"></i>Event Ratings </h3>
-                            </div>
-                            
-                        </div>
-                    </div>
+                <?php include('chart.php');?>
                 </div>
             </div>
         </main>
 
         <!-----End Main content------>
     </section>
-
-    <script>
-        document.getElementById('enrol_box').addEventListener('click', function () {
-            window.location.href = 'admin-reports_enrolees.php';
-        });
-
-        document.getElementById('passing_box').addEventListener('click', function () {
-            window.location.href = 'admin-reports_passing.php';
-        });
-
-        document.getElementById('attendance_box').addEventListener('click', function () {
-            window.location.href = 'admin-reports_attendance.php';
-        });
-
-        
-        document.getElementById('feedback_box').addEventListener('click', function () {
-            window.location.href = 'admin-reports_feedback.php';
-        });
-
-        document.getElementById('event_box').addEventListener('click', function () {
-            window.location.href = 'admin-reports_event.php';
-        });
-
-
-    </script>
-
     <!-----End of Body------>
 </body>
 

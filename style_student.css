@@ -386,10 +386,16 @@ body{
 /**********Classes***********/
 
 /*********BOXES***********/
+.pcoded-main-content .rec-content {
+  position: relative;
+  margin: 0px 0px 0px 40px;
+  display: flex;
+  flex-direction: column;
+}
 .pcoded-main-content .rec-content .upperbox{
   display: flex;
   justify-content: space-between;
-  margin: 0px 0px 10px 130px;
+  margin: 0px 0px 10px 100px;
 }
 .pcoded-main-content .rec-content .upperbox h4{
   display: flex;
@@ -399,18 +405,17 @@ body{
 
 .pcoded-main-content .rec-content .middlebox {
   padding: 5px;
-  margin: 7px 0px 0px 150px;
-  height: 305px;
-  width: 900px;
+  margin: 10px 0px 0px 100px;
+  height: 295px;
+  width: 1100px;
   flex-wrap: wrap;
-  position: absolute;
   display: flex;
-  flex-direction: column;
+ 
 }
   .pcoded-main-content .rec-content .middlebox .records_box {
-    width: 305px;
+    width: 300px;
     height: 105px;
-    margin: 30px 20px 0px 25px;
+    margin: 20px 20px 0px 20px;
     border-radius: 10px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -1179,6 +1184,9 @@ height: 50px;
 
 
 /**********ABOUT**************/
+.col-md-8{
+  background-color: #FFFFFF;
+}
 .col-md-8 h1{
   color: black;
   font-family: 'Poppins';
@@ -1190,6 +1198,7 @@ height: 50px;
   margin-top: 5%;
   margin-bottom: 5%;
   text-indent: 70px;
+  
 }
 .col-md-4 img{
   width: 425px;

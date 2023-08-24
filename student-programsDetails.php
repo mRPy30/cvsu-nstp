@@ -22,7 +22,7 @@ $page = $components[2];
     <title><?php echo "Student Page"; ?></title>
 
      <!----------CSS------------>
-    <link rel="stylesheet" href="style_students.css">
+    <link rel="stylesheet" href="style_student.css">
 
      <!----------BOOTSTRAP------------>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -56,42 +56,42 @@ $page = $components[2];
 <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">
-    <div class="centered">
-        
-        <div class="student_prog">
-            <h1>NSTP PROGRAMS / FEEDING PROGRAM</h1>
+            <div class="centered">
+                
+                <div class="student_prog">
+                    <h1>NSTP PROGRAMS / FEEDING PROGRAM</h1>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<div class="feed">
-    <div class="inner_feed">
-        <h1>FEEDING PROGRAM</h1>
-    </div>
+        <div class="feed">
+            <div class="inner_feed">
+                <h1>FEEDING PROGRAM</h1>
+            </div>
 
-    <div class="inner_feed-2">
-        <h1>PROGRAM DESCRIPTION</h1>
-    </div>
+            <div class="inner_feed-2">
+                <h1>PROGRAM DESCRIPTION</h1>
+            </div>
 
-    <div class="inner_feed-3">
-        <h1>Armand G. Aton</h1>
-        <p>Assigned Instructor</p>
-        <img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">
-    </div>
+            <div class="inner_feed-3">
+                <h1>Armand G. Aton</h1>
+                <p>Assigned Instructor</p>
+                <img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">
+            </div>
 
-    <div class="inner_feed-4">
-        <h1>7AM - 12PM</h1>
-        <p>Time</p>
-        <i class="fa-regular fa-clock"></i>
-    </div>
+            <div class="inner_feed-4">
+                <h1>7AM - 12PM</h1>
+                <p>Time</p>
+                <i class="fa-regular fa-clock"></i>
+            </div>
 
-    <div class="inner_feed-5">
-        <h1>Brgy. Buhay na Tubig</h1>
-        <p>Location</p>
-        <i class="fa-solid fa-location-dot"></i>
-        <button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>
-    </div>
-</div>
+            <div class="inner_feed-5">
+                <h1>Brgy. Buhay na Tubig</h1>
+                <p>Location</p>
+                <i class="fa-solid fa-location-dot"></i>
+                <button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>
+            </div>
+        </div>
 </div>
 </div>
 </main>
