@@ -102,6 +102,10 @@ $page = $components[2];
     </section>
 
     <script>
+        document.getElementById('course_box').addEventListener('click', function () {
+            window.location.href = 'student-classes-course-materials.php';
+        });
+
         document.getElementById('instructor_box').addEventListener('click', function () {
             window.location.href = 'student-classes-instructor.php';
         });
@@ -110,16 +114,17 @@ $page = $components[2];
             window.location.href = 'student-classes-classlist.php';
         });
 
-        document.getElementById('course_box').addEventListener('click', function () {
-            window.location.href = 'student-classes-course-materials.php';
-        });
-
+        
         document.getElementById('grade_box').addEventListener('click', function () {
             window.location.href = 'student-classes-grade.php';
         });
 
         document.getElementById('schedule_box').addEventListener('click', function () {
             window.location.href = 'student-classes-schedule.php';
+        });
+
+        document.getElementById('grade_box').addEventListener('click', function () {
+            window.location.href = 'student-classes-grades.php';
         });
 
     </script>

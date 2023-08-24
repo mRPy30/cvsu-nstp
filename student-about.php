@@ -60,7 +60,29 @@ $page = $components[2];
             <div class="container pt-4 ">
                 <div class="col-lg-12">
 
-                    <!----DITO KA PRE MAG START--->
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <h1>The <b>National Service Training Program (NSTP) </b> Act of 2001 (R.A. 9163) was enacted in response to public clamor for reforms in the Reserved Officers Training Corps (ROTC) Program. This act affirms that the prime duty of the government shall be to serve and protect its citizens. In turn, it shall be the responsibility of all its citizens to defend the security of the State; thus, the government may require each citizen to render personal, military or civil service. In the pursuit of these goals, the youth shall be motivated, trained, organized, and mobilized in military training, literacy, civic welfare, and other similar endeavors in service to the nation.</h1>
+                </div>
+                    <div class="col-md-4">
+                        <img src="Rectangle 147.png" class="rounded float">
+                    </div>
+                </div>
+
+                <div class="inner-content-home">
+                    <div class="inner-left col-md-6">
+                        <h3>NSTP I</h3>  
+                        <p>The course mandated by Republic Act No. 9163, otherwise known as the National Service Training Act of 2001, aims to enhance the civic consciousness of the students “by developing the ethics of service and patriotism” while undergoing Civic Welfare Training Service (CWTS). NSTP1 covers topics through big sessions in campus that will tap on the students’ enthusiasm and idealism for nation-building, leadership and civic involvement. Combining active reflection in a creative dynamic learning environment, it prepares the students into actual community service in NSTP 2.</p>
+                        <img src="pic1.png" class="rounded float">
+                    </div>
+
+                    <div class="inner-right col-md-6  ">
+                        <h3>NSTP II</h3>  
+                        <p>This course is the natural follow through of the Civic Welfare Training Service (CWTS) the students underwent in NSTP 1. It includes the programs and activities highlighted by the community service/immersion that are contributory to the welfare and the betterment of the life of the members of the community. Among the areas where the students can make their contribution through CWTS 2 are education, environment, entrepreneurship, health and safety and the moral development of the members of the community where they render service. It is hoped that this course will point them to a clearer life-long engagement in service and volunteerism.</p>
+                        <br>
+                        <img src="pic2.png" class="rounded float">
+                    </div>
+                </div>
 
                 </div>
             </div>

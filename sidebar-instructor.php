@@ -122,14 +122,7 @@
                     } ?> " href="instructor-volunteer.php"><i class="fa-solid fa-people-group"></i>
                         Volunteer </a>
                 </li>
-                <li class="nav-link">
-                    <a href="instructor-description.php" class="<?php if ($page == "instructor-description.php") {
-                        echo "nav-link active";
-                    } else {
-                        echo "nav-link";
-                    } ?> " href="instructor-description.php"><i class="fa-sharp fa-regular fa-rectangle-list"></i>
-                        Description </a>
-                </li>
+                
             </ul>
         </div>
     </div>

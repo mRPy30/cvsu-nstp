@@ -644,6 +644,64 @@ height: 50px;
 /******end classlist***/
 
 
+/******grades*******/
+.pcoded-main-content .tbl_grades .table .title th{
+  background-color:#6FBB76 ;
+  color: #ffffff;
+}
+.pcoded-main-content .tbl_grades .table{
+  margin: 20px 160px;
+  text-align: center;
+  background-color: #FFF;
+  width: 1000px;
+  overflow-x:auto;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .tbl_grades .table input{
+  border: none;
+  width: 100px;
+  background-color: #F9F9F9;
+  text-align: center;
+  padding: 0px 10px;
+}
+.pcoded-main-content .tbl_grades .table .valid{
+  color: #008A0E;
+  font-size: larger;
+  position: absolute;
+  right: 75px;
+  visibility: hidden;
+}
+.pcoded-main-content .tbl_grades .table .invalid{
+  color: #ff0000;
+  font-size: larger;
+  position: absolute;
+  right: 75px;
+  visibility: hidden;
+}
+.pcoded-main-content .tbl_grades .table .error-icon {
+  color: red;
+  display: none;
+}
+
+.pcoded-main-content .tbl_grades .table .valid-icon {
+  color: green;
+  display: none;
+}
+.pcoded-main-content .tbl_grades form .btn{
+  margin-left: 60vw;
+  position: absolute;
+  border-radius: 15px;
+  background: #6FBB76;
+  color: #FFF;
+  font-size: 12px;
+  font-family: 'Inter';
+  text-transform: uppercase;
+  width: 90px;
+}
+/***end grade table****/
+/******end grade******/
+
+
 
 
 /**********Programs***********/
@@ -1121,6 +1179,64 @@ height: 50px;
 
 
 /**********ABOUT**************/
+.col-md-8 h1{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: justify;
+  margin-left: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-indent: 70px;
+}
+.col-md-4 img{
+  width: 425px;
+  height: 300px;
+  flex: auto;
+}
+.col-md-6 h3{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bolder;
+  text-align: justify;
+}
+.col-md-6 p{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: justify;
+  line-height: 20px;
+}
+.col-md-6 img{
+  width: 600px;
+  height: 300px;
+}
+.inner-content-home {
+  display: flex;
+  padding: 10px 10px;
+  margin: 0px 120px;
+}
+.inner-content-home .inner-left h3{
+ padding: 10px 0px;
+}
+.inner-content-home .inner-left p{
+  font-size: 17px;
+ text-align:justify;
+}
+.inner-content-home .inner-right h3 {
+  padding: 10px 50px;
+}
+.inner-content-home .inner-right p{
+  font-size: 17px;
+  text-align:justify;
+  padding-left: 50px;
+}
 
 
 

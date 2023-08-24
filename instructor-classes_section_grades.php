@@ -95,24 +95,7 @@
                                             <td><input type="text"></td>
                                             <td><ion-icon class="invalid" name="close-circle-outline"></ion-icon></td>
                                         </tr>
-                                        <tr>
-                                            <td>202110117</td>
-                                            <td>Bianca Bautista</td>
-                                            <td><input type="text"></td>
-                                            <td><ion-icon class="invalid" name="close-circle-outline"></ion-icon></td>
-                                        </tr>
-                                        <tr>
-                                            <td>202110118</td>
-                                            <td>Agustine Cuevas</td>
-                                            <td><input type="text"></td>
-                                            <td><ion-icon class="valid" name="checkmark-circle-outline"></ion-icon></td>
-                                        </tr>
-                                        <tr>
-                                            <td>202110119</td>
-                                            <td>Bianca Bautista</td>
-                                            <td><input type="text"></td>
-                                            <td><ion-icon class="valid" name="checkmark-circle-outline"></ion-icon></td>
-                                        </tr>
+
                                     </tbody>
                             </table>
                             <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
