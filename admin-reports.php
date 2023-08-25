@@ -57,10 +57,9 @@ $page = $components[2];
 
         <!--Main Content-->
         <main class="pcoded-main-content">
-            <div class="container pt-4">
+            <div class="container">
                 <div class="col-lg-12">
-                <div class="rec-content">
-                        
+                    <div class="reports-content">
                         <div class="upperbox">
                             <h4> Reports </h4>
                         </div>

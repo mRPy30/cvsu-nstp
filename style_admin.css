@@ -113,26 +113,267 @@ body{
 /*******************END LANDING********************/
 
 
+/*****************Admin Create Programs*******************/
+.pcoded-main-content .rec-content .align-tbl-programs{
+  margin: 10px 110px 0px 100px;
+}
+
+.pcoded-main-content .rec-content
+   .align-tbl-programs .tabledisplay-program {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 40px;
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
+  }
+  .pcoded-main-content .rec-content 
+.align-tbl-programs .tabledisplay-program .course-and-section p{
+  padding: 5px;
+  font: normal 500 17px/normal 'Poppins';
+  margin: 5px;
+  position: absolute;
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs #program-table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 10px 20px 10px 20px;
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs #program-table th,
+  #program-table td {
+      padding: 8px 2px 8px 2px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font: normal 500 14px/normal 'Poppins';
+  }
+
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs #program-table th,
+  #program-table #iprogram-table th {
+      background-color:#e7e7e7;
+      font: normal 500 15px/normal 'Poppins';
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs .tabledisplay-program
+  #program-table .image-container {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    }
+
+    .pcoded-main-content .rec-content 
+  .align-tbl-programs .tabledisplay-program
+  #program-table .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .edit-button {
+      background-color: #2196F3;
+      border-radius: 4px;
+      font: normal 13px/normal 'Poppins';
+      height: 32px;
+      color: #FFF;
+      border: none;
+      padding: 0px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .edit-button:hover{
+      background-color: #1307f4;
+      transition: 0.4s;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .delete-button {
+      background-color: #f44336;
+      border-radius: 4px;
+      font: normal 13px/normal 'Poppins';
+      height: 32px;
+      color: #FFF;
+      border: none;
+      padding: 0px 10px;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .delete-button:hover {
+      background-color: #ff1100;
+      transition: 0.4s;
+    }
+/**********END admin create programs*************/
+
+
+/******************admin FEEDBACK*************************/
+
+/******************end admin feedback*********************/
+
+/*****STANDARD REC-CONTENT********/
+.pcoded-main-content .rec-content {
+  position: relative;
+  margin: 0px 0px 0px 110px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pcoded-main-content .rec-content .upperbox { 
+  height: 50px;
+  width: 105%;
+  display: flex;
+  margin: 10px 0px 0px 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+/*********BOXES***********/
+.pcoded-main-content .rec-content .middlebox {
+  padding: 5px;
+  margin: 20px 0px 0px 100px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+  .pcoded-main-content .rec-content .middlebox .records_box {
+    width: 350px;
+    height: 105px;
+    margin: 20px 20px 0px 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover{
+  background-color: #6FBB76;
+  transition: all .5s ease;
+  transform: scale(0.98);
+  z-index: 2;
+  color: #FFF;
+}
+.pcoded-main-content .rec-content .middlebox .records_box h3{
+  font: normal 500 20px/normal 'Poppins';
+  text-align: center;
+  margin: 40px 0px 0px 5px;
+}
+.pcoded-main-content .middlebox .records_box  h3 i{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover i{
+  color: #FFF;
+}
+.pcoded-main-content .middlebox .records_box  h3 ion-icon{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover ion-icon{
+  color: #FFF;
+}
+
+
+/******STANDARD END REC-CONTENT********/
 
 
 /*****************************RECORDS SECTION************************************/
-    
-/*****START RECORDS********/
-      .pcoded-main-content .rec-content {
-        position: relative;
-        margin: 0px 0px 0px 110px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-      }
-      /******STANDARD UPPERBAR********/
-      .pcoded-main-content .rec-content .upperbox { 
-        height: 50px;
-        width: 105%;
-        display: flex;
-        margin: 10px 0px 0px 35px;
-        justify-content: space-between;
-        align-items: center;
+
+
+/*****START OUTER RECORDS********/
+.pcoded-main-content .records-content {
+  position: relative;
+  margin: 0px 0px 0px 110px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+/******OUTER UPPERBOX RECORDS********/
+.pcoded-main-content .records-content .upperbox { 
+  height: 50px;
+  width: 105%;
+  display: flex;
+  margin: 10px 0px 0px 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+.pcoded-main-content .records-content .upperbox h4{
+  font: normal 700 18px/normal 'Poppins';
+  margin: 10px 50px 8px 25px;
+  
+}
+.pcoded-main-content .records-content .upperbox h3{
+  font: normal 700 18px/normal 'Poppins';
+  margin: 14px 0px 8px 5px;
+  position: relative;
+}
+/*********BOXES***********/
+.pcoded-main-content .records-content .middlebox {
+  padding: 5px;
+  margin: 20px 0px 0px 100px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+  .pcoded-main-content .records-content .middlebox .records_box {
+    width: 350px;
+    height: 105px;
+    margin: 20px 20px 0px 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .records-content .middlebox .records_box:hover{
+  background-color: #6FBB76;
+  transition: all .5s ease;
+  transform: scale(0.98);
+  z-index: 2;
+  color: #FFF;
+}
+.pcoded-main-content .records-content .middlebox .records_box h3{
+  font: normal 500 20px/normal 'Poppins';
+  text-align: center;
+  margin: 40px 0px 0px 5px;
+}
+.pcoded-main-content .middlebox .records_box  h3 i{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .records-content .middlebox .records_box:hover i{
+  color: #FFF;
+}
+.pcoded-main-content .middlebox .records_box  h3 ion-icon{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .records-content .middlebox .records_box:hover ion-icon{
+  color: #FFF;
+}
+/*****END OUTER RECORDS********/
+
+/****INNER RECORDS******/
+    .pcoded-main-content .rec-content .upperbox { 
+      height: 50px;
+      width: 105%;
+      display: flex;
+      margin: 10px 0px 0px 35px;
+      justify-content: space-between;
+      align-items: center;
     }
     .pcoded-main-content .rec-content .upperbox .go-back-button {
       font-size: xx-large;
@@ -151,6 +392,8 @@ body{
       margin: 14px 0px 8px 5px;
       position: relative;
     }
+
+    
     /********* table display ***********/
       
     .pcoded-main-content .rec-content .searchbox {
@@ -189,54 +432,6 @@ body{
       flex-direction: row;
     }
     
-    /*********BOXES***********/
-    .pcoded-main-content .rec-content .middlebox {
-      padding: 5px;
-      margin: 20px 0px 0px 100px;
-      height: 400px;
-      display: flex;
-      flex-wrap: wrap;
-    }
-      .pcoded-main-content .rec-content .middlebox .records_box {
-        width: 350px;
-        height: 105px;
-        margin: 20px 20px 0px 20px;
-        border-radius: 10px;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box:hover{
-      background-color: #6FBB76;
-      transition: all .5s ease;
-      transform: scale(0.98);
-      z-index: 2;
-      color: #FFF;
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box h3{
-      font: normal 500 20px/normal 'Poppins';
-      text-align: center;
-      margin: 40px 0px 0px 5px;
-    }
-    .pcoded-main-content .middlebox .records_box  h3 i{
-      color: #000000;
-      font-size: 20px;
-      margin: 0px 10px 0px 0px;
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box:hover i{
-      color: #FFF;
-    }
-    .pcoded-main-content .middlebox .records_box  h3 ion-icon{
-      color: #000000;
-      font-size: 20px;
-      margin: 0px 10px 0px 0px;
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box:hover ion-icon{
-      color: #FFF;
-    }
-
-
-
-
 /****************RECORD CLASSES*******************/
   
   .pcoded-main-content .rec-content .middlebox-class {
@@ -732,6 +927,7 @@ body{
 /*******END RECORDS STUDENT CLASSES********/
 
 /*******RECORDS SECTION DETAILS********/
+
 /*******END RECORDS SECTION DETAILS********/
 
 
@@ -1348,7 +1544,7 @@ body{
 
 
 
-  /********Admin Complience*************/
+  /*****************Admin Complience************************/
 
 
       /*******COMPLIANCE FIRST PAGE********/
@@ -1409,10 +1605,6 @@ body{
    }
 /*******END OF COMPLIANCE FIRST PAGE********/  
 
-
-
-
-
   /*******COMPLIANCE SECOND PAGE********/
   .pcoded-main-content .compliance2-title{
         margin: 20px 160px;
@@ -1459,11 +1651,6 @@ body{
       color: white;
  }
 /*******END OF COMPLIANCE SECOND PAGE********/
-
-
-
-
-
 
  /*******COMPLIANCE THIRD PAGE********/
  .pcoded-main-content .compliance3-title h4 {
@@ -1521,9 +1708,85 @@ body{
   font-weight: 500;
  }
 /*******END OF COMPLIANCE THIRD  PAGE********/
+/*****************End Admin Complience************************/
 
 
-/*************EXTERNAL**************/
+/***************REPORTS**********************/
+/*****START REPORTS********/
+      .pcoded-main-content .reports-content {
+        position: relative;
+        margin: 0px 0px 0px 110px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      /******STANDARD UPPERBAR********/
+      .pcoded-main-content .reports-content .upperbox { 
+        height: 50px;
+        width: 105%;
+        display: flex;
+        margin: 10px 0px 0px 35px;
+        justify-content: space-between;
+        align-items: center;
+    }
+     .pcoded-main-content .reports-content .upperbox h4{
+      font: normal 700 18px/normal 'Poppins';
+      margin: 10px 50px 8px 25px;
+      
+    }
+    .pcoded-main-content .reports-content .upperbox h3{
+      font: normal 700 18px/normal 'Poppins';
+      margin: 14px 0px 8px 5px;
+      position: relative;
+    }
+/*********BOXES***********/
+    .pcoded-main-content .reports-content .middlebox {
+      padding: 5px;
+      margin: 20px 0px 0px 100px;
+      height: 400px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+      .pcoded-main-content .reports-content .middlebox .records_box {
+        width: 350px;
+        height: 105px;
+        margin: 20px 20px 0px 20px;
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box:hover{
+      background-color: #6FBB76;
+      transition: all .5s ease;
+      transform: scale(0.98);
+      z-index: 2;
+      color: #FFF;
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box h3{
+      font: normal 500 20px/normal 'Poppins';
+      text-align: center;
+      margin: 40px 0px 0px 5px;
+    }
+    .pcoded-main-content .middlebox .records_box  h3 i{
+      color: #000000;
+      font-size: 20px;
+      margin: 0px 10px 0px 0px;
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box:hover i{
+      color: #FFF;
+    }
+    .pcoded-main-content .middlebox .records_box  h3 ion-icon{
+      color: #000000;
+      font-size: 20px;
+      margin: 0px 10px 0px 0px;
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box:hover ion-icon{
+      color: #FFF;
+    }
+
+/*************END REPORTS*******************/
+
+/********************EXTERNAL***********************/
 .pcoded-main-content .rec-content .align-tbl-external{
   margin: 10px 70px 0px 60px;
 }
@@ -1654,112 +1917,7 @@ cursor: pointer;
   background-color: #008104;
   transition: 0.4s;
 }
-/***********END EXTERNAL***********/
+/*********************END EXTERNAL************************/
 
-/***********Admin Create Programs**************/
-.pcoded-main-content .rec-content .align-tbl-programs{
-  margin: 10px 110px 0px 100px;
-}
-
-.pcoded-main-content .rec-content
-   .align-tbl-programs .tabledisplay-program {
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: 40px;
-    border-radius: 6px;
-    background: #FFF;
-    box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
-  }
-  .pcoded-main-content .rec-content 
-.align-tbl-programs .tabledisplay-program .course-and-section p{
-  padding: 5px;
-  font: normal 500 17px/normal 'Poppins';
-  margin: 5px;
-  position: absolute;
-  }
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs #program-table{
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    margin: 10px 20px 10px 20px;
-  }
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs #program-table th,
-  #program-table td {
-      padding: 8px 2px 8px 2px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-      font: normal 500 14px/normal 'Poppins';
-  }
-
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs #program-table th,
-  #program-table #iprogram-table th {
-      background-color:#e7e7e7;
-      font: normal 500 15px/normal 'Poppins';
-  }
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs .tabledisplay-program
-  #program-table .image-container {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-    overflow: hidden;
-    }
-
-    .pcoded-main-content .rec-content 
-  .align-tbl-programs .tabledisplay-program
-  #program-table .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .edit-button {
-      background-color: #2196F3;
-      border-radius: 4px;
-      font: normal 13px/normal 'Poppins';
-      height: 32px;
-      color: #FFF;
-      border: none;
-      padding: 0px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .edit-button:hover{
-      background-color: #1307f4;
-      transition: 0.4s;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .delete-button {
-      background-color: #f44336;
-      border-radius: 4px;
-      font: normal 13px/normal 'Poppins';
-      height: 32px;
-      color: #FFF;
-      border: none;
-      padding: 0px 10px;
-      text-align: center;
-      display: inline-block;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .delete-button:hover {
-      background-color: #ff1100;
-      transition: 0.4s;
-    }
-/**********END admin create programs*************/
 
   /************MAIN CONTENTS**************/

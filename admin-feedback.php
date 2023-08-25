@@ -1,4 +1,17 @@
 <?php
+include 'db_connect.php';
+
+
+// Start the session
+session_start();
+
+// Include the necessary files
+include 'db_connect.php';
+
+// Fetch courses from the database
+$sql = 'SELECT courseID, courseName FROM tbl_course';
+$result = $conn->query($sql);
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -57,10 +70,34 @@ $page = $components[2];
 
         <!--Main Content-->
         <main class="pcoded-main-content">
-            <div class="container pt-4">
+            <div class="container">
                 <div class="col-lg-12">
-                    
-                </div>
+                <div class="rec-content">
+                        <div class="upperbox">
+                            <h4>FEEDBACK</h4>
+                        </div>
+
+                        <div class="middlebox-class">
+                            <?php
+                            // Check if there are any courses
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $courseID = $row['courseID'];
+                                    $courseName = $row['courseName'];
+                                    $encodedCourseName = urlencode($courseName);
+
+                                    echo "<a href='?courseID=$courseID&courseName=$encodedCourseName'>";
+                                    echo "<div class='course-box'>";
+                                    echo "<p>$courseName</p>";
+                                    echo "</div>";
+                                    echo "</a>";
+                                }
+                            } else {
+                                echo "No courses found.";
+                            }
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

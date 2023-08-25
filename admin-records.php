@@ -58,7 +58,7 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container">
                 <div class="col-lg-12">
-                        <div class="rec-content">
+                        <div class="records-content">
                             <!-- Add your main content here -->
                             <div class="upperbox">
                                 <h4> RECORDS </h4>
