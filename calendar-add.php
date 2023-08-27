@@ -70,8 +70,6 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
             height: 530px;
             margin: 20px;
             background-color: #FFFFFF;
-
-        
           }
 
           .event-panel-title {

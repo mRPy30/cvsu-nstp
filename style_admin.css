@@ -20,14 +20,14 @@ body{
   
   /*******LANDING PAGE*******/
   .pcoded-main-content .total-result{
-    margin: 20px 0px 0px 200px;
+    margin: 10px 0px 0px 135px;
     display: inline-flex;
     position: absolute;
   }
   .pcoded-main-content .total_stud_box {
     position: relative;
-    height: 95px;
-    width: 300px;
+    height: 80px;
+    width: 320px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
     background-color: #ffffff;
@@ -35,58 +35,345 @@ body{
     align-items: center;
     justify-content: flex-end;
     padding: 10px; /* Add 'px' unit to the padding value */
-    margin: 10px 20px 0px 20px;
-    border-radius: 10px;
+    margin: 10px 5px 0px 20px;
+    border-radius: 5px;
   }
   
   .pcoded-main-content .total_stud_box h1 {
     color: #008A0E;
-    font: normal 600 45px/normal 'Poppins';
-    margin: 20px 50px 9px 165px;
+    font: normal 600 37px/normal 'Poppins';
+    margin: 0px 50px 10px 165px;
+    position: absolute;
+  }
+  .pcoded-main-content .total_stud_box ion-icon{
+    color: #000000;
+    font-size: 50px;
+    margin: 0px 160px 5px 0px;
     position: absolute;
   }
   .pcoded-main-content .total_stud_box i{
-    color: #6FBB76;
-    font-size: 55px;
-    margin: 0px 120px 6px 0px;
+    color: #000000;
+    font-size: 50px;
+    margin: 0px 145px 5px 0px;
     position: absolute;
   }
-  
   .pcoded-main-content .total_stud_box p {
-    color: #000;
+    color: #777777;
     font-size: 20px;
-    font: normal 600 14px/normal 'Poppins';
+    font: normal 600 12px/normal 'Poppins';
     margin: 0px 0px 0px 110px;
   }
-  .pcoded-main-content .calendar_section{
-    position: relative;
-    margin: 150px 0px 0px 100px;
-    
+
+  .pcoded-main-content .bar_section{
+    position: absolute;
+    margin: 130px 0px 0px 0px;
+    width: 1200px;
+
+  }
+
+  .pcoded-main-content .table-event-list {
+    width: 317px;
+    height: 395px;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: 128px 0px 0px 846px;
+    background: #FFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: absolute;
+    border-radius: 5px;
+  }
+  .pcoded-main-content .table-event-list p{
+    padding: 5px;
+    font: normal 700 14px/normal 'Poppins';
+    margin: 8px;
+    position: absolute;
+  }
+  .pcoded-main-content .table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 40px 0px 0px 0px;
+  }
+  .pcoded-main-content .table th{
+    background-color:#6FBB76;
+    font: normal 600 15px/normal 'Poppins';
+    text-align: center;
+  }
+  .pcoded-main-content .table td{
+    font: normal 500 12px/normal 'Poppins';
+  }
+
+  .pcoded-main-content .rate_section{
+    position: absolute;
+    margin: 560px 0px 0px 0px;
+    width: 1200px;
 
   }
 /*******************END LANDING********************/
 
 
+/*****************Admin Create Programs*******************/
+.pcoded-main-content .rec-content .align-tbl-programs{
+  margin: 10px 110px 0px 100px;
+}
+
+.pcoded-main-content .rec-content
+   .align-tbl-programs .tabledisplay-program {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 40px;
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
+  }
+  .pcoded-main-content .rec-content 
+.align-tbl-programs .tabledisplay-program .course-and-section p{
+  padding: 5px;
+  font: normal 500 17px/normal 'Poppins';
+  margin: 5px;
+  position: absolute;
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs #program-table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 10px 20px 10px 20px;
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs #program-table th,
+  #program-table td {
+      padding: 8px 2px 8px 2px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font: normal 500 14px/normal 'Poppins';
+  }
+
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs #program-table th,
+  #program-table #iprogram-table th {
+      background-color:#e7e7e7;
+      font: normal 500 15px/normal 'Poppins';
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-programs .tabledisplay-program
+  #program-table .image-container {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    }
+
+    .pcoded-main-content .rec-content 
+  .align-tbl-programs .tabledisplay-program
+  #program-table .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .edit-button {
+      background-color: #2196F3;
+      border-radius: 4px;
+      font: normal 13px/normal 'Poppins';
+      height: 32px;
+      color: #FFF;
+      border: none;
+      padding: 0px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .edit-button:hover{
+      background-color: #1307f4;
+      transition: 0.4s;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .delete-button {
+      background-color: #f44336;
+      border-radius: 4px;
+      font: normal 13px/normal 'Poppins';
+      height: 32px;
+      color: #FFF;
+      border: none;
+      padding: 0px 10px;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .pcoded-main-content .rec-content
+    .align-tbl-programs .tabledisplay-program #program-table
+    .delete-button:hover {
+      background-color: #ff1100;
+      transition: 0.4s;
+    }
+/**********END admin create programs*************/
+
+
+/******************admin FEEDBACK*************************/
+
+/******************end admin feedback*********************/
+
+/*****STANDARD REC-CONTENT********/
+.pcoded-main-content .rec-content {
+  position: relative;
+  margin: 0px 0px 0px 110px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pcoded-main-content .rec-content .upperbox { 
+  height: 50px;
+  width: 105%;
+  display: flex;
+  margin: 10px 0px 0px 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+/*********BOXES***********/
+.pcoded-main-content .rec-content .middlebox {
+  padding: 5px;
+  margin: 20px 0px 0px 100px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+  .pcoded-main-content .rec-content .middlebox .records_box {
+    width: 350px;
+    height: 105px;
+    margin: 20px 20px 0px 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover{
+  background-color: #6FBB76;
+  transition: all .5s ease;
+  transform: scale(0.98);
+  z-index: 2;
+  color: #FFF;
+}
+.pcoded-main-content .rec-content .middlebox .records_box h3{
+  font: normal 500 20px/normal 'Poppins';
+  text-align: center;
+  margin: 40px 0px 0px 5px;
+}
+.pcoded-main-content .middlebox .records_box  h3 i{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover i{
+  color: #FFF;
+}
+.pcoded-main-content .middlebox .records_box  h3 ion-icon{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .rec-content .middlebox .records_box:hover ion-icon{
+  color: #FFF;
+}
+
+
+/******STANDARD END REC-CONTENT********/
 
 
 /*****************************RECORDS SECTION************************************/
-    
-/*****START RECORDS********/
-      .pcoded-main-content .rec-content {
-        position: relative;
-        margin: 0px 0px 0px 110px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-      }
-      /******STANDARD UPPERBAR********/
-      .pcoded-main-content .rec-content .upperbox { 
-        height: 50px;
-        width: 105%;
-        display: flex;
-        margin: 10px 0px 0px 35px;
-        justify-content: space-between;
-        align-items: center;
+
+
+/*****START OUTER RECORDS********/
+.pcoded-main-content .records-content {
+  position: relative;
+  margin: 0px 0px 0px 110px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+/******OUTER UPPERBOX RECORDS********/
+.pcoded-main-content .records-content .upperbox { 
+  height: 50px;
+  width: 105%;
+  display: flex;
+  margin: 10px 0px 0px 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+.pcoded-main-content .records-content .upperbox h4{
+  font: normal 700 18px/normal 'Poppins';
+  margin: 10px 50px 8px 25px;
+  
+}
+.pcoded-main-content .records-content .upperbox h3{
+  font: normal 700 18px/normal 'Poppins';
+  margin: 14px 0px 8px 5px;
+  position: relative;
+}
+/*********BOXES***********/
+.pcoded-main-content .records-content .middlebox {
+  padding: 5px;
+  margin: 20px 0px 0px 100px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+  .pcoded-main-content .records-content .middlebox .records_box {
+    width: 350px;
+    height: 105px;
+    margin: 20px 20px 0px 20px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.pcoded-main-content .records-content .middlebox .records_box:hover{
+  background-color: #6FBB76;
+  transition: all .5s ease;
+  transform: scale(0.98);
+  z-index: 2;
+  color: #FFF;
+}
+.pcoded-main-content .records-content .middlebox .records_box h3{
+  font: normal 500 20px/normal 'Poppins';
+  text-align: center;
+  margin: 40px 0px 0px 5px;
+}
+.pcoded-main-content .middlebox .records_box  h3 i{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .records-content .middlebox .records_box:hover i{
+  color: #FFF;
+}
+.pcoded-main-content .middlebox .records_box  h3 ion-icon{
+  color: #000000;
+  font-size: 20px;
+  margin: 0px 10px 0px 0px;
+}
+.pcoded-main-content .records-content .middlebox .records_box:hover ion-icon{
+  color: #FFF;
+}
+/*****END OUTER RECORDS********/
+
+/****INNER RECORDS******/
+    .pcoded-main-content .rec-content .upperbox { 
+      height: 50px;
+      width: 105%;
+      display: flex;
+      margin: 10px 0px 0px 35px;
+      justify-content: space-between;
+      align-items: center;
     }
     .pcoded-main-content .rec-content .upperbox .go-back-button {
       font-size: xx-large;
@@ -105,6 +392,8 @@ body{
       margin: 14px 0px 8px 5px;
       position: relative;
     }
+
+    
     /********* table display ***********/
       
     .pcoded-main-content .rec-content .searchbox {
@@ -143,54 +432,6 @@ body{
       flex-direction: row;
     }
     
-    /*********BOXES***********/
-    .pcoded-main-content .rec-content .middlebox {
-      padding: 5px;
-      margin: 20px 0px 0px 100px;
-      height: 400px;
-      display: flex;
-      flex-wrap: wrap;
-    }
-      .pcoded-main-content .rec-content .middlebox .records_box {
-        width: 350px;
-        height: 105px;
-        margin: 20px 20px 0px 20px;
-        border-radius: 10px;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box:hover{
-      background-color: #6FBB76;
-      transition: all .5s ease;
-      transform: scale(0.98);
-      z-index: 2;
-      color: #FFF;
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box h3{
-      font: normal 500 20px/normal 'Poppins';
-      text-align: center;
-      margin: 40px 0px 0px 5px;
-    }
-    .pcoded-main-content .middlebox .records_box  h3 i{
-      color: #000000;
-      font-size: 20px;
-      margin: 0px 10px 0px 0px;
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box:hover i{
-      color: #FFF;
-    }
-    .pcoded-main-content .middlebox .records_box  h3 ion-icon{
-      color: #000000;
-      font-size: 20px;
-      margin: 0px 10px 0px 0px;
-    }
-    .pcoded-main-content .rec-content .middlebox .records_box:hover ion-icon{
-      color: #FFF;
-    }
-
-
-
-
 /****************RECORD CLASSES*******************/
   
   .pcoded-main-content .rec-content .middlebox-class {
@@ -323,7 +564,7 @@ body{
       }
       .pcoded-main-content .rec-content
       .add-box{
-        margin: 20px 0px 0px 100px; 
+        margin: 15px 0px 0px 818px; 
         bottom: 20px;
         left: 50%;
       }
@@ -350,6 +591,32 @@ body{
         transition: 0.4s;
       }
 
+      /***expenses**/
+      .pcoded-main-content .upperbox
+      .addbox{
+        margin: 0px 0px 0px 490px;
+      }
+      .pcoded-main-content .upperbox
+      .addbox button{
+        width: 115px;
+        height: 40px;
+        z-index: 999;
+        background-color: #4CAF50;
+        color: white; 
+        border: none;
+        padding: 10px 20px; 
+        text-align: center; 
+        text-decoration: none; 
+        display: inline-block; 
+        font: normal 400 12px/normal 'Inter';  
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .pcoded-main-content .upperbox
+      .addbox button:hover{
+        background-color: #008104;
+        transition: 0.4s;
+      }
       
         
 
@@ -489,7 +756,7 @@ body{
       /******table*****/
       .pcoded-main-content .rec-content 
       .align-tbl-course{
-        margin: 10px 0px 0px 330px;
+        margin: 0px 0px 0px 330px;
       }
       .pcoded-main-content .rec-content 
       .align-tbl-course .tabledisplay {
@@ -660,6 +927,7 @@ body{
 /*******END RECORDS STUDENT CLASSES********/
 
 /*******RECORDS SECTION DETAILS********/
+
 /*******END RECORDS SECTION DETAILS********/
 
 
@@ -712,7 +980,7 @@ body{
 
 /******INSTRUCTOR LIST********/
 .pcoded-main-content .rec-content .align-tbl-instructor{
-  margin: 10px 110px 0px 100px;
+  margin: 0px 110px 0px 100px;
 }
   .pcoded-main-content .rec-content
    .align-tbl-instructor
@@ -841,15 +1109,14 @@ body{
 
 /********RECORDS FINANCES**********/
 .pcoded-main-content .rec-content .middlebox-finance{
-  padding: 35px 10px 5px 0px;
-  margin: 40px 5px 5px 35px;
+  padding: 0px 10px 5px 0px;
+  margin: 30px 5px 5px 35px;
   width: 1000px;
   height: 550px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-  background-color: #edecec;
   border-radius: 20px;
 }
 .pcoded-main-content .rec-content .middlebox-finance 
@@ -919,7 +1186,7 @@ body{
 /******margin table*****/
 .pcoded-main-content .rec-content 
 .align-tbl-finances{
-  margin: 60px 0px 0px 100px;
+  margin: 30px 0px 0px 100px;
 }
 .pcoded-main-content .rec-content .align-tbl-finances 
 .table-box {
@@ -1277,7 +1544,7 @@ body{
 
 
 
-  /********Admin Complience*************/
+  /*****************Admin Complience************************/
 
 
       /*******COMPLIANCE FIRST PAGE********/
@@ -1338,10 +1605,6 @@ body{
    }
 /*******END OF COMPLIANCE FIRST PAGE********/  
 
-
-
-
-
   /*******COMPLIANCE SECOND PAGE********/
   .pcoded-main-content .compliance2-title{
         margin: 20px 160px;
@@ -1388,11 +1651,6 @@ body{
       color: white;
  }
 /*******END OF COMPLIANCE SECOND PAGE********/
-
-
-
-
-
 
  /*******COMPLIANCE THIRD PAGE********/
  .pcoded-main-content .compliance3-title h4 {
@@ -1450,9 +1708,85 @@ body{
   font-weight: 500;
  }
 /*******END OF COMPLIANCE THIRD  PAGE********/
+/*****************End Admin Complience************************/
 
 
-/*************EXTERNAL**************/
+/***************REPORTS**********************/
+/*****START REPORTS********/
+      .pcoded-main-content .reports-content {
+        position: relative;
+        margin: 0px 0px 0px 110px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      /******STANDARD UPPERBAR********/
+      .pcoded-main-content .reports-content .upperbox { 
+        height: 50px;
+        width: 105%;
+        display: flex;
+        margin: 10px 0px 0px 35px;
+        justify-content: space-between;
+        align-items: center;
+    }
+     .pcoded-main-content .reports-content .upperbox h4{
+      font: normal 700 18px/normal 'Poppins';
+      margin: 10px 50px 8px 25px;
+      
+    }
+    .pcoded-main-content .reports-content .upperbox h3{
+      font: normal 700 18px/normal 'Poppins';
+      margin: 14px 0px 8px 5px;
+      position: relative;
+    }
+/*********BOXES***********/
+    .pcoded-main-content .reports-content .middlebox {
+      padding: 5px;
+      margin: 20px 0px 0px 100px;
+      height: 400px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+      .pcoded-main-content .reports-content .middlebox .records_box {
+        width: 350px;
+        height: 105px;
+        margin: 20px 20px 0px 20px;
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box:hover{
+      background-color: #6FBB76;
+      transition: all .5s ease;
+      transform: scale(0.98);
+      z-index: 2;
+      color: #FFF;
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box h3{
+      font: normal 500 20px/normal 'Poppins';
+      text-align: center;
+      margin: 40px 0px 0px 5px;
+    }
+    .pcoded-main-content .middlebox .records_box  h3 i{
+      color: #000000;
+      font-size: 20px;
+      margin: 0px 10px 0px 0px;
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box:hover i{
+      color: #FFF;
+    }
+    .pcoded-main-content .middlebox .records_box  h3 ion-icon{
+      color: #000000;
+      font-size: 20px;
+      margin: 0px 10px 0px 0px;
+    }
+    .pcoded-main-content .reports-content .middlebox .records_box:hover ion-icon{
+      color: #FFF;
+    }
+
+/*************END REPORTS*******************/
+
+/********************EXTERNAL***********************/
 .pcoded-main-content .rec-content .align-tbl-external{
   margin: 10px 70px 0px 60px;
 }
@@ -1583,112 +1917,7 @@ cursor: pointer;
   background-color: #008104;
   transition: 0.4s;
 }
-/***********END EXTERNAL***********/
+/*********************END EXTERNAL************************/
 
-/***********Admin Create Programs**************/
-.pcoded-main-content .rec-content .align-tbl-programs{
-  margin: 10px 110px 0px 100px;
-}
-
-.pcoded-main-content .rec-content
-   .align-tbl-programs .tabledisplay-program {
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: 40px;
-    border-radius: 6px;
-    background: #FFF;
-    box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
-  }
-  .pcoded-main-content .rec-content 
-.align-tbl-programs .tabledisplay-program .course-and-section p{
-  padding: 5px;
-  font: normal 500 17px/normal 'Poppins';
-  margin: 5px;
-  position: absolute;
-  }
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs #program-table{
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    margin: 10px 20px 10px 20px;
-  }
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs #program-table th,
-  #program-table td {
-      padding: 8px 2px 8px 2px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-      font: normal 500 14px/normal 'Poppins';
-  }
-
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs #program-table th,
-  #program-table #iprogram-table th {
-      background-color:#e7e7e7;
-      font: normal 500 15px/normal 'Poppins';
-  }
-  .pcoded-main-content .rec-content 
-  .align-tbl-programs .tabledisplay-program
-  #program-table .image-container {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-    overflow: hidden;
-    }
-
-    .pcoded-main-content .rec-content 
-  .align-tbl-programs .tabledisplay-program
-  #program-table .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .edit-button {
-      background-color: #2196F3;
-      border-radius: 4px;
-      font: normal 13px/normal 'Poppins';
-      height: 32px;
-      color: #FFF;
-      border: none;
-      padding: 0px 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .edit-button:hover{
-      background-color: #1307f4;
-      transition: 0.4s;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .delete-button {
-      background-color: #f44336;
-      border-radius: 4px;
-      font: normal 13px/normal 'Poppins';
-      height: 32px;
-      color: #FFF;
-      border: none;
-      padding: 0px 10px;
-      text-align: center;
-      display: inline-block;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .pcoded-main-content .rec-content
-    .align-tbl-programs .tabledisplay-program #program-table
-    .delete-button:hover {
-      background-color: #ff1100;
-      transition: 0.4s;
-    }
-/**********END admin create programs*************/
 
   /************MAIN CONTENTS**************/

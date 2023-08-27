@@ -58,7 +58,7 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container">
                 <div class="col-lg-12">
-                        <div class="rec-content">
+                        <div class="records-content">
                             <!-- Add your main content here -->
                             <div class="upperbox">
                                 <h4> RECORDS </h4>
@@ -73,8 +73,12 @@ $page = $components[2];
                                     <h3><i class="fa-solid fa-graduation-cap"></i> Student Records</h3>
                                 </div> 
 
-                                <div class="records_box" id="financial_box">
-                                    <h3><ion-icon name="wallet"></ion-icon> Financial Records</h3>
+                                <div class="records_box" id="year_box">
+                                    <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
+                                </div>
+
+                                <div class="records_box" id="sem_box">
+                                    <h3><i class="fa-regular fa-calendar"></i> Semester Records</h3>
                                 </div>
 
                                 <div class="records_box" id="courses_box">
@@ -89,13 +93,13 @@ $page = $components[2];
                                     <h3><i class="fa-regular fa-calendar"></i> Coordinator Records</h3>
                                 </div> 
 
-                                <div class="records_box" id="year_box">
-                                    <h3><i class="fa-solid fa-calendar-check"></i> School-Year Records</h3>
+                                <div class="records_box " id="financial_box">
+                                    <h3><ion-icon name="wallet"></ion-icon> Financial Records</h3>
                                 </div>
 
-                                <div class="records_box" id="sem_box">
-                                    <h3><i class="fa-regular fa-calendar"></i> Semester Records</h3>
-                                </div>  
+                                <div class="records_box" id="certificate_box">
+                                    <h3><i class="fa-solid fa-certificate"></i> Programs Certificate </h3>
+                                </div>
                             </div>
                         </div>
                 </div>
@@ -133,7 +137,10 @@ $page = $components[2];
         document.getElementById('sem_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Semester.php';
         });
-
+        
+        document.getElementById('certificate_box').addEventListener('click', function() {
+            window.location.href = 'admin-records_certificate.php';
+        });
             
         document.getElementById('coordinator_box').addEventListener('click', function() {
             window.location.href = 'admin-records_Coordinator.php';

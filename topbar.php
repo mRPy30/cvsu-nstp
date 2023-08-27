@@ -26,10 +26,10 @@
     height: 32px;
  }
  .header-section .row .logo .p2 p {
-    font: normal 400 18px/31px 'Abel';
+    font: normal 400 16px/31px 'Abel';
     position: fixed;
     left: 104px;
-    top: 38px;
+    top: 37px;
     width: 195px;
     height: 29px;
  }
@@ -76,7 +76,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 35px;
     position: fixed;
     left: 120px;
@@ -113,7 +113,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 21px;
+    font-size: 18px;
     line-height: 35px;
     position: fixed;
     left: 320px;
@@ -151,11 +151,11 @@
             <div class="row">
                 <div class="col-8 logo ">
                    <img src="logo-nstp.png" alt="">
-                    <div class=" p1">
-                        <p>NSTP PROGRAM</p>
+                    <div class="p1">
+                        <p>NSTP PORTAL</p>
                     </div>
                     <div class="p2">
-                    <p class="font-weight-normal">CVSU-IMUS CAMPUS</p>
+                    <p class="font-weight-normal">CvSU-IMUS CAMPUS</p>
                     </div>
                     <div class="logout">
                         <button type="button" class="btn btn-light rounded btn-logout float-left " onclick="goBack()"><i

@@ -28,7 +28,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         // Retrieve the individual values
         $coordinatorImage = $row['coordinatorImage'];
-        $name = $row['name'];
+        $name = $row['CoorName'];
         $email = $row['email'];
         $facebook = $row['facebook'];
         $password = $row['password'];
@@ -37,7 +37,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         // Create an object for each coordinator
         $coordinator = array(
             'coordinatorImage' => $coordinatorImage,
-            'name' => $name,
+            'CoorName' => $name,
             'email' => $email,
             'facebook' => $facebook,
             'password' => $password,
@@ -174,7 +174,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <?php foreach ($coordinators as $coordinator): ?>
                 <tr>
                     <td><img src="data:image/jpeg;base64,<?php echo base64_encode($coordinator['coordinatorImage']); ?>" alt="Coordinator Image" width="50"></td>
-                    <td><?php echo $coordinator['name']; ?></td>
+                    <td><?php echo $coordinator['CoorName']; ?></td>
                     <td><?php echo $coordinator['email']; ?></td>
                     <td><?php echo $coordinator['facebook']; ?></td>
                     <td><?php echo $coordinator['password']; ?></td>

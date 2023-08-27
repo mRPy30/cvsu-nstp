@@ -145,20 +145,18 @@ $page = $components[2];
                                     <tbody class="scrollable-tbody">
                                         <?php if (!empty($students)): ?>
                                         <?php foreach ($students as $student): ?>
-                                        <?php foreach ($students as $studentid): ?>
                                         <tr>
-                                            <td><?php echo $studentid['id']; ?></td>
                                             <td>
                                                 <a
-                                                    href="instructor-student_info.php?id=<?php echo $student['id']; ?>">
-                                                    <?php echo $student['name']; ?>
+                                                    href="instructor-student_info.php?id=<?php echo $student['name']; ?>">
+                                                    
                                                 </a>
                                             </td>
                                             <td>
                                                 <input type="number" name="attendance[<?php echo $student['id']; ?>]" value="0">
                                             </td>
                                         </tr>
-                                        <?php endforeach; ?>
+
                                         <?php endforeach; ?>
                                         <?php else: ?>
                                         <tr>

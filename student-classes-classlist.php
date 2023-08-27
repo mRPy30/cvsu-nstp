@@ -1,3 +1,14 @@
+<?php
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +22,7 @@
     <title><?php echo "Student Page"; ?></title>
 
      <!----------CSS------------>
-    <link rel="stylesheet" href="style_students.css">
+    <link rel="stylesheet" href="style_student.css">
 
      <!----------BOOTSTRAP------------>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">

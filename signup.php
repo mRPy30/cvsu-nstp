@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $semesterQuery = "SELECT semesterID FROM tbl_semester WHERE isDefault = 1";
         $semesterResult = mysqli_query($conn, $semesterQuery);
         $semesterID = mysqli_fetch_assoc($semesterResult)['semesterID'];
-  
+
         // Get the section ID from the selected section value
         $sectionIDQuery = "SELECT sectionID FROM tbl_sections WHERE sectionName = '$section'";
         $sectionIDResult = mysqli_query($conn, $sectionIDQuery);
@@ -66,11 +66,11 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!---------title-------------->
-    <link rel="short icon" href="logo.png" type="">
-    <title>SIGN UP PAGE</title>
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
+    <title>Signup Student</title>
 
     <!---------Css link------------>
-    <link rel="stylesheet" href="style_log-in_&_sign-up.css">
+    <link rel="stylesheet" href="style_log-in_&_signup.css">
 
     <!-----------bootsrap------------>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -92,23 +92,6 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
-    <!------navbar------>
-    <nav class="navbar-login_signup login-header-section sticky-top header-section-container">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 logo">
-                    <div class="p1">
-                        <p>NSTP PROGRAM</p>
-                    </div>
-                    <div class="col-4 home">
-                        <a href="homepage.php" class="home-link"><i class="fa-solid fa-house"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!------End navbar------>
-
     <!-----main content----->
     <div class="bg-signup">
         <img src="background-signup.jpg" alt="cvsucover">
@@ -117,18 +100,18 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="container signup_container">
             <div class="row">
                 <div class="col text-align ">
-                    <img src=logo.png>
+                    <img src=logo-nstp.png>
                     <div class="body_logo">
-                        <p> CAVITE STATE UNIVERSITY</p>
+                        <p> CvSU-IMUS CAMPUS</p>
                     </div>
                     <div class="body-title">
-                        <h1>IMUS CAMPUS</h1>
+                        <h1>NSTP PORTAL</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
- <!-----signup section----->
+    <!-----signup section----->
     <aside class="form-signup">
         <div class="container">
             <div class="box">
@@ -137,62 +120,62 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <h3>CREATE ACCOUNT</h3>
                     </div>
                     <!----F O R M---->
-                        <form method="POST">
-                            <div class="form-control">
-                                <label class="enter" for="name">Name:</label>
-                                
-                                <input type="text" class="form-control" id='name' name="name">
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="id">Student ID:</label>
-                              
-                                <input type="text" id='id' class="form-control" name="id" required>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error</small>
-                            </div>
-                            <div class="form-control">
-                                <div class="box-control">
-                                    <div class="form-control-1">
-                                        <label for="course">Training Program:</label>
-                                            <select name='course' id="course">
-                                                <?php foreach ($courses as $course) : ?>
-                                                    <option value="<?php echo $course['courseID']; ?>"><?php echo $course['courseName']; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                    </div>
-                                    <div class="form-control-2">
-                                        <label for="section">Section:</label>
-                                            <select name="section" id="section">
-                                            <?php foreach ($sections as $section) : ?>
-    <option value="<?php echo $section['sectionID']; ?>"><?php echo $section['sectionName']; ?></option>
-<?php endforeach; ?>
-                                            </select>
-                                    </div>
-                                </div>
-                            </div>  
-                            <div class="form-control">
-                                <label for="password">Password:</label>
-                             
-                                <input type="password" class="form-control" id='password' name="password">
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error</small>
-                            </div>
-                            <div class="form-control">
-                                <button class="btn btn-lg btn-block" type="submit" value="Submit">SIGNUP</button>
-                            </div>
-                            <div class="login">
-                                <p>Already have an account? <a href="login.php"> Login now</a></p>
-                            </div>
-                        </form>
+                    <form method="POST">
+                        <div class="form-control">
+                            <label class="enter" for="name">Name:</label>
 
-                    </div>
+                            <input type="text" class="form-control" id='name' name="name">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="id">Student ID:</label>
+
+                            <input type="text" id='id' class="form-control" name="id" required>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error</small>
+                        </div>
+                        <div class="form-control">
+                            <div class="box-control">
+                                <div class="form-control-1">
+                                    <label for="course">Training Program:</label>
+                                    <select name='course' id="course">
+                                        <?php foreach ($courses as $course): ?>
+                                            <option value="<?php echo $course['courseID']; ?>"><?php echo $course['courseName']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-control-2">
+                                    <label for="section">Section:</label>
+                                    <select name="section" id="section">
+                                        <?php foreach ($sections as $section): ?>
+                                            <option value="<?php echo $section['sectionID']; ?>"><?php echo $section['sectionName']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label for="password">Password:</label>
+
+                            <input type="password" class="form-control" id='password' name="password">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error</small>
+                        </div>
+                        <div class="form-control">
+                            <button class="btn btn-lg btn-block" type="submit" value="Submit">SIGNUP</button>
+                        </div>
+                        <div class="login">
+                            <p>Already have an account? <a href="login.php"> Login now</a></p>
+                        </div>
+                    </form>
+
                 </div>
             </div>
+        </div>
         </div>
     </aside>
 
@@ -240,7 +223,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         var sectionDropdown = document.getElementById('section');
 
         // Add an event listener to the course dropdown
-        document.getElementById('course').addEventListener('change', function() {
+        document.getElementById('course').addEventListener('change', function () {
             // Clear the section dropdown
             sectionDropdown.innerHTML = '';
 
@@ -251,7 +234,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
             var selectedCourseSections = sections[selectedCourseId];
 
             // Populate the section dropdown based on the selected course
-            selectedCourseSections.forEach(function(section) {
+            selectedCourseSections.forEach(function (section) {
                 var option = document.createElement('option');
                 option.textContent = section;
                 sectionDropdown.appendChild(option);
@@ -262,7 +245,7 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         document.getElementById('course').dispatchEvent(new Event('change'));
 
 
-            // ------------------- JAVASCRIPT code for form validation -----------------------//
+        // ------------------- JAVASCRIPT code for form validation -----------------------//
 
         // JavaScript code for form validation
 
@@ -291,8 +274,8 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
             if (nameVal === '') {
                 setErrorMsg(name, 'Name cannot be blank');
                 isValid = false;
-        
-           
+
+
             } else if (/\d/.test(nameVal)) {
                 setErrorMsg(name, 'Names should have no numeric characters');
                 isValid = false;
@@ -359,4 +342,5 @@ $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
         }
     </script>
 </body>
+
 </html>

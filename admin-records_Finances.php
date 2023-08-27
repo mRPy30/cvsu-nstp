@@ -85,6 +85,9 @@ $remainingBudget = $totalBudget - $totalExpenses;
                                                                  <!--------------------------------- DIV PARA SA TITLE AT GO BACK BUTTON ----------------------------------->
                         <div class="upperbox">
                             <h4>FINANCIAL RECORDS</h4>
+                                <div class="addbox">
+                                    <button id="add-button" class="add-button" >Add Expense</button>
+                                </div>
                             <a href="admin-records.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
@@ -150,9 +153,7 @@ $remainingBudget = $totalBudget - $totalExpenses;
                                 </div>
                             </div>    
                         </div>
-                            <div class="add-box">
-                                <button id="add-button" class="add-button" >Add Expense</button>
-                            </div>
+                           
                             </div>                
                     </div>
                 </div>

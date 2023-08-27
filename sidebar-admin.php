@@ -13,9 +13,6 @@
         box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.44);
     }
 
-    .sidebar .navbar-nav {
-        margin: 0px 5px;
-    }
 
     .sidebar .navbar-nav .pcoded-inner-navbar {
         flex-direction: column;
@@ -49,6 +46,7 @@
 
     .sidebar .nav .nav-link.active {
         color: #008A0E;
+        
     }
 
     /*******RESPONSIVE**********/
@@ -94,7 +92,7 @@
                         echo "nav-link active";
                     } else {
                         echo "nav-link";
-                    } ?> "> <i class="fa-sharp fa-solid fa-house"></i> Home </a>
+                    } ?> "> <i class="fa-solid fa-gauge-high"></i></i> Dashboard </a>
                 </li>
 
                 <li class="nav-link">

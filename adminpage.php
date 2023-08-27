@@ -19,12 +19,13 @@
     $row = mysqli_fetch_assoc($result);
     $totalInstructors = $row['total_instructors'];
 
-    // Active Sidebar Page
+    
 
-$directoryURI = $_SERVER['REQUEST_URI'];
-$path = parse_url($directoryURI, PHP_URL_PATH);
-$components = explode('/', $path);
-$page = $components[2];
+    // Active Sidebar Page
+    $directoryURI = $_SERVER['REQUEST_URI'];
+    $path = parse_url($directoryURI, PHP_URL_PATH);
+    $components = explode('/', $path);
+    $page = $components[2];
 
 
 ?>
@@ -77,27 +78,58 @@ $page = $components[2];
             <div class="container pt-4">
                 <div class="col-lg-12">
                     <div class="total-result">
+                        <!---BOXES--->
                         <div class='total_stud_box'>
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h1><?php echo $totalStudents; ?></h1>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h1><?php echo $totalStudents; ?></h1>
                             <p>NSTP Students</p>
                         </div>
 
                         <div class='total_stud_box'>
-                            <i class="fa-solid fa-book"></i>
+                            <ion-icon name="book-outline"></ion-icon>
                             <h1><?php echo $totalCourse; ?></h1>
                             <p>NSTP Program</p>
                         </div>
 
                         <div class='total_stud_box'>
-                        <i class="fa-solid fa-chalkboard-user"></i>
+                            <ion-icon name="people-outline"></ion-icon>
                             <h1><?php echo $totalInstructors; ?></h1>
                             <p>NSTP Instructors</p>
                         </div>
                     </div>
-                    <!--<div class="calendar_section">
-                        <?php// include('calendar.php');?>
-                        </div>-->
+
+                    <!--CHART--->
+                    <div class="bar_section">
+                        <?php include('chart.php');?>
+                    </div>
+
+                    <!---Table---->
+                        <div class="table-event-list">
+                            <p>Event</p>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Program</th>
+                                        <th>Location</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="scrollable-tbody">
+                                    <tr>
+                                        <td>Feeding Program</td>
+                                        <td>Buhay Na Tubig</td>
+                                        <td>09-15-2023</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    <!--RATES--->
+                        <div class="rate_section">
+                            <?php include('linechart.php');?>
+                        </div>
+
                 </div>
             </div>
         </main>        

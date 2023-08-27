@@ -74,15 +74,10 @@ if ($result->num_rows > 0) {
 
                         <!-- Add New Course Form -->
                         <div class="formbox">
-<<<<<<< HEAD
                             <div class="form-container">
-                                <h4>Add New Training Programs</h4>
-=======
-                            <div class="form-container-coor">
-                                <h4>Add New Course</h4>
->>>>>>> a32d5462431f0f661625f6c4a4302ef09e941e30
+                                <h4>Add New Programs</h4>
                                 <form method="post" id="add-course-form" action="admin-records_manageCourses.php">
-                                    <label for="courseName">Course Name:</label>
+                                    <label for="courseName">Training Program Name:</label>
                                     <input type="text" id="courseName" name="courseName" required>
                                     
                                     <button type="submit">Add Course</button>
@@ -97,7 +92,7 @@ if ($result->num_rows > 0) {
                                     <!-- Table header -->
                                     <thead>
                                         <tr>
-                                            <th>Course Name</th>
+                                            <th>Training Program Name</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
