@@ -64,65 +64,37 @@ $page = $components[2];
         <main class="pcoded-main-content">
           <div class="container pt-4">
             <div class="col-lg-12">
-              <div class="tbl-volunteer">
-                <h5>Volunteer List</h5>
-                <button type="button" type="submit" class="btn" value="submit">Submit</button>
-                <table class="table table-hover ">
-                    <thead class="title">
-                      <tr>
-                        <th scope="col" >Student Name</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Total Attendance</th>
-                      </tr>
-                    </thead>
-                    <tbody class="overflow-y-auto">
-                      <tr>
-                        <th>Agustine Cuevas</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                      <tr>
-                        <th>Agustine Cuevas</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                      <tr>
-                        <th>Agustine Cuevas</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                      <tr>
-                        <th>Agustine Cuevas</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                      <tr>
-                        <th >Bianca Bautista</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                      <tr>
-                        <th>Agustine Cuevas</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                      <tr>
-                        <th >Bianca Bautista</th>
-                        <td>03/12/2023</td>
-                        <td><input type="text"></td>
-                      </tr>
-                    </tbody>
-                </table>
-              </div>
+                    <div class="student_prog2">
+                            <p>NSTP PROGRAMS</p>
+                        </div>
 
+                        <div class="feeds">
+                            <a href="instructor-programsDetails.php">
+                                <div class="inner_feeds">
+                                     <h1>FEEDING PROGRAM</h1>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <p>7AM - 12PM</p>
+                                </div>
+                            </a>
+                            <div class="inner_feeds-2">
+                                <i class="fa-regular fa-user"></i>
+                                <p>Armand G. Aton</p>
+                            </div>
 
+                            <div class="inner_feeds-3">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Brgy. Buhay na Tubig</p>
+                            </div>
+                        </div>
 
-              
-              
-          </div>       
+            </div>
+          </div>
         </main>     
+
+    <!-----End Main content------>        
     </section>
-            <!-----End Main content------>
-             <!-----End of Body------>
+
+    
+<!-----End of Body------>
 </body>
 </html>

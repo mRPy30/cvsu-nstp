@@ -1,4 +1,61 @@
+<?php
+include 'db_connect.php';
 
+
+// Start the session
+session_start();
+
+// Fetch section info
+$selectedsectionID = $_GET['sectionID'] ?? '';
+
+$sql = "SELECT * FROM tbl_sections WHERE sectionID = '$selectedsectionID'";
+$result = $conn->query($sql);
+
+// Initialize an empty array to hold student data
+$students = array();
+
+if ($result->num_rows > 0) {
+    $sectionData = $result->fetch_assoc();
+    $courseID = $sectionData['courseID'];
+    
+    // Fetch name and student id
+    $sql = "SELECT id, name FROM student WHERE sectionID = '$selectedsectionID'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $students = $result->fetch_all(MYSQLI_ASSOC);
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) {
+    $attendanceData = $_POST['attendance'];
+
+    // Loop through each student's attendance and update the database
+    foreach ($attendanceData as $studentId => $attendance) {
+        // Update the attendance value for each student in the database
+        $updateQuery = "UPDATE student SET attendance = '$attendance' WHERE id = '$studentId'";
+        $conn->query($updateQuery);
+        
+        // Calculate total attendance for each student and update the total_attendance column
+        $totalAttendanceQuery = "UPDATE student SET total_attendance = total_attendance + '$attendance' WHERE id = '$studentId'";
+        $conn->query($totalAttendanceQuery);
+    }
+
+    // Redirect back to the page to refresh the section table
+    header("Location: instructor-classes_section_grades.php");
+    exit();
+}
+
+// Active Sidebar Page
+
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,27 +132,23 @@
                                 <tr>
                                     <th scope="col" class="col-3">Student Number</th>
                                     <th scope="col" class="col-3">Name</th>
-                                    <th scope="col" class="col-3">Overall grade</th>
-                                    <th scope="col" class="col-3">Remarks</th>
+                                    <th scope="col" class="col-3">Grade</th>
                                 </tr>
                                 </thead>
                                     <tbody>
+                                    <?php if (!empty($students)): ?>
+                                        <?php foreach ($students as $student): ?>
+                                            <tr>
+                                                <td><?php echo $student['id']; ?></td>
+                                                <td><?php echo $student['name']; ?></td>
+                                                <td><input type="number" name="attendance[<?php echo $student['id']; ?>]" value="0"></td>
+                                             </tr>
+                                        <?php endforeach; ?>
+                                        <?php else: ?>
                                         <tr>
-                                            <td>202110115</td>
-                                            <td>Ariel Hementera</td>
-                                            <td><input type="text" form-control></td>
-                                            <td>
-                                                <ion-icon class="valid" name="checkmark-circle-outline" id="check-icon"></ion-icon>
-                                                <ion-icon class="invalid" name="close-circle-outline" id="error-icon"></ion-icon>
-                                            </td>
+                                            <td colspan="4">No students found.</td>
                                         </tr>
-                                        <tr>
-                                            <td>202110116</td>
-                                            <td>Agustine Cuevas</td>
-                                            <td><input type="text"></td>
-                                            <td><ion-icon class="invalid" name="close-circle-outline"></ion-icon></td>
-                                        </tr>
-
+                                        <?php endif; ?>
                                     </tbody>
                             </table>
                             <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
@@ -106,58 +159,5 @@
             </main>      
         <!-----End Main content------>
 </section>
-
-<script>
-   const password = document.getElementById('password');
-
-   form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            if (validate()) {
-                form.submit(); // Submit the form if validation succeeds
-            }
-        });
-
-     // Password validation
-     if (passwordVal === '') {
-                setErrorMsg(password, 'Password cannot be blank');
-                isValid = false;
-            } else if (passwordVal.length < 8) {
-                setErrorMsg(password, 'Password should have at least 8 characters');
-                isValid = false;
-            } else if (!/[A-Z]/.test(passwordVal)) {
-                setErrorMsg(password, 'Password should contain at least 1 uppercase letter');
-                isValid = false;
-            } else if (!/[a-z]/.test(passwordVal)) {
-                setErrorMsg(password, 'Password should contain at least 1 lowercase letter');
-                isValid = false;
-            } else if (!/\d/.test(passwordVal)) {
-                setErrorMsg(password, 'Password should contain at least 1 numeric character');
-                isValid = false;
-            } else {
-                setSuccessMsg(password);
-            }
-
-            return isValid; // Return the overall validation result
-        
-
-
-            function setErrorMsg(input, errorMsg) {
-            const formControl = input.parentElement;
-            const small = formControl.querySelector('small');
-            formControl.className = 'form-control .valid-icon';
-            small.innerText = errorMsg;
-            small.style.display = 'block'; // Change visibility to display
-        }
-
-        function setSuccessMsg(input) {
-            const formControl = input.parentElement;
-            formControl.className = 'form-control error-icon';
-            const small = formControl.querySelector('small');
-            small.style.display = 'none'; // Change visibility to display
-        }
-    </script>
-            
-</script>
-
 </body>
 </html>

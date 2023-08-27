@@ -164,12 +164,6 @@ $page = $components[2];
                                         </tr>
                                         <?php endif; ?>
                                             
-                                        <tr>
-                                            <td>202110116</td>
-                                            <th><a href="instructor-student_info.php">Bianca Bautista</a></th>
-                                            <td><input type="text"></td>
-                                        </tr>
-                                    </tbody>
                             </table>
                             <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
                         </form>

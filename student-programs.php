@@ -53,57 +53,34 @@ $page = $components[2];
     <!---------End Sidebar--------->
 <br>
 
-<main class="pcoded-main-content">
-            <div class="container pt-4 ">
-            <div class="col-lg-12">
-    <div class="centered">
-    
-        <div class="student_prog2">
-            <h1>NSTP PROGRAMS</h1>
-        </div>
+        <main class="pcoded-main-content">
+            <div class="container">
+                <div class="col-lg-12">
+                        <div class="student_prog2">
+                            <p>NSTP PROGRAMS</p>
+                        </div>
 
-    </div>
-</div>
+                        <div class="feeds">
+                            <a href="student-programsDetails.php">
+                                <div class="inner_feeds">
+                                     <h1>FEEDING PROGRAM</h1>
+                                    <i class="fa-regular fa-clock"></i>
+                                    <p>7AM - 12PM</p>
+                                </div>
+                            </a>
+                            <div class="inner_feeds-2">
+                                <i class="fa-regular fa-user"></i>
+                                <p>Armand G. Aton</p>
+                            </div>
 
-<div class="feeds">
-<a href="student-programsDetails.php">
-    <div class="inner_feeds">
-        <h1>FEEDING PROGRAM</h1>
-        <i class="fa-regular fa-clock"></i>
-        <p>7AM - 12PM</p>
-    </div>
-    </a>
+                            <div class="inner_feeds-3">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Brgy. Buhay na Tubig</p>
+                            </div>
+                        </div>
 
-    <div class="inner_feeds-2">
-        <i class="fa-regular fa-user"></i>
-        <p>Armand G. Aton</p>
-    </div>
-
-    <div class="inner_feeds-3">
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Brgy. Buhay na Tubig</p>
-    </div>
-</div>
-
-<div class="feeds-3">
-    <div class="inner_feeds-4">
-        <h1>CLEAN UP DRIVE</h1>
-        <i class="fa-regular fa-clock"></i>
-        <p>7AM - 12PM</p>
-    </div>
-
-    <div class="inner_feeds-5">
-        <i class="fa-regular fa-user"></i>
-        <p>Armand G. Aton</p>
-    </div>
-
-    <div class="inner_feeds-6">
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Brgy. Buhay na Tubig</p>
-    </div>
-</div>
-</div>      
-            </div>
+                    </div>      
+                </div>
             </div>
         </main>     
 
