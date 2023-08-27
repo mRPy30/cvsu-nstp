@@ -152,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="eval_sheet">
             <h1>A. INSTRUCTOR EVALUATION</h1>
             <p>1. Shows good command and knowledge of the subject matter.</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_1" aria-label="Evaluation 1">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="eval_sheet">
             <p>2. Demonstrates breadth and depth of mastery.</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_2" aria-label="Evaluation 2">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -182,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="eval_sheet">
             <p>3. Draws and share information in the state-of-the-art theory and practice in his/her respective discipline.</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_3" aria-label="Evaluation 3">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="eval_sheet">
             <p>4. Demonstrates up-to-date knowledge and/or awareness on current trends and issues of the subject matter.</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_4" aria-label="Evaluation 4">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -210,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="eval_sheet">
             <p>5. Integrates subject to practical circumstances.</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_5" aria-label="Evaluation 5">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -226,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="eval_sheet">
         <h1>B. TRAINING PROGRAM EVALUATION</h1>
             <p>1. How would you rate the overall quality of the course content and materials provided throughout the semester?</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="course_evaluation_1" aria-label="Course Evaluation 1">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -268,7 +268,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="eval_sheet">
             <p>4. Were the course resources, such as textbooks, online platforms, or supplementary materials, helpful in supporting your learning experience?</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_1" aria-label="Evaluation 1">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
@@ -282,7 +282,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="eval_sheet">
             <p>5. How would you rate the organization and structure of the course in terms of facilitating your learning and comprehension of the subject matter?</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="instructor_evaluation_2" aria-label="Evaluation 2">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>

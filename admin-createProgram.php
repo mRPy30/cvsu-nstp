@@ -171,7 +171,7 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <!----------------- POP UP FORM NG PAG ADD  -------------->
 
     <div id="add-program-popup" class="form-popup">
-        <form method="post" class="form-container" id="add-program-form" action="manageProgram.php">
+    <form method="post" class="form-container" id="add-program-form" action="manageProgram.php">
 
             <div class="popup-box">
                 <div class="first-column">
@@ -227,7 +227,7 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </div>
 
             </div>
-            <button type="submit">Add Program</button>
+            <button type="submit" name="addProgram">Add Program</button>
             <button type="button" id="cancelButton">Cancel</button>
 
         </form>
@@ -295,16 +295,18 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     </div>
                 </div>
             </div>
-            <button type="submit">Update Program</button>
+            <<button type="submit" name="updateProgram">Update Program</button>
             <button type="button" id="cancelEditButton">Cancel</button>
         </form>
     </div>
+
+
+
 
     <form id="deleteProgramForm" action="manageProgram.php" method="post">
         <input type="hidden" name="programID" id="programIDInput">
         <input type="hidden" name="deleteProgram" value="1">
     </form>
-
 
 
 
