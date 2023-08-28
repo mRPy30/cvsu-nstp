@@ -75,9 +75,11 @@ body{
    background: #6FBB76;
    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
    width: 345px;
-   height: 360px;
+   height: 320px;
    position: absolute;
-   margin: 38px 80vw 0px 55vw;
+   margin: 80px 80vw 0px 55vw;
+  ;
+
  }
  .header h4{
    font: normal 700 17px/normal 'Poppins';
@@ -90,12 +92,32 @@ body{
  .event-panel-content {
    font-size: 14px;
  }
+
+ .class-container{
+   overflow-y: scroll;
+   height: 235px;
+ }
+.class-container::-webkit-scrollbar {
+   width: 8px; 
+}
+.class-container:-webkit-scrollbar-thumb {
+   background-color: #888; 
+   border-radius: 4px; 
+}
+.class-container::-webkit-scrollbar-thumb:hover {
+   background-color: #555; 
+}
+.class-container::-webkit-scrollbar-track {
+   background-color: #ddd;
+}
+
  .class-box {
    border-radius: 8px;
    background-color: #ffffff;
    display: flex;
    align-items: center;
    margin: 5px;
+   height: 45px;
  }
  .date-box {
    height: 50px;
@@ -139,8 +161,8 @@ body{
  }
 
  .program-box {
-   width: 285px;
-   height: 50px;
+   width: 268px;
+   height: 45px;
    border-radius: 8px;
    padding: 5px;
    display: flex;

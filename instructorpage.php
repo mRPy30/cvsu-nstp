@@ -120,6 +120,7 @@ $page = $components[2];
                     <div class="header">
                         <h4>Upcoming</h4>
                     </div>
+                    <div class="class-container">
                         <?php
                         $stmt = $conn->prepare("SELECT * FROM tbl_schedule ORDER BY schedule_date ASC");
                         $stmt->execute();
@@ -163,6 +164,7 @@ $page = $components[2];
                     $day = date('d', strtotime($scheduleDate));
 
                     echo '
+                    <div class="class">
                     <div class="class-box" data-event-id="' . $scheduleID . '">
                         <div class="date-box">
                             <h3>' . $month . '</h3>
@@ -174,6 +176,7 @@ $page = $components[2];
                             <h5>' . $location . $scheduleID .'</h5>
                         </div>
                     </div>
+                    </div>
                     ';
                 }
                 }
@@ -181,6 +184,7 @@ $page = $components[2];
                 $stmt->close();
                 $conn->close();
                 ?>
+                </div>
                 </aside>
 
                   <!----------------------------------- CALENDAR BOX ---------------------------------------->
