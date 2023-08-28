@@ -66,7 +66,7 @@ $page = $components[2];
                                 <div class = "col-sm-12">
                                     <div class = "nstp-instructor">
                                         <img src="instructors_folder/Aton.jpg"> 
-                                        <p> NSTP Instructor </p> 
+                                        <p> Name </p> 
                                         <p class="p1"> <ion-icon name="logo-facebook"></ion-icon>NSTP Instructor </p> 
                                         <p class="p2"> <ion-icon name="mail-open"></ion-icon>NSTP Instructor </p> 
                                     </div>
