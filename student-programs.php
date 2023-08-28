@@ -1,4 +1,16 @@
 <?php
+
+include 'db_connect.php';
+
+
+
+
+
+
+
+
+
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -60,23 +72,55 @@ $page = $components[2];
                             <p>NSTP PROGRAMS</p>
                         </div>
 
-                        <div class="feeds">
-                            <a href="student-programsDetails.php">
-                                <div class="inner_feeds">
-                                     <h1>FEEDING PROGRAM</h1>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <p>7AM - 12PM</p>
-                                </div>
-                            </a>
-                            <div class="inner_feeds-2">
-                                <i class="fa-regular fa-user"></i>
-                                <p>Armand G. Aton</p>
-                            </div>
+                        
+                        <?php         
+                  
+              
+                  // Fetch all programs
+                  $query = "SELECT * FROM tbl_program";
+                  $result = $conn->query($query);
+                  
+                  if ($result->num_rows > 0) {
+                      while ($row = $result->fetch_assoc()) {
+                          echo '<div class="feeds">';
+                          echo '<a href="instructor-programsDetails.php">';
+                          echo '<div class="inner_feeds">';
+                          echo '<h1>' . $row["programName"] . '</h1>';
+                          echo '<i class="fa-regular fa-clock"></i>';
+                          echo '<p>' . $row["start_time"] . ' - ' . $row["end_time"] . '</p>';
+                          echo '</div>';
+                          echo '</a>';
+                  
+                          // Fetch instructor's name based on instructor ID
+                          $instructorID = $row["instructorID"]; // Assuming this is the instructor ID in the tbl_program table
+                  
+                          $instructorQuery = "SELECT instructorName FROM instructor WHERE id = $instructorID";
+                          $resultInstructor = $conn->query($instructorQuery);
+                         
+                          if ($resultInstructor) {
+                              $instructorRow = $resultInstructor->fetch_assoc();
+                              $instructorName = $instructorRow["instructorName"];
+                          } else {
+                              // Handle the case when the query fails
+                              $instructorName = "Unknown Instructor";
+                          }
+                  
+                          echo '<div class="inner_feeds-2">';
+                          echo '<i class="fa-regular fa-user"></i>';
+                          echo '<p>' . $instructorName . '</p>'; // Display instructor's name
+                          echo '</div>';
+                  
+                          echo '<div class="inner_feeds-3">';
+                          echo '<i class="fa-solid fa-location-dot"></i>';
+                          echo '<p>' . $row["programLocation"] . '</p>';
+                          echo '</div>';
 
-                            <div class="inner_feeds-3">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>Brgy. Buhay na Tubig</p>
-                            </div>
+                          echo '</div>';
+                      }
+                  } else {
+                      echo "No programs found.";
+                  }
+                  ?>
                         </div>
 
                     </div>      

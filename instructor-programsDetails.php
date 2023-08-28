@@ -1,4 +1,34 @@
 <?php
+
+
+
+session_start();
+include 'db_connect.php';
+
+// Check if the programID is set in the URL
+if (isset($_GET['programID'])) {
+    // Get the programID value from the URL
+    $selectedProgramID = $_GET['programID'];
+
+    // Store the selected program ID in a session variable
+    $_SESSION['selectedProgramID'] = $selectedProgramID;
+
+    // Prepare and execute the query to fetch the program name based on program ID
+    $programQuery = "SELECT programName FROM tbl_program WHERE programID = $selectedProgramID";
+    $result = $conn->query($programQuery);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc(); // Fetch the row
+        $programName = $row['programName']; // Store the program name in a variable
+    } else {
+        $programName = "Program Not Found"; // Default value if program name is not found
+    }
+  
+
+}
+
+
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -67,39 +97,82 @@ $page = $components[2];
             <div class="centered">
                 
                 <div class="student_prog">
-                    <h1>NSTP PROGRAMS / FEEDING PROGRAM</h1>
+                    <h1>NSTP PROGRAMS /  <?php  echo $programName; ?> </h1>
                 </div>
             </div>
         </div>
 
-        <div class="feed">
-            <div class="inner_feed">
-                <h1>FEEDING PROGRAM</h1>
-            </div>
+        <?php
 
-            <div class="inner_feed-2">
-                <h1>PROGRAM DESCRIPTION</h1>
-            </div>
+                include 'db_connect.php';
 
-            <div class="inner_feed-3">
-                <h1>Armand G. Aton</h1>
-                <p>Assigned Instructor</p>
-                <img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">
-            </div>
+                // Check if the selected program ID is set in the session
+                if (isset($_SESSION['selectedProgramID'])) {
+                    // Retrieve the selected program ID from the session
+                    $selectedProgramID = $_SESSION['selectedProgramID'];
 
-            <div class="inner_feed-4">
-                <h1>7AM - 12PM</h1>
-                <p>Time</p>
-                <i class="fa-regular fa-clock"></i>
-            </div>
+                    // Prepare and execute the query to fetch program details based on program ID
+                    $query = "SELECT * FROM tbl_program WHERE programID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("i", $selectedProgramID);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
 
-            <div class="inner_feed-5">
-                <h1>Brgy. Buhay na Tubig</h1>
-                <p>Location</p>
-                <i class="fa-solid fa-location-dot"></i>
-                <button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>
-            </div>
-        </div>
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        // Display program details using fetched data
+                        echo '<div class="feed">';
+                        echo '<div class="inner_feed">';
+                        echo '<h1>' . $row["programName"] . '</h1>';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-2">';
+                        echo '<h1>' . $row["description"] . '</h1>';
+                        echo '</div>';
+
+                        // Fetch instructor's name based on instructor ID
+                        $instructorID = $row["instructorID"];
+                        $instructorQuery = "SELECT instructorName FROM instructor WHERE id = $instructorID";
+                        $resultInstructor = $conn->query($instructorQuery);
+
+                        if ($resultInstructor) {
+                            $instructorRow = $resultInstructor->fetch_assoc();
+                            $instructorName = $instructorRow["instructorName"];
+                        } else {
+                            // Handle the case when the query fails
+                            $instructorName = "Unknown Instructor";
+                        }
+
+                        echo '<div class="inner_feed-3">';
+                        echo '<h1>' . $instructorName . '</h1>';
+                        echo '<p>Assigned Instructor</p>';
+                        echo '<img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-4">';
+                        echo '<h1>' . $row["start_time"] . ' - ' . $row["end_time"] . '</h1>';
+                        echo '<p>Time</p>';
+                        echo '<i class="fa-regular fa-clock"></i>';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-5">';
+                        echo '<h1>' . $row["programLocation"] . '</h1>';
+                        echo '<p>Location</p>';
+                        echo '<i class="fa-solid fa-location-dot"></i>';
+                        echo '<button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>';
+                        echo '</div>';
+
+                        echo '</div>'; // Close the feed div
+                    } else {
+                        echo "Program details not found.";
+                    }
+
+                    $stmt->close();
+                    $conn->close();
+                } else {
+                    echo "No program selected.";
+                }
+                ?>
           </div>       
         </main>     
     </section>

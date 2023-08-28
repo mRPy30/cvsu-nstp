@@ -6,10 +6,14 @@ include 'db_connect.php';
 session_start();
 
 // Fetch section info
-$selectedsectionID = $_GET['sectionID'] ?? '';
+$selectedsectionID = $_SESSION['selectedsectionID'];
+$selectedsectionName = $_SESSION['selectedsectionName'];
+
 
 $sql = "SELECT * FROM tbl_sections WHERE sectionID = '$selectedsectionID'";
 $result = $conn->query($sql);
+
+
 
 // Initialize an empty array to hold student data
 $students = array();
@@ -19,7 +23,7 @@ if ($result->num_rows > 0) {
     $courseID = $sectionData['courseID'];
     
     // Fetch name and student id
-    $sql = "SELECT id, name FROM student WHERE sectionID = '$selectedsectionID'";
+    $sql = "SELECT id, name, finalGrade FROM student WHERE sectionID = '$selectedsectionID'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -107,7 +111,7 @@ $page = $components[2];
                 <div class="container pt-4">
                     <div class="col-lg-12">
                         <div class="box-top">
-                            <h5>BSIT1-C</h5>
+                            <h5><?php echo " $selectedsectionName" ?></h5>
                                 <a href="instructor-classes.php">
                                 <ion-icon name="arrow-back-circle-outline"></ion-icon>
                                 </a>
@@ -127,30 +131,33 @@ $page = $components[2];
                         </div>
                         <div class="tbl_grades">
                         <form method="post">
-                            <table class="table table-hover ">
-                                <thead class="title">
+                        <table class="table table-hover" method="post">
+                            <thead class="title bar">
                                 <tr>
                                     <th scope="col" class="col-3">Student Number</th>
-                                    <th scope="col" class="col-3">Name</th>
-                                    <th scope="col" class="col-3">Grade</th>
+                                    <th scope="col" class="col-5">Name</th>
+                                    <th scope="col" class="col-3">Final Grade</th>
+                                    <th scope="col" class="col-3">Remarks</th>
+                                
                                 </tr>
-                                </thead>
-                                    <tbody>
-                                    <?php if (!empty($students)): ?>
-                                        <?php foreach ($students as $student): ?>
-                                            <tr>
-                                                <td><?php echo $student['id']; ?></td>
-                                                <td><?php echo $student['name']; ?></td>
-                                                <td><input type="number" name="attendance[<?php echo $student['id']; ?>]" value="0"></td>
-                                             </tr>
-                                        <?php endforeach; ?>
-                                        <?php else: ?>
+                            </thead>
+                            <tbody class="scrollable-tbody">
+                                <?php if (!empty($students)): ?>
+                                    <?php foreach ($students as $student): ?>
                                         <tr>
-                                            <td colspan="4">No students found.</td>
+                                            <td><?php echo $student['id']; ?></td>
+                                            <td><?php echo $student['name']; ?></td>
+                                            <td><?php echo $student['finalGrade']; ?></td>
+                                            
                                         </tr>
-                                        <?php endif; ?>
-                                    </tbody>
-                            </table>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="3">No students found.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>    
                             <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
                         </form>
                         </div>

@@ -1,13 +1,23 @@
 <?php
 
-include 'db_connect.php';
-
-
+include "db_connect.php";
 session_start();
 
-$selectedsectionID = "";
-$selectedsectionName = "";
-$selectedCourseName = "";
+
+
+$selectedsectionID = $_GET['sectionID'];
+$selectedsectionName = $_GET['sectionName'];
+
+// Store the values in session variables
+$_SESSION['selectedsectionID'] = $selectedsectionID;
+$_SESSION['selectedsectionName'] = $selectedsectionName;
+
+// Display the stored values
+echo "Selected Section ID: " . $_SESSION['selectedsectionID'];
+echo "Selected Section Name: " . $_SESSION['selectedsectionName'];
+
+
+
 
 
 
@@ -47,14 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) 
 
 // Check if the sectionName parameter is set in the URL
 if (isset($_GET['sectionName'])) {
-    // Get the sectionName value and store it in a variable
-    $sectionName = $_GET['sectionName'];
-
-    
+    // Get the sectionName value from the URL and store it in a session variable
+    $_SESSION['selectedsectionName'] = $_GET['sectionName'];
 } else {
-    // Handle the case when sectionName parameter is not set in the URL
-    echo "Section Name not provided.";
+    // Retrieve the section name from the session variable
+    $sectionName = $_SESSION['selectedsectionName'];
 }
+
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -103,7 +113,7 @@ $page = $components[2];
 <!----Body----->
 
 <body>
-<?php  echo "$selectedsectionID"; ?>
+
     
     <section class="bg-section">
         <!---------Sidebar------------>
@@ -118,7 +128,7 @@ $page = $components[2];
                             <ion-icon name="arrow-back-circle-outline"></ion-icon>
                         </a>                  
                         <div class="section_name">
-                            <h1><?php echo " $sectionName" ?></h1>
+                            <h1><?php echo " $selectedsectionName" ?></h1>
                             <p id="datetime"></p>
                         </div>
                         <div class="class_navs">
@@ -134,37 +144,32 @@ $page = $components[2];
                         </div>
                         <div class="tbl_masterlist">
                         <form method="post">
-                            <table class="table table-hover" method="post">
-                                <thead class="title bar">
+                        <table class="table table-hover" method="post">
+                        <thead class="title bar">
+                            <tr>
+                                <th scope="col" class="col-3">Student Number</th>
+                                <th scope="col" class="col-5">Name</th>
+                                <th scope="col" class="col-2">Total Attendance</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scrollable-tbody">
+                            <?php if (!empty($students)): ?>
+                                <?php foreach ($students as $student): ?>
+                                    <tr>
+                                        <td><?php echo $student['id']; ?></td>
+                                        <td><?php echo $student['name']; ?></td>
+                                        <td>
+                                            <input type="number" name="attendance[<?php echo $student['name']; ?>]" value="0">
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
                                 <tr>
-                                    <th scope="col" class="col-3">Student Number</th>
-                                    <th scope="col" class="col-5">Name</th>
-                                    <th scope="col" class="col-2"> Total Attendance</th>
+                                    <td colspan="3">No students found.</td>
                                 </tr>
-                                </thead>
-                                    <tbody class="scrollable-tbody">
-                                        <?php if (!empty($students)): ?>
-                                        <?php foreach ($students as $student): ?>
-                                        <tr>
-                                            <td>
-                                                <a
-                                                    href="instructor-student_info.php?id=<?php echo $student['name']; ?>">
-                                                    
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <input type="number" name="attendance[<?php echo $student['id']; ?>]" value="0">
-                                            </td>
-                                        </tr>
-
-                                        <?php endforeach; ?>
-                                        <?php else: ?>
-                                        <tr>
-                                            <td colspan="4">No students found.</td>
-                                        </tr>
-                                        <?php endif; ?>
-                                            
-                            </table>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
                             <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
                         </form>
                         </div>
