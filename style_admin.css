@@ -296,40 +296,37 @@ body{
 /*****START OUTER RECORDS********/
 .pcoded-main-content .records-content {
   position: relative;
-  margin: 0px 0px 0px 110px;
-  padding: 20px;
+  margin: 0px 0px 0px 40px;
   display: flex;
   flex-direction: column;
 }
 /******OUTER UPPERBOX RECORDS********/
 .pcoded-main-content .records-content .upperbox { 
-  height: 50px;
-  width: 105%;
   display: flex;
-  margin: 10px 0px 0px 35px;
   justify-content: space-between;
-  align-items: center;
+  margin: 0px 0px 10px 100px;
 }
 .pcoded-main-content .records-content .upperbox h4{
   font: normal 700 18px/normal 'Poppins';
-  margin: 10px 50px 8px 25px;
+  margin: 10px 50px 2px 25px;
   
 }
 .pcoded-main-content .records-content .upperbox h3{
-  font: normal 700 18px/normal 'Poppins';
+  font: normal 500 18px/normal 'Poppins';
   margin: 14px 0px 8px 5px;
   position: relative;
 }
 /*********BOXES***********/
 .pcoded-main-content .records-content .middlebox {
   padding: 5px;
-  margin: 20px 0px 0px 100px;
-  height: 400px;
-  display: flex;
+  margin: 10px 0px 0px 100px;
+  height: 295px;
+  width: 1100px;
   flex-wrap: wrap;
+  display: flex;
 }
   .pcoded-main-content .records-content .middlebox .records_box {
-    width: 350px;
+    width: 300px;
     height: 105px;
     margin: 20px 20px 0px 20px;
     border-radius: 10px;
@@ -344,7 +341,7 @@ body{
   color: #FFF;
 }
 .pcoded-main-content .records-content .middlebox .records_box h3{
-  font: normal 500 20px/normal 'Poppins';
+  font: normal 500 18px/normal 'Poppins';
   text-align: center;
   margin: 40px 0px 0px 5px;
 }
