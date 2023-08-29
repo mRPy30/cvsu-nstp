@@ -17,7 +17,7 @@ $page = $components[2];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Coordinator Page"; ?></title>
 
      <!----------CSS------------>
@@ -56,7 +56,7 @@ $page = $components[2];
 
         <!--Main Content-->
         <main class="pcoded-main-content">
-            <div class="container">
+            <div class="container pt-4">
                 <div class="col-lg-12">
                         <div class="records-content">
                             <!-- Add your main content here -->
@@ -82,7 +82,7 @@ $page = $components[2];
                                 </div>
 
                                 <div class="records_box" id="courses_box">
-                                    <h3><i class="fa-solid fa-file-lines"></i> Training Program Records</h3>
+                                    <h3><i class="fa-solid fa-file-lines"></i> Training Program <br>Records</h3>
                                 </div>
                                 
                                 <div class="records_box" id="instructor_box">

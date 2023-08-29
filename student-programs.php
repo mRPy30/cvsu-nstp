@@ -83,7 +83,7 @@ $page = $components[2];
                   if ($result->num_rows > 0) {
                       while ($row = $result->fetch_assoc()) {
                           echo '<div class="feeds">';
-                          echo '<a href="instructor-programsDetails.php">';
+                          echo '<a href="student-programsDetails.php">';
                           echo '<div class="inner_feeds">';
                           echo '<h1>' . $row["programName"] . '</h1>';
                           echo '<i class="fa-regular fa-clock"></i>';

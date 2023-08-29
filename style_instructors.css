@@ -6,6 +6,20 @@
 body{
    overflow-x: hidden;
  }
+body::-webkit-scrollbar {
+   width: 12px; 
+}
+body::-webkit-scrollbar-thumb {
+   background-color: #aeaeae; 
+   border-radius: 4px; 
+}
+body::-webkit-scrollbar-thumb:hover {
+   background-color: #555; 
+}
+body::-webkit-scrollbar-track {
+   background-color: #ffffff;
+}
+
 /*******BODY******/
 .bg-section{
     left: 0;
@@ -18,7 +32,7 @@ body{
 /****Main Content****/  
 .pcoded-main-content .instructor_prof{
     margin: 20px 0px 0px 130px;
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid #000000;
     width: 1045px;
  }
  .pcoded-main-content .instructor_prof p{
@@ -96,19 +110,21 @@ body{
  .class-container{
    overflow-y: scroll;
    height: 235px;
+   width: 305px;
+   margin-right: 10px;
  }
 .class-container::-webkit-scrollbar {
    width: 8px; 
 }
-.class-container:-webkit-scrollbar-thumb {
-   background-color: #888; 
-   border-radius: 4px; 
+.class-container::-webkit-scrollbar-thumb {
+   background-color: #cccccc; 
+   border-radius: 6px; 
 }
 .class-container::-webkit-scrollbar-thumb:hover {
-   background-color: #555; 
+   background-color: #ffd700; 
 }
 .class-container::-webkit-scrollbar-track {
-   background-color: #ddd;
+   background-color: #ffffff;
 }
 
  .class-box {
@@ -161,7 +177,7 @@ body{
  }
 
  .program-box {
-   width: 268px;
+   width: 286px;
    height: 45px;
    border-radius: 8px;
    padding: 5px;

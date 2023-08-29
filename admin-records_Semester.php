@@ -3,7 +3,15 @@
 
 include 'db_connect.php';
 
+// Active Sidebar Page
 
+$directoryURI = $_SERVER['REQUEST_URI'];
+
+$path = parse_url($directoryURI, PHP_URL_PATH);
+
+$components = explode('/', $path);
+
+$page = $components[2];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +22,7 @@ include 'db_connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Coordinator Page"; ?></title>
 
      <!----------CSS------------>
@@ -65,7 +73,10 @@ include 'db_connect.php';
                                     name="arrow-back-circle-outline"></ion-icon></a>
         </div>
 
-       
+       <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
+       <div class="add-box">
+            <button id="add-sem-button">Add Semester</button>
+        </div>
          <!--------------------------------------TABLE NG CLASSES --------------------------------------------->
         <div class="align-tbl-year">
             <div class="table-year-display">
@@ -149,16 +160,6 @@ include 'db_connect.php';
                 </tbody>
             </table>
         </div>
-
-
-
-
-
-        
-        <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
-        <div class="add-box">
-            <button id="add-year-button">Add Semester</button>
-        </div>
     </div>
                 </div>
     </div>
@@ -183,7 +184,7 @@ include 'db_connect.php';
     <!----------------- POP UP FORM PARA SA PAG EDIT NG ISANG CLASS -------------->
 
         <div id="edit-sem-popup" class="form-popup">
-            <form method="post" class="form-container" id="edit-sem-form" action="manageSemester.php">
+            <form method="post" class="form-container" id="edit-sem-form" action="admin-records_manageSemester.php">
                 <h4>Edit Sem</h4>
                 <input type="hidden" name="semesterID" id="edit-semesterID">
                 <label for="edit-semesterName">Semester Name:</label>
@@ -198,7 +199,7 @@ include 'db_connect.php';
 
        
             
-        <form id="deleteSemForm" action="manageSemester.php" method="post">
+        <form id="deleteSemForm" action="admin-records_manageSemester.php" method="post">
                 <input type="hidden" name="semesterID" id="semesterIDInput">
                 <input type="hidden" name="deleteSemester" value="1">
          </form>             

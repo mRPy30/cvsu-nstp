@@ -54,49 +54,105 @@ $page = $components[2];
 <br>
 
 <main class="pcoded-main-content">
-            <div class="container pt-4 ">
-                <div class="col-lg-12">
-            <div class="centered">
-                
-                <div class="student_prog">
-                    <h1>NSTP PROGRAMS / FEEDING PROGRAM</h1>
-                    <a href="student-programs.php" class="go-back-button"><ion-icon
+            <div class="container">
+                <div class="col-lg-12">                
+                    <div class="upperbox">
+                        <h4>NSTP PROGRAMS / FEEDING PROGRAM</h4>
+                            <a href="student-programs.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
+                    </div>
+                    <div class="feed">
+                        <div class="inner_feed">
+                            <h1>FEEDING PROGRAM</h1>
+                        </div>
+
+                        <div class="inner_feed-2">
+                            <h1>PROGRAM DESCRIPTION</h1>
+                        </div>
+
+                        <div class="inner_feed-3">
+                            <h1>Armand G. Aton</h1>
+                            <p>Assigned Instructor</p>
+                            <img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">
+                        </div>
+
+                        <div class="inner_feed-4">
+                            <h1>7AM - 12PM</h1>
+                            <p>Time</p>
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+
+                        <div class="inner_feed-5">
+                            <h1>Brgy. Buhay na Tubig</h1>
+                            <p>Location</p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <button type="submit" class="btn" id="volunteer-button">+ VOLUNTEER NOW</button>
+                        </div>
+                    </div>
+
+                    <!----------------- POP UP FORM Volunteer -------------->
+
+        <div id="volunteer-popup" class="form-popup">
+            <form method="post" class="form-container" id="volunteer-form" action="">
+                <h4>Volunteer Registration</h4>
+
+                <label for="add-volunteer">Enter your Name:</label>
+                <input type="text" name="Name" placeholder="Please Enter Your Full name">
+
+                <label for="email-volunteer">Enter your Name:</label>
+                <input type="text" name="Name" placeholder="Please Enter Your Email add">
+                
+                <div class="form-control-1">
+                                    <label for="studentID">Student Number:</label>
+                                    <input name='studentID' id="studentId">
+                                        
+                                    </input>
+                                </div>
+                                <div class="form-control-2">
+                                    <label for="number">Contact Number:</label>
+                                    <input name="section" id="section">
+
+                                    </input>
+                                </div>
+
+                <label for="section-volunteer">Course and Section:</label>
+                <select type="select" name="select">
+                    <option>
+
+                    </option>
+                </select>
+
+                <button type="submit" onclick="closeAddForm()">Signup</button>
+                <button type="button" onclick="closeAddForm()">Cancel</button>
+            </form>
+        </div>
+
                 </div>
             </div>
-        </div>
-
-        <div class="feed">
-            <div class="inner_feed">
-                <h1>FEEDING PROGRAM</h1>
-            </div>
-
-            <div class="inner_feed-2">
-                <h1>PROGRAM DESCRIPTION</h1>
-            </div>
-
-            <div class="inner_feed-3">
-                <h1>Armand G. Aton</h1>
-                <p>Assigned Instructor</p>
-                <img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">
-            </div>
-
-            <div class="inner_feed-4">
-                <h1>7AM - 12PM</h1>
-                <p>Time</p>
-                <i class="fa-regular fa-clock"></i>
-            </div>
-
-            <div class="inner_feed-5">
-                <h1>Brgy. Buhay na Tubig</h1>
-                <p>Location</p>
-                <i class="fa-solid fa-location-dot"></i>
-                <button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>
-            </div>
-        </div>
-</div>
-</div>
 </main>
 </section>
+
+    <script>
+    // Get the button element
+    var volunteerButton = document.getElementById('volunteer-button');
+
+    // Get the popup form element
+    var volunteerPopup = document.getElementById('volunteer-popup');
+
+    // Add an event listener to the button for the click event
+    volunteerButton.addEventListener('click', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Show the popup form
+        volunteerPopup.style.display = 'block';
+    });
+
+    // Function to close the pop-up form
+    function closeAddForm() {
+        document.getElementById("volunteer-popup").style.display = "none";
+    }
+    </script>
+
 </body>
 </html>
