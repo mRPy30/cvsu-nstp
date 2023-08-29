@@ -1,4 +1,32 @@
 <?php
+include 'db_connect.php';
+session_start();
+$accountID = $_SESSION['id'];
+
+
+//// query for the name of the Student
+$query = "SELECT sectionID FROM student WHERE id = '$accountID'";
+$result = mysqli_query($conn, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $sectionID = $row['sectionID'];
+} else {
+    // Handle the case if the student is not found
+    $sectionID = "Unknown";
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -56,30 +84,52 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">
-                    <div class="content-instructor">     
-                    <div class ="class-instructor"> 
-                        <p> CLASS INSTRUCTOR </p> 
-                        <a href="student-classes.php" class="go-back-button"><ion-icon
-                                    name="arrow-back-circle-outline"></ion-icon></a>
+                <div class="content-instructor">
+                    <div class="class-instructor">
+                        <p>CLASS INSTRUCTOR</p>
+                        <a href="student-classes.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
                     </div>
-                             <div class = "row">
-                                <div class = "col-sm-12">
-                                    <div class = "nstp-instructor">
-                                        <img src="instructors_folder/Aton.jpg"> 
-                                        <p> Name </p> 
-                                        <p class="p1"> <ion-icon name="logo-facebook"></ion-icon>NSTP Instructor </p> 
-                                        <p class="p2"> <ion-icon name="mail-open"></ion-icon>NSTP Instructor </p> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>      
-            </div>
-            </div>
-        </main>     
+                    
+                    <?php
+// Prepare and execute the query to fetch student and instructor information based on section
+$studentQuery = "SELECT s.name AS student_name, se.instructorID, i.instructorName, i.instructorDescription, i.email, i.facebook
+                FROM student AS s
+                JOIN tbl_sections AS se ON s.sectionID = se.sectionID
+                JOIN instructor AS i ON se.instructorID = i.id
+                WHERE s.sectionID = $sectionID";
+
+$result = $conn->query($studentQuery);
+
+// Group the results by instructor ID
+$instructors = array();
+while ($row = $result->fetch_assoc()) {
+    $instructorID = $row["instructorID"];
+    if (!isset($instructors[$instructorID])) {
+        $instructors[$instructorID] = $row;
+    }
+}
+
+// Loop through distinct instructors and display their information
+foreach ($instructors as $instructor) {
+    echo '<div class="row">';
+    echo '<div class="col-sm-12">';
+    echo '<div class="nstp-instructor">';
+    echo '<img src="instructors_folder/Aton.jpg">';
+    echo '<p>' . $instructor["instructorName"] . '</p>';
+    echo '<br>';
+    echo '<p>' . $instructor["instructorDescription"] . '</p>';
+    echo '<p class="p1"><ion-icon name="logo-facebook"></ion-icon>' . $instructor["facebook"] . '</p>';
+    echo '<p class="p2"><ion-icon name="mail-open"></ion-icon>' . $instructor["email"] . '</p>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+}
+?>
+</div>
+
+      
+    </tbody>
+</table>
 
     <!-----End Main content------>        
     </section>
