@@ -65,7 +65,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Coordinator Page"; ?></title>
 
      <!----------CSS------------>
@@ -194,7 +194,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <input type="text" placeholder="Enter Instructor Name" name="instructorName" required>
 
                 <label for="sectionName"><b>Section Name</b></label>
-                    <select name="sectionName" required>
+                    <select type="select" name="sectionName" required>
                     <?php foreach ($sections as $section): ?>
                         <option value="<?php echo $section['sectionName']; ?>"><?php echo $section['sectionName']; ?></option>
                     <?php endforeach; ?>

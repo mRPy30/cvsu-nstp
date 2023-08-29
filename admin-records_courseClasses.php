@@ -146,7 +146,19 @@ if ($result->num_rows > 0) {
                             <form method="post" class="form-container" id="add-section-form" action="admin-records_manageClass.php">
                                 <h4>Add Class</h4>
                                 <label for="add-sectionName">Section Name:</label>
+
                                 <input type="text" name="sectionName" placeholder="Enter section name">
+
+                                <label for="instructor"><b>Instructor:</b></label>
+                                <select name="sectionName" required>
+                                    <option>
+                                        
+                                    </option>
+                                </select>
+                                
+                                <label for="room"><b>Room:</b></label>
+                                <input type="text" placeholder="Enter Room No." name="room">
+
                                 <button type="submit">Add Class</button>
                                 <button type="button" class="cancel-button">Cancel</button>
                             </form>
@@ -238,9 +250,9 @@ if ($result->num_rows > 0) {
         }
 
         
-        // Close the edit section pop-up form when the cancel button is clicked
-        document.querySelector('#edit-section-popup .cancel-button').addEventListener('click', () => {
-                document.getElementById('edit-section-popup').style.display = 'none';
+        // Close the add section pop-up form when the cancel button is clicked
+        document.querySelector('#add-section-popup .cancel-button').addEventListener('click', () => {
+                document.getElementById('add-section-popup').style.display = 'none';
             });
 
         });

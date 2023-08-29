@@ -67,7 +67,10 @@ include 'db_connect.php';
 
      
         </div>
-
+         <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
+         <div class="add-box">
+            <button id="add-year-button">Add Semester</button>
+        </div>
        
          <!--------------------------------------TABLE NG CLASSES --------------------------------------------->
         <div class="align-tbl-year">
@@ -153,10 +156,7 @@ include 'db_connect.php';
             </table>
         </div>
         </div>
-         <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
-        <div class="add-box">
-            <button id="add-year-button">Add Semester</button>
-        </div>
+        
     </div>
                 </div>
             </div>

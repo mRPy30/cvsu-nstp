@@ -7,6 +7,20 @@
 body{
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  width: 12px; 
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #aeaeae; 
+  border-radius: 4px; 
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+body::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
 /*******BODY******/
 .bg-section{
   left: 0;
@@ -296,7 +310,7 @@ body{
 /*****START OUTER RECORDS********/
 .pcoded-main-content .records-content {
   position: relative;
-  margin: 0px 0px 0px 40px;
+  margin: 15px 0px 0px 40px;
   display: flex;
   flex-direction: column;
 }
@@ -561,9 +575,7 @@ body{
       }
       .pcoded-main-content .rec-content
       .add-box{
-        margin: 15px 0px 0px 818px; 
-        bottom: 20px;
-        left: 50%;
+        margin: 15px 0px 0px 820px; 
       }
       .pcoded-main-content .rec-content
       .add-box button{
@@ -632,6 +644,20 @@ body{
             box-shadow: 0px 0px 400px 900px rgba(0,0,0,0.28);
             z-index: 9999;
         }
+        #add-section-popup .cancel-button {
+          background-color: #bababa;
+          color: #ffffff;
+          padding: 5px 10px;
+          border: none;
+          cursor: pointer;
+          margin-left: 100px;
+          border-radius: 3px;
+          font: normal 400 13px/normal 'Poppins';
+      }
+      #add-section-popup .cancel-button:hover {
+          background-color: #999;
+      }
+
         .form-container {
             width: 300px;
         }
@@ -643,12 +669,39 @@ body{
             margin-bottom: 5px;
             font: normal 400 15px/normal 'Poppins';
         }
+        .form-container input[type="file"] {
+          position: relative;
+          outline: none;
+          padding: 4px;
+          margin: -4px;
+        }
+        .form-container input[type="file"]:focus::file-selector-button {
+          background-color: #4CAF50;
+          border-radius: 10px;
+        }
+        .form-container input[type="file"]:focus-within::file-selector-button,
+        input[type="file"]:focus::file-selector-button {
+          background-color: #4CAF50;
+          border-radius: 10px;
+          outline-offset: 2px;
+        }
         .form-container input[type="text"] {
             width: 95%;
             padding: 5px;
             margin-bottom: 10px;
             border-color: none;
             border-radius: 6px;
+        }
+        .form-container select[type="select"]{
+          width: 95%;
+          border: 1px solid black;
+          font-family: 'poppins';
+          font-size: 13px;
+          text-align: center;
+          line-height: 100%;
+          border-radius: 5px;
+          padding: 8px;
+          margin-bottom: 10px;
         }
         .form-container button[type="submit"] {
             background-color: #6FBB76;
@@ -661,7 +714,27 @@ body{
             cursor: pointer;
             border-radius: 3px;
             font: normal 400 13px/normal 'Poppins';
+            margin-top: 10px;
         }
+        .form-container button[type="submit"]:hover {
+          background-color: #008A0E;
+
+        }
+        .form-container button[type="button"] {
+          background-color: #bababa;
+            color: #ffffff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            margin-left: 100px;
+            border-radius: 3px;
+            font: normal 400 13px/normal 'Poppins';
+            margin-top: 10px;
+
+      }
+      .form-container button[type="button"]:hover {
+        background-color: #999;
+    }
         .form-popup {
             display: none;
             position: fixed;
@@ -1516,16 +1589,7 @@ body{
     border-radius: 4px;
 }
 
-.pcoded-main-content .rec-content
-    .align-tbl-year #edit-sem-popup .cancel-button{
-    width: 70px;
-    font-size: 14px;
-    border-radius: 5px;
-    padding: 8px;
-    display: block;
-    margin-top: 10px;
-    background-color: gray;
-}
+
 .pcoded-main-content .rec-content
     .align-tbl-year #semester-table form button{
     width: 110px;
@@ -1884,36 +1948,6 @@ cursor: pointer;
   font: normal 400 14px/normal 'Inter';
 }
 
-
-
-.pcoded-main-content .rec-content
-.add-box{
-  margin: 20px 0px 0px 100px; 
-  bottom: 20px;
-  left: 50%;
-}
-.pcoded-main-content .rec-content
-.add-box button{
-  width: 130px;
-  height: 45px;
-  z-index: 999;
-  background-color: #4CAF50;
-  color: white; 
-  border: none;
-  padding: 10px 20px; 
-  text-align: center; 
-  text-decoration: none; 
-  display: inline-block; 
-  font: normal 400 12px/normal 'Inter'; 
-  margin: 4px 2px; 
-  cursor: pointer;
-  border-radius: 5px;
-}
-.pcoded-main-content .rec-content
-.add-box button:hover{
-  background-color: #008104;
-  transition: 0.4s;
-}
 /*********************END EXTERNAL************************/
 
 

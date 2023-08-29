@@ -40,7 +40,7 @@ $remainingBudget = $totalBudget - $totalExpenses;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Coordinator Page"; ?></title>
 
      <!----------CSS------------>
@@ -215,7 +215,7 @@ $remainingBudget = $totalBudget - $totalExpenses;
                 <br> <br>
 
                 <button type="submit" class="btn" onclick="closeEditForm()">Update</button>
-                <button type="button" class="btn cancel" onclick="closeEditForm()">Cancel</button>
+                <button type="button" class="btn cancel" onclick="closeEditForm()" style="background-color: #bababa; color: #ffffff; padding: 5px 10px; border: none; cursor: pointer; margin-left: 100px; border-radius: 3px; font: normal 400 13px/normal 'Poppins';">Cancel</button>
             </form>
             </div>
 

@@ -137,8 +137,6 @@ $page = $components[2];
                                     <th scope="col" class="col-3">Student Number</th>
                                     <th scope="col" class="col-5">Name</th>
                                     <th scope="col" class="col-3">Final Grade</th>
-                                    <th scope="col" class="col-3">Remarks</th>
-                                
                                 </tr>
                             </thead>
                             <tbody class="scrollable-tbody">

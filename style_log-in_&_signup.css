@@ -188,7 +188,8 @@ body{
 }
 .form-login .form-group .form-login .btn:hover {
     transform: scale(1.02);
-  }
+    background-color: #008A0E;
+}
 .form-login .signup{
     font-family: 'Poppins';
     font-style: normal;
@@ -441,7 +442,9 @@ body{
         align-items: center;
         color: #FFFFFF;
     }
-
+    .form-signup .form-group .btn:hover{
+        background-color: #008A0E;
+    }
     .form-signup .login{
         font-family: 'Poppins';
         font-style: normal;
