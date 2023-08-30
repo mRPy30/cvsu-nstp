@@ -78,7 +78,8 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">
-                    <div class="upperbox">
+                    <div class="upperbox-grades">
+                        <h6>NSTP Grades</h6>
                         <div class="print">
                             <i class="fa-solid fa-print" onclick="printSection('container')"></i>
                         </div>

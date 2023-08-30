@@ -121,7 +121,7 @@ $page = $components[2];
                                         $volunteerCount = $program['volunteers'];
                                         $programID = $program['programID'];
 
-                                        echo "<tr class='clickable-row' data-href='programDetails.php?programID={$programID}'>";
+                                        echo "<tr class='clickable-row' data-href='admin-programDetails.php?programID={$programID}'>";
                                         echo "<td>$programName</td>";
                                         echo "<td>$instructorName</td>";
                                         echo "<td>$volunteerCount</td>";

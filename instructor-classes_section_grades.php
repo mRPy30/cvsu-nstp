@@ -31,25 +31,43 @@ if ($result->num_rows > 0) {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) {
-    $attendanceData = $_POST['attendance'];
+    //insert Grades
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $finalGrades = $_POST['finalGrade'];
 
-    // Loop through each student's attendance and update the database
-    foreach ($attendanceData as $studentId => $attendance) {
-        // Update the attendance value for each student in the database
-        $updateQuery = "UPDATE student SET attendance = '$attendance' WHERE id = '$studentId'";
-        $conn->query($updateQuery);
+        foreach ($finalGrades as $studentId => $grade) {
+            // Validate input if needed
+            // Insert final grade into the database
+        $insertQuery = "INSERT INTO student (finalGrade) VALUES ('$finalGrades')";
+        $conn->query($insertQuery);
+        }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $studentIDs = $_POST['id'];
+            $grades = $_POST['finalGrades'];
         
-        // Calculate total attendance for each student and update the total_attendance column
-        $totalAttendanceQuery = "UPDATE student SET total_attendance = total_attendance + '$attendance' WHERE id = '$studentId'";
-        $conn->query($totalAttendanceQuery);
+            // Loop through the submitted data and update grades for each student
+            for ($i = 0; $i < count($studentIDs); $i++) {
+                $studentID = $studentIDs[$i];
+                $grade = $grades[$i];
+        
+                // Update the grade in the database for the current student
+                // Your database update code here
+            }
+        
+            // Redirect back to the page after updating grades
+            header('Location: student_grades.php');
+            exit();
+        }
+    
+
+    // Redirect or display a success message
+    
+    if ($conn->query($insertQuery) === TRUE) {
+        header("Location: instructor-classes_section_grades.php");
+    } else {
+        echo "Error: " . $insertQuery . "<br>" . $conn->error;
     }
-
-    // Redirect back to the page to refresh the section table
-    header("Location: instructor-classes_section_grades.php");
-    exit();
 }
-
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -140,23 +158,20 @@ $page = $components[2];
                                 </tr>
                             </thead>
                             <tbody class="scrollable-tbody">
-                                <?php if (!empty($students)): ?>
-                                    <?php foreach ($students as $student): ?>
-                                        <tr>
-                                            <td><?php echo $student['id']; ?></td>
-                                            <td><?php echo $student['name']; ?></td>
-                                            <td><?php echo $student['finalGrade']; ?></td>
-                                            
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
+                            <tbody class="scrollable-tbody">
+                            <?php foreach ($students as $student): ?>
                                     <tr>
-                                        <td colspan="3">No students found.</td>
+                                        <td><?php echo $student['id']; ?></td>
+                                        <td><?php echo $student['name']; ?></td>
+                                        <td>
+                                            <input type="hidden" name="studentIDs[]" value="<?php echo $student['id']; ?>">
+                                            <input type="number" name="grades[]" min="0" max="100" step="0.1">
+                                        </td>
                                     </tr>
-                                <?php endif; ?>
+                                <?php endforeach; ?>
                             </tbody>
-                        </table>    
-                            <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                        </table>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                         </div>
                     </div>
