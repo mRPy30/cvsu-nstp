@@ -1,21 +1,37 @@
 <?php
 include 'db_connect.php';
 
-// Code for deleting a semester
+// Code for deleting a year
 if (isset($_POST['yearID']) && isset($_POST['deleteYear'])) {
-    // Delete existing expense
+    // Delete existing year
     $yearID = $_POST['yearID'];
 
-    // Delete the expense from the database
+    // Delete the year from the database
     $deleteQuery = "DELETE FROM tbl_year WHERE yearID = '$yearID'";
     $conn->query($deleteQuery);
 
-    // Redirect back to the page to refresh the expense table
+    // Redirect back to the page to refresh the year table
     header('Location: admin-records_Year.php');
     exit();
-
 }
 
+// Code for setting a year as default
+if (isset($_POST['yearID']) && isset($_POST['setDefaultYear'])) {
+    // Clear existing default year
+    $clearDefaultQuery = "UPDATE tbl_year SET isDefault = 0";
+    $conn->query($clearDefaultQuery);
+
+    // Set the selected year as default
+    $yearID = $_POST['yearID'];
+    $setDefaultQuery = "UPDATE tbl_year SET isDefault = 1 WHERE yearID = '$yearID'";
+    $conn->query($setDefaultQuery);
+
+    // Redirect back to the page to refresh the year table
+    header('Location: admin-records_Year.php');
+    exit();
+}
+
+// Code for editing a year
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["yearID"]) && isset($_POST["yearName"])) {
     $yearID = $_POST["yearID"];
     $yearName = $_POST["yearName"];
@@ -27,11 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["yearID"]) && isset($_
     $stmt->execute();
     $stmt->close();
     
-    // Redirect back to the same page after editing a semester
+    // Redirect back to the same page after editing a year
     header("Location: admin-records_Year.php");
     exit();
 }
-// Code for adding a semester
+
+// Code for adding a year
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["yearName"])) {
     $yearName = $_POST["yearName"];
     
@@ -42,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["yearName"])) {
     $stmt->execute();
     $stmt->close();
     
-    // Redirect back to the same page after adding a semester
+    // Redirect back to the same page after adding a year
     header("Location: admin-records_Year.php");
     exit();
 }

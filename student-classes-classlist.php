@@ -1,5 +1,29 @@
 <?php
+
+//connection
+include 'db_connect.php';
+
 // Active Sidebar Page
+session_start();
+$accountID = $_SESSION['id'];
+
+
+//// query for the name of the Student
+$query = "SELECT sectionID FROM student WHERE id = '$accountID'";
+$result = mysqli_query($conn, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $sectionID = $row['sectionID'];
+} else {
+    // Handle the case if the student is not found
+    $sectionID = "Unknown";
+}
+
+
+
+
+
 
 $directoryURI = $_SERVER['REQUEST_URI'];
 
@@ -9,6 +33,9 @@ $components = explode('/', $path);
 
 $page = $components[2];
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,54 +99,37 @@ $page = $components[2];
                              <div class="col-sm-12"> 
                              <div class="class-list-box"> 
                              
+                             
+                                    
                              <table class="table-bordered">
                                 <thead>
                                     <tr>
-                                  
-                                    <th>STUDENT NAME</th>
-                                    <th>STATUS</th>
-                                  
+                                        <th>STUDENT NAME</th>
+                                        <th>STATUS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                    <td>Maricar Malimban Glorioso</td>
-                                    <td>ENROLLED</td>
-                            
-                                    </tr>
-                                    <tr>
-                                    <td></td>
-                                    <td></td>                       
-                                    </tr>
+                                    <?php
+                                    // Prepare and execute the query to fetch students based on section ID
+                                    $studentQuery = "SELECT name FROM student WHERE sectionID = ?";
+                                    $stmt = $conn->prepare($studentQuery);
+                                    $stmt->bind_param("i", $sectionID);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
 
-                                    <tr>
-                                    <td></td>
-                                    <td></td>
-                                    </tr>
+                                    // Loop through the result set and display student information
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<tr>';
+                                        echo '<td>' . $row["name"] . '</td>';
+                                        echo '<td>ENROLLED</td>'; // Automatically set as enrolled
+                                        echo '</tr>';
+                                    }
 
-                                    <tr>
-                                    <td></td>
-                                    <td></td>                                
-                                    </tr>
-
-                                    <tr>
-                                    <td></td>
-                                    <td></td>                        
-                                    </tr>
-
-                                    <tr>
-                                    <td></td>
-                                    <td></td>
-                                    </tr>
-
-                                    <tr>
-                                    <td> </td>
-                                    <td> </td>
-                                    </tr>
-                                   
-                                    
+                                    $stmt->close();
+                                    ?>
                                 </tbody>
-                                </table>
+                            </table>
+                                                        
                              
                              </div>
 

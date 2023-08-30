@@ -59,7 +59,7 @@ include 'db_connect.php';
     
         <div class="upperbox">
 
-            <h3>Semester List</h3>
+            <h3>Year List</h3>
             
        
             <a href="admin-records.php" class="go-back-button"><ion-icon
@@ -69,7 +69,7 @@ include 'db_connect.php';
         </div>
          <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
          <div class="add-box">
-            <button id="add-year-button">Add Semester</button>
+            <button id="add-year-button">Add Year</button>
         </div>
        
          <!--------------------------------------TABLE NG CLASSES --------------------------------------------->
@@ -180,10 +180,9 @@ include 'db_connect.php';
 
         <div id="add-year-popup" class="form-popup">
             <form method="post" class="form-container" id="add-year-form" action="admin-records_manageYear.php">
-                <h4>Add Class</h4>
-                <label for="add-year-name">School Year:</label>
-                <input type="text" name="yearName" placeholder="Enter Semester name">
-                <button type="submit">Add Semester</button>
+                <h4>Add School Year</h4>
+                <input type="text" name="yearName" placeholder="Enter Year">
+                <button type="submit">Add Year</button>
             </form>
         </div>
 
@@ -203,7 +202,7 @@ include 'db_connect.php';
                 </div>
             </form>
         </div>
-
+                    
        
             
         <form id="deleteYearForm" action="admin-records_manageYear.php" method="post">
