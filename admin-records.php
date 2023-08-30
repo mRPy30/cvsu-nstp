@@ -82,7 +82,7 @@ $page = $components[2];
                                 </div>
 
                                 <div class="records_box" id="courses_box">
-                                    <h3><i class="fa-solid fa-file-lines"></i> Training Program <br>Records</h3>
+                                    <h3><i class="fa-solid fa-file-lines"></i> Training Program Records</h3>
                                 </div>
                                 
                                 <div class="records_box" id="instructor_box">
