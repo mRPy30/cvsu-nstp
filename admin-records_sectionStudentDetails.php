@@ -6,9 +6,9 @@ session_start();
 
 
 
-    $selectedsectionID = "";
-    $selectedsectionName = "";
-    $selectedCourseName = "";
+$selectedsectionID = "";
+$selectedsectionName = "";
+$selectedCourseName = "";
 
 if (isset($_GET['sectionID']) && isset($_GET['sectionName'])) {
     $selectedsectionID = $_GET['sectionID'];
@@ -184,7 +184,81 @@ if ($result->num_rows > 0) {
 
         <!-----End Main content------>
 
-        <!-----End of Body------>
+    </section>
+
+
+    <!--------To Print--------->
+
+    <script type="text/javascript">
+        function printSection(el) {
+            var getFullContent = document.body.innerHTML;
+            var printsection = document.getElementById(el).innerHTML;
+            document.body.innerHTML = printsection;
+            window.print();
+            document.body.innerHTML = getFullContent;
+        }
+    </script>
+
+    <style>
+        @media print {
+            body {
+                visibility: hidden;
+            }
+
+            .align-tbl-student .align-tbl-student {
+                visibility: visible;
+            }
+
+            .print-container .student-tbl-display {
+                top: 20px;
+            }
+        }
+    </style>
+
+    <div onclick="print()">
+        <div class="align-tbl-student" id="container">
+            <div class="student-tbl-display">
+                <div class="course-and-section" style="text-align: center; margin-top: 30px; margin-bottom: 10px;">
+                    <h3>
+                        <?php echo $selectedCourseName . ' - ' . $selectedsectionName; ?>
+                    </h3>
+                </div>
+
+                <table id="student-course-table"
+                    style="text-align: center; margin-top: 30px; margin-bottom: 10px; font-size:20px;">
+                    <thead>
+                        <tr>
+                            <th
+                                style="background-color:#e7e7e7; width: 100vw; text-align:left; padding-top: 10px; padding-bottom:10px; padding-left:40px">
+                                Student
+                                Names</th>
+                        </tr>
+                    </thead>
+                    <tbody class="scrollable-tbody">
+                        <?php if (!empty($students)): ?>
+                        <?php foreach ($students as $student): ?>
+                        <tr>
+                            <td>
+                                <a href="admin-records_studentData.php?id=<?php echo $student['id']; ?>">
+                                    <?php echo $student['name']; ?>
+                                </a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="4">No students found.</td>
+                        </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-----End of Print------>
+
+    <!-----End of Body------>
     </section>
 </body>
 
