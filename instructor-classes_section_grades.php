@@ -31,43 +31,8 @@ if ($result->num_rows > 0) {
     }
 }
 
-    //insert Grades
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $finalGrades = $_POST['finalGrade'];
+  
 
-        foreach ($finalGrades as $studentId => $grade) {
-            // Validate input if needed
-            // Insert final grade into the database
-        $insertQuery = "INSERT INTO student (finalGrade) VALUES ('$finalGrades')";
-        $conn->query($insertQuery);
-        }
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $studentIDs = $_POST['id'];
-            $grades = $_POST['finalGrades'];
-        
-            // Loop through the submitted data and update grades for each student
-            for ($i = 0; $i < count($studentIDs); $i++) {
-                $studentID = $studentIDs[$i];
-                $grade = $grades[$i];
-        
-                // Update the grade in the database for the current student
-                // Your database update code here
-            }
-        
-            // Redirect back to the page after updating grades
-            header('Location: student_grades.php');
-            exit();
-        }
-    
-
-    // Redirect or display a success message
-    
-    if ($conn->query($insertQuery) === TRUE) {
-        header("Location: instructor-classes_section_grades.php");
-    } else {
-        echo "Error: " . $insertQuery . "<br>" . $conn->error;
-    }
-}
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -148,7 +113,7 @@ $page = $components[2];
                             <p>ACADEMIC YEAR : 2022 - 2023 | SEMESTER: SECOND SEMESTER</p>
                         </div>
                         <div class="tbl_grades">
-                        <form method="post">
+                        <form action="instructor-manageGrades.php" method="post">
                         <table class="table table-hover" method="post">
                             <thead class="title bar">
                                 <tr>
