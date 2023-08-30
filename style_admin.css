@@ -129,12 +129,12 @@ body::-webkit-scrollbar-track {
 
 /*****************Admin Create Programs*******************/
 .pcoded-main-content .rec-content .align-tbl-programs{
-  margin: 10px 110px 0px 100px;
+  margin: 10px 110px 0px 0px;
 }
 
 .pcoded-main-content .rec-content
    .align-tbl-programs .tabledisplay-program {
-    width: 800px;
+    width: 1099px;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -152,7 +152,7 @@ body::-webkit-scrollbar-track {
   }
   .pcoded-main-content .rec-content 
   .align-tbl-programs #program-table{
-    width: 100%;
+    width: 320%;
     border-collapse: collapse;
     table-layout: fixed;
     margin: 10px 20px 10px 20px;
@@ -171,6 +171,7 @@ body::-webkit-scrollbar-track {
   #program-table #iprogram-table th {
       background-color:#e7e7e7;
       font: normal 500 15px/normal 'Poppins';
+      text-align: center;
   }
   .pcoded-main-content .rec-content 
   .align-tbl-programs .tabledisplay-program

@@ -48,7 +48,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Coordinator Page"; ?></title>
 
      <!----------CSS------------>
