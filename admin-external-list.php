@@ -121,32 +121,32 @@ if ($result && mysqli_num_rows($result) > 0) {
                                 </table>
                             </div>
                             <div class="add-box">
-                            <button class="add-button" id="addInstructorButton">+ New Activities</button>
+                            <button type="submit" class="add-button" id="external-Button">+ New Activities</button>
                         </div>
                             </div>
                         </div>
 
             
            
-                 <!----------------------------- Add expense form (hidden by default) ------------------------>
+                 <!----------------------------- Add external form (hidden by default) ------------------------>
 
 
-                 <div id="addForm" class="form-popup">
-            <form action="admin-manageExternal.php" method="POST" class="form-container" enctype="multipart/form-data">
-                <h2>Add Instructor</h2>
+                 <div id="externalForm" class="form-popup">
+                    <form action="admin-manageExternal.php" method="POST" class="form-container" enctype="multipart/form-data">
+                        <h2>Add External</h2>
 
                 
-                <label for="activityImage"><b>Activity Image</b></label>
-                <input type="file" name="instructorImage" accept="image/*" required>
+                        <label for="activityImage"><b>Activity Image</b></label>
+                        <input type="file" name="instructorImage" accept="image/*" required>
 
-                <label for="activityID"><b>activity ID</b></label>
-                <input type="text" placeholder="Enter actvity ID" name="instructorID" required>
+                        <label for="activityID"><b>Activity ID</b></label>
+                        <input type="text" placeholder="Enter actvity ID" name="instructorID" required>
 
-                <label for="activityTitle"><b>Activity Title</b></label>
-                <input type="text" placeholder="Enter activity Name" name="instructorName" required>
+                        <label for="activityTitle"><b>Activity Title</b></label>
+                        <input type="text" placeholder="Enter activity Name" name="instructorName" required>
 
-                <button type="submit" class="btn" onclick="closeAddForm()">Add</button>
-                <button type="button" class="btn cancel" onclick="closeAddForm()">Cancel</button>
+                        <button type="submit" class="btn" onclick="closeAddForm()">Add</button>
+                        <button type="button" class="btn cancel" onclick="closeAddForm()">Cancel</button>
          </form>
     </div>
 
@@ -161,98 +161,25 @@ if ($result && mysqli_num_rows($result) > 0) {
         // ---------------------------------- adding external open js -------------------------------- //
 
                 // Get the button element
-                var addExternalButton = document.getElementById('addInstructorButton');
+                var ExternalButton = document.getElementById('external-Button');
 
                 // Get the popup form element
-                var addInstructorForm = document.getElementById('addForm');
+                var externalPopup = document.getElementById('externalForm');
 
                 // Add an event listener to the button for the click event
-                addInstructorButton.addEventListener('click', function(event) {
+                ExternalButton.addEventListener('click', function(event) {
                 // Prevent the default form submission behavior
                 event.preventDefault();
 
                 // Show the popup form
-                addInstructorForm.style.display = 'block';
+                externalPopup.style.display = 'block';
                 });
 
 
                 // Function to close the pop-up form
                 function closeAddForm() {
-                document.getElementById("addForm").style.display = "none";
-                }
-       
-
-
-
-                // --------------------------OPENING ADDING FORM ------------------===============//
-
-                // Get the button element
-                var addInstructorButton = document.getElementById('addInstructorButton');
-
-                // Get the popup form element
-                var addInstructorForm = document.getElementById('addForm');
-
-                // Add an event listener to the button for the click event
-                addInstructorButton.addEventListener('click', function(event) {
-                // Prevent the default form submission behavior
-                event.preventDefault();
-
-                // Show the popup form
-                addInstructorForm.style.display = 'block';
-                });
-
-
-                // Function to close the pop-up form
-                function closeAddForm() {
-                document.getElementById("addForm").style.display = "none";
-                }
-
-
-                // ------------------------- OPENING EDITING FORM --------------------------------//
-
-
-                // Get the button elements for edit buttons
-                var editButtons = document.getElementsByClassName('edit-button');
-
-                // Add event listeners to each "Edit" button
-                Array.from(editButtons).forEach(function(editButton) {
-                editButton.addEventListener('click', function(event) {
-                    var expenseID = event.target.getAttribute('data-expense-id');
-                    openEditForm(expenseID);
-                });
-                });
-
-                function openEditForm(expenseID) {
-                    var expenses = <?php echo json_encode($expenses); ?>;
-                    var expense = expenses.find(function(e) {
-                        return e.expenseID === expenseID;
-                    });
-
-                    if (expense) {
-                        document.getElementById("expenseID").value = expense.expenseID;
-                        document.getElementById("expenseName").value = expense.expenseName;
-                        document.getElementById("year").value = expense.yearID;
-                        document.getElementById("amount").value = expense.amount;
-                        document.getElementById("editForm").style.display = 'block';
-                    }
-                    }
-              
-                // Close the edit form
-                function closeEditForm() {
-                document.getElementById("editForm").style.display = 'none';
-                }
-
-
-
-                //--------------------------- DELETE CONFIRMATION PROMPT ------------------------------//
-                function deleteExpense(expenseID) {
-                    if (confirm("Are you sure you want to delete this expense?")) {
-                        document.getElementById('expenseIDInput').value = expenseID;
-                        document.getElementById('deleteExpenseForm').submit();
-                    }
-                }
-
-                
+                document.getElementById("externalForm").style.display = "none";
+                }  
          </script>
 </body>
 </html>    

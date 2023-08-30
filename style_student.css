@@ -846,7 +846,7 @@ height: 50px;
   font-size: xx-large;
   color: #008A0E;
   flex-direction: row;
-  margin: 10px 0px 0px 40vw;
+  margin: 10px 0px 0px 710px;
   text-decoration: none;
 }
 .pcoded-main-content .upperbox-grades{
@@ -954,7 +954,7 @@ height: 50px;
 .pcoded-main-content .inner_feed-2 h1{
     color: black;
     font-family: 'Poppins';
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 900;
     line-height: normal;
 }

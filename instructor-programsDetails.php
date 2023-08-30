@@ -94,13 +94,12 @@ $page = $components[2];
         <main class="pcoded-main-content">
           <div class="container pt-4">
             <div class="col-lg-12">
-            <div class="centered">
-                
-                <div class="student_prog">
-                    <h1>NSTP PROGRAMS /  <?php  echo $programName; ?> </h1>
-                </div>
+            <div class="upperbox">
+                        <h4>NSTP PROGRAMS / <?php  echo $programName; ?></h4>
+                            <a href="instructor-programs.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
+                    </div>
             </div>
-        </div>
 
         <?php
 
@@ -155,11 +154,17 @@ $page = $components[2];
                         echo '<i class="fa-regular fa-clock"></i>';
                         echo '</div>';
 
+                        echo '<div class="inner_feed-4">';
+                        echo '<h1>' . $row["scheduleDate"] . '</h1>';
+                        echo '<p>Time</p>';
+                        echo '<i class="fa-regular fa-calendar"></i>';
+                        echo '</div>';
+
                         echo '<div class="inner_feed-5">';
                         echo '<h1>' . $row["programLocation"] . '</h1>';
                         echo '<p>Location</p>';
                         echo '<i class="fa-solid fa-location-dot"></i>';
-                        echo '<button type="submit" class="btn btn-primary">+ VOLUNTEER NOW</button>';
+                        echo '<button type="submit" class="btn" id="volunteer-button">REGISTERED VOLUNTEER</button>';
                         echo '</div>';
 
                         echo '</div>'; // Close the feed div
@@ -173,10 +178,18 @@ $page = $components[2];
                     echo "No program selected.";
                 }
                 ?>
+                
+            </div>
+            </div>
           </div>       
         </main>     
     </section>
             <!-----End Main content------>
              <!-----End of Body------>
+             <script>
+                document.getElementById('volunteer-button').addEventListener('click', function() {
+            window.location.href = 'instructor-programList.php';
+        });
+        </script>
 </body>
 </html>

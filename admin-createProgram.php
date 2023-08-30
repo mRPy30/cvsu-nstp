@@ -294,7 +294,7 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     </div>
                 </div>
             </div>
-            <<button type="submit" name="updateProgram">Update Program</button>
+            <button type="submit" name="updateProgram">Update Program</button>
             <button type="button" id="cancelEditButton">Cancel</button>
         </form>
     </div>
