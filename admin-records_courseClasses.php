@@ -201,7 +201,19 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                 <input type="hidden" name="sectionID" id="edit-sectionID">
                                 <label for="edit-sectionName">Section Name:</label>
                                 <input type="text" id="edit-sectionName" name="sectionName" required>
-                                <br><br>
+                    
+                                <label for="instructor">Instructor</label>
+                                    <select name="instructor_id" id="instructor_id" class="custom-select">
+                                        <?php foreach ($instructors as $row): ?>
+                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['instructorName']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                
+
+                                
+                                <label for="room"><b>Room:</b></label>
+                                <input type="text" placeholder="Enter Room No." name="room">
+
                                 <button type="submit">Update Section</button>
                                 <button type="button" class="cancel-button">Cancel</button>
                             </form>
