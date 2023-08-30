@@ -1,7 +1,4 @@
 <?php
-
-include 'db_connect.php';
-
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -11,10 +8,7 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 
 $page = $components[2];
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +20,11 @@ $page = $components[2];
     <!----------TITLE------------>
     <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title>
-        <?php echo "Instructor Page"; ?>
+        <?php echo "Student Page"; ?>
     </title>
 
     <!----------CSS------------>
-    <link rel="stylesheet" href="style_instructors.css">
+    <link rel="stylesheet" href="style_student.css">
 
     <!----------BOOTSTRAP------------>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -49,63 +43,35 @@ $page = $components[2];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
-
-    <!----------ALERTS-------------->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-
+    <script src="https://kit.fontawesome.com/a3902efdd7.js" crossorigin="anonymous"></script>
 
     <!---Inner topbar--->
     <?php include('topbar.php'); ?>
-
 </head>
-
 <!----Body----->
 
 <body>
+
+    <!---------Sidebar------------>
+
+
     <section class="bg-section">
-        <!---------Sidebar------------>
-        <?php include('sidebar-instructor.php'); ?>
+        <?php include('sidebar-student.php'); ?>
+        <!---------End Sidebar--------->
 
-        <!----Main Content Instructor Student Info------>
-        <div class="pcoded-main-content">
-            <div class="container pt-4">
+        <!--Main Content-->
+
+        <!--Main Content codeeeee-->
+
+        <main class="pcoded-main-content">
+            <div class="container">
                 <div class="col-lg-12">
-                    <div class="col-lg-8">
-                        <div class="active-box">
-                            <h5>STUDENT INFO.</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="instructor-classes_section.php">
-                            <ion-icon name="arrow-back-circle-outline"></ion-icon>
-                        </a>
-                    </div>
-                    <div></div>
-                    <hr class="main-content-line">
                 </div>
-                <div class="col-md-9 student-info">
-                    <div class="stud-details">
-                        <h2>Bernard Fernandez</h2>
-                        <p>Bachelor of Science in Information Technology</p>
-                        <p>First Year</p>
-                        <p>202110118</p>
-                        <p>CWTS</p>
-                        <h2>Contact</h2>
-                        <p>09123456789</p>
-                        <p>Fernandez.Bernard@Cvsu.edu.ph</p>
-                        <h2>Nstp Instructor :</h2>
-                        <p>Armand Aton</p>
-                    </div>
-                </div>
-
             </div>
-        </div>
-        </div>
-
+        </main>
+         <!-----End Main content------>
     </section>
-
+     <!-----End of Body------>
 </body>
 
-</html>
+</html

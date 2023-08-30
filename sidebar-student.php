@@ -125,6 +125,14 @@
                         echo "nav-link";
                     } ?> "> <i class="fa-solid fa-comment"></i> Feedback </a>
                 </li>
+                
+                <li class="nav-link">
+                    <a href="student-contact.php" class="<?php if ($page == "student-contact.php") {
+                        echo "nav-link active";
+                    } else {
+                        echo "nav-link";
+                    } ?> "> <i class="fa-solid fa-square-phone"></i> Contact </a>
+                </li>
 
                 <li class="nav-link">
                     <a href="student-about.php" class="<?php if ($page == "student-about.php") {
