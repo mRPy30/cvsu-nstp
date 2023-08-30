@@ -31,25 +31,25 @@ if ($result->num_rows > 0) {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) {
-    $attendanceData = $_POST['attendance'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitGrades'])) {
+    $finalGrades = $_POST['finalGrade'];
 
-    // Loop through each student's attendance and update the database
-    foreach ($attendanceData as $studentId => $attendance) {
-        // Update the attendance value for each student in the database
-        $updateQuery = "UPDATE student SET attendance = '$attendance' WHERE id = '$studentId'";
-        $conn->query($updateQuery);
-        
-        // Calculate total attendance for each student and update the total_attendance column
-        $totalAttendanceQuery = "UPDATE student SET total_attendance = total_attendance + '$attendance' WHERE id = '$studentId'";
-        $conn->query($totalAttendanceQuery);
+    foreach ($finalGrades as $studentId => $grade) {
+        // Validate input if needed
+        // Insert final grade into the database
+    $insertQuery = "INSERT INTO student (finalGrade) VALUES ('$finalGrades')";
+    $conn->query($insertQuery);
     }
 
-    // Redirect back to the page to refresh the section table
-    header("Location: instructor-classes_section_grades.php");
-    exit();
-}
 
+    // Redirect or display a success message
+    
+    if ($conn->query($insertQuery) === TRUE) {
+        header("Location: instructor-classes_section_grades.php");
+    } else {
+        echo "Error: " . $insertQuery . "<br>" . $conn->error;
+    }
+}
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -145,7 +145,9 @@ $page = $components[2];
                                         <tr>
                                             <td><?php echo $student['id']; ?></td>
                                             <td><?php echo $student['name']; ?></td>
-                                            <td><?php echo $student['finalGrade']; ?></td>
+                                            <td>
+                                                <input type="number" name="finalGrade[<?php echo $student['name']; ?>]" value="0">
+                                            </td>
                                             
                                         </tr>
                                     <?php endforeach; ?>
@@ -156,7 +158,7 @@ $page = $components[2];
                                 <?php endif; ?>
                             </tbody>
                         </table>    
-                            <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                            <button type="submit" class="btn btn-primary" name="submitGrades">Submit</button>
                         </form>
                         </div>
                     </div>
