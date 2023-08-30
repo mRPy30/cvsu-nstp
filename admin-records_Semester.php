@@ -129,34 +129,41 @@ $page = $components[2];
                     </tr>
                 </thead>
                 <tbody class="scrollable-tbody">
-                    <?php
-                    $sql = "SELECT * FROM tbl_semester";
-                    $result = $conn->query($sql);
+    <?php
+    $sql = "SELECT * FROM tbl_semester";
+    $result = $conn->query($sql);
 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            $semester = $row["semesterName"];
-                            $semesterID = $row["semesterID"];
-                            $isDefault = $row["isDefault"];
-                            ?>
-                            <tr>
-                                <td><?php echo $semester; ?></td>
-                                <td><?php echo ($isDefault) ? 'Yes' : 'No'; ?></td>
-                                <td>
-                                    <?php if (!$isDefault) { ?>
-                                        <form method="POST" action="setDefaultSem.php">
-                                            <input type="hidden" name="semesterID" value="<?php echo $semesterID; ?>">
-                                            <button type="submit">Set as Default</button>
-                                        </form>
-                                    <?php } ?>
-                                </td>
-                            </tr>
-                            <?php
-                        }
-                    } else {
-                        echo "<tr><td colspan='3'>No records found</td></tr>";
-                    }
-                    ?>
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $semester = $row["semesterName"];
+            $semesterID = $row["semesterID"];
+            $isDefault = $row["isDefault"];
+
+            // Check if the semester is the current default semester
+            if ($isDefault) {
+                $currentDefaultID = $semesterID;
+            }
+
+            ?>
+            <tr>
+                <td><?php echo $semester; ?></td>
+                <td><?php echo ($isDefault) ? 'Yes' : 'No'; ?></td>
+                <td>
+                    <?php if (!$isDefault) { ?>
+                        <form method="POST" action="setDefaultSem.php">
+                            <input type="hidden" name="semesterID" value="<?php echo $semesterID; ?>">
+                            <button type="submit">Set as Default</button>
+                        </form>
+                    <?php } ?>
+                </td>
+            </tr>
+            <?php
+        }
+    } else {
+        echo "<tr><td colspan='3'>No records found</td></tr>";
+    }
+    ?>
+</tbody>
                 </tbody>
             </table>
         </div>

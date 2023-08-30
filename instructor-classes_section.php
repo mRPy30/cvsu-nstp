@@ -8,14 +8,10 @@ session_start();
 $selectedsectionID = $_GET['sectionID'];
 $selectedsectionName = $_GET['sectionName'];
 
+
 // Store the values in session variables
 $_SESSION['selectedsectionID'] = $selectedsectionID;
 $_SESSION['selectedsectionName'] = $selectedsectionName;
-
-// Display the stored values
-echo "Selected Section ID: " . $_SESSION['selectedsectionID'];
-echo "Selected Section Name: " . $_SESSION['selectedsectionName'];
-
 
 
 

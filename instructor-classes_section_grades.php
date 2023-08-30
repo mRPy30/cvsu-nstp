@@ -119,7 +119,7 @@ $page = $components[2];
                         <div class="class_navs">
                             <ul class="nav nav-underline">
                                 <li class="nav-item">
-                                  <a class="nav-link" href="instructor-classes_section.php">Masterlist</a>
+                                  <a class="nav-link" href="instructor-classes_section.php?sectionID=<?php echo $selectedsectionID; ?>&sectionName=<?php echo $selectedsectionName; ?>">Masterlist</a>
                                 </li>
                                 <li class="nav-item">
                                   <a class="nav-link active" href="#">Grades</a>
