@@ -42,7 +42,7 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title>
         <?php echo "Coordinator Page"; ?>
     </title>
@@ -104,15 +104,14 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                 <table id="program-table">
                                     <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Location</th>
-                                            <th>Description</th>
-                                            <th>Instructor</th>
-                                            <th>Date</th>
-                                            <th>Start Time</th>
-                                            <th>End Time</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th class="col-1">Title</th>
+                                            <th class="col-2">Location</th>
+                                            <th class="col-2">Description</th>
+                                            <th class="col-2">Instructor</th>
+                                            <th class="col-1">Date</th>
+                                            <th class="col-1">Start Time</th>
+                                            <th class="col-1">End Time</th>
+                                            <th colspan="2">Modify</th>
                                         </tr>
                                     </thead>
                                     <tbody class="scrollable-tbody">
@@ -295,7 +294,7 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     </div>
                 </div>
             </div>
-            <<button type="submit" name="updateProgram">Update Program</button>
+            <button type="submit" name="updateProgram">Update Program</button>
             <button type="button" id="cancelEditButton">Cancel</button>
         </form>
     </div>

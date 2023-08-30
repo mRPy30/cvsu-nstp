@@ -32,7 +32,7 @@ $page = $components[2];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">   
     <title>
         <?php echo "Student Page"; ?>
     </title>
@@ -78,7 +78,8 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container pt-4 ">
                 <div class="col-lg-12">
-                    <div class="upperbox">
+                    <div class="upperbox-grades">
+                        <h6>NSTP Grades</h6>
                         <div class="print">
                             <i class="fa-solid fa-print" onclick="printSection('container')"></i>
                         </div>

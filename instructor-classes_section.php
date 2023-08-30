@@ -78,7 +78,7 @@ $page = $components[2];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Instructor Page"; ?></title>
 
      <!----------CSS------------>
@@ -139,34 +139,38 @@ $page = $components[2];
                               </ul>
                         </div>
                         <div class="tbl_masterlist">
-                        <form method="post">
-                        <table class="table table-hover" method="post">
-                        <thead class="title bar">
-                            <tr>
-                                <th scope="col" class="col-3">Student Number</th>
-                                <th scope="col" class="col-5">Name</th>
-                                <th scope="col" class="col-2">Total Attendance</th>
-                            </tr>
-                        </thead>
-                        <tbody class="scrollable-tbody">
-                            <?php if (!empty($students)): ?>
-                                <?php foreach ($students as $student): ?>
-                                    <tr>
-                                        <td><?php echo $student['id']; ?></td>
-                                        <td><?php echo $student['name']; ?></td>
-                                        <td>
-                                            <input type="number" name="attendance[<?php echo $student['name']; ?>]" value="0">
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="3">No students found.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                            <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                            <form action="instructor-manageAttendance.php"method="post">
+                                <table class="table table-hover" method="post">
+                                    <thead class="title bar">
+                                        <tr>
+                                            <th scope="col" class="col-3">Student Number</th>
+                                            <th scope="col" class="col-5">Name</th>
+                                            <th scope="col" class="col-2">Total Attendance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="scrollable-tbody">
+                                        <?php if (!empty($students)): ?>
+                                            <?php foreach ($students as $student): ?>
+                                                <tr>
+                                                    <td><?php echo $student['id']; ?></td>
+                                                    <td><?php echo $student['name']; ?></td>
+                                                    <td>
+                                                        <input type="hidden" name="studentIDs[]" value="<?php echo $student['id']; ?>">
+                                                        <input type="number" name="attendance[<?php echo $student['id']; ?>]" value="0">
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <tr>
+                                                <td colspan="3">No students found.</td>
+                                            </tr>
+                                        <?php endif; ?>
+                                    </tbody>
+                                </table>
+                                <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                            </form>
+                        </div>
+                                                    
                         </form>
                         </div>
                     </div>

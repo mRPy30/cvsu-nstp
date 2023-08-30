@@ -20,12 +20,14 @@ if (isset($_SESSION['selectedCourseID'])) {
         exit();
     }
     // Handle the form submission for editing an existing section
-    elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sectionName']) && isset($_POST['sectionID'])) {
+    elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sectionName']) && isset($_POST['instructor_id']) && isset($_POST['room']) && isset($_POST['sectionID'])) {
         $sectionName = $_POST['sectionName'];
+        $instructorID = $_POST['instructor_id'];
+        $room = $_POST['room'];
         $sectionID = $_POST['sectionID'];
 
         // Update the section in the database
-        $updateQuery = "UPDATE tbl_sections SET sectionName = '$sectionName' WHERE sectionID = '$sectionID'";
+        $updateQuery = "UPDATE tbl_sections SET sectionName = '$sectionName', instructorID = '$instructorID', room = '$room' WHERE sectionID = '$sectionID'";
         $conn->query($updateQuery);
 
         // Redirect back to the page to refresh the section table
@@ -33,11 +35,13 @@ if (isset($_SESSION['selectedCourseID'])) {
         exit();
     }
     // Handle the form submission for adding a new section
-    elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sectionName']) && !isset($_POST['sectionID'])) {
+    elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sectionName']) && isset($_POST['instructor_id']) && isset($_POST['room']) && !isset($_POST['sectionID'])) {
         $sectionName = $_POST['sectionName'];
+        $instructorID = $_POST['instructor_id'];
+        $room = $_POST['room'];
 
         // Insert the new section into the database
-        $insertQuery = "INSERT INTO tbl_sections (sectionName, courseID) VALUES ('$sectionName', '$selectedCourseID')";
+        $insertQuery = "INSERT INTO tbl_sections (sectionName, instructorID, room, courseID) VALUES ('$sectionName', '$instructorID', '$room', '$selectedCourseID')";
         $conn->query($insertQuery);
 
         // Redirect back to the page to refresh the section table
@@ -50,5 +54,3 @@ if (isset($_SESSION['selectedCourseID'])) {
     exit();
 }
 ?>
-
-

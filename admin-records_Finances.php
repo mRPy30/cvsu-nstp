@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
 }
 
 // Retrieving the budget for the year 2023
-$query = "SELECT total_budget FROM tbl_budget WHERE yearID = 1";
+$query = "SELECT total_budget FROM tbl_budget WHERE yearID = 2023";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();
 $totalBudget = $row['total_budget'];

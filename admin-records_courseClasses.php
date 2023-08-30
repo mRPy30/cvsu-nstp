@@ -27,6 +27,11 @@ if ($result->num_rows > 0) {
 } else {
     $sections = array();
 }
+
+
+$query = "SELECT id, instructorName FROM instructor";
+$result = mysqli_query($conn, $query);
+$instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -103,28 +108,47 @@ if ($result->num_rows > 0) {
                                     <thead>
                                         <tr>
                                             <th>Section Name</th>
+                                            <th>Instructor</th>
+                                            <th>Room</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody class="scrollable-tbody">
-                                                <?php if (!empty($sections)): ?>
-                                                    <?php foreach ($sections as $section): ?>
-                                                        <tr>
-                                                            <td><?php echo $section['sectionName']; ?></td>
-                                                            <td>
-                                                                <button onclick="openForm('<?php echo $section['sectionID']; ?>')" class="edit-button">Edit</button>
-                                                            </td>
-                                                            <td>
-                                                                <a href="admin-records_manageClass.php?delete=<?php echo $section['sectionID']; ?>&courseID=<?php echo $selectedCourseID; ?>&courseName=<?php echo $selectedCourseName; ?>" class="delete-button">Delete</a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                <?php else: ?>
-                                            <tr>
-                                                <td colspan="3">No sections found.</td>
-                                            </tr>
-                                        <?php endif; ?>
+                                    <?php if (!empty($sections)): ?>
+    <?php foreach ($sections as $section): ?>
+        <tr>
+            <td><?php echo $section['sectionName']; ?></td>
+            <td>
+                <?php
+                $instructorID = $section['instructorID'];
+
+                // Fetch instructor's name using the instructorID
+                $instructorQuery = "SELECT instructorName FROM instructor WHERE id = '$instructorID'";
+                $instructorResult = $conn->query($instructorQuery);
+
+                if ($instructorResult->num_rows > 0) {
+                    $instructorData = $instructorResult->fetch_assoc();
+                    echo $instructorData['instructorName'];
+                } else {
+                    echo "Unknown Instructor";
+                }
+                ?>
+            </td>
+            <td><?php echo $section['Room']; ?></td>
+            <td>
+                <button onclick="openForm('<?php echo $section['sectionID']; ?>')" class="edit-button">Edit</button>
+            </td>
+            <td>
+                <a href="admin-records_manageClass.php?delete=<?php echo $section['sectionID']; ?>&courseID=<?php echo $selectedCourseID; ?>&courseName=<?php echo $selectedCourseName; ?>" class="delete-button">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+<?php else: ?>
+    <tr>
+        <td colspan="3">No sections found.</td>
+    </tr>
+<?php endif; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -149,12 +173,16 @@ if ($result->num_rows > 0) {
 
                                 <input type="text" name="sectionName" placeholder="Enter section name">
 
-                                <label for="instructor"><b>Instructor:</b></label>
-                                <select name="sectionName" required>
-                                    <option>
-                                        
-                                    </option>
-                                </select>
+                                
+                                    <label for="instructor">Instructor</label>
+                                    <br>
+                                    <select name="instructor_id" id="instructor_id" class="custom-select">
+                                        <?php foreach ($instructors as $row): ?>
+                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['instructorName']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                
+
                                 
                                 <label for="room"><b>Room:</b></label>
                                 <input type="text" placeholder="Enter Room No." name="room">
@@ -173,7 +201,19 @@ if ($result->num_rows > 0) {
                                 <input type="hidden" name="sectionID" id="edit-sectionID">
                                 <label for="edit-sectionName">Section Name:</label>
                                 <input type="text" id="edit-sectionName" name="sectionName" required>
-                                <br><br>
+                    
+                                <label for="instructor">Instructor</label>
+                                    <select name="instructor_id" id="instructor_id" class="custom-select">
+                                        <?php foreach ($instructors as $row): ?>
+                                            <option value="<?php echo $row['id']; ?>"><?php echo $row['instructorName']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                
+
+                                
+                                <label for="room"><b>Room:</b></label>
+                                <input type="text" placeholder="Enter Room No." name="room">
+
                                 <button type="submit">Update Section</button>
                                 <button type="button" class="cancel-button">Cancel</button>
                             </form>

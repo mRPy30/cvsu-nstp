@@ -18,7 +18,7 @@ $page = $components[2];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Student Page"; ?></title>
 
      <!----------CSS------------>
@@ -82,15 +82,22 @@ $page = $components[2];
                             <i class="fa-regular fa-clock"></i>
                         </div>
 
+                        <div class="inner_feed-4">
+                            <h1>August 30, 2023</h1>
+                            <p>Date</p>
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+
                         <div class="inner_feed-5">
                             <h1>Brgy. Buhay na Tubig</h1>
                             <p>Location</p>
                             <i class="fa-solid fa-location-dot"></i>
                             <button type="submit" class="btn" id="volunteer-button">+ VOLUNTEER NOW</button>
                         </div>
+                        
                     </div>
 
-                    <!----------------- POP UP FORM Volunteer -------------->
+                    <!----------------- Popup form in Volunteer -------------->
 
         <div id="volunteer-popup" class="form-popup">
             <form method="post" class="form-container" id="volunteer-form" action="">
@@ -102,25 +109,40 @@ $page = $components[2];
                 <label for="email-volunteer">Enter your Name:</label>
                 <input type="text" name="Name" placeholder="Please Enter Your Email add">
                 
-                <div class="form-control-1">
-                                    <label for="studentID">Student Number:</label>
-                                    <input name='studentID' id="studentId">
+                    <div class="form-control-1">
+                        <label for="studentID">Student Number:</label>
+                        <input name='studentID' id="studentId">
                                         
-                                    </input>
-                                </div>
-                                <div class="form-control-2">
-                                    <label for="number">Contact Number:</label>
-                                    <input name="section" id="section">
+                        </input>
+                        
+                        <label for="course-volunteer">Course:</label>
+                    <select type="select" name="select">
+                        <option>
 
-                                    </input>
-                                </div>
+                        </option>
+                    </select>
+                    </div>
+                    <div class="form-control-2">
+                        <label for="number">Contact Number:</label>
+                        <input name="section" id="section">
 
-                <label for="section-volunteer">Course and Section:</label>
-                <select type="select" name="select">
-                    <option>
+                        </input>
 
-                    </option>
-                </select>
+                        <label for="section-volunteer">Section:</label>
+                    <select type="select" name="select">
+                        <option>
+
+                        </option>
+                    </select>
+                    </div>
+
+
+                <div class="form-control-1">
+                    
+                </div>
+                <div class="form-control-2">
+
+                </div>
 
                 <button type="submit" onclick="closeAddForm()">Signup</button>
                 <button type="button" onclick="closeAddForm()">Cancel</button>

@@ -31,24 +31,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitAttendance'])) {
-    $attendanceData = $_POST['attendance'];
-
-    // Loop through each student's attendance and update the database
-    foreach ($attendanceData as $studentId => $attendance) {
-        // Update the attendance value for each student in the database
-        $updateQuery = "UPDATE student SET attendance = '$attendance' WHERE id = '$studentId'";
-        $conn->query($updateQuery);
-        
-        // Calculate total attendance for each student and update the total_attendance column
-        $totalAttendanceQuery = "UPDATE student SET total_attendance = total_attendance + '$attendance' WHERE id = '$studentId'";
-        $conn->query($totalAttendanceQuery);
-    }
-
-    // Redirect back to the page to refresh the section table
-    header("Location: instructor-classes_section_grades.php");
-    exit();
-}
+  
 
 // Active Sidebar Page
 
@@ -69,7 +52,7 @@ $page = $components[2];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Instructor Page"; ?></title>
 
      <!----------CSS------------>
@@ -130,7 +113,7 @@ $page = $components[2];
                             <p>ACADEMIC YEAR : 2022 - 2023 | SEMESTER: SECOND SEMESTER</p>
                         </div>
                         <div class="tbl_grades">
-                        <form method="post">
+                        <form action="instructor-manageGrades.php" method="post">
                         <table class="table table-hover" method="post">
                             <thead class="title bar">
                                 <tr>
@@ -140,23 +123,20 @@ $page = $components[2];
                                 </tr>
                             </thead>
                             <tbody class="scrollable-tbody">
-                                <?php if (!empty($students)): ?>
-                                    <?php foreach ($students as $student): ?>
-                                        <tr>
-                                            <td><?php echo $student['id']; ?></td>
-                                            <td><?php echo $student['name']; ?></td>
-                                            <td><?php echo $student['finalGrade']; ?></td>
-                                            
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
+                            <tbody class="scrollable-tbody">
+                            <?php foreach ($students as $student): ?>
                                     <tr>
-                                        <td colspan="3">No students found.</td>
+                                        <td><?php echo $student['id']; ?></td>
+                                        <td><?php echo $student['name']; ?></td>
+                                        <td>
+                                            <input type="hidden" name="studentIDs[]" value="<?php echo $student['id']; ?>">
+                                            <input type="number" name="grades[]" min="0" max="100" step="0.1">
+                                        </td>
                                     </tr>
-                                <?php endif; ?>
+                                <?php endforeach; ?>
                             </tbody>
-                        </table>    
-                            <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                        </table>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                         </div>
                     </div>

@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----------TITLE------------>
-    <link rel="shortcut icon" href="logo.png" type="">
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
     <title><?php echo "Student Page"; ?></title>
 
      <!----------CSS------------>
@@ -149,155 +149,146 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="eval-form">
+<form  id="feedbackForm"  action="submit_feedback.php" method="post">
+    
+<input type="hidden" name="instructor_rating" id="instructor_rating">
         <div class="eval_sheet">
             <h1>A. INSTRUCTOR EVALUATION</h1>
             <p>1. Shows good command and knowledge of the subject matter.</p>
-            <select class="form-select" name="instructor_evaluation_1" aria-label="Evaluation 1">
+            <select class="form-select" name="instructor_evaluation_1" id="instructor_evaluation_1" aria-label="Evaluation 1">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
         
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+     
         <div class="eval_sheet">
             <p>2. Demonstrates breadth and depth of mastery.</p>
-            <select class="form-select" name="instructor_evaluation_2" aria-label="Evaluation 2">
+            <select class="form-select" name="instructor_evaluation_2" id="instructor_evaluation_2" aria-label="Evaluation 2">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+
         <div class="eval_sheet">
             <p>3. Draws and share information in the state-of-the-art theory and practice in his/her respective discipline.</p>
-            <select class="form-select" name="instructor_evaluation_3" aria-label="Evaluation 3">
+            <select class="form-select" name="instructor_evaluation_3" id="instructor_evaluation_3" aria-label="Evaluation 3">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+    
         <div class="eval_sheet">
             <p>4. Demonstrates up-to-date knowledge and/or awareness on current trends and issues of the subject matter.</p>
-            <select class="form-select" name="instructor_evaluation_4" aria-label="Evaluation 4">
+            <select class="form-select"name="instructor_evaluation_4" id="instructor_evaluation_4" aria-label="Evaluation 4">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+       
         <div class="eval_sheet">
             <p>5. Integrates subject to practical circumstances.</p>
-            <select class="form-select" name="instructor_evaluation_5" aria-label="Evaluation 5">
+            <select class="form-select" name="instructor_evaluation_5" id="instructor_evaluation_5" aria-label="Evaluation 5">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
-</div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+        <input type="hidden" name="course_rating" id="course_rating">
         <div class="eval_sheet">
         <h1>B. TRAINING PROGRAM EVALUATION</h1>
             <p>1. How would you rate the overall quality of the course content and materials provided throughout the semester?</p>
-            <select class="form-select" name="course_evaluation_1" aria-label="Course Evaluation 1">
+            <select class="form-select" name="course_evaluation_1" id="course_evaluation_1" aria-label="Course Evaluation 1">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+       
         <div class="eval_sheet">
             <p>2. Did the course effectively cover the stated learning objectives and provide you with the necessary knowledge and skills?</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" name="course_evaluation_2" id="course_evaluation_2" aria-label="Course Evaluation 2">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
         <div class="eval_sheet">
             <p>3. Were the assessments and assignments designed to accurately evaluate your understanding of the course material and allow you to demonstrate your knowledge?</p>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select"name="course_evaluation_3" id="course_evaluation_3" aria-label="Course Evaluation 3">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+   
         <div class="eval_sheet">
             <p>4. Were the course resources, such as textbooks, online platforms, or supplementary materials, helpful in supporting your learning experience?</p>
-            <select class="form-select" name="instructor_evaluation_1" aria-label="Evaluation 1">
+            <select class="form-select" name="course_evaluation_4" id="course_evaluation_4" aria-label="Course Evaluation 4">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
+
         <div class="eval_sheet">
             <p>5. How would you rate the organization and structure of the course in terms of facilitating your learning and comprehension of the subject matter?</p>
-            <select class="form-select" name="instructor_evaluation_2" aria-label="Evaluation 2">
+            <select class="form-select" name="course_evaluation_5" id="course_evaluation_5" aria-label="Course Evaluation 5">
             <option selected >--Select Evaluation--</option>
             <option value="1">5 - Outstanding</option>
             <option value="2">4 - Exceeds Expectations</option>
             <option value="3">3 - Meets Expectations</option>
             <option value="4">2 - Needs Improvement</option>
             <option value="5">1 - Unacceptable</option>
+            </select>
         </div>
 
-        <div class="eval_sheet">
-            <select class="form-select" aria-label="Default select example">
-        </div>
         <div class="eval_sheet">
         <h1>COMMENTS AND SUGGESTIONS</h1>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-        <button type="submit" class="btn btn-primary">SUBMIT</button>
+  
+        <button type="submit" class="btn btn-primary" id="submitForm">SUBMIT</button>
         </div>
         </div>
         </form>
@@ -305,5 +296,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 </main>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const instructorEvaluationIDs = ["1", "2", "3", "4", "5"]; // IDs of instructor evaluations
+    const courseEvaluationIDs = ["1", "2", "3", "4", "5"]; // IDs of course evaluations
+
+    const submitFormButton = document.getElementById("submitForm");
+
+    // Function to calculate the total score
+    function calculateTotalScore(evaluationIDs) {
+        let totalScore = 0;
+        evaluationIDs.forEach((evaluationID) => {
+            const selectElement = document.getElementById(`instructor_evaluation_${evaluationID}`);
+            if (selectElement) {
+                const selectedValue = parseInt(selectElement.value);
+                if (!isNaN(selectedValue)) {
+                    totalScore += selectedValue;
+                }
+            }
+        });
+        return totalScore;
+    }
+
+    submitFormButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const instructorTotalScore = calculateTotalScore(instructorEvaluationIDs);
+    const courseTotalScore = calculateTotalScore(courseEvaluationIDs);
+
+    // Assign total scores to respective fields
+    document.getElementById("instructor_rating").value = instructorTotalScore;
+    document.getElementById("course_rating").value = courseTotalScore;
+
+    // Submit the form
+    document.getElementById("feedbackForm").submit();
+});
+});
+</script>
 </body>
 </html>

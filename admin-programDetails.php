@@ -1,43 +1,28 @@
 <?php
+session_start();
 include 'db_connect.php';
 
+// Check if the programID is set in the URL
 if (isset($_GET['programID'])) {
-    // Retrieve the programID value from the URL and sanitize it
-    $programID = filter_input(INPUT_GET, 'programID', FILTER_SANITIZE_NUMBER_INT);
-}
+    // Get the programID value from the URL
+    $selectedProgramID = $_GET['programID'];
 
-$programs = array(); // Initialize an empty array to store program details
+    // Store the selected program ID in a session variable
+    $_SESSION['selectedProgramID'] = $selectedProgramID;
 
-$sql = "SELECT p.*, i.instructorName
-        FROM tbl_program p
-        JOIN instructor i ON p.instructorID = i.id
-        WHERE programID = $programID";
+    // Prepare and execute the query to fetch the program name based on program ID
+    $programQuery = "SELECT programName FROM tbl_program WHERE programID = $selectedProgramID";
+    $result = $conn->query($programQuery);
 
-
-$result_program = $conn->query($sql);
-if ($result_program->num_rows > 0) {
-    while ($row = $result_program->fetch_assoc()) {
-        // Format the scheduleDate to "month day, year" format
-        $formattedScheduleDate = date('F j, Y', strtotime($row["scheduleDate"]));
-
-        // Store the program details in the array
-        $programs[] = array(
-            'programName' => $row["programName"],
-            'programLocation' => $row["programLocation"],
-            'description' => $row["description"],
-            'instructorID' => $row["instructorID"],
-            'volunteers' => $row["volunteers"],
-            'instructorName' => $row["instructorName"],
-            'formattedScheduleDate' => $formattedScheduleDate, // Store the formatted date
-            'start_time' => $row["start_time"],
-            'end_time' => $row["end_time"]
-        );
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc(); // Fetch the row
+        $programName = $row['programName']; // Store the program name in a variable
+    } else {
+        $programName = "Program Not Found"; // Default value if program name is not found
     }
-} else {
-    echo "<tr><td colspan='9'>No records found</td></tr>";
+  
+
 }
-
-
 
 
 // Active Sidebar Page
@@ -49,316 +34,170 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 
 $page = $components[2];
-
 ?>
-
-
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <style>
-        /* CSS for topbar */
-        .topbar {
-            background-color: #6FBB76;
-            color: #fff;
-            padding: 20px;
-        }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .topbar .logout {
-            float: right;
-            color: #fff;
-            text-decoration: none;
-        }
+    <!----------TITLE------------>
+    <link rel="short icon" href="logo-shortcut-icon.png" type="">
+    <title>
+        <?php echo "Coordinator Page"; ?>
+    </title>
 
-        /* CSS for sidebar */
-        .sidebar {
-            background-color: #f1f1f1;
-            float: left;
-            width: 200px;
-            height: 100vh;
-        }
+    <!----------CSS------------>
+    <link rel="stylesheet" href="style_admin.css">
 
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    <!----------BOOTSTRAP------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        .sidebar ul li {
-            padding: 10px;
-            background-color: #ddd;
-            cursor: pointer;
-        }
+    <!----------FONTS------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@400;800&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
 
-        .sidebar ul li:hover {
-            background-color: #ccc;
-        }
+    <!----------ICONS------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
-        /* CSS for content */
-        .content {
-            margin-left: 200px; /* Adjust this value to match the width of the sidebar */
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .records_box {
-            height: 75px;
-            width: 300px;
-            border: solid black 1px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 12px;
-            margin-top: 0;
-        }
-
-        h1 {
-            margin: 0; /* Reset the margin for the h1 element */
-            margin-left: 50px;
-        }
-
-        p {
-            font-size: 20px;
-            color: black;
-            margin: 0; /* Reset the margin for the p element */
-            margin-bottom: 10px;
-        }
-
-        .upperbox { 
-            border-bottom: solid black 1px;
-            height: 50px;
-            width: 100%;
-            display: flex;
-            margin-bottom: 20px;
-        }
-
-        .upperbox h4 {
-            margin-left: 15px;
-        }
-        
-        .upperbox .go-back-button {
-            margin-left: 850px;
-            display: inline-block;
-            padding: 10px 20px;
-            height: 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 3px;
-        }
-        .middlebox {
-            padding: 5px;
-            margin: 5px;
-            width: 1150px;
-            height: 550px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            margin-left: px;
-            padding-top: 20px;
-            margin-top: 20px;
-            border: solid 1px black;
-            justify-content: space-evenly;
-        }
-
-        .new-program {
-            height: 75px;
-            width: 300px;
-            border: solid black 1px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 12px;
-            margin-top: 0;
-        }
-
-        .program-list{
-            height: 75px;
-            width: 300px;
-            border: solid black 1px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 12px;
-            margin-top: 0;
-        }
-
-        /* Style for the three-column table */
-        .three-column-table {
-            width: 80%;
-            border-collapse: collapse;
-            border: 1px solid #e0e0e0;
-            margin: 20px 0;
-        }
-
-        /* Style for table headers */
-        .three-column-table th {
-            background-color: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            padding: 10px;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        /* Style for table data cells */
-        .three-column-table td {
-            border: 1px solid #e0e0e0;
-            padding: 10px;
-        }
-
-        /* Style for alternating row colors */
-        .three-column-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+    <!----------ALERTS-------------->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
-        .info-box{
-            border: 1px solid black;
-            padding: 10px;
-            display: flex;
-            width: 1100px;
-            justify-content: space-evenly;
-        }
+    <!---Inner topbar--->
+    <?php include('topbar.php'); ?>
 
-        
-        .table-box{
-            border: 1px solid black;
-            padding: 10px;
-            display: flex;
-            width: 1100px;
-            justify-content: space-evenly;
-            margin-top: 5px;
-        }
-
-        .box{
-            border: 1px solid black;
-            height: 100px;
-            width: 400px;
-            border-radius:10px;
-            margin: 5px;
-        }
-
-
-
-    </style>
 </head>
+
+<!----Body----->
+
 <body>
-    <!-- Topbar -->
-    <div class="topbar">
-        <a class="logout" href="log-in.php">Logout</a>
-    </div>
+    <section class="bg-section">
+        <!---------Sidebar------------>
+        <?php include('sidebar-admin.php'); ?>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <ul>
-            <li><a href="adminpage.php">Home</a></li>
-            <li><a href="records.php">Records</a></li>
-            <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="programs.php">Programs</a></li>
-            <li><a href="feedback.php">Feedback</a></li>
-            <li><a href="reports.php">Reports</a></li>
-            <li><a href="compliance.php">Compliance</a></li>
-        </ul>
-    </div>
+        <!---------End Sidebar--------->
 
-    
+        <!--Main Content-->
+        <main class="pcoded-main-content">
+          <div class="container pt-4">
+            <div class="col-lg-12">
+              <div class="upperbox">
+                        <h4>Program Details</h4>
+                            <a href="admin-program.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
+                    </div>
+                    <?php
 
-    <!-- Main content -->
-    <div class="content">
+                include 'db_connect.php';
 
-        <div class="upperbox">
-            <h4><?php echo $programs[0]['programName']; ?></h4>
-            <a href="programs.php" class="go-back-button">Go Back</a>
-        </div>
+                // Check if the selected program ID is set in the session
+                if (isset($_SESSION['selectedProgramID'])) {
+                    // Retrieve the selected program ID from the session
+                    $selectedProgramID = $_SESSION['selectedProgramID'];
+
+                    // Prepare and execute the query to fetch program details based on program ID
+                    $query = "SELECT * FROM tbl_program WHERE programID = ?";
+                    $stmt = $conn->prepare($query);
+                    $stmt->bind_param("i", $selectedProgramID);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        // Display program details using fetched data
+                        echo '<div class="feed">';
+                        echo '<div class="inner_feed">';
+                        echo '<h1>' . $row["programName"] . '</h1>';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-2">';
+                        echo '<h1>' . $row["description"] . '</h1>';
+                        echo '</div>';
+
+                        // Fetch instructor's name based on instructor ID
+                        $instructorID = $row["instructorID"];
+                        $instructorQuery = "SELECT instructorName FROM instructor WHERE id = $instructorID";
+                        $resultInstructor = $conn->query($instructorQuery);
+
+                        if ($resultInstructor) {
+                            $instructorRow = $resultInstructor->fetch_assoc();
+                            $instructorName = $instructorRow["instructorName"];
+                        } else {
+                            // Handle the case when the query fails
+                            $instructorName = "Unknown Instructor";
+                        }
+
+                        echo '<div class="inner_feed-3">';
+                        echo '<h1>' . $instructorName . '</h1>';
+                        echo '<p>Assigned Instructor</p>';
+                        echo '<img src="instructors_folder/Aton.jpg" class="rounded-img" alt="">';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-4">';
+                        echo '<h1>' . $row["start_time"] . ' - ' . $row["end_time"] . '</h1>';
+                        echo '<p>Time</p>';
+                        echo '<i class="fa-regular fa-clock"></i>';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-4">';
+                        echo '<h1>' . $row["scheduleDate"] . '</h1>';
+                        echo '<p>Time</p>';
+                        echo '<i class="fa-regular fa-calendar"></i>';
+                        echo '</div>';
+
+                        echo '<div class="inner_feed-5">';
+                        echo '<h1>' . $row["programLocation"] . '</h1>';
+                        echo '<p>Location</p>';
+                        echo '<i class="fa-solid fa-location-dot"></i>';
+                        echo '</div>';
+
+                        echo '</div>'; // Close the feed div
+                    } else {
+                        echo "Program details not found.";
+                    }
+
+                    $stmt->close();
+                    $conn->close();
+                } else {
+                    echo "No program selected.";
+                }
+                ?>
+              <div class="tbl-volunteer">
+                <table class="table table-hover ">
+                    <thead class="title">
+                      <tr>
+                        <th scope="col">Student Name</th>
+                        <th scope="col">Section</th>
+                        <th>Training Program</th>
+                      </tr>
+                    </thead>
+                    <tbody class="">
+                      <tr>
+                        <td>Agustine Cuevas</td>
+                        <td>BSIT-2C</td>
+                        <td>Civil Welfare Training Service</td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
 
 
-                
-        <div class="middlebox">
 
-            <div class="info-box">
-
-                <div class="box">
-                    <h4><?php echo $programs[0]['programLocation']; ?></h4>
-                </div>
-
-                <div class="box">
-                    <h4><?php echo $programs[0]['instructorName']; ?></h4>
-                </div>
-                
-                <div class="box">
-                    <h4><?php echo $programs[0]['formattedScheduleDate']; ?></h4>
-                </div>
-
-            </div>
-
-            <div class="table-box">
-
-                <div class="tabledisplay">
-                    <table class="three-column-table">
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Section </th>
-                            <th>Traning Program</th>
-                        </tr>
-                     </table>
-                </div>
-
-            </div>
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-        </div>
-        
-
-
-
-    </script>
+              
+              
+          </div>       
+        </main>     
+    </section>
+            <!-----End Main content------>
+             <!-----End of Body------>
 </body>
 </html>
