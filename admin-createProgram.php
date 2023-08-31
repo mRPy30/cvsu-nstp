@@ -94,11 +94,14 @@ $instructors = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <!-- Add your main content here -->
                         <div class="upperbox">
                             <h4> PROGRAMS </h4>
-                        </div>
-                        <div class="add-box">
+                            <div class="addbox">
                             <button id="add-program-button">Add
                                 Program</button>
                         </div>
+                        <a href="admin-program.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
+                        </div>
+                        
                         <div class="align-tbl-programs">
                             <div class="tabledisplay-program">
                                 <table id="program-table">

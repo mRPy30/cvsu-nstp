@@ -139,7 +139,7 @@ $page = $components[2];
                               </ul>
                         </div>
                         <div class="tbl_masterlist">
-                            <form action="instructor-manageAttendance.php"method="post">
+                            <form action="instructor-manageAttendance.php" id="attendanceForm">
                                 <table class="table table-hover" method="post">
                                     <thead class="title bar">
                                         <tr>
@@ -167,7 +167,7 @@ $page = $components[2];
                                         <?php endif; ?>
                                     </tbody>
                                 </table>
-                                <button type="submit" class="btn btn-primary" name="submitAttendance">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                                                     
@@ -194,6 +194,33 @@ $page = $components[2];
 
     // Update the date and time every second
     setInterval(updateDateTime, 1000);
+
+
+    // Function to show success message using SweetAlert
+  function showSuccessMessage() {
+    Swal.fire({
+      title: 'Submission Successful',
+      text: 'Total attendance has been submitted successfully.',
+      icon: 'success',
+    });
+  }
+
+  // Attach event listener to the form submission
+  document.addEventListener('DOMContentLoaded', () => {
+    const attendanceForm = document.querySelector('#attendanceForm');
+    attendanceForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      // Submit the form using AJAX or regular form submission
+      const response = await fetch(attendanceForm.action, {
+        method: 'POST',
+        body: new FormData(attendanceForm),
+      });
+
+      if (response.ok) {
+        showSuccessMessage();
+      }
+    });
+  });
   </script>
 </body>
 </html>

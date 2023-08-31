@@ -1,24 +1,16 @@
 <?php
 include 'db_connect.php';
+
 // Start the session
 session_start();
 
-// Include the necessary files
-include 'db_connect.php';
+// Retrieve the selected course ID and name from session variables
+$courseID = $_GET['courseID'];
+$courseName = $_GET['courseName'];
 
-// Fetch courses from the database
-$sql = 'SELECT courseID, courseName FROM tbl_course';
+// Fetch sections for the selected course from the database
+$sql = "SELECT sectionID, sectionName FROM tbl_sections WHERE courseID = '$courseID'";
 $result = $conn->query($sql);
-
-// Active Sidebar Page
-
-$directoryURI = $_SERVER['REQUEST_URI'];
-
-$path = parse_url($directoryURI, PHP_URL_PATH);
-
-$components = explode('/', $path);
-
-$page = $components[2];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,38 +63,37 @@ $page = $components[2];
                 <div class="col-lg-12">
                 <div class="rec-content">
                         <div class="upperbox">
-                            <h4>TRAINING PROGRAM</h4>
-                            <a href="admin-records.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+                            <h4><?php echo $courseName; ?> Sections</h4>
+                            <a href="admin-records_certficate.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
-                        <div class="middlebox-Student">
+                        <div class="middlebox-Student-classes">
+                            
                         <?php
-                        // Check if there are any courses
+                        // Check if there are any sections
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                $courseID = $row['courseID'];
-                                $courseName = $row['courseName'];
-                                $encodedCourseName = urlencode($courseName);
+                                $sectionID = $row['sectionID'];
+                                $sectionName = $row['sectionName'];
+                                $encodedSectionName = urlencode($sectionName);
 
-                                echo "<a href='admin-records_studentCertificate.php?courseID=$courseID&courseName=$encodedCourseName'>";
-                                echo "<div class='course-box'>";
-                                echo "<p>$courseName</p>";
+                                echo "<a href='admin-records_certificateUpload.php?sectionID=$sectionID&sectionName=$encodedSectionName'>";
+                                echo "<div class='section-box'>";
+                                echo "<p> $sectionName</p>";
                                 echo "</div>";
-                                echo "</a>";
                             }
                         } else {
-                            echo "No courses found.";
+                            echo "No sections found for the selected course.";
                         }
                         ?>
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
         </main>
-     <!-----End Main content------>        
+                    <!-----End Main content------>        
         
 <!-----End of Body------>
 </section>
 </body>
-</html>  
+</html>    

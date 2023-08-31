@@ -69,14 +69,15 @@ $page = $components[2];
     
         <div class="upperbox">
             <h3>Semester List</h3>
-            <a href="admin-records.php" class="go-back-button"><ion-icon
+        <!----------  PARA SA ADDITION BUTTON ----------------->
+       <div class="addbox">
+            <button id="add-sem-button">Add Semester</button>
+        </div>
+        <a href="admin-records.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
         </div>
 
-       <!--------------------------------------  PARA SA ADDITION BUTTON --------------------------------------------->
-       <div class="add-box">
-            <button id="add-sem-button">Add Semester</button>
-        </div>
+       
          <!--------------------------------------TABLE NG CLASSES --------------------------------------------->
         <div class="align-tbl-year">
             <div class="table-year-display">

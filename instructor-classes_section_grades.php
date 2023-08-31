@@ -73,7 +73,8 @@ $page = $components[2];
     <script src="https://kit.fontawesome.com/11a4f2cc62.js" crossorigin="anonymous"></script>
 
     <!----------ALERTS-------------->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <!---Inner topbar--->
      <?php include('topbar.php');?>
@@ -113,7 +114,7 @@ $page = $components[2];
                             <p>ACADEMIC YEAR : 2022 - 2023 | SEMESTER: SECOND SEMESTER</p>
                         </div>
                         <div class="tbl_grades">
-                        <form action="instructor-manageGrades.php" method="post">
+                        <form action="instructor-manageGrades.php" id="gradesForm">
                         <table class="table table-hover" method="post">
                             <thead class="title bar">
                                 <tr>
@@ -144,5 +145,51 @@ $page = $components[2];
             </main>      
         <!-----End Main content------>
 </section>
+<script>
+  // Function to show success message using SweetAlert
+  function showSuccessMessage() {
+    Swal.fire({
+      title: 'Submission Successful',
+      text: 'Final Grades have been submitted successfully.',
+      icon: 'success',
+    });
+  }
+  // Attach event listener to the form submission
+  document.addEventListener('DOMContentLoaded', () => {
+    const gradesForm = document.querySelector('#gradesForm');
+    gradesForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(gradesForm);
+
+      // Validate form data before submission
+      let hasErrors = false;
+      formData.getAll('studentIDs[]').forEach((studentId, index) => {
+        const gradeInput = formData.getAll('grades[]')[index];
+        if (studentId === '' || gradeInput === '') {
+          hasErrors = true;
+        }
+      });
+
+      if (hasErrors) {
+        showErrorMessage('Please provide both student numbers and grades.');
+        return;
+      }
+
+      // Submit the form using AJAX or regular form submission
+      const response = await fetch(gradesForm.action, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        showSuccessMessage();
+      } else {
+        showErrorMessage('An error occurred. Please try again.');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

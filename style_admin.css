@@ -1977,6 +1977,58 @@ body::-webkit-scrollbar-track {
 }
 /****************School YEar***********************/
 
+
+/*************Certificate*************/
+.pcoded-main-content .rec-content
+  .align-tbl-student .certificate-tbl-display {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 40px;
+  border-radius: 6px;
+  background: #FFF;
+  box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-certificate-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 10px 25px 0px 20px;
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-certificate-table th,
+  #student-certificate-table td {
+  padding: 8px 2px 8px 2px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font: normal 500 14px/normal 'Poppins';
+  }
+  
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-certificate-table th,
+  #student-course-table #student-course-table th {
+  background-color:#e7e7e7;
+  font: normal 500 15px/normal 'Poppins';
+  }
+  .pcoded-main-content .rec-content 
+  .align-tbl-student #student-certificate-table a{
+    color: #000000;
+    font: normal 500 13px/normal 'Poppins';
+  }
+      .pcoded-main-content .rec-content .upperbox
+      .upload i {
+        font-size: x-large;
+        margin: 0px 0px 5px 0px;
+        flex-direction: row;
+        color: #000;
+      }
+      .pcoded-main-content .rec-content .upperbox
+      .upload i:hover{
+        transform: scale(0.98);
+      }
+/***********end certificate*********/
   /*******************END RECORDS********************/
 
 

@@ -104,6 +104,8 @@ $page = $components[2];
                         <!-- Add your main content here -->
                         <div class="upperbox">
                             <h4> PROGRAMS </h4>
+                            <a href="admin-program.php" class="go-back-button"><ion-icon
+                                    name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
                         <div class="align-tbl-programs">
                             <div class="tabledisplay-program">

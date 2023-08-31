@@ -15,7 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->query($updateQuery);
     }
     
-    // Redirect or display a success message
+    // Respond with a success message
+    $response = array('success' => true);
+    echo json_encode($response);
     header("Location: instructor-classes_section_grades.php");
     exit();
 }

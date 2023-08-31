@@ -58,9 +58,6 @@ if ($result->num_rows > 0) {
     $students = array();
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -130,30 +127,22 @@ if ($result->num_rows > 0) {
                                     aria-label="Text input with checkbox" id="searchInput" onkeyup="searchTable()"
                                     placeholder="Search section names...">
                             </div>
-
-                            <div class="print">
-                            <i class="fa-solid fa-print" onclick="printSection('container')"></i>
-                            </div>
-                            
-
-                            <a href="admin-records_Student.php" class="go-back-button"><ion-icon
+                            <div class="upload">
+                            <i class="fa-solid fa-upload" id="addInstructorButton"></i>
+                        </div>
+                            <a href="admin-records_certificate.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
-
+                        
                         <!--------------------------------- TABLE FOR STUDENTS ----------------------------------->
                         <div class="align-tbl-student">
-                            <div class="student-tbl-display">
-                                <div class="course-and-section">
-                                    <p>
-                                        <?php echo $selectedCourseName . ' - ' . $selectedsectionName; ?>
-                                    </p>
-                                </div>
+                            <div class="certificate-tbl-display">
 
-                                <table id="student-course-table">
+                                <table id="student-certificate-table">
                                     <thead>
                                         <tr>
-                                            <th>Student Names</th>
+                                            <th colspan="2">Student Names</th>
                                         </tr>
                                     </thead>
                                     <tbody class="scrollable-tbody">
@@ -165,6 +154,9 @@ if ($result->num_rows > 0) {
                                                     href="admin-records_studentData.php?id=<?php echo $student['id']; ?>">
                                                     <?php echo $student['name']; ?>
                                                 </a>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm" type="file" id="formFile">
                                             </td>
                                         </tr>
                                         <?php endforeach; ?>
@@ -186,108 +178,10 @@ if ($result->num_rows > 0) {
         <!-----End Main content------>
 
     </section>
-
-
-    <!--------To Print--------->
-
-    <script type="text/javascript">
-        function printSection(el) {
-            var getFullContent = document.body.innerHTML;
-            var printsection = document.getElementById(el).innerHTML;
-            document.body.innerHTML = printsection;
-            window.print();
-            document.body.innerHTML = getFullContent;
-        }
-    </script>
-
-    <style>
-        @media print {
-            body {
-                visibility: hidden;
-            }
-
-            .align-tbl-student .align-tbl-student {
-                visibility: visible;
-            }
-
-            .print-container .student-tbl-display {
-                top: 20px;
-            }
-        }
-    </style>
-
-    <div onclick="print()">
-        <div class="align-tbl-student" id="container">
-            <div class="student-tbl-display">
-                <div class="course-and-section" style="text-align: center; margin-top: 30px; margin-bottom: 10px;">
-                    <h3>
-                        <?php echo $selectedCourseName . ' - ' . $selectedsectionName; ?>
-                    </h3>
-                </div>
-
-                <table id="student-course-table"
-                    style="text-align: center; margin-top: 30px; margin-bottom: 10px; font-size:20px;">
-                    <thead>
-                        <tr>
-                            <th
-                                style="background-color:#e7e7e7; width: 100vw; text-align:left; padding-top: 10px; padding-bottom:10px; padding-left:40px">
-                                Student
-                                Names</th>
-                        </tr>
-                    </thead>
-                    <tbody class="scrollable-tbody">
-                        <?php if (!empty($students)): ?>
-                        <?php foreach ($students as $student): ?>
-                        <tr>
-                            <td>
-                                <a href="admin-records_studentData.php?id=<?php echo $student['id']; ?>">
-                                    <?php echo $student['name']; ?>
-                                </a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                        <?php else: ?>
-                        <tr>
-                            <td colspan="4">No students found.</td>
-                        </tr>
-                        <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-----End of Print------>
+<!-----End of Print------>
 
     <!-----End of Body------>
     </section>
-    <script>
-         // --------------------------------- JS PARA SA PAG SEARCH  ------------------------------- //
-
-         function searchTable() {
-            var input, filter, table, tbody, tr, td, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("course-table");
-            tbody = table.getElementsByTagName("tbody")[0];
-            tr = tbody.getElementsByTagName("tr");
-
-            // Loop through all table rows and hide those that don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0]; // Assuming the section name is in the first column
-
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-
-    </script>
 </body>
+
 </html>
