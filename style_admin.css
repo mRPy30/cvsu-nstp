@@ -242,194 +242,27 @@ body::-webkit-scrollbar-track {
       text-align: start;
       font: normal 600 20px/34px 'Poppins';
     }
-    .pcoded-main-content .feeds{
-        border-radius: 10px;
-        padding: 30px;
-        background-color: white;
-        margin-left: 110px;
-        width: 1080px;
-        height: 180px;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
-        transition: all .3s ease;
-    }
-    .pcoded-main-content .feeds:hover{
-      transform: scale(0.99);
-    }
-    .pcoded-main-content .feeds a{
-        text-decoration: none;
-    }
-    .pcoded-main-content .feeds a h1{
-        color: #008A0E;
-        font-family: 'Poppins';
-        font-size: 35px;
-        font-weight: 900;
-        line-height: normal;
-        text-decoration: none;
-    }
-    .pcoded-main-content .feeds p{
-        color: black;
-        font-family: 'Poppins';
-        font-size: 15px;
-        font-weight: 500;
-        line-height: normal;
-        margin-top: 40px;
-        margin-left: 25px;
-    }
-    .pcoded-main-content .feeds i{
-        color:black;
-        position: absolute;
-        font-size: 20px;
-        margin-top: 35px;
-    }
-    .pcoded-main-content .inner_feeds-2 p{
-        color: black;
-        font-family: 'Poppins';
-        font-size: 11px;
-        font-weight: 500;
-        line-height: normal;
-        position: absolute;
-        margin-top: -40px;
-        margin-left: 195px;
-    }
-    .pcoded-main-content .inner_feeds-2 i{
-        color:black;
-        position: absolute;
-        font-size: 18px;
-        margin-top: -40px;
-        margin-left: 170px;
-    }
-    .pcoded-main-content .inner_feeds-3 p{
-        color: black;
-        font-family: 'Poppins';
-        font-size: 15px;
-        font-weight: 500;
-        line-height: normal;
-        position: absolute;
-        margin-top: -40px;
-        margin-left: 405px;
-    }
-    .pcoded-main-content .inner_feeds-3 i{
-        color:black;
-        position: absolute;
-        font-size: 20px;
-        margin-top: -40px;
-        margin-left: 385px;
-    }
     
-    .pcoded-main-content .feeds-3{
-        border-radius: 10px;
-        padding: 30px;
-        background-color: white;
-        margin-left: 110px;
-        width: 1080px;
-        height: 180px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
-    }
-    .pcoded-main-content .feeds-3 h1{
-        color: #008A0E;
-        font-family: 'Poppins';
-        font-size: 40px;
-        font-weight: 900;
-        line-height: normal;
-    }
+    /******* Details programs *****/
     
-    .pcoded-main-content .upperbox { 
+    .pcoded-main-content .upperbox-prog { 
       height: 50px;
       width: 1050px;
       display: flex;
       margin: 10px 0px 0px 140px;
       align-items: center;
     }
-    .pcoded-main-content .upperbox h4{
+    .pcoded-main-content .upperbox-prog h4{
       font: normal 700 18px/normal 'Poppins';
       margin: 10px 50px 8px 0px;
       
     }
-    .pcoded-main-content .upperbox .go-back-button {
+    .pcoded-main-content .upperbox-prog .go-back-button {
       font-size: xx-large;
       color: #008A0E;
       flex-direction: row;
-      margin: 10px 0px 0px 710px;
+      margin: 10px 0px 0px 780px;
       text-decoration: none;
-    }
-    .pcoded-main-content .upperbox-grades{
-      height: 50px;
-      width: 1050px;
-      display: flex;
-      margin: 10px 0px 0px 160px;
-      align-items: center;
-    }
-    .pcoded-main-content .upperbox-grades h6{
-      font: normal 700 18px/normal 'Poppins';
-      margin: 10px 0px 8px 0px;
-    }
-    .pcoded-main-content .upperbox-grades .go-back-button {
-      font-size: xx-large;
-      color: #008A0E;
-      flex-direction: row;
-      margin: 10px 0px 0px 20px;
-      text-decoration: none;
-    }
-    .pcoded-main-content .upperbox-grades .print i {
-      font-size: x-large;
-      margin: 10px 0px 6px 53vw;
-      flex-direction: row;
-    
-    }
-    
-    .feeds-3 i{
-        color:black;
-        position: absolute;
-        font-size: 20px;
-        margin-top: 37px;
-    }
-    .inner_feeds-4 p{
-        color: black;
-        font-family: 'Poppins';
-        font-size: 20px;
-        font-weight: 500;
-        line-height: normal;
-        position: absolute;
-        margin-top: 32px;
-        margin-left: 25px;
-    }
-    .inner_feeds-5 i{
-        color:black;
-        position: absolute;
-        font-size: 20px;
-        margin-top: 37px;
-        margin-left: 175px;
-    }
-    .inner_feeds-5 p{
-        color: black;
-        font-family: 'Poppins';
-        font-size: 20px;
-        font-weight: 500;
-        line-height: normal;
-        position: absolute;
-        margin-top: 32px;
-        margin-left: 200px;
-    }
-    .inner_feeds-6 i{
-        color:black;
-        position: absolute;
-        font-size: 20px;
-        margin-top: 37px;
-        margin-left: 390px;
-    }
-    .inner_feeds-6 p{
-        color: black;
-        font-family: 'Poppins';
-        font-size: 20px;
-        font-weight: 500;
-        line-height: normal;
-        position: absolute;
-        margin-top: 32px;
-        margin-left: 410px;
     }
     
     
@@ -437,15 +270,15 @@ body::-webkit-scrollbar-track {
         border-radius: 10px;
         padding: 20px;
         background-color: white;
-        margin:20px 0px 0px 140px;
+        margin: 30px 0px 0px 140px;
         width: 1030px;
-        height: 500px;
+        height: 400px;
         box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
     }
     .pcoded-main-content .feed h1{
         color: black;
         font-family: 'Poppins';
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 900;
         line-height: normal;
     }
@@ -454,32 +287,32 @@ body::-webkit-scrollbar-track {
         padding: 20px;
         background-color: #FFE193;
         width: 490px;
-        height: 410px;
+        height: 325px;
         margin-bottom: 50px;
         box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
     }
     .pcoded-main-content .inner_feed-2 h1{
         color: black;
         font-family: 'Poppins';
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 900;
         line-height: normal;
     }
     
     .pcoded-main-content .inner_feed-3{
         border-radius: 10px;
-        padding: 15px 0px 0px 20px;
+        padding: 8px 0px 5px 20px;
         background-color: white;
         width: 475px;
-        height: 95px;
+        height: 73px;
         margin-left: 515px;
-        margin-top: -460px;
+        margin-top: -375px;
         box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
     }
     .pcoded-main-content .inner_feed-3 h1{
         color: black;
         font-family: 'Poppins';
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         line-height: normal;
         margin: 5px;
@@ -487,25 +320,25 @@ body::-webkit-scrollbar-track {
     .pcoded-main-content .inner_feed-3 p{
         color: black;
         font-family: 'Poppins';
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 900;
         line-height: normal;
         margin-left: 5px;
     }
     .pcoded-main-content .inner_feed-3 img{
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
         margin-left: 350px;
-        margin-top: -115px;
+        margin-top: -107px;
         border-radius: 100%;
     }
     
     .pcoded-main-content .inner_feed-4{
         border-radius: 10px;
-        padding: 15px 0px 0px 20px;
+        padding: 8px 0px 0px 20px;
         background-color: white;
         width: 475px;
-        height: 95px;
+        height: 73px;
         margin-left: 515px;
         margin-top: 10px;
         box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
@@ -513,7 +346,7 @@ body::-webkit-scrollbar-track {
     .pcoded-main-content .inner_feed-4 h1{
         color: black;
         font-family: 'Poppins';
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         line-height: normal;
         margin: 5px;
@@ -522,7 +355,7 @@ body::-webkit-scrollbar-track {
     .pcoded-main-content .inner_feed-4 p{
         color: black;
         font-family: 'Poppins';
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 900;
         line-height: normal;
         margin-left: 5px;
@@ -536,10 +369,10 @@ body::-webkit-scrollbar-track {
     }
     .pcoded-main-content .inner_feed-5{
         border-radius: 10px;
-        padding: 15px 0px 0px 20px;
+        padding: 8px 0px 0px 20px;
         background-color: white;
         width: 475px;
-        height: 95px;
+        height: 73px;
         margin-left: 515px;
         margin-top: 10px;
         box-shadow: 1px 0px 4px 2px rgba(0, 0, 0, 0.25);
@@ -547,7 +380,7 @@ body::-webkit-scrollbar-track {
     .pcoded-main-content .inner_feed-5 h1{
         color: black;
         font-family: 'Poppins';
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         line-height: normal;
         margin: 5px;
@@ -555,7 +388,7 @@ body::-webkit-scrollbar-track {
     .pcoded-main-content .inner_feed-5 p{
         color: black;
         font-family: 'Poppins';
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 900;
         line-height: normal;
         margin-left: 5px;
@@ -565,7 +398,7 @@ body::-webkit-scrollbar-track {
         position: absolute;
         font-size: 50px;
         margin-left: 360px;
-        margin-top: -65px;
+        margin-top: -67px;
     }
     .pcoded-main-content .inner_feed-5 button{
         background-color: #6FBB76;
@@ -577,36 +410,89 @@ body::-webkit-scrollbar-track {
         font-family: 'Poppins';
         font-weight: 800;
     }
-    .pcoded-main-content .inner_feed-5 button:hover{
-        background-color: #008A0E;
-    }
-    
-    .pcoded-main-content .form-container {
-      width: 300px;
-    }
-    .pcoded-main-content .form-container h4 {
-      margin-top: 0;
+    .tbl-volunteer{
+      padding: 5px;
+      margin: 30px 0px 120px 140px;
+      text-align: center;
+      width: 1030px;
+      height: 200px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
     .tbl-volunteer .table{
-      margin: 30px 0px 120px 200px;
+      margin: 15px 0px 0px 25px;
       text-align: center;
-      width: 900px;
-      overflow-y: scroll;
-      box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      width: 95%;
+      height: 150px;
     } 
-    .tbl-volunteer .table .title th{
-      background-color:#6FBB76 ;
-      
-    }
     .tbl-volunteer
     .table .title th{
-     background-color:#6FBB76 ;
-     color: #ffffff;
+     background-color: #dbdbdb;
      text-align: center;
-     font-size: 12px;
-     font-family: 'Inter';
-     text-transform: uppercase;
-    }    
+     font: normal 500 15px/normal 'Poppins';
+    }
+    .tbl-volunteer{
+      overflow-y: scroll;
+      margin-right: 40px;
+    }
+    .tbl-volunteer::-webkit-scrollbar {
+      width: 8px; 
+   }
+   .tbl-volunteer::-webkit-scrollbar-thumb {
+      background-color: #cccccc; 
+      border-radius: 6px; 
+   }
+   .tbl-volunteer::-webkit-scrollbar-thumb:hover {
+      background-color: #555; 
+   }
+   .tbl-volunteer::-webkit-scrollbar-track {
+      background-color: #999;
+   }
+    
+    /******* Program List ******/
+    .pcoded-main-content .rec-content .align-tbl-programsList{
+      margin: 10px 110px 0px 100px;
+    }
+  
+      .pcoded-main-content .rec-content
+      .align-tbl-programsList .tabledisplay-programList {
+      width: 800px;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      margin-top: 40px;
+      border-radius: 6px;
+      background: #FFF;
+      box-shadow: -2px 2px 15px -4px rgba(4,4,4,0.82);
+      }
+      .pcoded-main-content .rec-content 
+      .align-tbl-programsList #program-table2 {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      margin: 15px 25px 10px 20px;
+      }
+      .pcoded-main-content .rec-content 
+      .align-tbl-programsList #program-table2  th,
+      #program-table2 td {
+      padding: 8px 2px 8px 2px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font: normal 500 14px/normal 'Poppins';
+      }
+      
+      .pcoded-main-content .rec-content 
+      .align-tbl-programsList #program-table2  th,
+      #program-table2 #program-table2 th {
+      background-color:#e7e7e7;
+      font: normal 500 15px/normal 'Poppins';
+      }
+      .pcoded-main-content .rec-content 
+      .align-tbl-programsList #program-table2  a{
+        color: #000000;
+        font: normal 500 13px/normal 'Poppins';
+      }
 /**********END admin create programs*************/
 
 

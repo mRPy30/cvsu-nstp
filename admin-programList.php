@@ -107,9 +107,9 @@ $page = $components[2];
                             <a href="admin-program.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
-                        <div class="align-tbl-programs">
-                            <div class="tabledisplay-program">
-                                <table id="program-table">
+                        <div class="align-tbl-programsList">
+                            <div class="tabledisplay-programList">
+                                <table id="program-table2">
                                     <tr>
                                         <th>PROGRAM</th>
                                         <th>INSTRUCTOR</th>

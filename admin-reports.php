@@ -61,7 +61,7 @@ $page = $components[2];
                 <div class="col-lg-12">
                     <div class="reports-content">
                         <div class="upperbox">
-                            <h4> Reports </h4>
+                            <h4> REPORTS </h4>
                         </div>
 
                         <div class="middlebox">

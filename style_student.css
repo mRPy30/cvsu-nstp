@@ -6,9 +6,6 @@
 body{
     overflow-x: hidden;
   }
-  body{
-    overflow-x: hidden;
-  }
  body::-webkit-scrollbar {
     width: 12px; 
  }
@@ -728,7 +725,7 @@ height: 50px;
 /**********Programs***********/
 .pcoded-main-content .student_prog2{
   margin: 10px 0px 0px 110px;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #000000;
   width: 1075px;
 }
 .pcoded-main-content .student_prog2 p{

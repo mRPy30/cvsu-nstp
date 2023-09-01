@@ -90,7 +90,7 @@ $page = $components[2];
         <main class="pcoded-main-content">
           <div class="container pt-4">
             <div class="col-lg-12">
-              <div class="upperbox">
+              <div class="upperbox-prog">
                         <h4>Program Details</h4>
                             <a href="admin-program.php" class="go-back-button"><ion-icon
                                     name="arrow-back-circle-outline"></ion-icon></a>
@@ -180,7 +180,27 @@ $page = $components[2];
                         <th>Training Program</th>
                       </tr>
                     </thead>
-                    <tbody class="">
+                    <tbody class="scroll">
+                      <tr>
+                        <td>Agustine Cuevas</td>
+                        <td>BSIT-2C</td>
+                        <td>Civil Welfare Training Service</td>
+                      </tr>
+                      <tr>
+                        <td>Agustine Cuevas</td>
+                        <td>BSIT-2C</td>
+                        <td>Civil Welfare Training Service</td>
+                      </tr>
+                      <tr>
+                        <td>Agustine Cuevas</td>
+                        <td>BSIT-2C</td>
+                        <td>Civil Welfare Training Service</td>
+                      </tr>
+                      <tr>
+                        <td>Agustine Cuevas</td>
+                        <td>BSIT-2C</td>
+                        <td>Civil Welfare Training Service</td>
+                      </tr>
                       <tr>
                         <td>Agustine Cuevas</td>
                         <td>BSIT-2C</td>
