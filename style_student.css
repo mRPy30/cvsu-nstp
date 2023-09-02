@@ -38,7 +38,7 @@ body{
  }
  .pcoded-main-content .student_prof p{
     text-align: start;
-    font: normal 500 16px/34px 'Poppins';
+    font: normal 600 16px/34px 'Poppins';
  }
  
  .pcoded-main-content .box{
@@ -843,7 +843,7 @@ height: 50px;
   font-size: xx-large;
   color: #008A0E;
   flex-direction: row;
-  margin: 10px 0px 0px 710px;
+  margin: 10px 0px 0px 790px;
   text-decoration: none;
 }
 .pcoded-main-content .upperbox-grades{
@@ -985,7 +985,7 @@ height: 50px;
     width: 60px;
     height: 60px;
     margin-left: 350px;
-    margin-top: -105px;
+    margin-top: -70px;
     border-radius: 100%;
 }
 
@@ -1378,7 +1378,101 @@ text-align: center;
       }
 /*********end feedback*********/
 
+/********Contacts********/
 
+.nstp_coordinator{
+  margin: 40px 0px 30px 100px;
+
+}
+.nstp_coordinator h1{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  margin-left: 430px;
+}
+.nstp_coordinator h2{
+  color: #008A0E;
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  margin-left: 430px;
+}
+.nstp_coordinator h3{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 460px;
+}
+.rounded-img{
+  border-radius: 50%;
+  position: flex;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 20px;
+  margin-left: 285px;
+  float: left;
+}
+.nstp_coordinator i {
+  position: absolute;
+  font-size: 20px;
+  color: black;
+  margin-left: 15px;
+}
+
+.mapouter{
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 260px;
+}
+.gmap_canvas{
+  overflow: hidden;
+  background: none;
+  width: 100%;
+  height: 260px;
+  margin-left: 120px;
+}
+.gmap_iframe{
+  height: 260px;
+}
+.section-padding-02 {
+  padding-top: 20px;
+}
+
+.contact-info{
+  margin: 0px 0px 30px 130px;
+}
+.contact-info__content i{
+  color:#008A0E;
+  position: absolute;
+  font-size: 27px;
+  margin-left: 100px;
+}
+.contact-info .row h5{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  margin-left: 145px;
+  margin-top: 10px;
+}
+.contact-info .row h6{
+  color: black;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 550;
+  margin-left: 46%;
+  margin-bottom: 50px;
+}
+
+/*******end contacts*****/
 
 
 /**********ABOUT**************/
