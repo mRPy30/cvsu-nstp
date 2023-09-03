@@ -1,3 +1,45 @@
+<?php
+include 'db_connect.php';
+session_start();
+
+$selectedCourseID = "";
+$selectedCourseName = "";
+
+if (isset($_GET['courseID']) && isset($_GET['courseName'])) {
+    $selectedCourseID = $_GET['courseID'];
+    $selectedCourseName = $_GET['courseName'];
+
+    $_SESSION['selectedCourseID'] = $selectedCourseID;
+    $_SESSION['selectedCourseName'] = $selectedCourseName;
+} elseif (isset($_SESSION['selectedCourseID']) && isset($_SESSION['selectedCourseName'])) {
+    $selectedCourseID = $_SESSION['selectedCourseID'];
+    $selectedCourseName = $_SESSION['selectedCourseName'];
+}
+
+
+$query = "SELECT tbl_activities.activityImage, tbl_activities.activityTitle, tbl_activities.activityID 
+            FROM tbl_activities" ;
+
+$result = mysqli_query($conn, $query);
+
+$external = array(); // Initialize an empty array to store external details
+
+if ($result && mysqli_num_rows($result) > 0) {
+    while ($externals = mysqli_fetch_assoc($result)) {
+        // Retrieve the individual values
+        $activityImage = $externals['activityImage'];
+        $activityTitle = $externals['activityTitle'];
+        $activityid = $externals['activityID'];
+
+        // Store the external array
+        $external[] = array(
+            'activityImage' => $activityImage,
+            'activityTitle' => $activityTitle,
+            'activityID' => $activityid
+        );
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,16 +89,13 @@
                 <div class="col-lg-12">
                     <div class="rec-content">
                         <div class="upperbox">
-                            <h3>NSTP ACTIVITIES</h3>
+                            <h3>NSTP NEWS AND UPDATES</h3>
                             <a href="admin-external-prog.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>  
                         </div>
 
                         <div class="align-tbl-external">
                             <div class="tabledisplay-external">
                             <div class="course-and-section">
-                                    <p>
-                                        <?php echo $selectedCourseName; ?>
-                                    </p>
                                 </div>
 
                                 <table id="program-table">

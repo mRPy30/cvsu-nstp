@@ -88,7 +88,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <div class="col-lg-12">
                     <div class="rec-content">
                         <div class="upperbox">
-                            <h3>NEWS AND UPDATES</h3>
+                            <h3>NEWS ACTIVITIES</h3>
                             <a href="admin-external-prog.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>  
                         </div>
 
