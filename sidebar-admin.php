@@ -111,20 +111,21 @@
                     } ?> "> <i class="fa-solid fa-people-group"></i> Programs </a>
                 </li>
 
-                <li class="nav-link">
-                    <a href="admin-feedback.php" class="<?php if ($page == "admin-feedback.php") {
-                        echo "nav-link active";
-                    } else {
-                        echo "nav-link";
-                    } ?> "> <i class="fa-solid fa-comment"></i> Feedback </a>
-                </li>
-
+                
                 <li class="nav-link">
                     <a href="admin-records.php" class="<?php if ($page == "admin-records.php") {
                         echo "nav-link active";
                     } else {
                         echo "nav-link";
                     } ?> "> <i class="fa-sharp fa-regular fa-rectangle-list"></i> Records </a>
+                </li>
+                
+                <li class="nav-link">
+                    <a href="admin-feedback.php" class="<?php if ($page == "admin-feedback.php") {
+                        echo "nav-link active";
+                    } else {
+                        echo "nav-link";
+                    } ?> "> <i class="fa-solid fa-comment"></i> Feedback </a>
                 </li>
 
                 <li class="nav-link">

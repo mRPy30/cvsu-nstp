@@ -593,9 +593,6 @@ height: 50px;
 
 /*******end materials*****/
 
-/*******schedule******/
-
-/******End Schedule****/
 
 /*******classlist*****/
 .pcoded-main-content .class-list p{
@@ -719,10 +716,43 @@ height: 50px;
 /***end grade table****/
 /******end grade******/
 
+/*****certificate******/
+.pcoded-main-content .note{
+  width: 1030px;
+  height: 140px;
+  color: #00600a;
+  padding: 20px 0px 0px 30px;
+  background-color: #a0dea7;
+  border-radius: 10px;
+  border: 1px solid #6FBB76;
+  margin: 20px 10px 0px 130px;
+}
+.pcoded-main-content .note h5{
+  font: normal 600 20px/normal 'arial' ;
+}
+.pcoded-main-content .note p{
+  font: normal 400 15px/normal 'poppins' ;
+  margin: 10px 0px 0px 23px;
+
+}
+.pcoded-main-content .list-content {
+  margin: 60px 0px 0px 160px;
+}
+.pcoded-main-content .list-content .certificate h5{
+  font: normal 600 18px/normal 'Inter' ;
+  margin-left: 13px;
+}
+.pcoded-main-content .list-content .certificate ul li a{
+font-size: 18px;
+color:  #4CAF50;
+font-weight: 500;
+font-family: 'poppins';
+text-decoration: none;
+line-height: 150%;
+}
 
 
-
-/**********Programs***********/
+/*************************Programs*********************************/
 .pcoded-main-content .student_prog2{
   margin: 10px 0px 0px 110px;
   border-bottom: 1px solid #000000;

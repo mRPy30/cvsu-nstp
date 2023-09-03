@@ -64,9 +64,26 @@ $page = $components[2];
         <!--Main Content codeeeee-->
 
         <main class="pcoded-main-content">
-            <div class="container">
+            <div class="container pt-4">
                 <div class="col-lg-12">
-</div>
+                    <div class="upperbox">
+                        <h4>NSTP Certificate </h4>
+
+                        <a href="student-classes.php" class="go-back-button"><ion-icon
+                                name="arrow-back-circle-outline"></ion-icon></a>
+                    </div>
+                    <div class="note">
+                        <h5>Reminder: </h5>
+                        <p>You can download certificate until you finished NSTP 1/NSTP 2 subject</p>
+                    </div>
+                    <div class="list-content">
+                        <div class="certificate">
+                            <h5><i class="fa-solid fa-download"></i>  Download NSTP Certificate</h5>
+                            <ul>
+                                <li class="gov-link1"><a href="">NSTP 1</a></li>
+                                <li class="gov-link2"><a href="">NSTP 2</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
