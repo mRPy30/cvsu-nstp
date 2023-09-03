@@ -21,7 +21,7 @@ $page = $components[2];
 
 
 // Perform a database query to retrieve student data
-$query = "SELECT * FROM student";
+$query = "SELECT * FROM student WHERE id = $accountID ";
 $result = mysqli_query($conn, $query);
 
 // Check if there are any rows returned
