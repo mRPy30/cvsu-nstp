@@ -1,4 +1,18 @@
 <?php
+
+
+
+session_start();
+
+$programID = $_GET['programID'];
+
+    // Store the program ID in a session variable
+    $_SESSION['programID'] = $programID;
+
+
+
+include 'db_connect.php';
+
 // Active Sidebar Page
 
 $directoryURI = $_SERVER['REQUEST_URI'];
@@ -8,6 +22,49 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 
 $page = $components[2];
+
+
+
+
+// Fetch course data from the database
+$query = "SELECT courseID, courseName FROM tbl_course";
+$result = mysqli_query($conn, $query);
+$courses = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Fetch section data from the database
+$query = "SELECT sectionID, sectionName FROM tbl_sections";
+$result = mysqli_query($conn, $query);
+$sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+
+include 'db_connect.php';
+
+// Check if the programID is set in the URL
+if (isset($_GET['programID'])) {
+    // Get the programID value from the URL
+    $selectedProgramID = $_GET['programID'];
+
+    // Store the selected program ID in a session variable
+    $_SESSION['selectedProgramID'] = $selectedProgramID;
+
+    // Prepare and execute the query to fetch the program name based on program ID
+    $programQuery = "SELECT programName FROM tbl_program WHERE programID = $selectedProgramID";
+    $result = $conn->query($programQuery);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc(); // Fetch the row
+        $programName = $row['programName']; // Store the program name in a variable
+    } else {
+        $programName = "Program Not Found"; // Default value if program name is not found
+    }
+  
+
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,54 +156,49 @@ $page = $components[2];
 
                     <!----------------- Popup form in Volunteer -------------->
 
-        <div id="volunteer-popup" class="form-popup">
-            <form method="post" class="form-container" id="volunteer-form" action="">
+                    <div id="volunteer-popup" class="form-popup">
+            <form method="post" class="form-container" id="volunteer-form" action="admin-manageVolunteer.php">
                 <h4>Volunteer Registration</h4>
 
                 <label for="add-volunteer">Enter your Name:</label>
-                <input type="text" name="Name" placeholder="Please Enter Your Full name">
+                <input type="text" name="name" placeholder="Please Enter Your Full name">
 
-                <label for="email-volunteer">Enter your Name:</label>
-                <input type="text" name="Name" placeholder="Please Enter Your Email add">
+                <label for="email-volunteer">Email:</label>
+                <input type="text" name="email" placeholder="Please Enter Your Email add">
                 
-                    <div class="form-control-1">
-                        <label for="studentID">Student Number:</label>
-                        <input name='studentID' id="studentId">
-                                        
-                        </input>
-                        
-                        <label for="course-volunteer">Course:</label>
-                    <select type="select" name="select">
-                        <option>
-
-                        </option>
-                    </select>
-                    </div>
-                    <div class="form-control-2">
-                        <label for="number">Contact Number:</label>
-                        <input name="section" id="section">
-
-                        </input>
-
-                        <label for="section-volunteer">Section:</label>
-                    <select type="select" name="select">
-                        <option>
-
-                        </option>
-                    </select>
-                    </div>
-
-
                 <div class="form-control-1">
+                    <label for="studentID">Student Number:</label>
+                    <input name='studentID' id="studentId"></input>
                     
+                    <label for="course">Training Program:</label>
+                    <select name='course' id="course">
+                        <?php foreach ($courses as $course): ?>
+                            <option value="<?php echo $course['courseID']; ?>"><?php echo $course['courseName']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
                 <div class="form-control-2">
+                    <label for="number">Contact Number:</label>
+                    <input name="number" id="number"></input>
 
+                    <label for="section">Section:</label>
+                    <select name="section" id="section">
+                        <?php foreach ($sections as $section): ?>
+                            <option value="<?php echo $section['sectionID']; ?>"><?php echo $section['sectionName']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
+
+                <!-- Hidden input field to store programID from the session -->
+                <input type="hidden" name="programID" value="<?php echo $_SESSION['programID']; ?>">
+
+                <div class="form-control-1"></div>
+                <div class="form-control-2"></div>
 
                 <button type="submit" onclick="closeAddForm()">Signup</button>
                 <button type="button" onclick="closeAddForm()">Cancel</button>
             </form>
+
         </div>
 
                 </div>
@@ -155,6 +207,69 @@ $page = $components[2];
 </section>
 
     <script>
+
+              // JavaScript code to populate the section dropdown dynamically
+
+        // Define an object to store the sections for each course
+        var sections = {
+            <?php
+            // Fetch section data from the database based on courses
+            $query = "SELECT courseID, sectionName FROM tbl_sections";
+            $result = mysqli_query($conn, $query);
+            $sections = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            // Organize the sections by course ID
+            $sectionsByCourse = [];
+            foreach ($sections as $section) {
+                $courseId = $section['courseID'];
+                $sectionName = $section['sectionName'];
+
+                if (!isset($sectionsByCourse[$courseId])) {
+                    $sectionsByCourse[$courseId] = [];
+                }
+
+                $sectionsByCourse[$courseId][] = $sectionName;
+            }
+
+            // Output the sections as JavaScript object
+            foreach ($sectionsByCourse as $courseId => $courseSections) {
+                echo "$courseId: [";
+                foreach ($courseSections as $index => $section) {
+                    if ($index !== 0) {
+                        echo ", ";
+                    }
+                    echo "'$section'";
+                }
+                echo "], ";
+            }
+            ?>
+        };
+
+        // Get reference to the section dropdown
+        var sectionDropdown = document.getElementById('section');
+
+        // Add an event listener to the course dropdown
+        document.getElementById('course').addEventListener('change', function () {
+            // Clear the section dropdown
+            sectionDropdown.innerHTML = '';
+
+            // Get the selected course ID
+            var selectedCourseId = this.value;
+
+            // Retrieve the sections for the selected course
+            var selectedCourseSections = sections[selectedCourseId];
+
+            // Populate the section dropdown based on the selected course
+            selectedCourseSections.forEach(function (section) {
+                var option = document.createElement('option');
+                option.textContent = section;
+                sectionDropdown.appendChild(option);
+            });
+        });
+
+        // Trigger the change event initially to populate the section dropdown
+        document.getElementById('course').dispatchEvent(new Event('change'));
+
     // Get the button element
     var volunteerButton = document.getElementById('volunteer-button');
 
@@ -174,6 +289,10 @@ $page = $components[2];
     function closeAddForm() {
         document.getElementById("volunteer-popup").style.display = "none";
     }
+
+
+
+  
     </script>
 
 </body>
