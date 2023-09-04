@@ -83,7 +83,7 @@ $page = $components[2];
                         </div>
 
                         <div class="inner_feed-4">
-                            <h1>August 30, 2023</h1>
+                            <h1>September 5, 2023</h1>
                             <p>Date</p>
                             <i class="fa-regular fa-calendar"></i>
                         </div>
@@ -106,7 +106,7 @@ $page = $components[2];
                 <label for="add-volunteer">Enter your Name:</label>
                 <input type="text" name="Name" placeholder="Please Enter Your Full name">
 
-                <label for="email-volunteer">Enter your Name:</label>
+                <label for="email-volunteer">Enter your Email Address:</label>
                 <input type="text" name="Name" placeholder="Please Enter Your Email add">
                 
                     <div class="form-control-1">
@@ -115,10 +115,14 @@ $page = $components[2];
                                         
                         </input>
                         
-                        <label for="course-volunteer">Course:</label>
+                    <label for="course-volunteer">Training Program:</label>
                     <select type="select" name="select">
+                        <option></option>
                         <option>
-
+                            Civil Welfare Training Service
+                        </option>
+                        <option>
+                            Reserve Officer Training Corps
                         </option>
                     </select>
                     </div>
@@ -130,8 +134,12 @@ $page = $components[2];
 
                         <label for="section-volunteer">Section:</label>
                     <select type="select" name="select">
+                        <option></option>
                         <option>
-
+                            BSCS - 1C
+                        </option>
+                        <option>
+                            BSIT - 1A
                         </option>
                     </select>
                     </div>

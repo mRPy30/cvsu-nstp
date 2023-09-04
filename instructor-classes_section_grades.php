@@ -111,7 +111,7 @@ $page = $components[2];
                               </ul>
                         </div>
                         <div class="acads_info">
-                            <p>ACADEMIC YEAR : 2022 - 2023 | SEMESTER: SECOND SEMESTER</p>
+                            <p>ACADEMIC YEAR : 2022 - 2023 | SEMESTER: SECOND</p>
                         </div>
                         <div class="tbl_grades">
                         <form action="instructor-manageGrades.php" id="gradesForm">
