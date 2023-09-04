@@ -1,29 +1,18 @@
 <?php
 include 'db_connect.php';
 
-
 // Start the session
 session_start();
 
-// Include the necessary files
-include 'db_connect.php';
+// Retrieve the selected course ID and name from session variables
+$courseID = $_GET['courseID'];
+$courseName = $_GET['courseName'];
 
-// Fetch courses from the database
-$sql = 'SELECT courseID, courseName FROM tbl_course';
+// Fetch sections for the selected course from the database
+$sql = "SELECT sectionID, sectionName FROM tbl_sections WHERE courseID = '$courseID'";
 $result = $conn->query($sql);
-
-// Active Sidebar Page
-
-$directoryURI = $_SERVER['REQUEST_URI'];
-
-$path = parse_url($directoryURI, PHP_URL_PATH);
-
-$components = explode('/', $path);
-
-$page = $components[2];
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +45,7 @@ $page = $components[2];
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
+
      
 <!---Inner topbar--->
 <?php include('topbar.php');?>
@@ -72,39 +62,39 @@ $page = $components[2];
         <main class="pcoded-main-content">
             <div class="container">
                 <div class="col-lg-12">
-                <div class="rec-content">
+                    <div class="rec-content">
                         <div class="upperbox">
-                            <h4>FEEDBACK</h4>
+                            <h4><?php echo $courseName; ?> Sections</h4>
+                            <a href="admin-feedback.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
                         </div>
 
-                        <div class="middlebox-class">
-                            <?php
-                            // Check if there are any courses
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $courseID = $row['courseID'];
-                                    $courseName = $row['courseName'];
-                                    $encodedCourseName = urlencode($courseName);
+                        <div class="middlebox-Student-classes">
+                            
+                        <?php
+                        // Check if there are any sections
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $sectionID = $row['sectionID'];
+                                $sectionName = $row['sectionName'];
+                                $encodedSectionName = urlencode($sectionName);
 
-                                    echo "<a href='admin-feedbackSection.php?courseID=$courseID&courseName=$encodedCourseName'>";
-                                    echo "<div class='course-box'>";
-                                    echo "<p>$courseName</p>";
-                                    echo "</div>";
-                                    echo "</a>";
-                                }
-                            } else {
-                                echo "No courses found.";
+                                echo "<a href='admin-FeedbackDetails.php?sectionID=$sectionID&sectionName=$encodedSectionName'>";
+                                echo "<div class='section-box'>";
+                                echo "<p> $sectionName</p>";
+                                echo "</div>";
                             }
-                            ?>
+                        } else {
+                            echo "No sections found for the selected course.";
+                        }
+                        ?>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-
-        <!-----End Main content------>
-    </section>
-    <!-----End of Body------>
+                    <!-----End Main content------>        
+        
+<!-----End of Body------>
+</section>
 </body>
-
-</html>
+</html>    

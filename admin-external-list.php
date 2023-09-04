@@ -88,7 +88,10 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <div class="col-lg-12">
                     <div class="rec-content">
                         <div class="upperbox">
-                            <h3>NEWS ACTIVITIES</h3>
+                            <h3>NSTP ACTIVITIES</h3>
+                            <div class="addbox">
+                            <button type="submit" class="add-button" id="external-Button">Add Activity</button>
+                        </div>
                             <a href="admin-external-prog.php" class="go-back-button"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>  
                         </div>
 
@@ -120,9 +123,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="add-box">
-                            <button type="submit" class="add-button" id="external-Button">+ New Activities</button>
-                        </div>
+                            
                             </div>
                         </div>
 
@@ -131,7 +132,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                  <!----------------------------- Add external form (hidden by default) ------------------------>
 
 
-                 <div id="externalForm" class="form-popup">
+                <div id="externalForm" class="form-popup">
                     <form action="admin-manageExternal.php" method="POST" class="form-container" enctype="multipart/form-data">
                         <h2>Add External</h2>
 
@@ -147,8 +148,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 
                         <button type="submit" class="btn" onclick="closeAddForm()">Add</button>
                         <button type="button" class="btn cancel" onclick="closeAddForm()">Cancel</button>
-         </form>
-    </div>
+                    </form>
+                </div>
 
 
                 </div>

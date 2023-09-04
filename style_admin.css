@@ -126,6 +126,120 @@ body::-webkit-scrollbar-track {
   }
 /*******************END LANDING********************/
 
+/****************Schedule**************************/
+.pcoded-main-content .sched-content .upperbox {
+  height: 50px;
+  width: 105%;
+  display: flex;
+  margin: 10px 0px 0px 110px;
+  justify-content: space-between;
+  align-items: center;
+}
+.pcoded-main-content .sched-content .upperbox h6{
+  font: normal 700 18px/normal 'Poppins';
+  margin: 10px 100px 8px 0px;
+  
+}
+.pcoded-main-content .sched-section{
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  width: 340px;
+  height: 260px;
+  padding: 30px;
+  margin: 20px 0px 0px 870px;
+}
+.pcoded-main-content .sched-section .sched-class{
+  margin: 15px 0px 20px 0px;
+}
+.pcoded-main-content .sched-section .sched-class .add-class{
+  border-radius: 10px;
+  background: #6FBB76;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  width: 280px;
+  height: 70px;
+  font: normal 600 15px/normal 'Poppins';
+}
+.pcoded-main-content .sched-section .sched-class .add-class:hover{
+  transition: all .6s ease;
+  transform: scale(0.98);
+}
+.pcoded-main-content .sched-section .sched-prog{
+  margin: 15px 0px 0px 0px;
+}
+.pcoded-main-content .sched-section .sched-prog .add-prog{
+  border-radius: 10px;
+  background: #FFE193;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  width: 280px;
+  height: 70px;
+  font: normal 600 15px/normal 'Poppins';
+}
+.pcoded-main-content .sched-section .sched-prog .add-prog:hover{
+  transition: all .6s ease;
+  transform: scale(0.98);
+}
+
+.form-container .form-control-1 {
+  margin: 0px 0px 8px 10px;
+  position: absolute;
+  }
+  
+  .form-container .form-control-1 input {
+  width: 130px;
+  border: 1px solid black;
+  font-family: 'poppins';
+  font-size: 11px;
+  line-height: 100%;
+  border-radius: 5px;
+  padding: 12px;
+  display: block;
+  
+  }
+  .form-container .form-control-1 label {
+  text-align: start;
+  margin: 5px 10px 8px 0px;
+  }
+  
+  .form-container .form-control-2 {
+  margin: 0px 0px 8px 159px;
+  position: relative;
+  }
+  
+  .form-container .form-control-2 input {
+  width: 130px;
+  border: 1px solid black;
+  font-family: 'poppins';
+  font-size: 11px;
+  line-height: 100%;
+  border-radius: 5px;
+  padding: 12px;
+  display: block;
+  
+  }
+  .form-container .form-control-2 label {
+  text-align: start;
+  margin: 5px 10px 8px 0px;
+  }
+  .form-container .date input[type="date"] {
+    width: 285px;
+    border: 1px solid black;
+    font-family: 'poppins';
+    font-size: 11px;
+    line-height: 100%;
+    border-radius: 5px;
+    padding: 12px;
+    display: block;
+    margin: 0px 10px 0px 8px;
+    }
+
+/*************End Schedule*************************/
+
+
+
+
 
 /*****************Admin Create Programs*******************/
 .pcoded-main-content .rec-content .align-tbl-programs{
@@ -545,6 +659,7 @@ body::-webkit-scrollbar-track {
   text-align: center;
   margin: 40px 0px 0px 5px;
 }
+
 .pcoded-main-content .middlebox .records_box  h3 i{
   color: #000000;
   font-size: 20px;

@@ -140,7 +140,7 @@ if (isset($_GET['programID'])) {
                         </div>
 
                         <div class="inner_feed-4">
-                            <h1>August 30, 2023</h1>
+                            <h1>September 5, 2023</h1>
                             <p>Date</p>
                             <i class="fa-regular fa-calendar"></i>
                         </div>
@@ -162,6 +162,45 @@ if (isset($_GET['programID'])) {
 
                 <label for="add-volunteer">Enter your Name:</label>
                 <input type="text" name="name" placeholder="Please Enter Your Full name">
+
+                <label for="email-volunteer">Enter your Email Address:</label>
+                <input type="text" name="Name" placeholder="Please Enter Your Email add">
+                
+                    <div class="form-control-1">
+                        <label for="studentID">Student Number:</label>
+                        <input name='studentID' id="studentId">
+                                        
+                        </input>
+                        
+                    <label for="course-volunteer">Training Program:</label>
+                    <select type="select" name="select">
+                        <option></option>
+                        <option>
+                            Civil Welfare Training Service
+                        </option>
+                        <option>
+                            Reserve Officer Training Corps
+                        </option>
+                    </select>
+                    </div>
+                    <div class="form-control-2">
+                        <label for="number">Contact Number:</label>
+                        <input name="section" id="section">
+
+                        </input>
+
+                        <label for="section-volunteer">Section:</label>
+                    <select type="select" name="select">
+                        <option></option>
+                        <option>
+                            BSCS - 1C
+                        </option>
+                        <option>
+                            BSIT - 1A
+                        </option>
+                    </select>
+                    </div>
+
 
                 <label for="email-volunteer">Email:</label>
                 <input type="text" name="email" placeholder="Please Enter Your Email add">
