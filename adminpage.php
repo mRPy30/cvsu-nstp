@@ -125,11 +125,6 @@
                             </table>
                         </div>
 
-                    <!--RATES--->
-                        <div class="rate_section">
-                            <?php include('linechart.php');?>
-                        </div>
-
                 </div>
             </div>
         </main>        
