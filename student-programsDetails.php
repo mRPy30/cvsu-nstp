@@ -163,7 +163,6 @@ if (isset($_GET['programID'])) {
                 <label for="add-volunteer">Enter your Name:</label>
                 <input type="text" name="name" placeholder="Please Enter Your Full name">
 
-<<<<<<< HEAD
                 <label for="email-volunteer">Enter your Email Address:</label>
                 <input type="text" name="Name" placeholder="Please Enter Your Email add">
                 
@@ -203,11 +202,9 @@ if (isset($_GET['programID'])) {
                     </div>
 
 
-=======
                 <label for="email-volunteer">Email:</label>
                 <input type="text" name="email" placeholder="Please Enter Your Email add">
                 
->>>>>>> 69acdbd69d97c466d9675a9d797e7c24c773434f
                 <div class="form-control-1">
                     <label for="studentID">Student Number:</label>
                     <input name='studentID' id="studentId"></input>
