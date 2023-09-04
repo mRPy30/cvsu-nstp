@@ -19,6 +19,23 @@ $components = explode('/', $path);
 
 $page = $components[2];
 
+
+// Perform a database query to retrieve student data
+$query = "SELECT * FROM student WHERE id = $accountID ";
+$result = mysqli_query($conn, $query);
+
+// Check if there are any rows returned
+if (mysqli_num_rows($result) > 0) {
+    $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    $students = array(); // If no students are found, initialize an empty array
+}
+
+
+
+
+
+
 ?>
 
 
@@ -99,23 +116,15 @@ $page = $components[2];
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <?php echo $student['yearID'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $student['course'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $student['id'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $student['name'] ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $student['finalGrade'] ?>
-                                        </td>
-                                    </tr>
+                                <?php foreach ($students as $student): ?>
+                                        <tr>
+                                            <td><?php echo $student['yearID']; ?></td>
+                                            <td><?php echo $student['course']; ?></td>
+                                            <td><?php echo $student['id']; ?></td>
+                                            <td><?php echo $student['name']; ?></td>
+                                            <td><?php echo $student['finalGrade']; ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </form>
