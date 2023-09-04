@@ -153,9 +153,9 @@ if ($result->num_rows > 0) {
                                 <table id="student-course-table">
                                     <thead>
                                         <tr>
-                                            <th class="col-6">Student Names</th>
-                                            <th class="2">Status</th>
-                                            <th class="2">Instructor Rating</th>
+                                            <th class="col-5">Student Names</th>
+                                            <th class="1">Status</th>
+                                            <th class="3">Instructor Rating</th>
                                             <th class="2">Program Rating</th>
                                         </tr>
                                     </thead>
@@ -169,6 +169,9 @@ if ($result->num_rows > 0) {
                                                     <?php echo $student['name']; ?>
                                                 </a>
                                             </td>
+                                            <td>Done</td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <?php endforeach; ?>
                                         <?php else: ?>

@@ -436,13 +436,16 @@ $page = $components[2];
                         </div>
 
                         <div class="form-control-1">
+                        <!----form1 Date--->
+                        
                         <!----form1 Time--->
                         <label for="course-volunteer"><br>Time From:</b></label>
                         <input type="time" id="appt" name="appt">
-                        </div>
+                    </div>
 
-                        <div class="form-control-2">
-                          <br>
+                      <div class="form-control-2">
+                        <!----form2 Date--->
+                        
                         <!----form2 Time--->
                         <label for="course-volunteer"><br>Time End:</b></label>
                         <input type="time" id="appt" name="appt">
