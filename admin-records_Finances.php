@@ -23,7 +23,7 @@ $totalBudget = $row['total_budget'];
 
 
 // Retrieving the total expenses for the year 2023
-$query = "SELECT SUM(amount) AS total_expenses FROM tbl_expenses  WHERE yearID = 1";
+$query = "SELECT SUM(amount) AS total_expenses FROM tbl_expenses  WHERE yearID = 2023";
 $result = $conn->query($query);
 $row = $result->fetch_assoc();
 $totalExpenses = $row['total_expenses'];

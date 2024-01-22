@@ -35,7 +35,7 @@ $query = "SELECT instructor.instructorImage, instructor.instructorName, instruct
             WHERE instructor.courseID = $selectedCourseID;";
 
 $result = mysqli_query($conn, $query);
-
+    
 $instructors = array(); // Initialize an empty array to store instructor details
 
 if ($result && mysqli_num_rows($result) > 0) {
@@ -139,10 +139,10 @@ if ($result && mysqli_num_rows($result) > 0) {
                                             <th>Instructor</th>
                                             <th>Class Handled</th>
                                             <th class="col-2" colspan="2">Modify</th>
-                                        </tr>
+                                        </tr>   
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($instructors as $instructor): ?>
+                                        <?php foreach ($instructors as $i   Instructor): ?>
                                             <tr>
                                     
                                             <td>
